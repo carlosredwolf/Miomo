@@ -1,0 +1,207 @@
+/* controls */
+.controls, .controls li {
+	padding:0;
+	margin:0;
+}
+.controls {
+	width: 96%;
+	height:40px;
+	display:none;
+	list-style-type:none;
+	overflow:hidden;
+	background:transparent;
+	margin:0;
+	margin-left: 15px;
+	background:#000;
+	position:relative;
+	top:-5px;
+	padding:4px;
+}
+.controls li {
+	float:left;
+	/*width:10%;*/
+	width:25px;
+	height:25px;
+	margin:2px auto;
+	margin-left:5px;
+	
+}
+.controls li:first-child {
+	margin-left:10px;
+}
+.controls .progress {
+	width:85%;
+	cursor:pointer;
+	margin-left:10px;
+	position:relative;
+	/*top:25%;*/
+	/*border:1px solid red;*/
+}
+.controls .progress input{
+	width:99%;
+	display:inline-block;
+	background-color:#CCB089;	
+	height:5px;
+}
+.controls button {
+	width:25px;
+	height:25px;
+	padding:1px;
+	margin:1px;
+	border:1px solid transparent;
+	text-align:center;
+	overflow:hidden;
+	white-space:nowrap;
+  	text-overflow:ellipsis;
+}
+.controls progress {
+	display:block;
+	width:100%;
+	height:15px;
+	/*height:1.25rem;*/
+	margin-top:2px;
+	/*margin-top:0.125rem;*/
+	border:1px solid #aaa;
+	/*overflow:hidden;*/
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	background-color:#808782;
+}
+.controls progress span {
+	width:0%;
+	height:100%;
+	display:inline-block;
+	background-color:#CCB089 !important;	
+}
+
+.w3-gold{
+    background:#CCB089;
+}
+
+/*   Play y pause  */
+.play{
+	background:transparent  url('../images/play2.png') no-repeat bottom right;background-position: 98% 0%;background-size: 100% ;
+}
+
+.pause{
+	background:transparent  url('../images/pause.png') no-repeat bottom right;background-position: 98% 0%;background-size: 100% ;
+}
+
+.sound{
+	background:transparent  url('../images/speaker.png') no-repeat bottom right;background-position: 98% 0%;background-size: 100% ;
+}
+
+.mute{
+	background:transparent  url('../images/speaker2.png') no-repeat bottom right;background-position: 98% 0%;background-size: 100% ;
+}
+/*    progess bar*/
+ input[type=range] {
+  height: 3px !important;
+  -webkit-appearance: none;
+  margin: 13px 0;
+  width: 100%;
+  /*background:#CCB089;*/
+  /*border:1px solid transparent;*/
+}
+input[type=range]:focus {
+  outline: none;
+  border: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #50555C;
+  background: #50555C;
+  border-radius: 3px;
+  /*border: 0px solid #000000;*/
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #C4A170;
+  border: 0px solid #808782;
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background: #CCB088;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top:0;
+  top:-4px;
+  position:relative;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #50555C;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #50555C;
+  background: #50555C;
+  border-radius: 3px;
+  /*border: 0px solid #000000;*/
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #C4A170;
+  border: 0px solid #808782;
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background: #CCB088;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #50555C;
+  border: 0px solid #000000;
+  border-radius: 6px;
+  box-shadow: 1px 1px 1px #50555C;
+}
+input[type=range]::-ms-fill-upper {
+  background: #50555C;
+  border: 0px solid #000000;
+  border-radius: 6px;
+  box-shadow: 1px 1px 1px #50555C;
+}
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 1px 1px 1px #C4A170;
+  border: 0px solid #808782;
+  height: 5px;
+  width: 5px;
+  border-radius: 5px;
+  background: #CCB088;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #50555C;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #50555C;
+}
+
+
+/*   VideoMedia Responsive  max-width -->  1320px */
+@media screen and (max-width: 1320px) {
+
+.controls .progress {
+  cursor:pointer;
+  margin-left:10px;
+  position:relative;
+  width: 80%;
+}
+
+
+
+}

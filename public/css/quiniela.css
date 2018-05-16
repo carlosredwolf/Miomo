@@ -1,0 +1,1223 @@
+body{background:#22333A;}
+
+/* ------- */
+.main-logo-sizeone{width:100px;height:100px;}
+.main-logo-sizetwo{width:60px;height:60px;}
+.main-menu-sizeone{height:100px}
+.main-menu-sizetwo{height:60px;}
+.margin-topone{margin: 20px 60px;}
+.margin-toptwo{margin: 0 60px;}
+/* ------- */
+
+SECTION.nav-left, SECTION.nav-right {
+    background-color: transparent;
+}
+
+SECTION.nav-left {
+    z-index: 1001 !important;
+    top:0;
+    left:0;
+}
+SECTION.nav-right {
+    z-index: 1001 !important;
+    top: 0;
+    right: 0;
+}
+/*------------------------------------------------------------*/
+/* Menú quinielas */
+SECTION.nav-left .main-logo img {
+    z-index:1002 !important;
+}
+SECTION.nav-right {display:none;}
+/* menu dropdown*/
+.menuNone{display:none;}
+.menuBlock{display:block;}
+
+.header_quiniela{margin: 0; width: auto;padding-top:0px;text-align:center;overflow:visible;	position: fixed;top: 0;width: 100%;	z-index:1000;background:#22333A;-webkit-transition:all 0.5s ease;-moz-transition:all 0.5s ease;-ms-transition:all 0.5s ease;-o-transition:all 0.5s ease;transition:all 0.5s ease;}
+.header_quiniela .navbar {background-color: #22333A;font-family: Arial, Helvetica, sans-serif;height: 60px;width: auto;text-align: center; clear:both; padding:1px; position: relative; z-index: 1002;-webkit-transition:all 0.5s ease;	-moz-transition:all 0.5s ease;	-ms-transition:all 0.5s ease;-o-transition:all 0.5s ease;transition:all 0.5s ease;}
+#responsiveMenu {display:none;}
+.header_quiniela .navbar a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 15px 16px;
+    text-decoration: none;
+    font:16px 'breamcatcher', helvetica, arial, sans-serif;
+	color:#CCAF88 !important;
+	text-transform:uppercase;
+	letter-spacing:5px;
+	margin: 2px 5px;
+	text-align: center;
+	position: relative;
+	z-index: 1003;
+}
+
+.header_quiniela .navbar a:first-child{
+	margin-left:30%;
+}
+.header_quiniela .dropdown {
+    float: right;
+    overflow: hidden;
+    font:16px 'breamcatcher', helvetica, arial, sans-serif;
+	color:#CCAF88 !important;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin: 2px 5px;
+	position:relative;
+	z-index: 1004;
+	overflow: visible;
+}
+
+.header_quiniela .dropdown .dropbtn, .header_quiniela  .avatar {
+    float:right;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color:#CCAF88 !important;
+    padding: 15px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    letter-spacing: 3px;
+    margin: 0;
+    display: inline-block;
+}
+.header_quiniela .avatar{
+	font-size: 48px;
+    padding: 2px;
+
+}
+.header_quiniela .dropdown .dropbtn i{
+	color:#CCAF88;
+	display: inline-block;
+}
+
+
+.header_quiniela .navbar a:hover, .header_quiniela .navbar a.active{
+    border-bottom:2px solid #CCAF88;
+}
+
+
+.header_quiniela .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #22333A;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    clear:both;
+    right:3px;
+}
+
+.header_quiniela .dropdown-content a {
+    color: black;
+    border-bottom:1px solid #CCAF88;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width:100%;
+    text-align: left;
+    margin:0;
+}
+.header_quiniela .dropdown-content a:first-child{
+	margin:0;
+}
+
+.header_quiniela .dropdown-content a:hover {
+    background-color: #fff;
+    color:#22333A !important;
+}
+
+.header_quiniela .dropdown:hover .dropdown-content, .dropDown{
+    display: block;
+    position:absolute;
+    z-index: 1006;
+    top:40px;
+    overflow: visible;
+    clear:both;
+}
+
+.header_quiniela .dropdown:hover .dropdown-content a{
+    display: block;
+    overflow: visible;
+}
+
+/*------------- Fin de Menú----------*/
+
+
+/*.header_quiniela a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}*/
+/*.header_quiniela a:hover {
+  background: #ddd;
+  color: black;
+}*/
+/*------------------------------------------------------------*/
+
+SECTION.quiniela{margin:100px 0 10px; /*border:1px solid orange;*/}
+
+section.quiniela .container{
+    margin: 0 60px;
+    width: auto;
+    position: relative;
+}
+.quiniela .container  h1{
+	width:80%;
+	font:80px 'breamcatcher', helvetica, arial, sans-serif;
+	color:#CCAF88 !important;
+	text-transform:uppercase;
+	letter-spacing:5px;
+	margin:30px auto 30px;
+	text-align: center;
+}
+
+.quiniela .container  h1 span{display:block;font-size:40px; color:#CCAF89;}
+
+
+/* -------- Quiniela -------- */
+
+.quiniela UL.quiniela-title{background-color:#ccb089;padding:9px 0 10px 0;margin:0 0 20px 0;}
+.quiniela UL.quiniela-title LI{overflow:hidden;width:100%;}
+.quiniela UL.quiniela-title H4, .quiniela UL.quiniela-title SPAN{font:normal 10px 'montserratbold', helvetica, arial, sans-serif;color:#fff;text-transform:uppercase;letter-spacing:4px;}
+.quiniela UL.quiniela-title H4{width:70%;padding:0 0 0 15px;float:left;}
+.quiniela UL.quiniela-title SPAN{float:right;width:30%;text-align:right;padding:0 15px 0 0;}
+.quiniela .container .quiniela-container{margin:5px 90px; border:1px solid transparent; background:#fff; /*height:970px;*/}
+.quiniela.proxPartidos .container .quiniela-container{background:#2D2E2E;}
+.quiniela .container .quiniela-container .contenido{margin:15px;border:2px solid #CCAF89;/*height:935px;*/ clear:both; position:relative; }
+.quiniela .container .quiniela-container .contenido .titulo-quiniela, .quiniela .container .quiniela-container .contenido .titulo-resultados, .quiniela .container .quiniela-container .contenido .titulo-proxPartidos{
+	width:100%;
+	min-height:180px;
+	position:relative;
+	color:#CCAF89;clear:both;}
+
+.quiniela .container .quiniela-container .contenido .titulo-resultados img, .quiniela .container .quiniela-container .contenido .titulo-proxPartidos img{margin:90px auto 20px; width:257px; height:155px; }
+.quiniela .container .quiniela-container .contenido .titulo-resultados h3, .quiniela .container .quiniela-container .contenido .titulo-proxPartidos h3{font:bold 20px 'poiretone-regular', sans-serif;text-transform:uppercase; letter-spacing:3px; margin:5px auto 50px;color:#CCAF89; width:auto;  height:30px; text-align: center;}
+
+.quiniela .container .quiniela-container .contenido .titulo-quiniela p{font:25px  'breamcatcher', helvetica, arial, sans-serif; float:left;margin:30px 0 30px 70px;color:#CCAF89; width:55%; height:80px; text-transform:uppercase;letter-spacing:5px; padding-left:90px; padding-top:5px;
+background: transparent url('../images/ball3.png') no-repeat bottom left; border:1px solid blue; }
+.quiniela .container .quiniela-container .contenido .titulo-quiniela img{float:left;margin:80px 70px 30px 190px; width:193px;  }
+.quiniela .container .quiniela-container .contenido .titulo-quiniela p span{display:block;}
+.quiniela .container .quiniela-container .contenido .titulo-quiniela p .tam1 {font-size: 40px;}
+.quiniela .container .quiniela-container .contenido .titulo-quiniela p .tam2 {font: 14px 'poiretone-regular'; letter-spacing:3px;}
+.quiniela .container .quiniela-container .contenido .titulo-quiniela p .tam3 {font-size: 28px;}
+.quiniela .container .quiniela-container .contenido .titulo-quiniela h3 {font:bold 20px 'poiretone-regular', sans-serif;text-transform:uppercase; letter-spacing:3px; margin:80px 120px 10px 5px;color:#CCAF89; width:25%; float:right; padding-top:40px; height:80px; text-align: left;}
+
+.quiniela .container .quiniela-container .contenido .formQuiniela{width:100%; /*height:935px;*/}
+.quiniela .container .quiniela-container .contenido .formQuiniela fieldset{width:75%; margin: 10px auto 0;height:137px; padding:1px; position:relative;/*border:1px solid orange;*/ clear:both; /*background:#ccc;*/}
+.quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info{width:40%; height:132px; /*border:1px solid yellow;*/ float:left;}
+.quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info > *{
+	padding-left:65px;
+}
+.quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info h2 {
+    width: 99%;
+    margin: 25px auto 10px;
+    font: bold 20px 'poiretone-regular', sans-serif;text-transform:uppercase;
+    letter-spacing: 3px;
+    word-spacing: 2px;
+    text-align: left;
+    color: #CCAF88;
+}
+.quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info h2 span{
+	display:block; font-size:16px; margin: 5px auto;}
+.quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info h3{
+	width:99% !important;
+	font:20px 'breamcatcher', helvetica, arial, sans-serif;
+	margin:10px auto 5px;
+	color:#000;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	word-spacing: 2px;
+	text-align:left;
+}
+
+.quiniela .container .quiniela-container .contenido .formQuiniela h3{
+	width:99% !important;
+	font:20px 'breamcatcher', helvetica, arial, sans-serif;
+	margin:10px auto 5px;
+	color:#000;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	word-spacing: 2px;
+	text-align:left;
+}
+
+.quiniela .container .quiniela-container .contenido .titulo-quiniela a{
+	width:99% !important;
+	font:20px 'breamcatcher', helvetica, arial, sans-serif;
+	margin:10px auto 5px;
+	color:#000;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	word-spacing: 2px;
+	text-align:left;
+}
+
+.quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro{
+	width:55%; height:132px; float:left;}
+.quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div{
+	width:40%; height:130px;float:left; text-align:center; overflow:hidden;}
+
+.quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div >*{
+	display:block;
+	float:left;
+}
+.quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div:first-child label{
+	float:left;
+}
+.quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div:first-child input{
+	float:right;
+}
+.quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div:last-child label{
+	float:right;
+}
+.quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div:last-child input{
+	float:left;
+}
+.quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro .deEmpate{width:60px;}
+.quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div.deEmpate .eEmpate{width:100%; font-weight:bold; text-align:center; margin:0 auto; margin-top:-15px; color: #CCAF88;
+}
+.quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div.deEmpate input{left:10%;}
+
+.quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div label{
+	font:14px 'breamcatcher', helvetica, arial, sans-serif;
+	margin:10px auto;
+	color:#000;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	word-spacing: 2px;
+	text-align:center;
+	display:block;
+}
+.quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div label img{
+	width:80px; height:80px; text-align:center; margin:5px auto;}
+
+.quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div input[type="radio"]{
+	/*display:block;*/
+	position:relative;
+	top:50px;
+	box-sizing: border-box;
+  	appearance: none;
+  	background: white;
+  	width: 40px;
+  	height: 40px;
+  	appearance: none;
+  	-webkit-appearance: none;
+  	-mozilla-appearance: none;
+  	/* Aligning your label text and your radio */
+  	vertical-align: text-bottom;
+  	padding: 0.5em;
+  	-webkit-appearance: none;
+}
+/* Setting the checked styles */
+.radio:checked { border:10px solid #CCAF88;}
+.square {  border: 1px solid #CCAF88;}
+
+.quiniela .container .quiniela-container .contenido form .form-enviar{width:100%;height:70px; margin:70px auto; }
+.quiniela .container .quiniela-container .contenido form .form-enviar input[type="submit"]{
+	width:280px;
+	height:55px !important;
+	display: block;
+	padding:10px;
+    font:bold 24px 'breamcatcher', helvetica, arial, sans-serif;
+    margin: 10px auto 5px;
+    color: #CCAF88;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    word-spacing: 2px;
+    text-align:center;
+    border:1px solid #CCAF88;
+    background:#fff;
+    }
+.quiniela .container .quiniela-container .contenido form .form-enviar input[type="submit"]:hover{
+	background:#CCAF88;
+	color:#fff;
+	-webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -ms-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+}
+.quiniela UL.game{margin:0 0 20px 0;}
+.quiniela UL.game LI{background-color:#f2f2f2;overflow:hidden;margin:0 0 10px 0;}
+.teams{width:400px;float:left;padding:15px 0 0 0;overflow:hidden;}
+P.team{float:left;width:300px;padding:0 0 0 18px;font:normal 16px 'montserratlight', helvetica, arial, sans-serif;color:#000e0d;}
+P.score{float:left;width:100px;font:normal 16px 'montserratlight', helvetica, arial, sans-serif;color:#ccb089;}
+UL.odds{overflow:hidden;width:570px;}
+.quiniela UL.game LI UL.odds LI{float:right;width:170px;margin:0;}
+.quiniela UL.game LI UL.odds LI.empate{margin:0 30px;}
+UL.odds LI DIV{background-color:#fff;-webkit-border-radius:3px;border-radius:3px;margin:8px 8px 8px 2px;padding:8px 0;}
+UL.odds LI DIV P{font:normal 16px 'montserratlight', helvetica, arial, sans-serif;color:#000e0d;text-align:center;}
+UL.odds LI DIV P.odd{font:normal 12px 'montserratbold', helvetica, arial, sans-serif;color:#ccb089;padding:3px 0 0 0;letter-spacing:2px;}
+
+
+/* vista de resultados */
+.resultados .container .quiniela-container .contenido .formQuiniela fieldset:last-child{margin-bottom: 100px;}
+.resultados .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div input:disabled {
+    background: #dddddd;
+}
+.resultados .container .quiniela-container .contenido .formQuiniela fieldset .resultadoError{
+	background: #fff  url('../images/error.png') no-repeat center center;
+	background-size: 99%;
+	opacity: 0.7;
+	/*width:75%;*/
+  width:100%;
+	height:137px;
+	position:absolute;
+	border:1px solid #ccc;
+}
+.resultados .container .quiniela-container .contenido .formQuiniela fieldset .resultadoExito{
+	background: transparent  url('../images/paloma.png') no-repeat  right center;
+	opacity: 1;
+	/*width:75%;*/
+  width:100%;
+	height:137px;
+	position:absolute;
+	border:1px solid #ccc;
+}
+
+/* ------------ Sección próximo partidos  -------------------------------*/
+
+SECTION.banner .proxPartidos .cProxPartidos h2{font-size: 30px; margin:25px auto 10px;color:#CCAF89; width:90% !important;}
+SECTION.banner .proxPartidos .cProxPartidos p{font:18px  'breamcatcher', helvetica, arial, sans-serif; margin:5px;color:#CCAF89; width:99% !important; height:80px; text-transform:uppercase;letter-spacing:2px; padding-top:25px;padding-left:135px;
+/*background: transparent url('../images/ball3.png') no-repeat bottom left;*/
+background: transparent url('../images/copa2.png') no-repeat bottom left; background-position:10% 5%;background-size: 38%;}
+SECTION.banner .proxPartidos .cProxPartidos p span{display:block;}
+SECTION.banner .proxPartidos .cProxPartidos p .tam1 {font-size: 30px;}
+SECTION.banner .proxPartidos .cProxPartidos p .tam2 {font-size: 12px;}
+SECTION.banner .proxPartidos .cProxPartidos p .tam3 {font: bold  15px  'poiretone-regular', helvetica, arial, sans-serif;}
+
+.proxPartidos .proxPContenedor .encuentro {width:65%;  height: 130px; margin: 20px auto 0; clear:both;}
+.proxPartidos .proxPContenedor .encuentro > div{float: left; margin:5px auto; width:25%; height:130px;
+font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#CCAF89; text-transform:uppercase;letter-spacing:4px;}
+/*.proxPartidos .proxPContenedor .encuentro > div:first-child{margin-left:35px}*/
+.proxPartidos .proxPContenedor .encuentro:last-child{margin-bottom:100px;}
+.proxPartidos .proxPContenedor .encuentro > div img { margin:10px auto; }
+.proxPartidos .proxPContenedor .encuentro div.horarios{width:50%;}
+.proxPartidos .proxPContenedor .encuentro div.horarios h2{font:bold  20px  'poiretone-regular', helvetica, arial, sans-serif; margin:15px auto 0px;color:#CCAF89; width:90% !important;  text-transform:uppercase;letter-spacing:2px; word-spacing: 2px;}
+.proxPartidos .proxPContenedor .encuentro div.horarios h2 span{display:block; font: bold 18px 'poiretone-regular', helvetica, arial, sans-serif; margin: 5px auto;}
+.proxPartidos .proxPContenedor .encuentro div.horarios h3{font:bold  24px 'breamcatcher', helvetica, arial, sans-serif; margin:20px auto 5px;color:#fff; width:99% !important;  text-transform:uppercase;letter-spacing:2px; word-spacing: 2px;text-align: center;}
+.proxPartidos .proxPContenedor .encuentro div.horarios{font-size: 28px;}
+
+/*-------------- Sección no hay resultados aun ---------------------------*/
+
+
+.containerResultados .container{
+    margin: 50px 150px  30px;
+    height:auto;
+    width: auto;
+    position: relative;
+    border:1px solid transparent;
+    background:#fff;
+}
+
+
+.containerResultados .container .marco{ width: 98%;
+  height:330px;
+  margin: 8px auto;
+  border: 2px solid #CCAF89;
+  clear: both;
+  /*z-index: 1005;*/
+    /* border: 1px solid red; */}
+.containerResultados .container .sobre{
+	background:transparent url('../images/sobre.png') no-repeat top left;background-size:100%;
+	height:280px;
+}
+ .containerResultados .container .marco .titulo-proxPartidos{/*border:1px solid yellow;*/font: bold 20px 'poiretone-regular', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+	color: #CCAF89;}
+ .containerResultados .container .marco .titulo-proxPartidos img{width:175px; margin:35px auto 5px;}
+ .containerResultados .container .marco .titulo-proxPartidos h3{font-size:18px;
+    margin: 20px auto 10px;
+    width: auto;
+    height: 30px;
+    text-align: center;}
+
+ .containerResultados .container .marco .titulo-proxPartidos h2{margin:15px auto 20px;font: bold 30px 'poiretone-regular', sans-serif;color: #CCAF89;text-transform:none; letter-spacing: 4px;}
+ .containerResultados .container .sobre .titulo-proxPartidos h2{margin:170px auto 20px; font-size:30px; width:80%;letter-spacing: 5px;}
+ .containerResultados .container .sobre .titulo-proxPartidos h2 span{display:block; font-size:18px;letter-spacing: 2px;}
+
+
+/*  ---------------------------------------------------------------------------------------------  */
+
+@media screen and (max-width: 480px) {
+/*  Responsive  */
+/* -------- Navigation -------- */
+  SECTION.nav-left, SECTION.nav-right{width:50px;}
+  .main-logo-sizeone{width:60px;height:60px;}
+  .main-logo-sizetwo{width:40px;height:40px;}
+  .menu{left:11px;}
+  .margin-toponeuser{margin-top: 20px;}
+  .margin-toptwouser{margin-top: 0;}
+
+  #menuDesktop{display:none;}
+  #responsiveMenu{display:block;}
+  /* menu dropdown*/
+  /*.menuNone{display:none;}
+  .menuBlock{display:block;}*/
+
+
+  .margin-topone {margin: 20px auto 0;}
+  .margin-toptwo {margin: 0 auto;}
+  .header_quiniela .navbar {width: 100%;}
+  .header_quiniela .navbar.responsive {height: auto;}
+
+  .navbar.responsive  .dropdown {
+      float: none;
+      width:100%;
+      font: 16px 'breamcatcher', helvetica, arial, sans-serif;
+      color: #CCAF88 !important;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      position: relative;
+      overflow:visible;
+      padding:1px;
+      margin:0;
+      /*border:1px solid red;*/
+      clear:both;
+    }
+
+    .navbar.responsive .dropdown button.dropbtn{
+      background: url(../images/arrowDown2.png) no-repeat bottom center; background-size: 35px;
+      text-align: center; width:60%;    padding: 5px; padding-bottom:8px;position: relative; z-index: 1005; border:1px solid blue;
+    }
+
+
+    .header_quiniela .responsive .dropdown .dropbtn{float: none;}
+
+    .header_quiniela .responsive .dropdown .dropdown-content {
+      width: 70%;
+      margin: 0 auto;
+      box-shadow: 0px 12px 20px 6px rgba(0,0,0,0.2);
+      /*border:1px solid yellow;*/
+      /*margin-left: 10%;
+      position:none;
+      right:0;*/
+    }
+    .header_quiniela .dropdown:hover .dropdown-content, .dropDown {
+      display: block;
+      position: initial !important;
+      /* z-index: 1006; */
+      top: 40px;
+      float:none;
+      overflow: visible;
+      clear: both;
+      -webkit-transition: all 0.6s ease;
+      -moz-transition: all 0.6s ease;
+      -ms-transition: all 0.6s ease;
+      -o-transition: all 0.6s ease;
+      transition: all 0.6s ease;
+    }
+
+    .header_quiniela .responsive .dropdown .dropdown-content a {
+      float: none;
+      color: white;
+      position: relative;
+      text-align: center;
+      z-index: 1007;
+      margin:0 auto;
+    }
+
+
+    /*----------------- header avatar menu --------------------*/
+    section.nav-right{display:block; background-color:transparent;}
+    section.nav-right .user{ -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;}
+    section.nav-right .avatarMenu {
+      background: #22333A url("../images/arrowDown.png") no-repeat bottom center;
+      background-size:50% 15%;
+      border: none;
+      outline: none;
+      color: #CCAF88;
+      padding-bottom:5px;
+      display: inline-block;
+      border:1px solid pink;
+      clear:both;
+      position:relative;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+
+    }
+    section.nav-right .avatarMenu  .avatar{font-size: 28px; width:28px; height:28px;}
+    section.nav-right .avatarMenu  .mini{font-size:15px; float: left; position:relative;left:-5px; top:-10px;}
+
+    section.nav-right  .dropdown {
+      float: none;
+      width:100%;
+      font: 16px 'breamcatcher', helvetica, arial, sans-serif;
+      color: #CCAF88 !important;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      position: relative;
+      overflow:visible;
+      padding:1px;
+      clear:both;
+    }
+
+
+    .nav-right .dropdown .dropbtn{float: none;}
+
+    .nav-right .dropdown .dropdown-content {
+      /*display: none;*/
+      width: 70%;
+      margin: 0 auto;
+      box-shadow: 0px 12px 20px 6px rgba(0,0,0,0.2);
+      /*border:1px solid yellow;*/
+      /*margin-left: 10%;
+      position:none;
+      right:0;*/
+    }
+    .nav-right .dropdown .dropdown-content span{font-size:12px; text-align: right; display:block; padding:4px 5px;}
+    .nav-right .dropdown:hover .dropdown-content {
+      /*display: block;*/
+      width:120px;
+      position: relative;
+      /* z-index: 1006; */
+      background:#22333A;
+      top: 0px;
+      right:75px;
+      overflow: visible;
+      clear: both;
+      -webkit-transition: all 0.6s ease;
+      -moz-transition: all 0.6s ease;
+      -ms-transition: all 0.6s ease;
+      -o-transition: all 0.6s ease;
+      transition: all 0.6s ease;
+    }
+
+    .nav-right .dropdown .dropdown-content a {
+      float: none;
+      font-size: 9px;
+      font-weight: normal;
+      color: white;
+      display: block;
+      position: relative;
+      text-align: left;
+      z-index: 1007;
+      margin:0 auto;
+      padding: 10px 8px;
+      border-bottom: 2px solid #CCAF88;
+      text-decoration: none;
+    }
+
+    /* ------------------------------------------------------- */
+
+    /*--- Sección de quiniela  ----*/
+    SECTION.quiniela {margin: 60px 0 10px;border: 1px solid orange;}
+    .main-menu-sizetwo {height: auto; border:1px solid magenta;}
+    .main-menu-sizeone {height: auto; border:1px solid pink;}
+
+    section.quiniela .container {
+      margin: 0 40px;
+      width: auto;
+      position: relative;
+      /*border:1px solid green;*/
+    }
+    .quiniela .container h1 {
+      width: 90%;
+      font: 40px 'breamcatcher', helvetica, arial, sans-serif;
+      color: #CCAF88 !important;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      margin: 10px auto 0;
+      text-align: center;
+    }
+    section.quiniela  .containerResultados .container {
+      margin: 10px 0 0;
+      height: auto;
+    }
+    section.quiniela  .containerResultados .container .sobre .titulo-proxPartidos h2 {
+      margin: 66px auto 20px;
+      font-size: 20px;
+      font-weight:600;
+      width: 90%;
+      letter-spacing: 4px;
+    }
+    .containerResultados .container .sobre .titulo-proxPartidos h2 span {
+      display: block;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+  .containerResultados .container .sobre {height:auto;}
+  .containerResultados .container .marco {width: 98%; margin: 4px auto;}
+  .quiniela .container .quiniela-container {margin: 5px auto 25px; }
+  .quiniela .container .quiniela-container .contenido .titulo-quiniela, .quiniela .container .quiniela-container .contenido .titulo-resultados, .quiniela .container .quiniela-container .contenido .titulo-proxPartidos {min-height: 80px;}
+  .quiniela .container .quiniela-container .contenido .titulo-quiniela img {
+    float: none;
+    margin: 10px auto 0;
+    width: 50%;
+  }
+  .quiniela .container .quiniela-container .contenido .titulo-quiniela h3 {
+    font: bold 14px 'poiretone-regular', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0 auto 5px;
+    width: 80%;
+    float: none;
+    padding-top: 10px;
+    height: auto;
+    text-align: center;
+  }
+
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset {
+    width: 99%;
+    margin: 5px auto 0;
+    min-height: 145px;
+    border-bottom: 1px solid #CCAF88;
+    /*border-top: 1px  dashed #FFEBBF; */
+    clear: both;
+    /*border-bottom: .01mm solid #CCAF88;*/
+    /* background: #ccc; */
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset:first-child{margin-top:25px;}
+   .quiniela .container .quiniela-container .contenido .formQuiniela fieldset:last-child {border-bottom: 1px solid transparent;}
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info {
+    width: 99%;
+    height: auto;
+    /*border: 1px solid yellow;*/
+    float: none;
+    clear:both;
+  }
+
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info h2 {
+    width: 99%;
+    margin: 5px auto 0;
+    font: bold 14px 'poiretone-regular', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    word-spacing: 2px;
+    text-align: center;
+    color: #CCAF88;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info h2 span {
+    display: block;
+    font-size: 12px;
+    margin: 0 auto;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info h3 {
+    width: 99% !important;
+    font: 18px 'breamcatcher', helvetica, arial, sans-serif;
+    margin: 5px auto;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    text-align: center;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info > * {
+    padding-left: 0;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro {
+    width: 100%;
+    /*min-height: auto;*/
+    height: 58px;
+    float: none;
+    margin-bottom:5px;
+    padding-bottom:2px;
+    border:1px solid transparent;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div {
+    width: 36%;
+    height: auto;
+    float: left;
+    text-align: center;
+    overflow: visible;
+    /*border:1px solid red;*/
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro .deEmpate {
+    width: 27%;
+    position: relative;
+
+  }
+    .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro .deEmpate label{
+      position:relative;
+      top:-15px;
+      margin-top:0;
+    }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div label{
+    width: 60%;}
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div label img {
+    /*width: 41px;*/
+    width: 100%;
+    /*height: 41px;*/
+    height: 100%;
+    position:relative;
+    top:-10px;
+    text-align: center;
+    margin: 5px;
+    margin-left:3px;
+    margin-top:5px;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div label img + span{
+    display:none;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div input[type="radio"] {
+    display: block;
+    position:relative;
+    top:20px;
+    left:12px;
+    box-sizing: border-box;
+    appearance: none;
+    background: white;
+    width: 23px;
+    height: 23px;
+    appearance: none;
+    -webkit-appearance: none;
+    -mozilla-appearance: none;
+    vertical-align: text-bottom;
+    padding: 0.5em;
+    -webkit-appearance: none;
+  }
+  .radio:checked {
+    border: 4px solid #CCAF88;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div label {
+    font: 14px 'breamcatcher', helvetica, arial, sans-serif;
+    margin: 0 auto;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    text-align: center;
+    display: block;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div:first-child label {
+    float: left;
+    margin:0;
+
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div:last-child label{
+    margin:0;
+    /*margin-right:5px;
+    margin-top:5px; */
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div:last-child label img{
+    margin:0;
+    margin-right:3px;
+    margin-top:5px;
+  }
+
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div:last-child input[type="radio"] {
+    position:relative;
+    left:-13px;
+
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro .deEmpate input[type="radio"]{
+    margin-left:38%;
+    left:0;
+  }
+
+  .quiniela .container .quiniela-container .contenido form .form-enviar {
+    width: 100%;
+    height: 40px;
+    margin: 20px auto 40px;
+  }
+  .quiniela .container .quiniela-container .contenido form .form-enviar input[type="submit"] {
+    width: 80%;
+    height: 55px !important;
+    margin: 10px auto 5px;
+  }
+  footer .container {
+    margin: 5px auto 0;
+    width: 90%;
+    height: 110px;
+    position: relative;
+    padding: 0;
+    clear: both;
+  }
+  FOOTER .container ul , FOOTER .container p {
+    width: 100%;
+    margin: 10px auto 10px;
+    text-align: center;
+    font: 13px 'breamcatcher', helvetica, arial, sans-serif;
+    letter-spacing: 3px;
+    word-spacing: 4px;
+  }
+  FOOTER .container ul {margin-top:20px;}
+  FOOTER .container ul li{margin:10px auto; display: block}
+
+
+  /* ----------- Resultados ---------------- */
+  .containerResultados .container .marco .titulo-proxPartidos img {
+    margin: 10px auto 0;
+    width: 40%;
+  }
+  .quiniela .container .quiniela-container .contenido .titulo-quiniela h3 {
+    font: bold 14px 'poiretone-regular', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0 auto 5px;
+    width: 80%;
+    float: none;
+    padding-top: 10px;
+    height: auto;
+    text-align: center;
+  }
+
+.quiniela .container .quiniela-container .contenido .titulo-resultados img, .quiniela .container .quiniela-container .contenido .titulo-proxPartidos img {
+    margin: 20px auto 5px;
+    width: 40%;
+    height: auto;
+  }
+  .containerResultados .container .marco .titulo-proxPartidos h3 {
+   font: bold 14px 'poiretone-regular', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0 auto 5px;
+    width: 80%;
+    float: none;
+    padding-top: 10px;
+    height: auto;
+    text-align: center;
+  }
+  .containerResultados .container .marco .titulo-proxPartidos h2 {
+   margin: 20px auto 20px;
+    font-size: 20px;
+    font-weight: 600;
+    width: 90%;
+    letter-spacing: 4px;
+  }
+  .containerResultados .container .marco {
+    width: 98%;
+    height: auto;
+
+  }
+  .containerResultados .container .marco .titulo-proxPartidos img {
+    margin: 10px auto 0;
+    width: 40%;
+  }
+
+
+  .containerResultados .container .marco .titulo-proxPartidos h2 {
+   margin: 20px auto 20px;
+    font-size: 20px;
+    font-weight: 600;
+    width: 90%;
+    letter-spacing: 4px;
+  }
+  .containerResultados .container .marco {
+    width: 98%;
+    height: auto;
+
+  }
+  .quiniela .container .quiniela-container .contenido .titulo-resultados h3, .quiniela .container .quiniela-container .contenido .titulo-proxPartidos h3 {
+    font: bold 16px 'poiretone-regular', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 5px auto 20px;
+    color: #CCAF89;
+    width: auto;
+    height: 30px;
+    text-align: center;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset {
+    width:100%;
+    margin: 5px auto 0;
+    min-height: auto;
+    border-bottom: 1px solid #CCAF88;
+    /* border-top: 1px dashed #FFEBBF; */
+    clear: both;
+    /* border-bottom: .01mm solid #CCAF88; */
+    /* background: #ccc; */
+  }
+  .quiniela .container .quiniela-container .contenido .titulo-resultados h3 span{display: block;font-size: 14px;}
+
+  .resultados .container .quiniela-container .contenido .formQuiniela fieldset .resultadoError {
+    background: #fff url(../images/error.png) no-repeat center center;
+    background-size: 99%;
+    opacity: 0.8;
+    width: 100%;
+    height: 137px;
+    position: absolute;
+    top:0;
+    left:0;
+    border: 1px solid red /*#ccc*/;
+  }
+  .resultados .container .quiniela-container .contenido .formQuiniela fieldset .resultadoExito {
+    background: transparent url(../images/paloma.png) no-repeat top right;
+    opacity: 1;
+    width: 100%;
+    height: 137px;
+    position: absolute;
+    top:0;
+    left:0;
+    border: 1px solid #ccc;
+  }
+  .resultados .container .quiniela-container .contenido .formQuiniela fieldset:last-child {
+    margin-bottom: 40px;
+  }
+
+  /*  Próximos partidos  */
+  .quiniela .container h1 {width: 99%;}
+  .proxPartidos .proxPContenedor .encuentro > div {
+    float: left;
+    margin: 5px 0;
+    width: 25%;
+    height: 50px;
+    font: 20px 'breamcatcher', helvetica, arial, sans-serif;
+    color: #CCAF89;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+   .proxPartidos.quiniela .container h1 {width: 99%; font-size: 32px;}
+  .proxPartidos .proxPContenedor .encuentro {
+    width: 100%;
+    height: auto;
+    margin: 5px auto 0;
+    min-height: 90px;
+    /*border-bottom: 1px solid #CCAF88;*/
+    clear: both;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info {
+    width: 99%;
+    height: auto;
+    float: none;
+    clear: both;
+  }
+
+
+  .proxPartidos .proxPContenedor .encuentro > div img {
+    margin: 10px auto;
+    width: 100%;
+    /* height: 41px; */
+    height: auto;
+    position: relative;
+    top: -10px;
+    text-align: center;
+    margin:0;
+    margin:;
+    /*margin-left: 3px;
+    margin-top: 5px;*/
+  }
+.proxPartidos .proxPContenedor .encuentro div:first-child{margin-left: 2px;}
+.proxPartidos .proxPContenedor .encuentro div:last-child{margin-right: 0px;}
+.proxPartidos .proxPContenedor .encuentro div.horarios {width: 48%;position:relative;
+    top:-15px;}
+.proxPartidos .proxPContenedor .encuentro div.horarios h2 {
+    font: bold 16px 'poiretone-regular', helvetica, arial, sans-serif;
+    margin: 5px auto 0px;
+    color: #CCAF89;
+    width: 90% !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+
+}
+.proxPartidos .proxPContenedor .encuentro div.horarios h2 span {
+    display: block;
+    font: bold 14px 'poiretone-regular', helvetica, arial, sans-serif;
+    margin: 5px auto;
+    letter-spacing: 2px;
+}
+.proxPartidos .proxPContenedor .encuentro div.horarios h3 {
+    font-size: 18px ;
+    margin: 5px auto 5px;
+
+}
+
+}
+
+/* ----------------------------------------------------------------------------------- */
+/*  Pantallas iphone 5, 6  */
+@media screen and (max-width: 400px) {
+
+
+  /*----------------- header avatar menu --------------------*/
+ /* menu dropdown*/
+/*.menuNone{display:none;}
+.menuBlock{display:block;}*/
+
+    section.nav-right{display:block; background-color:transparent;}
+    section.nav-right .user{ -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;}
+    section.nav-right .avatarMenu {
+      background: #22333A url("../images/arrowDown.png") no-repeat bottom center;
+      background-size:50% 15%;
+      width:35px;
+      height:35px;
+      border: none;
+      outline: none;
+      color: #CCAF88;
+      padding:0;
+      padding-bottom:5px;
+      margin:3px 0 0 5px;
+      display: block;
+      border:1px solid pink;
+      clear:both;
+      position:relative;
+      z-index:1003;
+    }
+    section.nav-right .avatarMenu i.avatar{font-size: 28px;float:left; display:block; margin:1px auto 0;}
+    section.nav-right .avatarMenu  .mini{font-size:15px; float: left; position:relative;left:-5px; top:-10px;}
+    /* ------------------------------------------------------- */
+
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro .deEmpate input[type="radio"] {
+    margin-left: 33%;
+    left: 0;
+  }
+
+.quiniela .container .quiniela-container .contenido form .form-enviar input[type="submit"] {
+    display: block;
+    font: bold 20px 'breamcatcher', helvetica, arial, sans-serif;
+    margin: 10px auto 5px;
+
+  }
+  .quiniela .container .quiniela-container .contenido .titulo-resultados img, .quiniela .container .quiniela-container .contenido .titulo-proxPartidos img {
+    margin: 20px auto 5px;
+    width: 40%;
+    height: auto;
+  }
+  .containerResultados .container .marco .titulo-proxPartidos h3 {
+   font: bold 14px 'poiretone-regular', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0 auto 5px;
+    width: 80%;
+    float: none;
+    padding-top: 10px;
+    height: auto;
+    text-align: center;
+  }
+  .containerResultados .container .marco .titulo-proxPartidos h2 {
+   margin: 20px auto 20px;
+    font-size: 20px;
+    font-weight: 600;
+    width: 90%;
+    letter-spacing: 4px;
+  }
+  .containerResultados .container .marco {
+    width: 98%;
+    height: auto;
+
+  }
+  .quiniela .container .quiniela-container .contenido .titulo-resultados h3, .quiniela .container .quiniela-container .contenido .titulo-proxPartidos h3 {
+    font: bold 16px 'poiretone-regular', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 5px auto 20px;
+    color: #CCAF89;
+    width: auto;
+    height: 30px;
+    text-align: center;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset {
+    width: 100%;
+    margin: 5px auto 0;
+    min-height: auto;
+    border-bottom: 1px solid #CCAF88;
+    /* border-top: 1px dashed #FFEBBF; */
+    clear: both;
+    /* border-bottom: .01mm solid #CCAF88; */
+    /* background: #ccc; */
+  }
+  .quiniela .container .quiniela-container .contenido .titulo-resultados h3 span{display: block;font-size: 14px;}
+
+  .resultados .container .quiniela-container .contenido .formQuiniela fieldset .resultadoError {
+    background: #fff url(../images/error.png) no-repeat center center;
+    background-size: 99%;
+    opacity: 0.85;
+    width: 100%;
+    height: 137px;
+    position: absolute;
+    top:0;
+    left:0;
+    border: 1px solid red /*#ccc*/;
+  }
+  .resultados .container .quiniela-container .contenido .formQuiniela fieldset .resultadoExito {
+    background: transparent url(../images/paloma.png) no-repeat top right;
+    opacity: 1;
+    width: 100%;
+    height: 137px;
+    position: absolute;
+    top:0;
+    left:0;
+    border: 1px solid #ccc;
+  }
+  .resultados .container .quiniela-container .contenido .formQuiniela fieldset:last-child {
+    margin-bottom: 40px;
+  }
+  FOOTER .container ul li {display:block;}
+
+  /*  Próximos partidos  */
+  .proxPartidos.quiniela .container h1 {width: 99%; font-size: 32px;}
+  .proxPartidos .proxPContenedor .encuentro {
+    width: 100%;
+    height: auto;
+    margin: 5px auto 0;
+    min-height: 130px;
+    /*border-bottom: 1px solid #CCAF88;*/
+    clear: both;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info {
+    width: 99%;
+    height: auto;
+    float: none;
+    clear: both;
+  }
+
+
+  .proxPartidos .proxPContenedor .encuentro > div {
+    float: left;
+    margin: 5px 0;
+    width: 25%;
+    /* height: 130px; */
+    font: 20px 'breamcatcher', helvetica, arial, sans-serif;
+    color: #CCAF89;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+
+
+  .proxPartidos .proxPContenedor .encuentro > div img {
+    margin: 10px auto;
+    width: 98%;
+    /* height: 41px; */
+    height: auto;
+    position: relative;
+    top: -10px;
+    text-align: center;
+    margin:0;
+
+    /*margin-left: 3px;
+    margin-top: 5px;*/
+  }
+.proxPartidos .proxPContenedor .encuentro div:first-child{margin-left: 2px;}
+.proxPartidos .proxPContenedor .encuentro div:last-child{margin-right: 0px;}
+.proxPartidos .proxPContenedor .encuentro div.horarios {width: 48%;position:relative;
+    top:-15px;}
+.proxPartidos .proxPContenedor .encuentro div.horarios h2 {
+    font: bold 12px 'poiretone-regular', helvetica, arial, sans-serif;
+    margin: 5px auto 0px;
+    color: #CCAF89;
+    width: 90% !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+
+}
+.proxPartidos .proxPContenedor .encuentro div.horarios h2 span {
+    display: block;
+    font: bold 10px 'poiretone-regular', helvetica, arial, sans-serif;
+    margin: 5px auto;
+    letter-spacing: 2px;
+}
+.proxPartidos .proxPContenedor .encuentro div.horarios h3 {
+    font-size: 16px ;
+    margin: 5px auto 5px;
+
+}
+
+}

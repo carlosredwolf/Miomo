@@ -154,11 +154,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Miomo\Providers\AppServiceProvider::class,
+        Miomo\Providers\AuthServiceProvider::class,
+        // Miomo\Providers\BroadcastServiceProvider::class,
+        Miomo\Providers\EventServiceProvider::class,
+        Miomo\Providers\RouteServiceProvider::class,
 
     ],
 

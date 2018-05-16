@@ -1,0 +1,987 @@
+/* -------- MEDIA QUERIES -------- */
+@media screen and (max-width: 1320px) {
+	/* -------- Global -------- */
+/*	.container{width:100%;padding:0 50px;}*/
+
+
+	/*--------------------------  Index ------------------------------ */
+	/* banner info */
+	section.banner .container{
+		padding:1px !important;
+		border:1px solid transparent;
+	}
+	section.banner .container .banner-info {
+	  display: block;
+	  margin: 0 20px 100px 0;
+	  margin-left:10%;
+	  width:430px;
+	  padding:0 ;
+	}
+	.top-illustration {
+	    background-size: 40%;
+	    background-position: 80% 20%;
+	}
+	.banner-info li{
+		/*border:1px solid blue;*/
+	}
+
+	SECTION.about{height: auto; }
+	SECTION.about .container .about-info {
+	    margin:1px;
+	    margin-left: 55px;
+	    height:auto;
+	    overflow: visible;
+
+	}
+
+	SECTION.about .container {
+    	background-position: 98% 15%;
+	    background-size: 55%;
+	    /* border: 1px solid blue; */
+	}
+	.cnt-banner h2 {margin: 20px auto 5px;}
+	SECTION.advantages .container {
+	    margin: 0px 50px;
+	    /*height: 380px;*/
+	    top: -10px;
+	}
+	SECTION.advantages .container > * {
+    	width: 44%;
+    	float: left;
+    	/* border: 1px solid gray; */
+	}
+	SECTION.advantages .container  .cnt-banner {
+	    width: 40%;
+	}
+	SECTION.advantages .container  .cnt-banner .adv-info-container {
+    	margin: 15px auto 5px;
+  	}
+	SECTION.advantages .container .cnt-video {
+    	width:50%;
+    	margin-top: 15px;
+	    margin-left: 60px;
+	}
+
+
+	SECTION.advantages .container   .slide-nav {
+	    text-align: center;
+	    margin: 35px 0 0 0;
+	}
+.slide-txt {
+  font-size:20px;
+}
+
+SECTION.banner .proxPartidos {
+    /*width: 96%; */
+    margin: 70px auto;
+    padding: 1px;
+    border: 3px solid transparent;
+}
+.user-type UL LI {
+    float: left;
+     width: 40%;
+    margin:0 auto;
+}
+
+.user-type UL LI:first-child {
+    margin-left: 10%;
+}
+
+	/*--------------------------  end Index ------------------------------ */
+	/* -------- Navigation -------- */
+	SECTION.nav-left, SECTION.nav-right{width:50px;}
+	.main-logo-sizeone{width:75px;height:75px;}
+	.main-logo-sizetwo{width:50px;height:50px;}
+	.menu{left:11px;}
+	
+	/* -------- Banner -------- */
+	.banner-info{padding:150px 0 70px 100px;}
+	/*.top-illustration{background:transparent url('../images/illustration-top.png') no-repeat right 60px bottom;background-size:500px;}*/
+	.mini-banner{padding:150px 80px 120px 80px;}
+	
+	/* -------- Advantages -------- */
+	/*SECTION.advantages{padding:100px 20px 80px 20px;overflow:hidden;}
+	.adv-info-container{float:left;width:60%;padding:0 0 0 20px;}
+	.video-img{position:relative;float:left;width:40%;padding:0 20px 0 0;top:0;left:0;}
+	.adv-info{float:none;width:100%;}*/
+	
+	/* -------- About -------- */
+	/*SECTION.about{padding:100px 0 50px 0;}
+	.about-info, .about-img{float:none;}
+	.about-info{width:65%;padding:0 0 0 40px;}
+	.about-img{position:absolute;top:0;right:-10%;}*/
+	
+	/* -------- User type -------- */
+	/*SECTION.user-type{padding:0 0 80px 0;}*/
+	SECTION.user-type {height: auto; margin:1px; margin-bottom: 10px;}
+	.usuario{padding:0 40px 0 0;}
+	.book{padding:0 0 0 40px;}
+	section.about .container .about-info ul {
+    	height: auto;
+	}
+	SECTION.user-type .container ul li h2{width:80%;}
+	
+	section.about .container .about-info ul li span {
+    	height: 50px;
+    	font-size: 16px ;
+    	margin: 0 8px 0 0;
+	}
+	/* -------- Earn More -------- */
+	SECTION.earn{padding:0; height: 350px;}
+	/*.earn UL{width:100%;padding:0 40px;}*/
+	.earn ul li:first-child {
+     margin-top: 0;
+    }
+
+	/* -------- Quiniela form -------- */
+	/*SECTION.quiniela-form{padding:80px 0 120px 0;}*/
+	/*.quiniela-form-info, .quiniela-form-form{padding:0 40px;}*/
+	.quiniela-form-form UL{margin:0;}
+	
+	/* -------- Accordion -------- */
+	.accordion-padd{padding:0 60px;}
+	.accordion-table OL{margin:25px 0 0 5px;}
+	.accordion-table OL LI{margin:0 20px 30px 45px;}
+	.accordion-table OL P{padding:0 0 0 15px;}
+	
+	/* -------- Register form -------- */
+	.register-container{padding:0;}
+	
+	/* -------- Quiniela -------- */
+	.quiniela-container{padding:0;}
+	UL.odds{float:right;}
+
+SECTION.earn .container {
+    height: auto;
+}
+	.earn ul {
+	    height: auto;
+	}
+	.earn h2 {
+ 	    color: #CCB089;
+    	margin: 25px auto 10px;
+    	font-size:40px;
+	}
+	.earn ul li:last-child{
+	    margin-bottom:25px !important;
+	}
+
+	SECTION.quiniela-form .container .quiniela-form-form ul li {
+	    height: 50px;
+	    margin:1px;
+	    margin: 0 0 5px 0;
+	    clear:both;
+
+	}
+
+	SECTION.quiniela-form .container .quiniela-form-form ul li.twoInputs input {
+	    width: 100% !important;
+    	float: left;
+    	margin: 0px auto 10px;
+	}
+
+	/*Menu cajon lateral*/
+	.sidenav UL LI a span{
+    	display:block;
+
+	}
+	footer {
+    	height: auto; 
+	}
+	footer .container {
+    height: auto; 
+	}
+}
+
+@media screen and (min-width: 860px)  and (max-width: 1060px) {
+	/*  Vista index.html */
+
+	section.banner .container .banner-info {
+		margin-left: 2% !important;
+	}
+	.top-illustration {
+	    background-size: 40%;
+	    background-position: 90% 20%;
+	}
+
+	/* Sección de próximos partidos */
+
+	SECTION.banner .proxPartidos {
+	    width: 96%;
+	}	
+	SECTION.banner .proxPartidos .cProxPartidos h2 {
+	    font-size: 26px;
+	}
+	SECTION.banner .proxPartidos .cProxPartidos p {
+	    font: 18px 'breamcatcher', helvetica, arial, sans-serif;
+	    margin: 5px;
+	    height: 70px;
+	    padding-top: 20px;
+	    padding-left: 110px;
+	    background-position: 8% 5%;
+	    background-size: 38%;
+	}	
+	SECTION.banner .proxPartidos .cProxPartidos p .tam3 {
+    	font-size: 14px;
+	}
+	SECTION.banner .proxPartidos .slideshow-container2 {
+	    width: 60%;
+	}
+}
+	
+@media screen and (max-width: 959px) {
+	/* -------- Advantages -------- */
+	SECTION.advantages{padding:80px 40px;}
+	.adv-info-container{float:none;width:100%;padding:50px 0 0 0;}
+	.video-img{float:none;width:50%;padding:0;margin:0 auto;}
+	
+	/* -------- Register form -------- */
+	.register-cta{padding:0 20px;margin:60px 0 0 0;}
+	.register-cta UL LI{float:none;width:100%;padding:0;}
+	.register-cta UL LI P{margin:40px 0 60px 0;font-size:22px;}
+	
+	/* -------- Quiniela -------- */
+	.teams{width:100%;float:none;padding:15px 0 0 0;}
+	.teams DIV.team-container{width:100%;}
+	P.team{width:85%;}
+	P.score{width:15%;text-align:right;padding:0 15px 0 0;}
+	UL.odds{width:100%;}
+	.quiniela UL.game LI UL.odds LI{float:left;width:30%;}
+	.quiniela UL.game LI UL.odds LI.empate{margin:0 5%;}
+	UL.odds LI DIV{margin:8px;}
+}
+
+@media screen and (max-width: 820px) {
+	/* -------- Banner -------- */
+	.banner-info{padding:100px 20px 200px 20px;margin:0 auto;width:100%;}
+	.top-illustration{background:transparent url('../images/illustration-top.png') no-repeat center bottom;background-size:400px;}
+	.mini-banner H1{font-size:40px;}
+	
+		/* -------- User type -------- */
+	SECTION.user-type{padding:0 0 30px 0;}
+	.user-type UL LI{float:none;width:100%;margin:0 0 50px 0;}
+	.user-type H2{font-size:32px;margin:0 0 30px 0;}
+	.user-type IMG{margin:0 0 30px 0;}
+	.usuario{padding:0;}
+	.book{padding:0;}
+	
+	/* -------- Earn More -------- */
+	.earn H3{font-size:32px;}
+	.earn H2{font-size:52px;}
+	.earn P{font-size:20px;}
+	
+	/* -------- Quiniela form -------- */
+	SECTION.quiniela-form{padding:60px 0 80px 0;}
+	.quiniela-form-info, .quiniela-form-form{float:none;width:100%;padding:0 20px;}
+	.quiniela-form-info{margin:0 0 40px 0;}
+}
+
+@media screen and (max-width: 640px) {
+	/* -------- Global -------- */
+	.container{width:100%;padding:0 40px;}
+	.mini-container{width:100%;}
+	
+	/* -------- Navigation -------- */
+	SECTION.nav-left, SECTION.nav-right{width:40px;letter-spacing:2px;}
+	.nav-left UL LI,.nav-right UL LI{margin:0 15px;}
+	.nav-left UL{width:255px;}
+	.nav-right UL{width:325px;}
+	.main-logo-sizeone{width:60px;height:60px;}
+	.main-logo-sizetwo{width:40px;height:40px;}
+	.menu{width:25px;height:19px;top:15px;left:8px;}
+	.menu .first{width:13px;}
+	.menu .second{width:25px;margin:5px 0;}
+	.menu .third{width:20px;}
+	.menu:hover .first{width:25px;}
+	.menu:hover .third{width:25px;}
+	
+	/* -------- Banner -------- */
+	.banner-info{padding:100px 20px;}
+	.top-illustration{background-size:320px;}
+	.banner H1{font-size:42px;}
+	.banner H4{font-size:28px;margin:0 0 40px 0;}
+	.banner .extra{width:100%;}
+	.mini-banner{padding:100px 60px 70px 60px;}
+	.mini-banner H1{font-size:32px;}
+	
+	/* -------- Buttons -------- */
+	.btn-light,.btn-dark{width:200px;font-size:13px;}
+	
+	/* -------- Advantages -------- */
+	SECTION.advantages{padding:80px 20px;}
+	.video-img{width:80%;}
+	.advantages H2{font-size:32px;margin:0 0 40px 0;text-align:center;}
+	.slide-txt{font-size:22px;}
+	.slide-txt::before{font-size:30px;}
+	
+	/* -------- About -------- */
+	.about-info{width:70%;padding:0 0 0 20px;}
+	.about-img{right:-10%;}
+	.about-info H2{font-size:32px;margin:0 0 30px 0;}
+	.about-info H3{font-size:28px;margin:0 0 50px 0;}
+	.about-info P{font-size:22px;margin:0 0 55px 0;}
+	.about-info UL LI P{font-size:15px;}
+	.about-info UL LI SPAN{font-size:20px;}	
+	
+	/* -------- Quiniela form -------- */
+	SECTION.quiniela-form{padding:60px 0;}
+	.quiniela-form H2{font-size:32px;margin:0 0 30px 0;}
+	.quiniela-form P{font-size:22px;margin:0 0 20px 0;}
+	
+	/* -------- Footer -------- */
+	FOOTER{padding:40px 0 30px 0;}
+	FOOTER A IMG{width:60px;}
+	FOOTER UL{margin:60px 0 40px 0;}
+	FOOTER UL LI{margin:12px 0;display:block;}
+	
+	/* -------- Sidenav -------- */
+	.sidenav UL{padding:40px 20px 0 20px;}
+	.sidenav A H2{font-size:52px;}
+	.sidenav A P{font-size:22px;}
+	.close-menu{top:20px;right:20px;}
+	
+	/* -------- Login Modal -------- */
+	.modal-content{padding:40px;width:90%;}
+	
+	/* -------- Accordion -------- */
+	.accordion-table OL{font-size:20px;}
+	.accordion-table .accordion{font-size:24px;}
+	.accordion-table OL P{font-size:15px;}
+	
+	/* -------- Register form -------- */
+	.register H2{font-size:32px;padding:0 20px;}
+	.register-container UL{padding:0 10px;margin:0 0 40px 0;}
+	.register-cta .btn-light{letter-spacing:1px;}
+	
+	/* -------- Quiniela -------- */
+	.teams{margin:0 0 10px 0;}
+	P.team{padding:0 0 0 10px;}
+	P.score{padding:0 10px 0 0;}
+	.quiniela UL.game LI UL.odds LI{float:none;width:100%;}
+	.quiniela UL.game LI UL.odds LI.empate{margin:0;}
+	UL.odds LI DIV{margin:0 8px 8px 8px;padding:8px 0;}
+}
+
+@media screen and (max-width: 480px) {	
+	/* -------- Banner -------- */
+	SECTION.banner{
+		height:auto;
+		clear:both;
+		padding:1px;
+		border:1px solid transparent;
+		clear:both;
+	}
+	SECTION.banner div.linkEncuesta {
+	    float: none;
+	    width: 66%;
+	    margin:10px auto 5px;
+	    
+	    background-size: 80%;
+	    /*border:1px solid red;*/
+	}
+
+	SECTION.banner div.linkEncuesta:hover {
+		background-size: 80%;
+	}
+
+	SECTION.banner div.linkEncuesta a {
+	    font-size: 11px;
+	    color: #ccb089;
+	    word-spacing: 0;
+	    letter-spacing: 1px;
+	}
+	.top-illustration {
+		background: transparent url(../images/bitcoin.png) no-repeat 50% 63%;
+    	background-size: 20%;
+	}
+
+	section.banner .container {
+		width:100%;
+		height:auto;
+		margin:0;
+	    padding: 1px !important;
+	    /*border: 1px solid blue;*/
+
+	}
+	section.banner .container .banner-info {
+	    display: block;
+	   	margin: 0 auto;
+    	width: 78%;
+	    padding: 0;
+	    /*border: 1px solid red;*/
+	}
+
+	.banner-info li:first-child {
+ 	   margin-top: 15px;
+	}
+	.banner-info li{
+
+	}
+	.banner H1 {
+		width:99%;
+	    font-size: 55px;
+	    letter-spacing: 4px;
+	    margin: 0;
+	}
+	.banner H4 {
+	    font-size: 12px;
+	    margin: 0 0 10px 0;
+	}
+	.banner P {
+	    font-size: 18px;
+	}
+	.banner .extra P {
+	    font-size: 16px;
+	    width:80%;
+	    margin:10px auto;
+	}
+	/* Proximos partidos*/
+	SECTION.banner .proxPartidos {
+    	width: 80%;
+	    margin: 50px auto 0;
+	    padding: 1px;
+	    border: 3px solid transparent;
+	}
+	SECTION.banner .proxPartidos .cProxPartidos {
+    	width: 99%;
+    	height: auto;
+    	min-height:50px;
+    	position: relative;
+    	float: none;
+    	margin:0  auto; 
+   }
+   SECTION.banner .proxPartidos .cProxPartidos h2 {
+    font-size: 16px;
+    margin: 5px auto 0;
+    color: #CCAF89;
+    width: 90% !important;
+}
+	SECTION.banner .proxPartidos .cProxPartidos p {
+	    font-size: 12px;
+	    margin: -5px auto;
+	    width: 99% !important;
+	    height: auto;
+	    min-height: auto;
+	    padding:5%;
+	    padding-top: 3%;
+	    /*padding-left: 30%;*/
+	    text-align: center;
+	    /* background: transparent url(../images/ball3.png) no-repeat bottom left; */
+	    background: transparent url(../images/copa2.png) no-repeat top left;
+	    background-position: 5% 5%;
+	    background-size: 20%;
+	    /*border:1px solid red;*/
+	}
+	SECTION.banner .proxPartidos .cProxPartidos p .tam3 {
+    	font-size: 12px;
+	}
+
+	SECTION.banner .proxPartidos .slideshow-container2 {
+    	width: 99%;
+    	min-height: 90px;
+    	position: relative;
+    	float: none;
+    	border: 1px solid transparent;
+	}
+	SECTION.banner .proxPartidos .slideshow-container2 .mySlides > div:first-child {
+    	margin-left: 25px;
+	}
+	SECTION.banner .proxPartidos .slideshow-container2 .prev, SECTION.banner .proxPartidos .slideshow-container2 .next {
+	    padding: 8px 4px;
+	}
+	SECTION.banner .proxPartidos .slideshow-container2 .mySlides > div {
+	    float: left;
+	    margin: 5px auto;
+	    /*width: 35px;*/
+	    width:15%;
+	    height: auto;
+	    font: 20px 'breamcatcher', helvetica, arial, sans-serif;
+	    margin: 0px auto;
+	    color: #CCAF89;
+	    text-transform: uppercase;
+	    letter-spacing: 4px;
+	}
+	SECTION.banner .proxPartidos .slideshow-container2 .mySlides > div img {
+    	margin: 10px auto;
+    	width: 100%;
+	}
+	
+	SECTION.banner .proxPartidos .slideshow-container2 .mySlides div.horarios {
+ 	   width: 50%;
+	}
+
+	SECTION.banner .proxPartidos .slideshow-container2 .mySlides div.horarios h2 {
+	    font-size: 12px ;
+	    font-weight: bold;
+	    margin: 5px auto 0px;
+	}
+	SECTION.banner .proxPartidos .slideshow-container2 .mySlides div.horarios h2 span {
+	    font-size:14px;
+	    margin: 0px auto;
+	}
+	SECTION.banner .proxPartidos .slideshow-container2 .mySlides div.horarios h3 {
+	    font-size: 12px;
+	    margin: 5px auto;
+	}
+	SECTION.banner .proxPartidos {
+		height: 180px;}
+	SECTION.banner .proxPartidos .marco {
+	    height: 155px;
+	 
+	}
+
+/*	.banner H1{font-size:30px;}
+	.banner H4{font-size:26px;margin:0 0 35px 0;}
+	.mini-banner{padding:80px 40px 60px 40px;}
+	.mini-banner H1{font-size:26px;}
+*/	
+	/* -------- Advantages -------- */
+	SECTION.advantages{width:auto; margin:10px auto 0; padding:0; clear:both;}
+	.video-img{width:100%;}
+	
+	SECTION.advantages .container {
+	    margin: 10px auto; 
+	    width: 100%;
+	    height: auto;
+	    clear: both;
+	    margin: 0;
+	    padding: 1px !important;
+	    /*border: 1px solid blue;*/
+	}
+
+	SECTION.advantages .container .cnt-video {
+	    width: 82%;
+	    margin: 5px auto;
+	    margin-left: 40px;
+	    clear:both;
+	}
+	SECTION.advantages .container .cnt-video video {
+	    width: 100%;
+	    background: #000 url(../images/repVideo.png) 50% 70% / cover no-repeat;
+	    transition: all 8s ease-in-out;
+	    box-shadow: 2px 1px 1px #ccc;
+	    margin: 5px auto 0;
+	    float: none;
+	    /*margin-left: 40px;*/
+	}
+	.controls {
+	    width: 100%;
+	    height: 40px;
+	    display: none;
+	    list-style-type: none;
+	    overflow: hidden;
+	    background: transparent;
+	    margin: 0;
+	    background: #000;
+	    position: relative;
+	    top: -5px;
+	    padding: 4px;
+	}
+	.controls button {
+	    width: 20px;
+	    height: 20px;
+	    padding: 1px;
+	}
+	.controls .progress {
+	    cursor: pointer;
+	    margin-left: 5px;
+	    position: relative;
+	    width: 71%;
+	}
+	input[type=range] {
+	    margin: 8px 0;
+	    width: 100%;
+	}
+	
+	SECTION.advantages .container .cnt-banner {
+    	width: 100% !important;
+    	float:none;
+    	margin: 5px auto;
+	}
+	.cnt-banner h2 {
+		width: 77%;
+	    font-size:30px;
+	    margin:0 auto;
+	    font-size: 32px;
+    	text-align: center;
+    	clear:both;
+    	/*border:1px solid red;*/
+	}
+	
+	.slide-txt {font-size:18px;}
+	.cnt-banner h2 span.tam1 {font-size: 19px;margin-top:10px;}
+	.cnt-banner h2 span.tam2 {font-size: 23px; font-weight:400x;}
+	.cnt-banner h2 span.tam3 {font-size: 30px;}
+
+	SECTION.advantages .container .cnt-banner .adv-info-container {
+    	width:77%;
+    	float: none;
+    	padding:1px;
+    	margin: 0px auto 10px;
+	}
+	.slide-txt{padding-left:30px;font-size:18px;}
+	.slide-txt::before{font-size:22px;}
+	
+	SECTION.advantages .container .slide-nav {
+	    text-align: center;
+	    margin-top: 15px 0 5px;
+	}
+	.slide-nav .dot {margin: 0 8px;}
+	/* -------- About -------- */
+	SECTION.about{ width:100%; margin-top:-10px;}
+	.about-info{width:100%;}
+	.about-img{display:none;}
+	SECTION.about .container {
+	    margin: 10px 40px 0;
+	    width: auto;
+	    height: 840px;
+	    position: relative;
+	    padding: 0;
+	    padding-top: 100px;
+	    color: #000;
+	    clear: both;
+	    top: -10px;
+	    background: #fff url(../images/ballcoin.png) no-repeat bottom right;
+	    background-position: 50% 0%;
+	    background-size: 45%;
+	    /*border: 1px solid blue; */
+	}	
+	SECTION.about .container .about-info {
+	    margin: 1px;
+	    margin: 0 auto;
+	    height: auto;
+	    padding:0;
+	}
+	.about-info h2 span.tam1 {font-size: 25px;}
+	SECTION.about .container .about-info > * {
+	    width: 80%;
+	    margin: 25px auto 10px;
+	}
+	section.about .container .about-info p {width: 75%;}
+	section.about .container .about-info ul {
+    	width: 100%;
+    	height: auto;
+    	background: #22333A;
+    	color: #fff;
+    	padding: 0px;
+    	border: 1px solid transparent;
+    	display: block;
+    	clear: both;
+    	/* position: relative; */
+	}
+	SECTION.user-type {
+		width:100%;
+    	padding: 1px;
+    	/*border:1px solid blue;*/
+    	clear:both;
+    	margin-bottom: 10px;
+	}
+	SECTION.user-type .container {
+	    margin: 10px 40px 0;
+	    width: auto;
+	    height: auto;
+	    position: relative;
+	    padding: 0;
+	    color: #000;
+	    clear: both;
+	    border: 1px solid transparent;
+	}
+
+	.user-type UL LI {
+	    float: left;
+	    /*width: 49%;*/
+	    width: 100%;
+	    margin: 5px auto;
+	}
+	.user-type UL LI:first-child {
+    	margin-left: 0;
+    	margin: 5px auto;
+    	border-bottom:1px solid ;
+	}
+
+	.user-type ul li img {
+	    width: 120px;
+	    height: auto;
+	    margin: 10px auto 0;
+	}
+	.user-type ul li h2 {font-size: 15px;}
+	.user-type .btn-light {
+	    width:80%;
+	    margin: 5px auto;
+	    font-size: 15px;
+	}
+	.user-type ul li p {
+	    width: 85%;
+	    margin:10px auto;
+	    color:#000;
+	    font: normal 16px/22px 'JosefinSans-Regular', helvetica, arial, sans-serif;
+	    text-align: justify;
+	    letter-spacing: 1px;
+	    word-spacing: 0;
+	}
+	/* -------- Earn More -------- */
+	
+	.earn H2{font-size:38px;}
+	SECTION.earn {height: auto; margin-top:10px;}
+	SECTION.earn .container {
+	    margin: 10px auto;
+	    width: 75%;
+	    height: auto;
+	    position: relative;
+	    padding: 0;
+	    color: #000;
+	    border: 1px solid transparent;
+	    clear: both;
+	    background: #fff;
+	    box-shadow: 0px 0px 5px #888888;
+	}
+	SECTION.earn .container ul{
+		width: 96%;
+	    height: auto;
+	    margin: 5px auto;
+	    border: 2px solid #C5A67E;	
+	}
+	SECTION.earn .container ul li {
+	    width:99%;
+	    color: #CCB089;
+	    margin: 0 auto ;
+	    font-size: 30px !important;
+	}
+
+ 	SECTION.earn .container ul li  h2 {
+	    width: 96%;
+	    margin: 10px auto;
+	    font-size: 30px;
+	}
+	SECTION.earn .container ul li  h3 {
+	    font-size:24px;
+	    font-weight: bold;
+	    margin: 5px auto;
+	}
+	SECTION.earn .container ul li  h2 span.tam1 {
+    	font-size: 20px;
+	}
+	SECTION.earn .container ul li:first-child{
+    	margin-top: 10px;
+	}
+	SECTION.earn .container ul li:last-child {
+    	margin-bottom: 10px;
+	}
+	/* -------- Sidenav -------- */
+	.sidenav A H2{font-size:40px;}
+	.sidenav A P{font-size:20px;}
+	SECTION.quiniela-form {
+	    background-color: #fff;
+	    height: auto;
+	    margin: 5px auto;
+	    width: auto;
+	    position: relative;
+	    left: 0px;
+	    top: 0px;
+	    padding: 1px;
+	    clear:both;
+	    /* border: 1px solid red; */
+	}
+	.styled-select.slate select {width: 80%;
+		background: url("../images/down-arrow.png") no-repeat right center;
+		background-size: 20px;
+	    appearance:none;
+	    -moz-appearance:none; /* Firefox */
+	    -webkit-appearance:none; /* Safari and Chrome */
+	    
+	}
+	
+	SECTION.quiniela-form .container {
+	    margin: 10px auto;
+	    width: 100%;
+	    height: auto;
+	    clear: both;
+	    /* box-shadow: 0px 0px 5px #888888; */
+	    top:0;
+	    padding:1px;
+	    clear:both;
+	}
+	SECTION.quiniela-form .container .quiniela-form-info, SECTION.quiniela-form .container .quiniela-form-form {
+    	width: 80%;
+ 	   	float: none;
+ 	   	margin: 0 auto;
+    	/*border: 1px solid green;*/
+	}
+	SECTION.quiniela-form .container .quiniela-form-info h2{
+		font-size: 35px;
+		width:100%;
+	    color: #22333B;
+	    margin: 0 auto 10px;
+	    text-transform: uppercase;
+	    letter-spacing: 4px;
+	    word-spacing: 2px;
+	    text-align: center;
+	}
+	SECTION.quiniela-form .container .quiniela-form-info h2 span {font-size: 14px;}
+	SECTION.quiniela-form .container .quiniela-form-info p {width: 99%;font-size: 20px;	}
+	SECTION.quiniela-form .container .quiniela-form-info p.tam2{font-size: 26px;}
+	SECTION.quiniela-form .container .quiniela-form-form {width: 78%; clear:both; margin-bottom:15px; padding:1px;}
+	SECTION.quiniela-form .container .quiniela-form-form h2:first-child {margin-top: 30px;}
+	SECTION.quiniela-form .container .quiniela-form-form ul.tipoUsuario li input[type='checkbox'] {
+  height: 30px;
+  width: 30px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+  background: #ccb089;
+  border:1px solid #ccb089;
+  cursor: pointer;
+}
+
+SECTION.quiniela-form .container .quiniela-form-form ul.tipoUsuario li input[type='checkbox']:after {
+  content: "";
+  vertical-align: middle;
+  text-align: center;
+  line-height: 13px;
+  position: absolute;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  left: 0;
+  top: 0;
+  font-size: 10px;
+  -webkit-box-shadow: inset 0 1px 1px #5F95FC, 0 1px 0 #5F95FC;
+  -moz-box-shadow: inset 0 1px 1px #5F95FC, 0 1px 0 #5F95FC;
+  box-shadow: inset 0 1px 1px #5F95FC, 0 1px 0 #5F95FC;
+  background: #5F95FC;
+}
+/*
+SECTION.quiniela-form .container .quiniela-form-form ul.tipoUsuario li input[type='checkbox']:hover:after, SECTION.quiniela-form .container .quiniela-form-form ul.tipoUsuario li input[type='checkbox']:checked:hover:after {
+  background: #b39469;
+  content: '\2714';
+  color: #fff;
+}*/
+
+	FOOTER {padding:1px;width:100%;clear:both;}
+	FOOTER .container ul {
+	    width: 80%;
+	    margin: 20px auto 10px;
+	    text-align: center;
+	    font: 13px 'breamcatcher', helvetica, arial, sans-serif;
+	    letter-spacing: 3px;
+	    word-spacing: 4px;
+	}
+	FOOTER .container ul li{margin: 10px auto 0;}
+	FOOTER .container p {width: 80%;}
+
+	.sidenavTam1{width:100%;}
+	.sidenav UL LI {
+	    padding: 10px 0;
+	    margin: 20px auto 0;
+	}
+	.sidenav UL {
+    	margin:20px auto;
+	}
+	.sidenav UL LI a span {display: inline-block;}
+	.sidenav UL LI a{font-size:20px;
+    margin: 0;}
+    .close-btn {
+	    height: 30px;
+	    width: 30px;
+	}
+	
+	
+	.login-form-title H2 {
+	    width: 90%;
+	    font: normal 25px 'breamcatcher', helvetica, arial, sans-serif;
+	    color: #C5A67E;
+	    margin: 50px auto 20px;
+	    text-align: center;
+	    letter-spacing: 5px;
+	}
+	.login-form-form UL LI {
+	    width: 90%;
+	    margin: 20px auto;
+	}
+	.btn-light, .btn-dark {
+    	width: 90%;
+    	font-size: 13px;
+	}
+}
+
+
+@media screen and (max-width: 370px) {
+	SECTION.banner div.linkEncuesta a {
+	    font-size: 9px;
+	}
+
+	SECTION.banner .proxPartidos .cProxPartidos p {
+	    font-size: 11px;
+	    margin: -5px auto;
+	    width: 99% !important;
+	    height: auto;
+	    padding: 5%;
+	    padding-top: 3%;
+	    text-align: center;
+	    /*padding-left: 25%;*/
+	    /* background: transparent url(../images/ball3.png) no-repeat bottom left; */
+	    background: transparent url(../images/copa2.png) no-repeat top left;
+	    background-position: 3% 5%;
+	    background-size: 20%;
+	    border: 1px solid red;
+	}
+	SECTION.banner .proxPartidos .cProxPartidos p .tam3 {
+    	font-size: 11px;
+	}
+	SECTION.banner .proxPartidos {width: 77%;}
+	SECTION.advantages .container .cnt-video {
+	    width: 78%;
+	    margin: 5px auto;
+	    margin-left: 40px;
+	}
+	.controls .progress {
+	    width: 68%;
+	}
+	.close-btn {
+	    height: 30px;
+	    width: 30px;
+	}
+	.login-form-title H2 {
+	    width: 90%;
+	    font: normal 25px 'breamcatcher', helvetica, arial, sans-serif;
+	    color: #C5A67E;
+	    margin: 50px auto 20px;
+	    text-align: center;
+	    letter-spacing: 5px;
+	}
+	.login-form-form UL LI {
+	    width: 90%;
+	    margin: 20px auto;
+	}
+	.btn-light, .btn-dark {
+    	width: 90%;
+    	font-size: 13px;
+	}
+	/* section user type */
+	.user-type ul li{width:90%;float:none; margin-left:0;margin:5px auto;}
+	.user-type ul li:first-child{margin-left:0; margin:5px auto;border-bottom:1px solid #ccb089;}
+}
+
+@media (max-height: 499px){
+	.sidenav UL {padding: 30px 20px 0 20px;}
+	.sidenav UL LI {
+	    padding: 5px 0;
+	    margin: 20px auto  0;
+	}
+	
+}
+
+@media (min-height: 500px) and (max-height: 599px){
+	.sidenav UL {padding: 40px 20px 0 20px;}
+	.sidenav UL LI {
+	    padding: 5px 0 ;
+	    margin: 20px auto 0;
+	}
+	
+@media (min-height: 600px) and (max-height: 700px){
+	.sidenav UL {padding: 45px 20px 0 20px;}
+	.sidenav UL LI {
+	    padding: 5px 0 ;
+	    margin: 25px auto 0;
+	}
+}
+
