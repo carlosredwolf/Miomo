@@ -1,0 +1,125 @@
+<?php
+
+namespace Miomo\Http\Controllers;
+
+use Illuminate\Http\Request;
+use GuzzleHttp\Client;
+use stdClass;
+
+class CommonController extends Controller
+{
+    //
+    const URL = 'http://battuta.medunes.net/api/';
+    const APIKEY = '9f5bf7869b8dd5faeb2735a6492885b5';
+
+    public function __construct(){
+      $this->client = new Client([
+        'base_uri' => self::URL
+      ]);
+    }
+
+    public function paises()
+    {
+      // code...
+      $response = $this->client->request('GET','country/all/',['query' => ['key'=>self::APIKEY]]);
+      $responseData = json_decode($response->getBody());
+
+      return $responseData;
+    }
+
+    public function estados($code)
+    {
+      // code...
+      $response = $this->client->request('GET','region/'.$code.'/all/',['query' => ['key'=>self::APIKEY]]);
+      $responseData = json_decode($response->getBody());
+
+      $estados = $this->mixEstados($responseData);
+
+      return $estados;
+    }
+
+    public function ciudades($code, $state)
+    {
+      // code...
+      $response = $this->client->request('GET','city/'.$code.'/search/',['query' => ['region' => $state,'key'=>self::APIKEY]]);
+      $responseData = json_decode($response->getBody());
+
+      $ciudades = $this->mixCiudades($responseData);
+
+      return $ciudades;
+    }
+
+    public function mixCiudades($responseData)
+    {
+      // code...
+      $ciudades =array();
+      $i = 1;
+      foreach ($responseData as $ciudad) {
+        // code...
+        $city = new stdClass();
+        $city->id = $i;
+        $city->name = $ciudad->city;
+
+        $i++;
+
+        array_push($ciudades, $city);
+      }
+      return $ciudades;
+    }
+
+    public function mixEstados($responseData)
+    {
+      // code...
+      $estados = array();
+      $i =1;
+      if ($responseData[0]->country == 'mx') {
+        // code...
+        foreach ($responseData as $estado) {
+          $state = new stdClass();
+          $state->id = $i;
+          $state->name = $estado->region;
+          // code...
+          $dName = explode(' ', $estado->region);
+          if ($i == 1) {
+            $state->display = $estado->region;
+          }elseif($i == 3 || $i == 23 || $i == 19) {
+            // code...
+            $state->display = $dName[2].' '.$dName[3];
+          }elseif ($i == 4 || $i == 24) {
+              // code...
+              $state->display = $dName[2].' '.$dName[3].' '.$dName[4];
+          }elseif ($i == 15) {
+            // code...
+            $state->display = $estado->region;
+          }elseif ($i == 30) {
+            // code...
+            $ver = explode('-', $dName[2]);
+            $state->display = $ver[0];
+          }else {
+            // code...
+            $state->display = $dName[2];
+          }
+
+          $i++;
+
+          array_push($estados, $state);
+        }
+
+      }else{
+        foreach ($responseData as $estado) {
+          $state = new stdClass();
+          $state->id = $i;
+          $state->name = $estado->region;
+          $state->display = $estado->region;
+
+          $i++;
+
+          array_push($estados, $state);
+        }
+      }
+      return $estados;
+    }
+
+
+
+}
