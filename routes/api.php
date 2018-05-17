@@ -20,4 +20,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('paises','CommonController@paises');
 Route::get('estados/{code}','CommonController@estados');
 Route::get('ciudades/{code}/{state}','CommonController@ciudades');
-Route::get('prueba','CommonController@prueba');
