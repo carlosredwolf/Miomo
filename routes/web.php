@@ -23,3 +23,6 @@ Route::get('fase/{name}', 'QuinielaController@fase');
 
 Route::get('terminos','StaticController@terminos');
 Route::get('privacidad','StaticController@privacidad');
+
+Route::get('football','FootballController@show');
+Route::get('football/{id}','FootballController@getPartidos');
