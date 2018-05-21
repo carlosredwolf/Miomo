@@ -36,3 +36,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('savedatainteres', 'RolesInteresController@store');
 
+Route::get('football','FootballController@show');
+Route::get('football/{id}','FootballController@getPartidos');
+

@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('paises','CommonController@paises');
+Route::get('estados/{code}','CommonController@estados');
+Route::get('ciudades/{code}/{state}','CommonController@ciudades');
