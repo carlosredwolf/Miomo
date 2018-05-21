@@ -1,8 +1,8 @@
 <?php
 
-namespace Miomo\Http\Controllers\Auth;
+namespace MiomoV1\Http\Controllers\Auth;
 
-use Miomo\Http\Controllers\Controller;
+use MiomoV1\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller
@@ -25,7 +25,7 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = 'quiniela';
 
     /**
      * Create a new controller instance.

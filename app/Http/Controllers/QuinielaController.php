@@ -15,6 +15,7 @@ class QuinielaController extends Controller
     const TORNEO = 'sr:tournament:16';
 
     public function __construct(){
+      $this->middleware('auth');
       $this->client = new Client([
         'base_uri' => self::URL
       ]);

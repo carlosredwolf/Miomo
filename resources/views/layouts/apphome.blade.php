@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="css/html5reset-1.6.1.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/quiniela.css">
+	<link rel="stylesheet" href="css/responsive.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -52,7 +53,7 @@
 	    			</button>
 	    			<div class="dropdown-content">
 
-		      				<a href="perfil">Perfil</a>
+		      				<a href="#">Perfil</a>
 		      				<a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Salir</a>
 	    			</div>
@@ -74,30 +75,9 @@
 	  	</section>
 
     <section class="quiniela">
-      <div class="container">
-        <h1>La Quiniela</h1>
-        {{-- @include('sections.containerResultados') --}}
-        <div class="quiniela-container">
-          <div class="contenido">
-
-          <div class="titulo-quiniela">
-            <img src="images/copa.png" alt="">
-              <!-- <p>
-              <span class="tam1">football soccer</span>
-              <span class="tam2">champions league </span>
-              </p> -->
-            <div style="" class="navbar margin-topone" id="menuDesktop">
-            @foreach ($jornadas as $key => $val)
-              <h4><span class="tam3"><a href="jornada/{{$key}}">Jornada {{$key}} de {{count($jornadas)}}</a></span></h4>
-            @endforeach
-						@foreach ($faseFinal as $key => $val)
-              <h4><span class="tam3"><a href="fase/{{$key}}">Ronda {{$key}}</a></span></h4>
-            @endforeach
-            </div>
-          </div>
-      </div>
-      </div>
-    </div>
+      <div class="container">	
+	  		@yield('content')
+		</div>
     </section>
   </div>
 

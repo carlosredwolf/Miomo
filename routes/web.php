@@ -11,7 +11,13 @@
 |
 */
 
-Route::get('/', 'QuinielaController@index');
+Route::get('/', function () {
+    return view('indexMiomo');
+});
+
+Route::get('perfil','UsuariosController@index');
+Route::post('editarperfil','UsuariosController@update');
+//Route::get('/', 'QuinielaController@show');
 
 Route::get('resultados', 'QuinielaController@resultados');
 Route::get('proximos', 'QuinielaController@proximos');
@@ -23,3 +29,10 @@ Route::get('fase/{name}', 'QuinielaController@fase');
 
 Route::get('terminos','StaticController@terminos');
 Route::get('privacidad','StaticController@privacidad');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('savedatainteres', 'RolesInteresController@store');
+

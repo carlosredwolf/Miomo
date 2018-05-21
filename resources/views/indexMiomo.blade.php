@@ -10,6 +10,7 @@
 	<meta name="description" content="">
 	<meta content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width" name="viewport">
 	<meta charset="utf-8">
+	<meta name="csrf-token" content="{{ csrf_token() }}" />
 	<title>Miomo</title>
 
 	<link rel="stylesheet" href="css/html5reset-1.6.1.css">
@@ -355,7 +356,9 @@
 			</div>
 
 			<div class="quiniela-form-form" id="formRegistro">
-					<form>
+			@yield('content')
+					<form id="form-register" method="POST" action="{{ route('register') }}">
+						@csrf
 						<h2>Datos Generales</h2>
 						<ul>
 							<li class="twoInputs">
@@ -384,7 +387,7 @@
 						<ul class="tipoUsuario">
 							<li>
 								<label for="tuser1" class="checkbox">
-        						<input type="checkbox" class="checkbox" id="tuser1" name="check_tuser[]" value="usuario" />Usuario</label>
+        						<input type="checkbox" class="checkbox" id="tuser1" name="check_tuser[]" value="apostador" />Usuario</label>
 							</li>
 							<li>
 								<label for="tuser2" class="checkbox">
@@ -392,7 +395,7 @@
 							</li>
 							<li>
 								<label for="tuser3" class="checkbox">
-        						<input type="checkbox" class="checkbox" id="tuser3" name="check_tuser[]" value="quiniela"  />Solo me interesa la quiniela</label>
+        						<input type="checkbox" class="checkbox" id="tuser3" name="check_tuser[]" value="visitante"  />Solo me interesa la quiniela</label>
 							</li>
 
 							<!-- <li class="selectOps styled-select slate">
@@ -405,15 +408,16 @@
 						</ul>
 						<h2>Datos de Usuario</h2>
 						<ul>
-							<li><input type="text" name="usuario" id="" value="" placeholder="Nombre de Usuario"></li>
+							<li><input type="text" name="name" id="" value="" placeholder="Nombre de Usuario"></li>
 							<li>
 								<!-- <label for="nombre">Dirección</label> -->
-								<input type="email" name="correo_electronico" id="" value="" placeholder="Correo Electrónico">
+								<input type="email" name="correo_electronico" id="" placeholder="Correo Electrónico" required>
 							</li>
-							<li><input type="password" name="contrasenia" id="" value="" placeholder="Contraseña"></li>
-							<li><input type="password" name="repetir_contrasenia" id="" value="" placeholder="Repetir contraseña"></li>
+							<li><input type="password" name="password" id="" placeholder="Contraseña" required></li>
+							<li><input type="password" name="password_confirmation" id="" placeholder="Repetir contraseña" required></li>
 							<li>
-								<a class="btn-light" href="#">enviar registro</a>
+								 <button class="btn-light" id="btn-registro" type="submit">Enviar</button>
+						
 							</li>
 						</ul>
 					</form>
@@ -433,6 +437,7 @@
 	</footer>
 
 	<script src="js/index.js" type="text/javascript" ></script>
+	<script src="{{ asset('js/intereses.js') }}" defer></script>
 	<script src="js/videoScript.js" type="text/javascript" ></script>
 
 </body>

@@ -3,6 +3,7 @@
 namespace Miomo\Http\Controllers\Auth;
 
 use Miomo\User;
+use Miomo\Datos_Usuario;
 use Miomo\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -28,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = 'quiniela';
 
     /**
      * Create a new controller instance.
@@ -49,9 +50,10 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:255|unique:users',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'g-recaptcha-response' => 'required|recaptcha',
         ]);
     }
 
@@ -59,14 +61,26 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \Miomo\User
+     * @return \MiomoV1\User
      */
-    protected function create(array $data)
+    protected function create(Array $data)
     {
-        return User::create([
+        $user=User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+        $id_user=$user->id;
+        $datosUsuario=Datos_Usuario::create([
+            'nombre'=>$data['nombre'],
+            'apellidos'=>$data['apellidos'],
+            'pais'=>$data['pais'],
+            'ciudad'=>$data['ciudad'],
+            'fecha_nacimiento'=>$data['fecha_nacimiento'],
+            'celular'=>$data['celular'],
+            'correo'=>$data['email'],
+            'id_usuario'=>$id_user]);
+            
+        return $user;
     }
 }

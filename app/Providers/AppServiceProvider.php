@@ -3,6 +3,7 @@
 namespace Miomo\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        //Importante agregar esto debido a que sino ocasiona un error al realizar
+        //la migración NO QUITAR.
+        Schema::defaultStringLength(191);
     }
 
     /**
