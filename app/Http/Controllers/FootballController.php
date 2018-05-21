@@ -36,13 +36,11 @@ class FootballController extends Controller
           $grupo = new stdClass();
           $grupo->id = $liga->id;
           $grupo->name = $liga->name;
-          $responseGrupo = $this->client->request('GET','/fixtures/matches.json',['query' => ['key'=>self::APIKEY
-          , 'secret' => self::SECRET, 'league' => $grupo->id]]);
-          $responseDataG = json_decode($responseGrupo->getBody());
+          $responseGrupo = $this->getPartidos($grupo->id);
 
-          $partidos = $responseDataG->data->fixtures;
+          $partidos = $responseGrupo->data->fixtures;
           $grupo->partidos = $partidos;
-          array_push($grupos, $liga);
+          array_push($grupos, $grupo);
         }
       }
 
@@ -52,12 +50,12 @@ class FootballController extends Controller
     public function getPartidos($id)
     {
       // code...
-      $responseGrupo = $this->client->request('GET','/fixtures/matches.json',['query' => ['key'=>self::APIKEY
+      $responseGrupo = $this->client->request('GET','fixtures/matches.json',['query' => ['key'=>self::APIKEY
       , 'secret' => self::SECRET, 'league' => $id]]);
 
-      $responseDataG = json_decode($responseGrupo->getBody());
-      //$response = response()->json($responseDataG);
+      $response = json_decode($responseGrupo->getBody());
+      //$response = response()->json($response);
 
-      return $responseDataG;
+      return $response;
     }
 }
