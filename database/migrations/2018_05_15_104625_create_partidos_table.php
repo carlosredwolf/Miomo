@@ -22,6 +22,8 @@ class CreatePartidosTable extends Migration
             //Empiezan llaves foraneas
             $table->unsignedInteger('id_jornada');
             $table->foreign('id_jornada')->references('id')->on('jornadas');
+            $table->unsignedInteger('id_grupo');
+            $table->foreign('id_grupo')->references('id')->on('grupos');
             $table->unsignedInteger('id_local');
             $table->foreign('id_local')->references('id')->on('equipos');
             $table->unsignedInteger('id_visitante');
