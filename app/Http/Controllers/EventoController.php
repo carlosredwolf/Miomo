@@ -4,6 +4,7 @@ namespace Miomo\Http\Controllers;
 
 use Miomo\Evento;
 use Illuminate\Http\Request;
+use stdClass;
 
 class EventoController extends Controller
 {
@@ -15,6 +16,29 @@ class EventoController extends Controller
     public function index()
     {
         //
+        $eventos = Evento::all();
+        if (!$eventos) {
+          return response()->json(['mensaje'=> 'NO existe ese fabricante','codigo'=>'404'],404);
+        }
+        $eventosArr = array();
+        foreach ($eventos as $evento) {
+          // code...
+          $response = new stdClass;
+
+          $response->nombre = $evento->nombre;
+          $response->fecha_inicio = $evento->fecha_inicio;
+          $response->fecha_fin = $evento->fecha_fin;
+          $response->comentarios = $evento->comentarios;
+          $response->anfitrion = $evento->anfitrion;
+          $response->ganador = $evento->ganador;
+          $response->finalista = $evento->finalista;
+          $response->status = $evento->status;
+
+          array_push($eventosArr,$response);
+        }
+
+
+        return response()->json(['eventos'=> $eventosArr],202);
     }
 
     /**
@@ -44,9 +68,26 @@ class EventoController extends Controller
      * @param  \Miomo\Evento  $evento
      * @return \Illuminate\Http\Response
      */
-    public function show(Evento $evento)
+    public function show($id)
     {
         //
+        $evento=Evento::find($id);
+        if (!$evento) {
+          return response()->json(['mensaje'=> 'NO existe ese evento','codigo'=>'404'],404);
+        }
+
+        $response = new stdClass;
+
+        $response->nombre = $evento->nombre;
+        $response->fecha_inicio = $evento->fecha_inicio;
+        $response->fecha_fin = $evento->fecha_fin;
+        $response->comentarios = $evento->comentarios;
+        $response->anfitrion = $evento->anfitrion;
+        $response->ganador = $evento->ganador;
+        $response->finalista = $evento->finalista;
+        $response->status = $evento->status;
+
+        return response()->json(['evento'=> $response],202);
     }
 
     /**

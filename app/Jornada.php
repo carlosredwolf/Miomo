@@ -9,4 +9,14 @@ use Miomo\Partido;
 class Jornada extends Model
 {
     //
+    protected $table="jornadas";
+    protected $hidden=['created_at','updated_at'];
+
+    public function evento(){
+      return $this->belongsTo('Miomo\Evento', 'id_evento');
+    }
+
+    public function partidos(){
+      return $this->hasMany('Miomo\Partido', 'id_jornada');
+    }
 }

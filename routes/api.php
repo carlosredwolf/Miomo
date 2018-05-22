@@ -21,4 +21,5 @@ Route::get('paises','CommonController@paises');
 Route::get('estados/{code}','CommonController@estados');
 Route::get('ciudades/{code}/{state}','CommonController@ciudades');
 
-Route::resource('evento','EventoController');
+Route::resource('evento','EventoController',['only'=>['index','show']]);
+Route::resource('evento.jornada','EventoJornadaController',['only'=>['index','show']]);
