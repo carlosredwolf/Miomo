@@ -71,6 +71,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
         $id_user=$user->id;
+        $id_rol=1;
         $datosUsuario=Datos_Usuario::create([
             'nombre'=>$data['nombre'],
             'apellidos'=>$data['apellidos'],
@@ -79,7 +80,8 @@ class RegisterController extends Controller
             'fecha_nacimiento'=>$data['fecha_nacimiento'],
             'celular'=>$data['celular'],
             'correo'=>$data['email'],
-            'id_usuario'=>$id_user]);
+            'id_usuario'=>$id_user,
+            'id_rol'=>$id_rol]);
             
         return $user;
     }

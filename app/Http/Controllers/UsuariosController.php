@@ -93,6 +93,7 @@ class UsuariosController extends Controller
         $datosUsuario->pais=$request->pais;
         $datosUsuario->correo=$request->email;
         $datosUsuario->id_usuario=$idUsuario;
+        $datosUsuario->id_usuario="1";
         //return response()->json($request);
          if($datosUsuario->save()){
              return redirect('perfil');

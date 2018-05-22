@@ -17,6 +17,8 @@ class CreatePartidosTable extends Migration
             $table->increments('id');
             $table->integer('score_local');
             $table->integer('score_visitante');
+            $table->string('hora_partido');
+            $table->date('fecha_partido');
             //Empiezan llaves foraneas
             $table->unsignedInteger('id_jornada');
             $table->foreign('id_jornada')->references('id')->on('jornadas');

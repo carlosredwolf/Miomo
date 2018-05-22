@@ -22,8 +22,11 @@ class CreateDatosUsuariosTable extends Migration
             $table->string('ciudad',30);
             $table->string('pais',80);
             $table->string('correo',120);
+            //Comienzan los foreign key
             $table->unsignedInteger('id_usuario');
             $table->foreign('id_usuario')->references('id')->on('users');
+             $table->unsignedInteger('id_rol');
+            $table->foreign('id_rol')->references('id')->on('cat__usuarios');
            /* $table->unsignedInteger('id_tipo_usuario');
             $table->foreign('id_tipo_usuario')->references('id')->on('cat__usuarios');
             */$table->timestamps();
