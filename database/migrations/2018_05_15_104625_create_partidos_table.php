@@ -15,8 +15,8 @@ class CreatePartidosTable extends Migration
     {
         Schema::create('partidos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('score_local');
-            $table->integer('score_visitante');
+            $table->integer('score_local')->nullable();
+            $table->integer('score_visitante')->nullable();
             $table->string('hora_partido');
             $table->date('fecha_partido');
             //Empiezan llaves foraneas

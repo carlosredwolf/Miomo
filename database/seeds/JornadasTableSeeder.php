@@ -25,7 +25,7 @@ class JornadasTableSeeder extends Seeder
         DB::table('jornadas')->insert(['nombre' => '2',
                                       'descripcion' => 'Fase de Grupos Jornada 2',
                                       'sig_jornada' => '3',
-                                      'fecha_inicio' => Carbon::parse('2018-06-20'),
+                                      'fecha_inicio' => Carbon::parse('2018-06-19'),
                                       'fecha_fin' => Carbon::parse('2018-06-24'),
                                       'id_status' => 1,
                                       'id_evento' => 1,

@@ -1,8 +1,8 @@
 <?php
 
-namespace MiomoV1\Http\Controllers\Auth;
+namespace Miomo\Http\Controllers\Auth;
 
-use MiomoV1\Http\Controllers\Controller;
+use Miomo\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller
