@@ -7,6 +7,7 @@ use GuzzleHttp\Client;
 use stdClass;
 use Miomo\Cat_Status;
 use Miomo\Cat_Resultados;
+use Miomo\Partido;
 use Session;
 
 
@@ -22,6 +23,24 @@ class CommonController extends Controller
       ]);
     }
 
+    public function index()
+    {
+      $jornadaAct = Session::get('jornadaAct');
+      $partidos = $jornadaAct->partidos;
+      $partidosOut = array();
+      foreach ($partidos as $partido) {
+        $partidoObj = new stdClass;
+        $partidoObj->id = $partido->id;
+        $partidoObj->fecha_partido = $partido->fecha_partido;
+        $partidoObj->hora_partido = $partido->hora_partido;
+        $partidoObj->local = $partido->local;
+        $partidoObj->visitante = $partido->visitante;
+
+        array_push($partidosOut,$partidoObj);
+      }
+      //return $partidosOut;
+      return view('indexMiomo',compact('partidosOut'));
+    }
 
     public function catResultados(){
       $response = Cat_Resultados::all();

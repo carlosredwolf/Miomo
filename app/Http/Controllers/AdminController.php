@@ -14,13 +14,10 @@ class AdminController extends Controller
 {
     //
     const TORNEO = 1;
-    const URL = 'https://miomo-api.herokuapp.com/api/';
+    //const URL = 'https://miomo-api.herokuapp.com/api/';
 
     public function __construct(){
       $this->middleware('auth');
-      $this->client = new Client([
-        'base_uri' => self::URL
-      ]);
     }
 
     public function show($id = self::TORNEO){

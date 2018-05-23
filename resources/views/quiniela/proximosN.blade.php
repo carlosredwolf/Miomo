@@ -75,9 +75,9 @@
 	<section class="header_quiniela main-menu-sizeone">
 
 		<div class="navbar margin-topone" id="menuDesktop">
-  			<a href="../admin">La quiniela</a>
-  			<a href="../admin/resultados">Resultados</a>
-  			<a class="active" href="../admin/proximos">Próximos partidos</a>
+  			<a href="../quiniela">La quiniela</a>
+  			<a href="../resultados">Resultados</a>
+  			<a class="active" href="../proximos">Próximos partidos</a>
 
   			{{-- <button class="avatar">
   					<i class="avatar fas fa-user-circle"></i>
@@ -98,9 +98,9 @@
 			<div class="dropdown">
 				<button onclick="myFunction()" class="dropbtn">Próximos partidos </button>
 				  <div id="myDropdown" class="dropdown-content">
-				    <a href="../admin">La quiniela</a>
-				    <a href="../admin/resultados">Resultados</a>
-  					<a class="active" href="../admin/proximos">Próximos partidos</a>
+				    <a href="../quiniela">La quiniela</a>
+				    <a href="../resultados">Resultados</a>
+  					<a class="active" href="../proximos">Próximos partidos</a>
   				  </div>
 			</div>
 

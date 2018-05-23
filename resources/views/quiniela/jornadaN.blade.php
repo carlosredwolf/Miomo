@@ -39,9 +39,9 @@
   	<section class="header_quiniela main-menu-sizeone">
 
   		<div class="navbar margin-topone" id="menuDesktop">
-    			<a class="active" href="../../admin">La quiniela</a>
-    			<a href="../../admin/resultados">Resultados</a>
-    			<a href="../../admin/proximos">Próximos partidos</a>
+    			<a class="active" href="../../quiniela">La quiniela</a>
+    			<a href="../../resultados">Resultados</a>
+    			<a href="../../proximos">Próximos partidos</a>
 
     			{{-- <button class="avatar">
     					<i class="avatar fas fa-user-circle"></i>
@@ -63,8 +63,8 @@
   				<button onclick="myFunction()" class="dropbtn">Resultados </button>
   				  <div id="myDropdown" class="dropdown-content">
   				    <a  class="active" href="../admin">La quiniela</a>
-  				    <a href="../../admin/resultados">Resultados</a>
-    					<a href="../../admin/proximos">Próximos partidos</a>
+  				    <a href="../../resultados">Resultados</a>
+    					<a href="../../proximos">Próximos partidos</a>
     				  </div>
   			</div>
   	</div>

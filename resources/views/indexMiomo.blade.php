@@ -40,7 +40,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="#formRegistro">
+					<a href="register#formRegistro">
 						Regístrate
 					</a>
 				</li>
@@ -50,7 +50,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="admin">
+					<a href="quiniela">
 						Quiniela
 					</a>
 				</li>
@@ -83,7 +83,7 @@
 								<input type="text" name="" id="" value="" placeholder="Contraseña">
 							</li>
 							<li>
-								<a class="btn-light" href="#">Iniciar Sesión</a>
+								<a class="btn-light" href="login">Iniciar Sesión</a>
 							</li>
 						</ul>
 					</form>
@@ -133,7 +133,7 @@
 					<h4>y obtén grandes beneficios</h4>
 				</li>
 				<li>
-					<a class="btn-dark" href="#formRegistro">regístrate</a>
+					<a class="btn-dark" href="register#formRegistro">regístrate</a>
 				</li>
 				<li>
 					<p>Participa en una quiniela gratis,
@@ -158,49 +158,21 @@
 </div>
 <!-- Slideshow container -->
 <div class="slideshow-container2">
+	@foreach ($partidosOut as $partido)
+		<div class="mySlides fade">
+			<div>
+	  		<img src="images/equipos/{{$partido->local->id}}.png" >
+	  	</div>
+			<div class="horarios">
+	  		<h2>{{date('d/M/Y',strtotime($partido->fecha_partido))}}<span>{{date('H:i A', strtotime($partido->hora_partido))}}</span></h2>
 
-  <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
-  	<div>
-  		<img src="images/equipos/4694.png" >
-
-  	</div>
-  	<div class="horarios">
-  		<h2>14 JUNIO 2018<span>10:00 A.M.</span></h2>
-
-		<h3> <span class="nomEquipo1">RUSIA</span>  VS  <span class="nomEquipo2">ARABIA SAUDITA</span></h3>
-  	</div>
-  	<div>
-  		<img src="images/equipos/4778.png" >
-  	</div>
-</div>
-
-<div class="mySlides fade">
-  <div>
-  		<img src="images/equipos/4758.png" >
-
-  	</div>
-  	<div class="horarios">
-  		<h2>15 JUNIO 2018 <span>07:00 A.M.</span></h2>
-  		<h3> <span class="nomEquipo1">EGIPTO</span>  VS  <span class="nomEquipo2"> URUGUAY </span></h3>
-  	</div>
-  	<div>
-  		<img src="images/equipos/4725.png" >
-  	</div>
-</div>
-
- <div class="mySlides fade">
-  	<div>
-  		<img src="images/equipos/4717.png" >
-  	</div>
-  	<div class="horarios">
-  		<h2>15 JUNIO 2018 <span>10:00 A.M.</span></h2>
-  		<h3> <span class="nomEquipo2">MARRUECOS </span>  VS  <span class="nomEquipo1">IRÁN</span></h3>
-  	</div>
-  	<div>
-  		<img src="images/equipos/4766.png" >
-  	</div>
-</div>
+			<h3> <span class="nomEquipo1">{{$partido->local->nombre}}</span>  VS  <span class="nomEquipo2">{{$partido->visitante->nombre}}</span></h3>
+	  	</div>
+	  	<div>
+	  		<img src="images/equipos/{{$partido->visitante->id}}.png" >
+	  	</div>
+	</div>
+	@endforeach
 <!-- Next and previous buttons -->
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 <a class="next" onclick="plusSlides(1)">&#10095;</a>

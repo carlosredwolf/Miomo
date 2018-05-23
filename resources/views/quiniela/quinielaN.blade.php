@@ -88,7 +88,7 @@
               </p> -->
             <div style="" class="navbar margin-topone" id="menuDesktop">
             @foreach ($jornadas as $jornada)
-              <h4><span class="tam3"><a href="admin/jornada/{{$jornada->id}}">{{$jornada->descripcion}}</a></span></h4>
+              <h4><span class="tam3"><a href="jornada/{{$jornada->id}}">{{$jornada->descripcion}}</a></span></h4>
             @endforeach
             </div>
           </div>
