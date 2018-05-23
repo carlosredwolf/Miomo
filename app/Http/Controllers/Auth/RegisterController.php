@@ -61,7 +61,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \MiomoV1\User
+     * @return \Miomo\User
      */
     protected function create(Array $data)
     {
@@ -71,7 +71,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
         $id_user=$user->id;
-        $id_rol=1;
+        $id_rol=3;
         $datosUsuario=Datos_Usuario::create([
             'nombre'=>$data['nombre'],
             'apellidos'=>$data['apellidos'],
@@ -82,7 +82,7 @@ class RegisterController extends Controller
             'correo'=>$data['email'],
             'id_usuario'=>$id_user,
             'id_rol'=>$id_rol]);
-            
+
         return $user;
     }
 }
