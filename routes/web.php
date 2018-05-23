@@ -39,3 +39,4 @@ Route::post('savedatainteres', 'RolesInteresController@store');
 Route::get('football','FootballController@show');
 Route::get('football/{id}','FootballController@getPartidos');
 
+Route::get('admin','AdminController@show');
