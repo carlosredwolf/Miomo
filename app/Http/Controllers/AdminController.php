@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Session;
 use GuzzleHttp\Client;
 use Miomo\Jornada;
+use Miomo\Evento;
+use Miomo\Partido;
+use stdClass;
 
 class AdminController extends Controller
 {
@@ -21,26 +24,47 @@ class AdminController extends Controller
     }
 
     public function show($id = self::TORNEO){
-      $response = $this->client->request('GET','evento/'.$id.'/jornada');
-      $responseData = json_decode($response->getBody());
-      $jornadas = $responseData->jornadas;
+
+      $evento = Evento::find($id);
+      if (!$evento) {
+        // code...
+        return response()->json(['mensaje'=> 'NO existe ese evento','codigo'=>'404'],404);
+      }
+      $jornadas = $evento->jornadas;
+      if (!$jornadas) {
+        // code...
+        return response()->json(['mensaje'=> 'NO existen jornadas de ese evento','codigo'=>'404'],404);
+      }
+      $jornadasArr = array();
+      foreach ($jornadas as $jornada) {
+        // code...
+        $response = new stdClass;
+        $response->id = $jornada->id;
+        $response->nombre = $jornada->nombre;
+        $response->descripcion = $jornada->descripcion;
+        $response->sig_jornada = $jornada->sig_jornada;
+        $response->fecha_inicio = $jornada->fecha_inicio;
+        $response->fecha_fin = $jornada->fecha_fin;
+        $response->status = $jornada->status;
+
+        array_push($jornadasArr, $response);
+      }
+
+      $responseData = $jornadasArr;
+      $jornadas = $responseData;
 
       return view('quiniela.quinielaN',compact('jornadas'));
-
-      //return response()->json($jornadas,202);
-
     }
 
     public function jornada($id)
     {
-      // code...
-      $response = $this->client->request('GET','jornada/'.$id);
-      $responseData = json_decode($response->getBody());
-      $jornada = $responseData->jornada;
 
-      //return response()->json($responseData->jornada->id,202);
-      Session::put('id',$jornada->id);
-      Session::put('sig',$jornada->sig_jornada);
+      $jornada = $this->getJornada($id);
+      Session::put('jornada',$jornada);
+
+      $jornadaSig = $this->getJornada($jornada->sig_jornada);
+      Session::put('jornadaSig',$jornadaSig);
+
       $name = $jornada->descripcion;
       $partidos = $jornada->partidos;
 
@@ -50,13 +74,7 @@ class AdminController extends Controller
 
     public function resultados()
     {
-      // code...
-      $id = Session::get('id');
-      $response = $this->client->request('GET','jornada/'.$id);
-      $responseData = json_decode($response->getBody());
-      $jornada = $responseData->jornada;
-
-      //return response()->json($responseData->jornada->id,202);
+      $jornada = Session::get('jornada');
       $name = $jornada->descripcion;
       $partidos = $jornada->partidos;
 
@@ -66,17 +84,54 @@ class AdminController extends Controller
 
     public function proximos()
     {
-      // code...
-      $id = Session::get('sig');
-      $response = $this->client->request('GET','jornada/'.$id);
-      $responseData = json_decode($response->getBody());
-      $jornada = $responseData->jornada;
+      $jornada = Session::get('jornadaSig');
 
-      //return response()->json($responseData->jornada->id,202);
       $name = $jornada->descripcion;
       $partidos = $jornada->partidos;
 
       return view('quiniela.proximosN',compact('partidos','name'));
 
+    }
+
+    public function getJornada($id)
+    {
+      $jornada = Jornada::find($id);
+      if (!$jornada) {
+        // code...
+        return response()->json(['mensaje'=> 'NO existe esa jornada','codigo'=>'404'],404);
+      }
+
+      $response = new stdClass;
+
+      $response->id = $jornada->id;
+      $response->nombre = $jornada->nombre;
+      $response->descripcion = $jornada->descripcion;
+      $response->sig_jornada = $jornada->sig_jornada;
+      $response->fecha_inicio = $jornada->fecha_inicio;
+      $response->fecha_fin = $jornada->fecha_fin;
+
+      $partidos = Partido::where('id_jornada', $response->id)->get();
+
+      $partidos = $partidos->sortBy('hora_partido')->sortBy('fecha_partido');
+      $partidosOut = array();
+      foreach ($partidos as $partido) {
+        $partidoObj = new stdClass;
+        $partidoObj->id = $partido->id;
+        $partidoObj->fecha_partido = $partido->fecha_partido;
+        $partidoObj->hora_partido = $partido->hora_partido;
+        $partidoObj->local = $partido->local;
+        $partidoObj->visitante = $partido->visitante;
+        $partidoObj->grupo = $partido->grupo;
+        $partidoObj->status = $partido->status;
+        $partidoObj->resultado = $partido->resultado;
+
+        array_push($partidosOut,$partidoObj);
+      }
+
+      $response->partidos = $partidosOut;
+
+      $response->status = $jornada->status;
+
+      return $response;
     }
 }
