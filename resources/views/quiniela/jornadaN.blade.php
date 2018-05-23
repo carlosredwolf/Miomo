@@ -117,16 +117,10 @@
 								{{-- {{ Form::radio('radio-'.$i, 'local', ['class' => 'radio square']) }} --}}
 								<input class="radio square" type="radio" name="radio-{{$i}}" >
               </div>
-							@php
-								$i++;
-							@endphp
               <div class ="deEmpate">
                 <input class="radio square" type="radio" name="radio-{{$i}}" >
                 <label  class ="eEmpate" for="radio-{{$i}}">Empate</label>
               </div>
-							@php
-								$i++;
-							@endphp
               <div>
                 <input  class="radio square" type="radio" name="radio-{{$i}}" >
                 <label class="eEquipo2" for="radio-{{$i}}"><img src="{{asset($route2)}}" >	<span class="nomEquipo2">{{$partido->visitante->nombre}}</span></label>

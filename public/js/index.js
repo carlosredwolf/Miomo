@@ -1,9 +1,9 @@
 
-	
+
 	$('span').each(function(){
 		this.onclick = function() {}
 	});
-	
+
 	// Shrink Logo
 	$(function(){
 	 var shrinkLogo = 10;
@@ -23,38 +23,38 @@
 	function getCurrentScroll() {
 		return window.pageYOffset;
 		}
-		
+
 		$("#bloqueoDiv").click(function(){
 			closeNav();
 		});
 
 		<!-- Modal Boxes -->
-	var modal = document.getElementsByClassName("modal-box");
-	var loginmodal = document.getElementById("login-modal");
-	var loginbtn = document.getElementById("login-btn");
-	var closelogin = document.getElementById("close-login-btn");
-
-	
-	loginbtn.onclick = function() {
-		loginmodal.style.display = "block";
-		
-	}
-    closelogin.onclick = function() {
-		loginmodal.style.display = "none";		
-	}
-
-	window.onclick = function(event) {
-		if (event.target == loginmodal) {
-			loginmodal.style.display = "none";
-		}
-
-	}
+	// var modal = document.getElementsByClassName("modal-box");
+	// var loginmodal = document.getElementById("login-modal");
+	// var loginbtn = document.getElementById("login-btn");
+	// var closelogin = document.getElementById("close-login-btn");
+	//
+	//
+	// // loginbtn.onclick = function() {
+	// // 	loginmodal.style.display = "block";
+	// //
+	// // }
+  //   closelogin.onclick = function() {
+	// 	loginmodal.style.display = "none";
+	// }
+	//
+	// window.onclick = function(event) {
+	// 	if (event.target == loginmodal) {
+	// 		loginmodal.style.display = "none";
+	// 	}
+	//
+	// }
 });
 
 	// Slideshow
 	var slideIndex = 1;
 	var slides = document.getElementsByClassName("slide");
-	
+
 	showSlides(slideIndex);
 
 	setInterval(function () {
@@ -82,13 +82,13 @@
 	  slides[slideIndex-1].style.display = "block";
 	  dots[slideIndex-1].className += " active";
 	}
-	
+
 	//Slideshow2
 	var slideIndex2 = 1;
 	var slides2 = document.getElementsByClassName("mySlides");
 
 	showSlides2(slideIndex2);
-	
+
 	// setInterval2(function () {
 	// 	showSlides2(slideIndex2);
 	// 	slideIndex2++;
@@ -118,8 +118,8 @@
 	  dots2[slideIndex2-1].className += " active";
 	}
 
-	
-	
+
+
 	<!-- Sidenav -->
 	function openNav() {
 		// document.getElementById("sidenav").style.width = "30%";
@@ -128,8 +128,8 @@
 		document.getElementById("bloqueoDiv").style.width="100%";
 
 	}
-	
-	
+
+
 
 	$(".sidenav UL LI a").on('click', function () {
 		closeNav();
@@ -140,5 +140,3 @@
 		document.getElementById("sidenav").classList.remove("sidenavTam1");
 		document.getElementById("bloqueoDiv").style.width="0";
 	}
-
-	

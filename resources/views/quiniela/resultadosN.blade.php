@@ -53,7 +53,7 @@
 		<div class="navbar margin-topone" id="menuDesktop">
   			<a href="../admin">La quiniela</a>
   			<a class="active"  href="../admin/resultados">Resultados</a>
-  			<a href="../admin/proximos	">Próximos partidos</a>
+  			<a href="../admin/proximos">Próximos partidos</a>
 
   			{{-- <button class="avatar">
   					<i class="avatar fas fa-user-circle"></i>

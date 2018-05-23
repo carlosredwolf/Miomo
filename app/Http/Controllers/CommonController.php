@@ -7,6 +7,8 @@ use GuzzleHttp\Client;
 use stdClass;
 use Miomo\Cat_Status;
 use Miomo\Cat_Resultados;
+use Session;
+
 
 class CommonController extends Controller
 {
@@ -42,10 +44,18 @@ class CommonController extends Controller
       return $responseData;
     }
 
-    public function estados($code)
+    public function estadospost($code){
+      Session::put('codigo',$code);
+      $msg = "Realizado.";
+        return response()->json(array('msg'=> $msg), 200);
+    }
+
+    public function estados()
     {
       // code...
-      $response = $this->client->request('GET','region/'.$code.'/all/',['query' => ['key'=>self::APIKEY]]);
+      $codigo =Session::get('codigo');
+
+      $response = $this->client->request('GET','region/'.$codigo.'/all/',['query' => ['key'=>self::APIKEY]]);
       $responseData = json_decode($response->getBody());
 
       $estados = $this->mixEstados($responseData);

@@ -65,6 +65,7 @@
 				<div class="dropdown">
 					<button onclick="myFunction()" class="dropbtn">Resultados </button>
 					  <div id="myDropdown" class="dropdown-content">
+					
 					    <a  class="active" href="quiniela">La quiniela</a>
 					    {{-- <a href="resultados">Resultados</a>
 	  					<a href="proximos">Próximos partidos</a> --}}

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/strength.css') }}">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -20,11 +21,20 @@
 							</li>
 							<li>
 								<!-- <label for="nombre">Apellidos</label> -->
-								<input type="text" name="pais" id="" value="" placeholder="País">
+								<input type="text" name="pais" id="pais-input" value="" placeholder="País" style="visibility:hidden">
+								<li class="selectOps styled-select slate">
+									<select name="paises" id="select-pais">
+									</select>
+								</li>
 							</li>
 							<li>
 								<!-- <label for="nombre">Apellidos</label> -->
-								<input type="text" name="ciudad" id="" value="" placeholder="Estado">
+								<li class="selectOps styled-select slate">
+									<select name="ciudades" id="select-estado">
+									<option value="x">Selecciona primero tu país</option>
+									</select>
+								</li>
+								<input type="text" name="ciudad" id="estado-input" value="" placeholder="Estado" style="visibility:hidden">
 							</li>
 
 							<li class="twoInputs tooltip" >
@@ -75,13 +85,16 @@
                                     </span>
                                 @endif
 							</li>
-							<li><input type="password" name="password" id="" placeholder="Contraseña" required>
+							<li><input type="password" name="password" id="myPassword" placeholder="Contraseña" required>
 							@if ($errors->has('password'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
 							</li>
+							<br>
+							<br>
+							<br>
 							<li><input type="password" name="password_confirmation" id="" placeholder="Repetir contraseña" required></li>
 							{!! Recaptcha::render() !!}
 							@if ($errors->has('g-recaptcha-response'))
@@ -101,4 +114,18 @@
     </div>
 </div>
 <script src="{{ asset('js/intereses.js') }}" defer></script>
+<script src="{{ asset('js/strength.js') }}"></script>
+<script src="{{ asset('js/js.js') }}"></script>
+<script>
+        $(document).ready(function($) {
+            $('#myPassword').strength({
+                strengthClass: 'strength',
+                strengthMeterClass: 'strength_meter',
+                strengthButtonClass: 'button_strength',
+                strengthButtonText: 'Show Password',
+                strengthButtonTextToggle: 'Hide Password'
+            });
+
+        });
+    </script>
 @endsection

@@ -50,7 +50,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="quiniela">
+					<a href="admin">
 						Quiniela
 					</a>
 				</li>
@@ -102,8 +102,8 @@
 
 		<ul>
 
-			<li><a href="#formRegistro">regístrate</a></li>
-			<li><span id="login-btn">inicia sesión</span></li>
+			<li><a href="register#formRegistro">regístrate</a></li>
+			<li><a href="login"><span id="login-btn">inicia sesión</span></a></li>
 		</ul>
 	</section>
 
@@ -417,7 +417,7 @@
 							<li><input type="password" name="password_confirmation" id="" placeholder="Repetir contraseña" required></li>
 							<li>
 								 <button class="btn-light" id="btn-registro" type="submit">Enviar</button>
-						
+
 							</li>
 						</ul>
 					</form>

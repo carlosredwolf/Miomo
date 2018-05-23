@@ -1,4 +1,4 @@
-@extends('layouts.appHome')
+@extends('layouts.apphome')
 @section('content')
 <div class="quiniela-container">
     <div style="" class="navbar margin-topone" id="menuDesktop">
@@ -8,10 +8,10 @@
 
                 <div class="card-body">
                 <meta name="csrf-token" content="{{ csrf_token() }}" />
-                 
+
                     <form id="form-register" method="POST" action="{{url('editarperfil')}}">
                         @csrf
-                        
+
                         <h2>Datos Generales</h2>
                          @if(isset($datosUsuario))
                             @foreach($datosUsuario as $dataUser)
