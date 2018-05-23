@@ -25,7 +25,7 @@ class CreateDatosUsuariosTable extends Migration
             //Comienzan los foreign key
             $table->unsignedInteger('id_usuario');
             $table->foreign('id_usuario')->references('id')->on('users');
-             $table->unsignedInteger('id_rol');
+             $table->unsignedInteger('id_rol')->default(1);
             $table->foreign('id_rol')->references('id')->on('cat__usuarios');
            /* $table->unsignedInteger('id_tipo_usuario');
             $table->foreign('id_tipo_usuario')->references('id')->on('cat__usuarios');

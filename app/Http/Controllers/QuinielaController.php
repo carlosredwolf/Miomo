@@ -14,8 +14,10 @@ class QuinielaController extends Controller
     const APIKEY = 'aghfck8a52fhv8vd7b5ssxt3';
     const TORNEO = 'sr:tournament:16';
 
+    
     public function __construct(){
       $this->middleware('auth');
+     
       $this->client = new Client([
         'base_uri' => self::URL
       ]);
@@ -26,6 +28,7 @@ class QuinielaController extends Controller
       // code...
       return view('indexMiomo');
     }
+    
 
     public function show($id = self::TORNEO)
     {

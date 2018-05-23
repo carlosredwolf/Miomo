@@ -1,13 +1,14 @@
 <?php
 
 namespace Miomo\Http\Controllers\Auth;
-
 use Miomo\User;
 use Miomo\Datos_Usuario;
 use Miomo\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Mail;
+use App\Rules\Uppercase;
 
 class RegisterController extends Controller
 {
@@ -29,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'quiniela';
+    protected $redirectTo = '/comprobar';
 
     /**
      * Create a new controller instance.
@@ -52,7 +53,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255|unique:users',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'password' => 'required|string|min:12|confirmed',
             'g-recaptcha-response' => 'required|recaptcha',
         ]);
     }
@@ -65,11 +66,14 @@ class RegisterController extends Controller
      */
     protected function create(Array $data)
     {
+        $data['confirmation_code'] = str_random(25);              
         $user=User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'confirmation_code' => $data['confirmation_code'],
         ]);
+
         $id_user=$user->id;
         $id_rol=1;
         $datosUsuario=Datos_Usuario::create([
@@ -80,9 +84,14 @@ class RegisterController extends Controller
             'fecha_nacimiento'=>$data['fecha_nacimiento'],
             'celular'=>$data['celular'],
             'correo'=>$data['email'],
-            'id_usuario'=>$id_user,
-            'id_rol'=>$id_rol]);
+            'id_usuario'=>$id_user]);
+
+        Mail::send('emails.confirmation_code', $data, function($message) use ($data) {
+        $message->to($data['email'], $data['name'])->subject('Por favor confirma tu correo');
+        });
             
         return $user;
     }
+
+    
 }
