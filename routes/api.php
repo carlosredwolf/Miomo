@@ -24,4 +24,5 @@ Route::get('resultados','CommonController@catResultados');
 Route::get('status','CommonController@catStatus');
 
 Route::resource('evento','EventoController',['only'=>['index','show']]);
-Route::resource('jornada','JornadaController',['only'=>['index','show']]);
+Route::resource('jornada','JornadaController',['only'=>['show']]);
+Route::get('evento/{id}/jornada','JornadaController@index');
