@@ -24,6 +24,10 @@ class DatabaseSeeder extends Seeder
         PartidosJ1TableSeeder::class,
         PartidosJ2TableSeeder::class,
         PartidosJ3TableSeeder::class,
+        PartidosR16TableSeeder::class,
+        PartidosQRFTableSeeder::class,
+        PartidosSMFTableSeeder::class,
+        PartidosFNLTableSeeder::class,
 
 
     ]);

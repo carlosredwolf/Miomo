@@ -53,6 +53,11 @@ class GruposTableSeeder extends Seeder
                                       'id_evento' => 1,
                                       'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                                       'updated_at' => Carbon::now()->format('Y-m-d H:i:s')]);
+        DB::table('grupos')->insert(['nombre' => 'N/A',
+                                      'descripcion' => 'No Aplica',
+                                      'id_evento' => 1,
+                                      'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                                      'updated_at' => Carbon::now()->format('Y-m-d H:i:s')]);
 
     }
 }

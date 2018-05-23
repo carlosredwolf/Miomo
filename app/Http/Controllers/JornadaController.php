@@ -4,6 +4,7 @@ namespace Miomo\Http\Controllers;
 
 use Miomo\Jornada;
 use Miomo\Evento;
+use Miomo\Partido;
 use stdClass;
 use Illuminate\Http\Request;
 
@@ -89,7 +90,27 @@ class JornadaController extends Controller
         $response->sig_jornada = $jornada->sig_jornada;
         $response->fecha_inicio = $jornada->fecha_inicio;
         $response->fecha_fin = $jornada->fecha_fin;
-        $response->partidos = $jornada->partidos;
+
+        $partidos = Partido::where('id_jornada', $response->id)->get();
+
+        $partidos = $partidos->sortBy('hora_partido')->sortBy('fecha_partido');
+        $partidosOut = array();
+        foreach ($partidos as $partido) {
+          $partidoObj = new stdClass;
+          $partidoObj->id = $partido->id;
+          $partidoObj->fecha_partido = $partido->fecha_partido;
+          $partidoObj->hora_partido = $partido->hora_partido;
+          $partidoObj->local = $partido->local;
+          $partidoObj->visitante = $partido->visitante;
+          $partidoObj->grupo = $partido->grupo;
+          $partidoObj->status = $partido->status;
+          $partidoObj->resultado = $partido->resultado;
+
+          array_push($partidosOut,$partidoObj);
+        }
+
+        $response->partidos = $partidosOut;
+
         $response->status = $jornada->status;
 
         return response()->json(['jornada'=> $response],202);
