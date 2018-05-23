@@ -20,6 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('paises','CommonController@paises');
 Route::get('estados/{code}','CommonController@estados');
 Route::get('ciudades/{code}/{state}','CommonController@ciudades');
+Route::get('resultados','CommonController@catResultados');
+Route::get('status','CommonController@catStatus');
 
 Route::resource('evento','EventoController',['only'=>['index','show']]);
-Route::resource('evento.jornada','EventoJornadaController',['only'=>['index','show']]);
+Route::resource('jornada','JornadaController',['only'=>['index','show']]);

@@ -4,9 +4,10 @@ namespace Miomo\Http\Controllers;
 
 use Miomo\Jornada;
 use Miomo\Evento;
+use stdClass;
 use Illuminate\Http\Request;
 
-class EventoJornadaController extends Controller
+class JornadaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,8 +27,21 @@ class EventoJornadaController extends Controller
           // code...
           return response()->json(['mensaje'=> 'NO existen jornadas de ese evento','codigo'=>'404'],404);
         }
+        $jornadasArr = array();
+        foreach ($jornadas as $jornada) {
+          // code...
+          $response = new stdClass;
+          $response->id = $jornada->id;
+          $response->nombre = $jornada->nombre;
+          $response->descripcion = $jornada->descripcion;
+          $response->sig_jornada = $jornada->sig_jornada;
+          $response->fecha_inicio = $jornada->fecha_inicio;
+          $response->fecha_fin = $jornada->fecha_fin;
+          $response->status = $jornada->status;
 
-        return response()->json(['jornadas'=> $jornadas],202);
+          array_push($jornadasArr, $response);
+        }
+        return response()->json(['jornadas'=> $jornadasArr],202);
     }
 
     /**
@@ -60,6 +74,25 @@ class EventoJornadaController extends Controller
     public function show($id)
     {
         //
+        //
+        $jornada = Jornada::find($id);
+        if (!$jornada) {
+          // code...
+          return response()->json(['mensaje'=> 'NO existe esa jornada','codigo'=>'404'],404);
+        }
+
+        $response = new stdClass;
+
+        $response->id = $jornada->id;
+        $response->nombre = $jornada->nombre;
+        $response->descripcion = $jornada->descripcion;
+        $response->sig_jornada = $jornada->sig_jornada;
+        $response->fecha_inicio = $jornada->fecha_inicio;
+        $response->fecha_fin = $jornada->fecha_fin;
+        $response->partidos = $jornada->partidos;
+        $response->status = $jornada->status;
+
+        return response()->json(['jornada'=> $response],202);
     }
 
     /**

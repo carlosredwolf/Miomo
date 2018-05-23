@@ -5,6 +5,8 @@ namespace Miomo\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use stdClass;
+use Miomo\Cat_Status;
+use Miomo\Cat_Resultados;
 
 class CommonController extends Controller
 {
@@ -16,6 +18,19 @@ class CommonController extends Controller
       $this->client = new Client([
         'base_uri' => self::URL
       ]);
+    }
+
+
+    public function catResultados(){
+      $response = Cat_Resultados::all();
+
+      return response()->json(['resultados'=> $response],202);
+    }
+
+    public function catStatus(){
+      $response = Cat_Status::all();
+
+      return response()->json(['status'=> $response],202);
     }
 
     public function paises()

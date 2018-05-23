@@ -19,4 +19,8 @@ class Jornada extends Model
     public function partidos(){
       return $this->hasMany('Miomo\Partido', 'id_jornada');
     }
+
+    public function status(){
+      return $this->belongsTo('Miomo\Cat_Status', 'id_status');
+    }
 }
