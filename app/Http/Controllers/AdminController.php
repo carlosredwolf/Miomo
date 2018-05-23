@@ -11,7 +11,7 @@ class AdminController extends Controller
 {
     //
     const TORNEO = 1;
-    const URL = 'http://miomo.com.devel/api/';
+    const URL = 'https://miomo-api.herokuapp.com/api/';
 
     public function __construct(){
       $this->middleware('auth');
