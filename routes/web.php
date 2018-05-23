@@ -40,3 +40,6 @@ Route::get('football','FootballController@show');
 Route::get('football/{id}','FootballController@getPartidos');
 
 Route::get('admin','AdminController@show');
+Route::get('admin/jornada/{id}','AdminController@jornada');
+Route::get('admin/resultados','AdminController@resultados');
+Route::get('admin/proximos','AdminController@proximos');

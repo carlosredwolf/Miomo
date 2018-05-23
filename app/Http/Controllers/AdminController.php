@@ -5,6 +5,7 @@ namespace Miomo\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use GuzzleHttp\Client;
+use Miomo\Jornada;
 
 class AdminController extends Controller
 {
@@ -22,30 +23,60 @@ class AdminController extends Controller
     public function show($id = self::TORNEO){
       $response = $this->client->request('GET','evento/'.$id.'/jornada');
       $responseData = json_decode($response->getBody());
-      $rondas = $responseData->jornadas;
+      $jornadas = $responseData->jornadas;
 
-      $jornadas = array();
-      $faseFinal = array();
-
-      foreach ($rondas as $ronda) {
-        // code...
-        if ($ronda->id <= 3) {
-          // code...
-          array_push($jornadas, $ronda);
-        }else {
-          // code...
-          array_push($faseFinal, $ronda);
-        }
-      }
-      Session::put('jornadas',$jornadas);
-      Session::put('faseFinal',$faseFinal);
-
-      //return $jornadas;
-      return view('quiniela.quinielaN',compact('jornadas','faseFinal'));
-
-      //return count($jornadas);
+      return view('quiniela.quinielaN',compact('jornadas'));
 
       //return response()->json($jornadas,202);
+
+    }
+
+    public function jornada($id)
+    {
+      // code...
+      $response = $this->client->request('GET','jornada/'.$id);
+      $responseData = json_decode($response->getBody());
+      $jornada = $responseData->jornada;
+
+      //return response()->json($responseData->jornada->id,202);
+      Session::put('id',$jornada->id);
+      Session::put('sig',$jornada->sig_jornada);
+      $name = $jornada->descripcion;
+      $partidos = $jornada->partidos;
+
+      return view('quiniela.jornadaN',compact('partidos','name'));
+
+    }
+
+    public function resultados()
+    {
+      // code...
+      $id = Session::get('id');
+      $response = $this->client->request('GET','jornada/'.$id);
+      $responseData = json_decode($response->getBody());
+      $jornada = $responseData->jornada;
+
+      //return response()->json($responseData->jornada->id,202);
+      $name = $jornada->descripcion;
+      $partidos = $jornada->partidos;
+
+      return view('quiniela.resultadosN',compact('partidos','name'));
+
+    }
+
+    public function proximos()
+    {
+      // code...
+      $id = Session::get('sig');
+      $response = $this->client->request('GET','jornada/'.$id);
+      $responseData = json_decode($response->getBody());
+      $jornada = $responseData->jornada;
+
+      //return response()->json($responseData->jornada->id,202);
+      $name = $jornada->descripcion;
+      $partidos = $jornada->partidos;
+
+      return view('quiniela.proximosN',compact('partidos','name'));
 
     }
 }

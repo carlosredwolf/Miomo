@@ -40,7 +40,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="#formRegistro">
+					<a href="register#formRegistro">
 						Regístrate
 					</a>
 				</li>
@@ -102,7 +102,7 @@
 
 		<ul>
 
-			<li><a href="#formRegistro">regístrate</a></li>
+			<li><a href="register#formRegistro">regístrate</a></li>
 			<li><span id="login-btn">inicia sesión</span></li>
 		</ul>
 	</section>
@@ -119,7 +119,7 @@
 		</ul>
 	</section>
 
-	
+
 	<section class="user-type">
 		<div class="container">
 			<!-- <img src="images/bottom-illustration.png" /> -->
@@ -172,7 +172,7 @@
 
 			<div class="quiniela-form-form" id="formRegistro">
 			@yield('content')
-				
+
 			</div>
 		</div>
 	</section>

@@ -88,7 +88,7 @@ class PartidosR16TableSeeder extends Seeder
         DB::table('partidos')->insert(['score_local' => null,
                                       'score_visitante' => null,
                                       'hora_partido' => '09:00:00',
-                                      'fecha_partido' => Carbon::parse('2018-06-03'),
+                                      'fecha_partido' => Carbon::parse('2018-07-03'),
                                       'id_jornada' => 4,
                                       'id_grupo' => 9,
                                       'id_local' => 1,

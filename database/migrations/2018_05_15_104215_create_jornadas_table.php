@@ -17,7 +17,7 @@ class CreateJornadasTable extends Migration
             $table->increments('id');
             $table->string('nombre',30);
             $table->string('descripcion',50);
-            $table->string('sig_jornada',30);
+            $table->integer('sig_jornada');
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
             //Llaves foraneas
