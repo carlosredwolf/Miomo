@@ -28,6 +28,11 @@ Route::group(['middleware' => ['check_confirm']], function () {
     Route::get('admin/{id}','AdminController@jornada');
 
     Route::post('admin','AdminController@store');
+
+    Route::post('quiniela','QuinielaController@store');
+    Route::put('quiniela','QuinielaController@update');
+    Route::get('quiniela/{id}/{jornada}','QuinielaController@quiniela');
+    Route::get('misquinielas','QuinielaController@show');
 });
 
 Route::get('perfil','UsuariosController@index');

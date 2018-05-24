@@ -1,9 +1,6 @@
-<form class="formQuiniela" method="POST" action="{{url('quiniela')}}">
+<form class="formQuiniela" method="PUT" action="{{url('quiniela')}}">
   @csrf
   <h3>{{$name}}</h3>
-  @php
-    $i = 0;
-  @endphp
   @foreach ($partidos as $partido)
     <fieldset >
     <div class="encuentros-info">
@@ -34,9 +31,6 @@
       </div>
     </div>
     </fieldset>
-    @php
-      $i++;
-    @endphp
   @endforeach
   <input type="hidden" name="idJ" value="{{$id}}">
   <input type="hidden" name="partidos" value="{{$partidosStr}}">

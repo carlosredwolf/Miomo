@@ -63,8 +63,9 @@ class EventoController extends Controller
 
       $name = $jornada->descripcion;
       $partidos = $jornada->partidos;
+      $partidosStr = json_encode($partidos);
 
-      return view('quiniela.jornada',compact('partidos','name'));
+      return view('quiniela.jornada',compact('partidos','name','partidosStr','id'));
 
     }
 

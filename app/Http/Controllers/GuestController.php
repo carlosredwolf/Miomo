@@ -28,7 +28,7 @@ class GuestController extends Controller
         $user->confirmation_code = null;
         $user->save();
 
-        return redirect('/admin')->with('notification', 'Has confirmado correctamente tu correo!');
+        return redirect('quiniela')->with('notification', 'Has confirmado correctamente tu correo!');
     }
 
     /**
