@@ -18,7 +18,7 @@ class CreateDatosUsuariosTable extends Migration
             $table->string('nombre',50);
             $table->string('apellidos',120);
             $table->date('fecha_nacimiento');
-            $table->string('celular',10);
+            $table->string('celular',20);
             $table->string('ciudad',30);
             $table->string('pais',80);
             $table->string('correo',120);

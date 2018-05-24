@@ -87,7 +87,7 @@
             <span class="tam2">champions league </span>
             </p> -->
 
-        <a class="nav-link" href="/admin">Regresar</a>
+        <a class="nav-link" href="../quiniela">Regresar</a>
         </div>
         <!-- Day -->
         <form class="formQuiniela">
