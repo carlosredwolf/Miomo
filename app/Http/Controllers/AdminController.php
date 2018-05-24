@@ -59,8 +59,9 @@ class AdminController extends Controller
 
       $name = $jornada->descripcion;
       $partidos = $jornada->partidos;
+      $partidosStr = json_encode($partidos);
 
-      return view('admin.jornada',compact('partidos','name'));
+      return view('admin.jornada',compact('partidos','name','partidosStr'));
 
     }
 
@@ -103,6 +104,14 @@ class AdminController extends Controller
 
       $response->status = $jornada->status;
 
+      return $response;
+    }
+
+    public function store(Request $request)
+    {
+      // code...
+      $response = $request->input('partidos');
+      $response = json_decode($response);
       return $response;
     }
 }

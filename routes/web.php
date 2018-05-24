@@ -27,6 +27,7 @@ Route::group(['middleware' => ['check_confirm']], function () {
     Route::get('admin','AdminController@show');
     Route::get('admin/{id}','AdminController@jornada');
 
+    Route::post('admin','AdminController@store');
 });
 
 Route::get('perfil','UsuariosController@index');
