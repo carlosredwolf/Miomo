@@ -9,6 +9,7 @@ use Miomo\Cat_Status;
 use Miomo\Cat_Resultados;
 use Miomo\Partido;
 use Session;
+use Carbon\Carbon;
 
 
 class CommonController extends Controller
@@ -25,8 +26,10 @@ class CommonController extends Controller
 
     public function index()
     {
-      $jornadaAct = Session::get('jornadaAct');
-      $partidos = $jornadaAct->partidos;
+      //$now = Carbon::now();
+      $now = Carbon::parse('2018-06-14');
+      $partidos = Partido::where('fecha_partido',$now)->get();
+
       $partidosOut = array();
       foreach ($partidos as $partido) {
         $partidoObj = new stdClass;
@@ -38,7 +41,6 @@ class CommonController extends Controller
 
         array_push($partidosOut,$partidoObj);
       }
-      //return $partidosOut;
       return view('indexMiomo',compact('partidosOut'));
     }
 

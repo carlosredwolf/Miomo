@@ -18,9 +18,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $jornada = $this->jornadaActual();
-        //View::share('jornadaAct', $jornada);
-        Session::put('jornadaAct',$jornada);
         //Importante agregar esto debido a que sino ocasiona un error al realizar
         //la migración NO QUITAR.
         Schema::defaultStringLength(191);

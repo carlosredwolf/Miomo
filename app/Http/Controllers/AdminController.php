@@ -50,43 +50,17 @@ class AdminController extends Controller
       $responseData = $jornadasArr;
       $jornadas = $responseData;
 
-      return view('quiniela.quinielaN',compact('jornadas'));
+      return view('admin.admin',compact('jornadas'));
     }
 
     public function jornada($id)
     {
-
       $jornada = $this->getJornada($id);
-      Session::put('jornada',$jornada);
-
-      $jornadaSig = $this->getJornada($jornada->sig_jornada);
-      Session::put('jornadaSig',$jornadaSig);
 
       $name = $jornada->descripcion;
       $partidos = $jornada->partidos;
 
-      return view('quiniela.jornadaN',compact('partidos','name'));
-
-    }
-
-    public function resultados()
-    {
-      $jornada = Session::get('jornada');
-      $name = $jornada->descripcion;
-      $partidos = $jornada->partidos;
-
-      return view('quiniela.resultadosN',compact('partidos','name'));
-
-    }
-
-    public function proximos()
-    {
-      $jornada = Session::get('jornadaSig');
-
-      $name = $jornada->descripcion;
-      $partidos = $jornada->partidos;
-
-      return view('quiniela.proximosN',compact('partidos','name'));
+      return view('admin.jornada',compact('partidos','name'));
 
     }
 

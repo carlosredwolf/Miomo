@@ -152,7 +152,7 @@
 	<p>
 	<!-- <span class="tam1">football soccer</span>
 	<span class="tam2">champions league </span>
-	 --><span class="tam3">JORNADA 1 DE 3</span>
+	 -->
 
 	</p>
 </div>

@@ -12,16 +12,16 @@
 	<meta charset="utf-8">
 	<title>Miomo</title>
 
-	<link rel="stylesheet" href="css/html5reset-1.6.1.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/quiniela.css">
+	<link rel="stylesheet" href="../css/html5reset-1.6.1.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/quiniela.css">
 	<!-- <link rel="stylesheet" href="css/responsive.css">-->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
-	<link rel="icon" href="images/favicon@2x.png">
+	<link rel="icon" href="../images/favicon@2x.png">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
 	<!-- Menu Overlay -->
 	<section class="sidenav" id="sidenav">
 		<div onclick="closeNav()" class="close-menu">
-			<img src="images/cross.svg" />
+			<img src="../images/cross.svg" />
 		</div>
 		<div class="mini-container">
 			<ul>
@@ -54,7 +54,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="terminos">
 						Términos y Condiciones
 					</a>
 				</li>
@@ -67,7 +67,7 @@
 	<!-- Sidebars -->
 	<section class="nav-left">
 		<a href="/" class="main-logo main-logo-sizeone">
-			<img src="images/main-logo.svg" />
+			<img src="../images/main-logo.svg" />
 		</a>
 
 	</section>
@@ -75,9 +75,9 @@
 	<section class="header_quiniela main-menu-sizeone">
 
 		<div class="navbar margin-topone" id="menuDesktop">
-  			<a href="/quiniela">La quiniela</a>
-  			<a href="/resultados">Resultados</a>
-  			<a class="active" href="/proximos">Próximos partidos</a>
+  			<a href="../quiniela">La quiniela</a>
+  			<a href="../resultados">Resultados</a>
+  			<a class="active" href="../proximos">Próximos partidos</a>
 
   			{{-- <button class="avatar">
   					<i class="avatar fas fa-user-circle"></i>
@@ -98,9 +98,9 @@
 			<div class="dropdown">
 				<button onclick="myFunction()" class="dropbtn">Próximos partidos </button>
 				  <div id="myDropdown" class="dropdown-content">
-				    <a href="quiniela">La quiniela</a>
-				    <a href="resultados">Resultados</a>
-  					<a class="active" href="proximos">Próximos partidos</a>
+				    <a href="../quiniela">La quiniela</a>
+				    <a href="../resultados">Resultados</a>
+  					<a class="active" href="../proximos">Próximos partidos</a>
   				  </div>
 			</div>
 
@@ -115,34 +115,31 @@
 				<div class="contenido">
 
 				<div class="titulo-proxPartidos">
-					<img src="images/copa.png" alt="">
-					<h3>JORNADAS {{$id}} DE {{$numJ}}</h3>
+					<img src="../images/copa.png" alt="">
+					<h3>{{$name}}</h3>
 				</div>
 				<!-- Day -->
 				<div class="proxPContenedor">
-					@foreach ($resultados as $grupo)
-	          {{-- <h2>GRUPO {{$grupo[0]->tournament_round->group}}</h2> --}}
-	          @foreach ($grupo as $partido)
+	          @foreach ($partidos as $partido)
 	            <div class="encuentro">
 	              @php
-	              $id1 = explode(":", $partido->competitors[0]->id);
-	              $id2 = explode(":", $partido->competitors[1]->id);
-	              $route1 = 'images/equipos/'.$id1[2].'.png';
-	              $route2 = 'images/equipos/'.$id2[2].'.png';
+	              $id1 = $partido->local->id;
+	              $id2 = $partido->visitante->id;
+	              $route1 = '../images/equipos/'.$id1.'.png';
+	              $route2 = '../images/equipos/'.$id2.'.png';
 	              @endphp
 								<div>
 	 								<img src="{{asset($route1)}}">
 	 							</div>
 								<div class="horarios">
-		  							<h2>{{date('d/M/Y',strtotime($partido->scheduled))}}<span>{{date("H:i A", strtotime('-5 hours',strtotime($partido->scheduled)))}}</span></h2>
-		  							<h3> <span class="nomEquipo1">{{$partido->competitors[0]->name}}</span>  VS  <span class="nomEquipo2">{{$partido->competitors[1]->name}}</span></h3>
+		  							<h2>{{date('d/M/Y',strtotime($partido->fecha_partido))}}<span>{{date("H:i A", strtotime($partido->hora_partido))}}</span></h2>
+		  							<h3> <span class="nomEquipo1">{{$partido->local->nombre}}</span>  VS  <span class="nomEquipo2">{{$partido->visitante->nombre}}</span></h3>
 		  					</div>
 								<div>
 	 								<img src="{{asset($route2)}}">
 	 							</div>
 	            </div>
 	          @endforeach
-	        @endforeach
 					</div>
 				</div>
 			</div>
@@ -152,7 +149,7 @@
 
 	<footer>
 		<div class="container">
-			<a href="/"><img src="images/secondary-logo.svg" /></a>
+			<a href="/"><img src="../images/secondary-logo.svg" /></a>
 			<ul>
 				<li><a href="terminos">Términos y condiciones</a></li>
 				<li><a href="privacidad">Política de privacidad</a></li>

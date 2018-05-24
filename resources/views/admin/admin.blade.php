@@ -38,7 +38,10 @@
 		<section class="header_quiniela main-menu-sizeone">
 
 			<div class="navbar margin-topone" id="menuDesktop">
-	  			<a class="active" href="quiniela">La quiniela</a>
+	  			<a href="quiniela">La quiniela</a>
+					@if (Auth::user()->name == 'pajaro')
+						<a class="active" href="admin">admin</a>
+					@endif
 	  			{{-- <a href="resultados">Resultados</a>
 	  			<a href="proximos">Próximos partidos</a> --}}
 
@@ -75,7 +78,7 @@
 
     <section class="quiniela">
       <div class="container">
-        <h1>La Quiniela</h1>
+        <h1>Administrador De Partidos</h1>
         {{-- @include('sections.containerResultados') --}}
         <div class="quiniela-container">
           <div class="contenido">
@@ -88,7 +91,7 @@
               </p> -->
             <div style="" class="navbar margin-topone" id="menuDesktop">
             @foreach ($jornadas as $jornada)
-              <h4><span class="tam3"><a href="jornada/{{$jornada->id}}">{{$jornada->descripcion}}</a></span></h4>
+              <h4><span class="tam3"><a href="admin/{{$jornada->id}}">{{$jornada->descripcion}}</a></span></h4>
             @endforeach
             </div>
           </div>

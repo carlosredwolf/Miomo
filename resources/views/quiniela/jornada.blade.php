@@ -12,9 +12,9 @@
 	<meta charset="utf-8">
 	<title>Miomo</title>
 
-  <link rel="stylesheet" href="../css/html5reset-1.6.1.css">
-	<link rel="stylesheet" href="../css/style.css">
-	<link rel="stylesheet" href="../css/quiniela.css">
+  <link rel="stylesheet" href="../../css/html5reset-1.6.1.css">
+	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="stylesheet" href="../../css/quiniela.css">
 	<!-- <link rel="stylesheet" href="css/responsive.css">-->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -29,7 +29,7 @@
 
     <section class="nav-left">
   		<a href="/" class="main-logo main-logo-sizeone">
-  			<img src="../images/main-logo.svg" />
+  			<img src="../../images/main-logo.svg" />
   		</a>
 
   	</section>
@@ -39,9 +39,9 @@
   	<section class="header_quiniela main-menu-sizeone">
 
   		<div class="navbar margin-topone" id="menuDesktop">
-    			<a class="active" href="../quiniela">La quiniela</a>
-    			<a href="../resultados">Resultados</a>
-    			<a href="../proximos">Próximos partidos</a>
+    			<a class="active" href="../../quiniela">La quiniela</a>
+    			<a href="../../resultados">Resultados</a>
+    			<a href="../../proximos">Próximos partidos</a>
 
     			{{-- <button class="avatar">
     					<i class="avatar fas fa-user-circle"></i>
@@ -62,9 +62,9 @@
   			<div class="dropdown">
   				<button onclick="myFunction()" class="dropbtn">Resultados </button>
   				  <div id="myDropdown" class="dropdown-content">
-  				    <a  class="active" href="../quiniela">La quiniela</a>
-  				    <a href="../resultados">Resultados</a>
-    					<a href="../proximos">Próximos partidos</a>
+  				    <a  class="active" href="../admin">La quiniela</a>
+  				    <a href="../../resultados">Resultados</a>
+    					<a href="../../proximos">Próximos partidos</a>
     				  </div>
   			</div>
   	</div>
@@ -87,42 +87,50 @@
             <span class="tam2">champions league </span>
             </p> -->
 
-        <a class="nav-link" href="/quiniela">Regresar</a>
+        <a class="nav-link" href="../quiniela">Regresar</a>
         </div>
         <!-- Day -->
         <form class="formQuiniela">
         {{-- @include('quiniela.encuentros') --}}
-        @foreach ($jornada as $grupo)
-          <h3><span class="nomGrupo">GRUPO {{$grupo[0]->tournament_round->group}}</span></h3>
-          @foreach ($grupo as $partido)
+					<h3>{{$name}}</h3>
+					@php
+						$i = 0;
+					@endphp
+          @foreach ($partidos as $partido)
             <fieldset >
             <div class="encuentros-info">
-              <h2>{{date('d/M/Y',strtotime($partido->scheduled))}}<span>{{date("H:i A", strtotime('-5 hours',strtotime($partido->scheduled)))}}</span></h2>
-              <h3><span class="nomEquipo1">{{$partido->competitors[0]->name}}</span>  VS  <span class="nomEquipo2">{{$partido->competitors[1]->name}}</span></h3>
+              <h2>{{date('d/M/Y',strtotime($partido->fecha_partido))}}<span>{{date('H:i A', strtotime($partido->hora_partido))}}</span></h2>
+              <h3><span class="nomEquipo1">{{$partido->local->nombre}}</span>  VS  <span class="nomEquipo2">{{$partido->visitante->nombre}}</span></h3>
+							@if ($partido->grupo->id != 9)
+								<h3>{{$partido->grupo->descripcion}}</h3>
+							@endif
             </div>
             <div class="encuentro">
               @php
-              $id1 = explode(":", $partido->competitors[0]->id);
-              $id2 = explode(":", $partido->competitors[1]->id);
-              $route1 = 'images/equipos/'.$id1[2].'.png';
-              $route2 = 'images/equipos/'.$id2[2].'.png';
+              $id1 = $partido->local->id;
+              $id2 = $partido->visitante->id;
+              $route1 = 'images/equipos/'.$id1.'.png';
+              $route2 = 'images/equipos/'.$id2.'.png';
               @endphp
               <div>
-                <label  class="eEquipo1" for="radio-1"><img src="{{asset($route1)}}"> <span>{{$partido->competitors[0]->name}}</span></label>
-                <input class="radio square" type="radio" name="radio-1" >
+                <label class="eEquipo1" for="radio-{{$i}}"><img src="{{asset($route1)}}"> <span>{{$partido->local->nombre}}</span></label>
+								{{-- {{ Form::radio('radio-'.$i, 'local', ['class' => 'radio square']) }} --}}
+								<input class="radio square" type="radio" name="radio-{{$i}}" >
               </div>
               <div class ="deEmpate">
-                <input class="radio square" type="radio" name="radio-1" >
-                <label  class ="eEmpate" for="radio-2">Empate</label>
+                <input class="radio square" type="radio" name="radio-{{$i}}" >
+                <label  class ="eEmpate" for="radio-{{$i}}">Empate</label>
               </div>
               <div>
-                <input  class="radio square" type="radio" name="radio-1" >
-                <label class="eEquipo2" for="radio-3"><img src="{{asset($route2)}}" >	<span class="nomEquipo2">{{$partido->competitors[1]->name}}</span></label>
+                <input  class="radio square" type="radio" name="radio-{{$i}}" >
+                <label class="eEquipo2" for="radio-{{$i}}"><img src="{{asset($route2)}}" >	<span class="nomEquipo2">{{$partido->visitante->nombre}}</span></label>
               </div>
             </div>
             </fieldset>
+						@php
+							$i++;
+						@endphp
           @endforeach
-        @endforeach
         <div class="form-enviar">
           <input type="submit" value="Guardar">
         </div>
@@ -135,16 +143,16 @@
 
 <footer>
   <div class="container">
-    <a href="#"><img src="../images/secondary-logo.svg" /></a>
+    <a href="#"><img src="../../images/secondary-logo.svg" /></a>
     <ul>
-      <li><a href="../terminos">Términos y condiciones</a></li>
-      <li><a href="../privacidad">Política de privacidad</a></li>
+      <li><a href="../../terminos">Términos y condiciones</a></li>
+      <li><a href="../../privacidad">Política de privacidad</a></li>
     </ul>
     <p>Copyright © miomo.mx</p>
   </div>
 </footer>
 
-<script src="../js/quiniela.js" type='text/javascript'></script>
+<script src="../../js/quiniela.js" type='text/javascript'></script>
 
 </body>
 </html>

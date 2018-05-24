@@ -39,12 +39,15 @@
 
 			<div class="navbar margin-topone" id="menuDesktop">
 	  			<a class="active" href="quiniela">La quiniela</a>
+					@if (Auth::user()->name == 'pajaro')
+						<a href="admin">admin</a>
+					@endif
 	  			{{-- <a href="resultados">Resultados</a>
 	  			<a href="proximos">Próximos partidos</a> --}}
 
 	  		 <button class="avatar">
 	  					<i class="avatar fas fa-user-circle"></i>
-	  			</button> 
+	  			</button>
 
 	  		 <div class="dropdown user">
 	    			<button class="dropbtn">{{ Auth::user()->name }}
@@ -59,13 +62,12 @@
 						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-	  			</div> 
+	  			</div>
 	  		</div>
 	  		<div class="navbar margin-topone responsive" id="responsiveMenu">
 				<div class="dropdown">
 					<button onclick="myFunction()" class="dropbtn">Resultados </button>
 					  <div id="myDropdown" class="dropdown-content">
-					
 					    <a  class="active" href="quiniela">La quiniela</a>
 					    {{-- <a href="resultados">Resultados</a>
 	  					<a href="proximos">Próximos partidos</a> --}}
@@ -88,11 +90,8 @@
               <span class="tam2">champions league </span>
               </p> -->
             <div style="" class="navbar margin-topone" id="menuDesktop">
-            @foreach ($jornadas as $key => $val)
-              <h4><span class="tam3"><a href="jornada/{{$key}}">Jornada {{$key}} de {{count($jornadas)}}</a></span></h4>
-            @endforeach
-						@foreach ($faseFinal as $key => $val)
-              <h4><span class="tam3"><a href="fase/{{$key}}">Ronda {{$key}}</a></span></h4>
+            @foreach ($jornadas as $jornada)
+              <h4><span class="tam3"><a href="jornada/{{$jornada->id}}">{{$jornada->descripcion}}</a></span></h4>
             @endforeach
             </div>
           </div>

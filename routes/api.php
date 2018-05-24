@@ -16,13 +16,3 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::get('paises','CommonController@paises');
-Route::get('estados/{code}','CommonController@estados');
-Route::get('ciudades/{code}/{state}','CommonController@ciudades');
-Route::get('resultados','CommonController@catResultados');
-Route::get('status','CommonController@catStatus');
-
-//Route::resource('evento','EventoController',['only'=>['index','show']]);
-//Route::resource('jornada','JornadaController',['only'=>['show']]);
-//Route::get('evento/{id}/jornada','JornadaController@index');

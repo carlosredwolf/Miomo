@@ -12,16 +12,16 @@
 	<meta charset="utf-8">
 	<title>Miomo</title>
 
-	<link rel="stylesheet" href="css/html5reset-1.6.1.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/quiniela.css">
+	<link rel="stylesheet" href="../css/html5reset-1.6.1.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/quiniela.css">
 	<!-- <link rel="stylesheet" href="css/responsive.css">-->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
-	<link rel="icon" href="images/favicon@2x.png">
+	<link rel="icon" href="../images/favicon@2x.png">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
 	<!-- Menu Overlay -->
 	<section class="sidenav" id="sidenav">
 		<div onclick="closeNav()" class="close-menu">
-			<img src="images/cross.svg" />
+			<img src="../images/cross.svg" />
 		</div>
 		<div class="mini-container">
 
@@ -41,7 +41,7 @@
 	<!-- Sidebars -->
 	<section class="nav-left">
 		<a href="/" class="main-logo main-logo-sizeone">
-			<img src="images/main-logo.svg" />
+			<img src="../images/main-logo.svg" />
 		</a>
 
 	</section>
@@ -51,9 +51,9 @@
 	<section class="header_quiniela main-menu-sizeone">
 
 		<div class="navbar margin-topone" id="menuDesktop">
-  			<a href="quiniela">La quiniela</a>
-  			<a class="active"  href="resultados">Resultados</a>
-  			<a href="proximos	">Próximos partidos</a>
+  			<a href="../quiniela">La quiniela</a>
+  			<a class="active"  href="../resultados">Resultados</a>
+  			<a href="../proximos">Próximos partidos</a>
 
   			{{-- <button class="avatar">
   					<i class="avatar fas fa-user-circle"></i>
@@ -74,9 +74,9 @@
 			<div class="dropdown">
 				<button onclick="myFunction()" class="dropbtn">Resultados </button>
 				  <div id="myDropdown" class="dropdown-content">
-				    <a  class="active" href="quiniela.html">La quiniela</a>
-				    <a href="resultados">Resultados</a>
-  					<a href="proximos">Próximos partidos</a>
+				    <a  class="active" href="../quiniela">La quiniela</a>
+				    <a href="../resultados">Resultados</a>
+  					<a href="../proximos">Próximos partidos</a>
   				  </div>
 			</div>
 	</div>
@@ -94,26 +94,23 @@
 				<div class="contenido">
 
 				<div class="titulo-resultados">
-					<img src="images/copa.png" alt="">
-					<h3>RESULTADOS <span>JORNADA {{$id}} DE {{$numJ}}</span></h3>
+					<img src="../images/copa.png" alt="">
+					<h3>RESULTADOS <span>{{$name}}</span></h3>
 				</div>
 				<!-- Day -->
 				<form class="formQuiniela">
-
-					@foreach ($resultados as $grupo)
-	          {{-- <h2>GRUPO {{$grupo[0]->tournament_round->group}}</h2> --}}
-	          @foreach ($grupo as $partido)
+	          @foreach ($partidos as $partido)
 	            <fieldset >
 	            <div class="encuentros-info">
-	              <h2>{{date('d/M/Y',strtotime($partido->scheduled))}}<span>{{date("H:i A", strtotime('-5 hours',strtotime($partido->scheduled)))}}</span></h2>
-	              <h3> <span class="nomEquipo1">{{$partido->competitors[0]->name}}</span>  VS  <span class="nomEquipo2">{{$partido->competitors[1]->name}}</span></h3>
+	              <h2>{{date('d/M/Y',strtotime($partido->fecha_partido))}}<span>{{date("H:i A", strtotime($partido->hora_partido))}}</span></h2>
+	              <h3> <span class="nomEquipo1">{{$partido->local->nombre}}</span>  VS  <span class="nomEquipo2">{{$partido->visitante->nombre}}</span></h3>
 	            </div>
 	            <div class="encuentro">
 	              @php
-	              $id1 = explode(":", $partido->competitors[0]->id);
-	              $id2 = explode(":", $partido->competitors[1]->id);
-	              $route1 = 'images/equipos/'.$id1[2].'.png';
-	              $route2 = 'images/equipos/'.$id2[2].'.png';
+	              $id1 = $partido->local->id;
+	              $id2 = $partido->visitante->id;
+	              $route1 = '../images/equipos/'.$id1.'.png';
+	              $route2 = '../images/equipos/'.$id2.'.png';
 								if (rand(0,2) == 0) {
 									$inputL = true;
 									$inputE = false;
@@ -131,7 +128,7 @@
 								}
 	              @endphp
                 <div>
-                  <label  class="eEquipo1" for="radio-1"><img src="{{asset($route1)}}"> <span>{{$partido->competitors[0]->name}}</span></label>
+                  <label  class="eEquipo1" for="radio-1"><img src="{{asset($route1)}}"> <span>{{$partido->local->nombre}}</span></label>
 									{{ Form::radio('radio-1', 'local', $inputL, ['class' => 'radio square'],'disabled') }}
                 </div>
                 <div class ="deEmpate">
@@ -142,7 +139,7 @@
                 <div>
 									{{ Form::radio('radio-3', 'visita', $inputV, ['class' => 'radio square'],'disabled') }}
                   {{-- <input  class="radio square" type="radio" name="radio-1" disabled> --}}
-                	<label class="eEquipo2" for="radio-3"><img src="{{asset($route2)}}" >	<span class="nomEquipo2">{{$partido->competitors[1]->name}}</span></label>
+                	<label class="eEquipo2" for="radio-3"><img src="{{asset($route2)}}" >	<span class="nomEquipo2">{{$partido->visitante->nombre}}</span></label>
                 </div>
 	            </div>
 							@if (rand(0,1) == 1)
@@ -153,7 +150,6 @@
 
 	            </fieldset>
 	          @endforeach
-	        @endforeach
 			</form>
 			</div>
 		</div>
