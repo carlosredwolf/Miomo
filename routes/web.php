@@ -30,7 +30,7 @@ Route::group(['middleware' => ['check_confirm']], function () {
     Route::post('admin','AdminController@store');
 
     Route::post('quiniela','QuinielaController@store');
-    Route::put('quiniela','QuinielaController@update');
+    Route::post('editarQuiniela','QuinielaController@update');
     Route::get('quiniela/{id}/{jornada}','QuinielaController@quiniela');
     Route::get('misquinielas','QuinielaController@show');
 });

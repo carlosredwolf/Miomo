@@ -26,6 +26,7 @@ class CreateQuinielasTable extends Migration
             $table->unsignedInteger('id_status');
             $table->foreign('id_status')->references('id')->on('cat__status');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

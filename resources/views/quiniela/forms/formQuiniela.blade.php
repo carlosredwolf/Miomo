@@ -1,4 +1,4 @@
-<form class="formQuiniela" method="PUT" action="{{url('quiniela')}}">
+<form class="formQuiniela" method="post" action="{{url('editarQuiniela')}}">
   @csrf
   <h3>{{$name}}</h3>
   @foreach ($partidos as $partido)
@@ -46,6 +46,7 @@
     </fieldset>
   @endforeach
   <input type="hidden" name="idJ" value="{{$id}}">
+  <input type="hidden" name="idQ" value="{{$idQ}}">
   <input type="hidden" name="partidos" value="{{$partidosStr}}">
 <div class="form-enviar">
   <input type="submit" value="Guardar">

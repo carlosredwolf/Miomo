@@ -69,7 +69,7 @@
   <section class="quiniela">
     <div class="container">
 
-      <h1>La Quiniela</h1>
+      <h1>Mi Quiniela</h1>
 
       <div class="quiniela-container">
 

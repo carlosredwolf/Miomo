@@ -23,6 +23,7 @@ class CreateApuestasTable extends Migration
             $table->unsignedInteger('id_resultado');
             $table->foreign('id_resultado')->references('id')->on('cat__resultados');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

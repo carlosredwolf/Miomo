@@ -3,10 +3,14 @@
 namespace Miomo;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Apuesta extends Model
 {
     //
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
     protected $table="apuestas";
     protected $hidden=['created_at','updated_at'];
     protected $fillable = [
