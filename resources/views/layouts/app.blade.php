@@ -27,6 +27,8 @@
 
 	<!-- Menu Overlay -->
 	<div id="bloqueoDiv"></div>
+	<!-- Menu Overlay -->
+	<div id="bloqueoDiv"></div>
 	<section class="sidenav" id="sidenav">
 
 		<div onclick="closeNav()" class="close-menu">
@@ -36,28 +38,28 @@
 			<ul>
 				<li>
 					<a href="/">
-						Inicio
+						Home
 					</a>
 				</li>
 				<li>
 					<a href="register#formRegistro">
-						Regístrate
+						Register
 					</a>
 				</li>
 				<li>
 					<a href="#aboutMiomo">
-						Sobre <span>nosotros</span>
+						About us
 					</a>
 				</li>
 				<li>
 					<a href="quiniela">
-						Quiniela
+						Pool
 					</a>
 				</li>
 				<li>
-					<a href="terminos">
+					<!--<a href="terminos">
 						Términos <span>y Condiciones</span>
-					</a>
+					</a>-->
 				</li>
 			</ul>
 		</div>
@@ -68,27 +70,27 @@
 	<div id="login-modal" class="modal-box">
 		<div class="modal-content">
 			<div>
-			<span class="close-btn" id="close-login-btn"></span>
-			<ul>
-				<li class="login-form-title">
-					<h2>Inicia Sesión</h2>
-				</li>
-				<li class="login-form-form">
-					<form>
-						<ul>
-							<li>
-								<input type="text" name="" id="" value="" placeholder="Usuario">
-							</li>
-							<li >
-								<input type="text" name="" id="" value="" placeholder="Contraseña">
-							</li>
-							<li>
-								<a class="btn-light" href="#">Iniciar Sesión</a>
-							</li>
-						</ul>
-					</form>
-				</li>
-			</ul>
+				<span class="close-btn" id="close-login-btn"></span>
+				<ul>
+					<li class="login-form-title">
+						<h2>Login</h2>
+					</li>
+					<li class="login-form-form">
+						<form>
+							<ul>
+								<li>
+									<input type="text" name="" id="" value="" placeholder="Usuario">
+								</li>
+								<li >
+									<input type="text" name="" id="" value="" placeholder="Contraseña">
+								</li>
+								<li>
+									<a class="btn-light" href="#">Login</a>
+								</li>
+							</ul>
+						</form>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -102,13 +104,13 @@
 
 		<ul>
 
-			<li><a href="register#formRegistro">regístrate</a></li>
-			<li><span id="login-btn">inicia sesión</span></li>
+			<li><a href="register#formRegistro">Register</a></li>
+			<li><a href="login"><span id="login-btn">Sign in </span></a></li>
 		</ul>
 	</section>
 
-<section class="nav-right">
-		 <div class="menu" onclick="openNav()">
+	<section class="nav-right">
+		<div class="menu" onclick="openNav()">
 			<span class="first"></span>
 			<span class="second"></span>
 			<span class="third"></span>
@@ -126,15 +128,16 @@
 			<ul>
 				<li class="usuario">
 					<img src="images/user.png" />
-					<h2>¡Quiero ser <span>usuario!</span></h2>
-					<a class="btn-light" href="#formRegistro">regístrate</a>
-					<p>Se creará una cuenta y desde ahí podrás realizar tus apuestas, con los mejores momios. (Para más información consulta términos y condiciones).</p>
+					<h2>I want to be a  <span>user!</span></h2>
+					<a class="btn-light" href="register#formRegistro">Register</a>
+					<p>Create an account and from there you can make your sports bets, with the best odds.</p>
 				</li>
 				<li class="book">
 					<img src="images/user2.png" />
-					<h2>¡Quiero ser <span>book!</span></h2>
-					<a class="btn-light" href="#formRegistro">regístrate</a>
-					<p>A través de la plataforma encontrarás usuarios que quieran jugar contra ti sin que tengas que buscarlos gestionaremos los pagos por ti, publicarás tus momios y tú solo verás los beneficios. Cupo limitado (Para más información consulta términos y condiciones).</p>
+					<h2>I want to be a <span>bookmaker!</span></h2>
+					<a class="btn-light" href="register#formRegistro">Register</a>
+					<p>You will be registered as a bookmaker where users will bet against your
+					published odds. We will find you users to bet on you, and manage your payments.</p>
 				</li>
 			</ul>
 		</div>
@@ -144,52 +147,56 @@
 		<div class="container">
 			<ul>
 				<li>
-					<h2><span class="tam1" >Descubre cómo</span>
-					ganar más dinero</h2>
+					<h2><span class="tam1" >FIND A WAY TO MAKE SOME MONEY THIS SUMMER!
+
+					</h2>
 				</li>
 				<li>
-					<p>Los nuevos usuarios participan por premios de hasta</p>
+					<p>If you register now you can join the World Cup pool and win a price up to:</p>
 				</li>
 				<li>
 					<h3>1.5 ETH</h3>
 				</li>
 				<li>
-					<p>Consulta términos y condiciones de la quiniela</p>
+					<p>Consult terms and conditions of the World Cup pool</p>
 				</li>
 			</ul>
 		</div>
 	</section>
 
-	 <section class="quiniela-form">
+	<section class="quiniela-form">
 		<div class="container">
 			<div class="quiniela-form-info">
-					<h2>Regístrate  <span>a la quiniela deportiva</span></h2>
-					<p>Compite en nuestra quieniela con un premio de 1.5 ETH al que resulte ganador de la quiniela.</p>
-					<p>Lo único que tienes que hacer es registrarte, elegir quinenes crees que sean los ganadores de los partidos y listo. Si eres el ganador te asignaremos a tu saldo.</p>
-					<p class="tam2">¡Participa gratis! </p>
-					<p>(Para más información consulta los Términos y condiciones).</p>
+				<h2>REGISTER
+					<span>TO THE WORLD CUP POOL</span></h2>
+					<p>Compete in our World Cup pool to win up to 1.5 ETH.
+ 
+ </p>
+					<p>The only thing you have to do right now is to register, choose who you think the winners will be and that's it. If you win we will add it to your balance.</p>
+					<p class="tam2">Participate for free! </p>
+					<p>(for more information consult terms and conditions).</p>
+				</div>
+
+				<div class="quiniela-form-form" id="formRegistro">
+					@yield('content')
+
+				</div>
 			</div>
+		</section>
 
-			<div class="quiniela-form-form" id="formRegistro">
-			@yield('content')
-
+		<footer>
+			<div class="container">
+				<a href="/"><img src="images/secondary-logo.svg" /></a>
+				<ul>
+					<li><a href="terminos">Términos y condiciones</a></li>
+					<li><a href="privacidad">Política de privacidad</a></li>
+				</ul>
+				<p>Copyright © miomo.mx</p>
 			</div>
-		</div>
-	</section>
+		</footer>
 
-	<footer>
-		<div class="container">
-			<a href="/"><img src="images/secondary-logo.svg" /></a>
-			<ul>
-				<li><a href="terminos">Términos y condiciones</a></li>
-				<li><a href="privacidad">Política de privacidad</a></li>
-			</ul>
-			<p>Copyright © miomo.mx</p>
-		</div>
-	</footer>
+		<script src="js/index.js" type="text/javascript" ></script>
+		<script src="js/videoScript.js" type="text/javascript" ></script>
 
-	<script src="js/index.js" type="text/javascript" ></script>
-	<script src="js/videoScript.js" type="text/javascript" ></script>
-
-</body>
-</html>
+	</body>
+	</html>

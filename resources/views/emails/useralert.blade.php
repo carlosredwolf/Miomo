@@ -1,4 +1,4 @@
 @extends('layouts.apph')
 @section('content')
-    <h1>Se ha enviado un correo de confirmación, por favor revisa tu cuenta de correo.</h1>
+    <h1>We sent a email confirmation, please check your email.</h1>
 @endsection

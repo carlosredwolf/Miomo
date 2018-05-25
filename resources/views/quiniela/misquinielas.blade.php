@@ -43,8 +43,8 @@
 					@if (Auth::user()->name == 'pajaro')
 						<a href="admin">admin</a>
 					@endif
-	  			{{-- <a href="resultados">Resultados</a>
-	  			<a href="proximos">Próximos partidos</a> --}}
+	  			{{-- <a href="resultados">Results</a>
+	  			<a href="proximos">Next matches</a> --}}
 
 	  		 <button class="avatar">
 	  					<i class="avatar fas fa-user-circle"></i>
@@ -56,9 +56,9 @@
 	    			</button>
 	    			<div class="dropdown-content">
 
-		      				<a href="perfil">Perfil</a>
+		      				<a href="perfil">Profiles</a>
 		      				<a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">Salir</a>
+                                                     document.getElementById('logout-form').submit();">Logout</a>
 	    			</div>
 						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
@@ -67,11 +67,11 @@
 	  		</div>
 	  		<div class="navbar margin-topone responsive" id="responsiveMenu">
 				<div class="dropdown">
-					<button onclick="myFunction()" class="dropbtn">Resultados </button>
+					<button onclick="myFunction()" class="dropbtn">Results </button>
 					  <div id="myDropdown" class="dropdown-content">
 					    <a  class="active" href="quiniela">La quiniela</a>
-					    {{-- <a href="resultados">Resultados</a>
-	  					<a href="proximos">Próximos partidos</a> --}}
+					    {{-- <a href="resultados">Results</a>
+	  					<a href="proximos">Next matches</a> --}}
 	  				  </div>
 				</div>
 		</div>
@@ -106,10 +106,10 @@
 		<div class="container">
 			<a href="#"><img src="images/secondary-logo.svg" /></a>
 			<ul>
-				<li><a href="terminos">Términos y condiciones</a></li>
-				<li><a href="privacidad">Política de privacidad</a></li>
+				<!--<li><a href="terminos">Términos y condiciones</a></li>
+				<li><a href="privacidad">Política de privacidad</a></li>-->
 			</ul>
-			<p>Copyright © miomo.mx</p>
+			<p>Copyright © miomo.net</p>
 		</div>
 	</footer>
 
