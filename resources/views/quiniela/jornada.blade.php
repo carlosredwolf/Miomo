@@ -39,9 +39,9 @@
   	<section class="header_quiniela main-menu-sizeone">
 
   		<div class="navbar margin-topone" id="menuDesktop">
-    			<a class="active" href="../../quiniela">La quiniela</a>
-    			<a href="../../resultados">Resultados</a>
-    			<a href="../../proximos">Próximos partidos</a>
+    			<a class="active" href="../../quiniela">The pool</a>
+    			<a href="../../resultados">Results</a>
+    			<a href="../../proximos">Next matches</a>
 
     			{{-- <button class="avatar">
     					<i class="avatar fas fa-user-circle"></i>
@@ -53,18 +53,18 @@
       			</button>
       			<div class="dropdown-content">
 
-  	      				<a href="#">Perfil</a>
-  	      				<a href="#">Salir</a>
+  	      				<a href="#">Profile</a>
+  	      				<a href="#">Logout</a>
       			</div>
     			</div> --}}
     		</div>
     		<div class="navbar margin-topone responsive" id="responsiveMenu">
   			<div class="dropdown">
-  				<button onclick="myFunction()" class="dropbtn">Resultados </button>
+  				<button onclick="myFunction()" class="dropbtn">Results </button>
   				  <div id="myDropdown" class="dropdown-content">
-  				    <a  class="active" href="../quiniela">La quiniela</a>
-  				    <a href="../../resultados">Resultados</a>
-    					<a href="../../proximos">Próximos partidos</a>
+  				    <a  class="active" href="../quiniela">The pool</a>
+  				    <a href="../../resultados">Results</a>
+    					<a href="../../proximos">Next matches</a>
     				  </div>
   			</div>
   	</div>
@@ -73,7 +73,7 @@
   <section class="quiniela">
     <div class="container">
 
-      <h1>La Quiniela</h1>
+      <h1>The pool</h1>
 
       <div class="quiniela-container">
 
@@ -82,7 +82,7 @@
         <div class="titulo-quiniela">
           <img src="{{asset('images/copa.png')}}" alt="">
 
-        <a class="nav-link" href="../quiniela">Regresar</a>
+        <a class="nav-link" href="../quiniela">Back</a>
         </div>
 				<meta name="csrf-token" content="{{ csrf_token() }}" />
         <!-- Day -->
@@ -97,10 +97,10 @@
   <div class="container">
     <a href="#"><img src="../../images/secondary-logo.svg" /></a>
     <ul>
-      <li><a href="../../terminos">Términos y condiciones</a></li>
-      <li><a href="../../privacidad">Política de privacidad</a></li>
+     <!-- <li><a href="../../terminos">Términos y condiciones</a></li>
+      <li><a href="../../privacidad">Política de privacidad</a></li>-->
     </ul>
-    <p>Copyright © miomo.mx</p>
+    <p>Copyright © miomo.net</p>
   </div>
 </footer>
 

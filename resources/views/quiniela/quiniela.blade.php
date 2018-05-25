@@ -38,13 +38,13 @@
 		<section class="header_quiniela main-menu-sizeone">
 
 			<div class="navbar margin-topone" id="menuDesktop">
-	  			<a class="active" href="quiniela">La quiniela</a>
-					<a href="misquinielas">Mis Quinielas</a>
+	  			<a class="active" href="quiniela">The pool</a>
+					<a href="misquinielas">My pools</a>
 					@if (Auth::user()->name == 'pajaro')
 						<a href="admin">admin</a>
 					@endif
-	  			{{-- <a href="resultados">Resultados</a>
-	  			<a href="proximos">Próximos partidos</a> --}}
+	  			{{-- <a href="resultados">Results</a>
+	  			<a href="proximos">Next matches</a> --}}
 
 	  		 <button class="avatar">
 	  					<i class="avatar fas fa-user-circle"></i>
@@ -69,8 +69,8 @@
 				<div class="dropdown">
 					<button onclick="myFunction()" class="dropbtn">Results </button>
 					  <div id="myDropdown" class="dropdown-content">
-					    <a  class="active" href="quiniela">La quiniela</a>
-					    {{-- <a href="resultados">Resultados</a>
+					    <a  class="active" href="quiniela">The pool</a>
+					    {{-- <a href="resultados">Results</a>
 	  					<a href="proximos">Next matches</a> --}}
 	  				  </div>
 				</div>
@@ -79,7 +79,7 @@
 
     <section class="quiniela">
       <div class="container">
-        <h1>La Quiniela</h1>
+        <h1>The pool</h1>
         {{-- @include('sections.containerResultados') --}}
         <div class="quiniela-container">
           <div class="contenido">
