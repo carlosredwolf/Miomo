@@ -51,9 +51,9 @@
 	<section class="header_quiniela main-menu-sizeone">
 
 		<div class="navbar margin-topone" id="menuDesktop">
-  			<a href="../quiniela">La quiniela</a>
-  			<a class="active"  href="../resultados">Resultados</a>
-  			<a href="../proximos">Próximos partidos</a>
+  			<a href="../quiniela">The pool</a>
+  			<a class="active"  href="../resultados">Results</a>
+  			<a href="../proximos">Next matches</a>
 
   			{{-- <button class="avatar">
   					<i class="avatar fas fa-user-circle"></i>
@@ -65,18 +65,18 @@
     			</button>
     			<div class="dropdown-content">
 
-	      				<a href="#">Perfil</a>
-	      				<a href="#">Salir</a>
+	      				<a href="#">Profile</a>
+	      				<a href="#">Logout</a>
     			</div>
   			</div> --}}
   		</div>
   		<div class="navbar margin-topone responsive" id="responsiveMenu">
 			<div class="dropdown">
-				<button onclick="myFunction()" class="dropbtn">Resultados </button>
+				<button onclick="myFunction()" class="dropbtn">Results </button>
 				  <div id="myDropdown" class="dropdown-content">
-				    <a  class="active" href="../quiniela">La quiniela</a>
-				    <a href="../resultados">Resultados</a>
-  					<a href="../proximos">Próximos partidos</a>
+				    <a  class="active" href="../quiniela">The pool</a>
+				    <a href="../resultados">Results</a>
+  					<a href="../proximos">Next matches</a>
   				  </div>
 			</div>
 	</div>
@@ -87,7 +87,7 @@
 
 		<div class="container">
 
-			<h1>Resultados</h1>
+			<h1>Results</h1>
 
 			<div class="quiniela-container">
 
@@ -95,7 +95,7 @@
 
 				<div class="titulo-resultados">
 					<img src="../images/copa.png" alt="">
-					<h3>RESULTADOS <span>{{$name}}</span></h3>
+					<h3>RESULTS <span>{{$name}}</span></h3>
 				</div>
 				<!-- Day -->
 				<form class="formQuiniela">
@@ -160,10 +160,10 @@
 		<div class="container">
 			<a href="/"><img src="images/secondary-logo.svg" /></a>
 			<ul>
-				<li><a href="terminos">Términos y condiciones</a></li>
-				<li><a href="privacidad">Política de privacidad</a></li>
+				<!--<li><a href="terminos">Términos y condiciones</a></li>
+				<li><a href="privacidad">Política de privacidad</a></li>-->
 			</ul>
-			<p>Copyright © miomo.mx</p>
+			<p>Copyright © miomo.net</p>
 		</div>
 	</footer>
 

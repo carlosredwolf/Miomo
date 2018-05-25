@@ -35,28 +35,28 @@
 			<ul>
 				<li>
 					<a href="/">
-						Inicio
+						Home
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						Regístrate
+						Register
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						Sobre nosotros
+						About us
 					</a>
 				</li>
 				<li>
 					<a href="quiniela">
-						Quiniela
+						Pool
 					</a>
 				</li>
 				<li>
-					<a href="terminos">
+					<!--<a href="terminos">
 						Términos y Condiciones
-					</a>
+					</a>-->
 				</li>
 			</ul>
 		</div>
@@ -75,9 +75,9 @@
 	<section class="header_quiniela main-menu-sizeone">
 
 		<div class="navbar margin-topone" id="menuDesktop">
-  			<a href="../quiniela">La quiniela</a>
-  			<a href="../resultados">Resultados</a>
-  			<a class="active" href="../proximos">Próximos partidos</a>
+  			<a href="../quiniela">The pool</a>
+  			<a href="../resultados">Results</a>
+  			<a class="active" href="../proximos">Next matches</a>
 
   			{{-- <button class="avatar">
   					<i class="avatar fas fa-user-circle"></i>
@@ -89,18 +89,18 @@
     			</button>
     			<div class="dropdown-content">
 
-	      				<a href="#">Perfil</a>
-	      				<a href="#">Salir</a>
+	      				<a href="#">Profile</a>
+	      				<a href="#">Logout</a>
     			</div>
   			</div> --}}
   		</div>
   		<div class="navbar margin-topone responsive" id="responsiveMenu">
 			<div class="dropdown">
-				<button onclick="myFunction()" class="dropbtn">Próximos partidos </button>
+				<button onclick="myFunction()" class="dropbtn">Next matches </button>
 				  <div id="myDropdown" class="dropdown-content">
-				    <a href="../quiniela">La quiniela</a>
-				    <a href="../resultados">Resultados</a>
-  					<a class="active" href="../proximos">Próximos partidos</a>
+				    <a href="../quiniela">The pool</a>
+				    <a href="../resultados">Results</a>
+  					<a class="active" href="../proximos">Next matches</a>
   				  </div>
 			</div>
 
@@ -108,7 +108,7 @@
 
 	<section class="quiniela proxPartidos">
 		<div class="container">
-			<h1>Próximos Partidos</h1>
+			<h1>Next matches</h1>
 
 			<div class="quiniela-container">
 
@@ -151,10 +151,10 @@
 		<div class="container">
 			<a href="/"><img src="../images/secondary-logo.svg" /></a>
 			<ul>
-				<li><a href="terminos">Términos y condiciones</a></li>
-				<li><a href="privacidad">Política de privacidad</a></li>
+				<!--<li><a href="terminos">Términos y condiciones</a></li>
+				<li><a href="privacidad">Política de privacidad</a></li>-->
 			</ul>
-			<p>Copyright © miomo.mx</p>
+			<p>Copyright © miomo.net</p>
 		</div>
 	</footer>
 

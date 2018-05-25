@@ -39,7 +39,7 @@
   	<section class="header_quiniela main-menu-sizeone">
 
   		<div class="navbar margin-topone" id="menuDesktop">
-    			<a class="active" href="../../misquinielas">Mis Quinielas</a>
+    			<a class="active" href="../../misquinielas">My pools</a>
 
     			{{-- <button class="avatar">
     					<i class="avatar fas fa-user-circle"></i>
@@ -51,16 +51,16 @@
       			</button>
       			<div class="dropdown-content">
 
-  	      				<a href="#">Perfil</a>
-  	      				<a href="#">Salir</a>
+  	      				<a href="#">Profile</a>
+  	      				<a href="#">Logout</a>
       			</div>
     			</div> --}}
     		</div>
     		<div class="navbar margin-topone responsive" id="responsiveMenu">
   			<div class="dropdown">
-  				<button onclick="myFunction()" class="dropbtn">Resultados </button>
+  				<button onclick="myFunction()" class="dropbtn">Results </button>
   				  <div id="myDropdown" class="dropdown-content">
-  				    <a  class="active" href="../misquinielas">Mis Quinielas</a>
+  				    <a  class="active" href="../misquinielas">My pools</a>
     				  </div>
   			</div>
   	</div>
@@ -69,7 +69,7 @@
   <section class="quiniela">
     <div class="container">
 
-      <h1>Mi Quiniela</h1>
+      <h1>My pool</h1>
 
       <div class="quiniela-container">
 
@@ -78,7 +78,7 @@
         <div class="titulo-quiniela">
           <img src="{{asset('images/copa.png')}}" alt="">
 
-        <a class="nav-link" href="../../misquinielas">Regresar</a>
+        <a class="nav-link" href="../../misquinielas">Back</a>
         </div>
 				<meta name="csrf-token" content="{{ csrf_token() }}" />
         <!-- Day -->
@@ -93,10 +93,10 @@
   <div class="container">
     <a href="#"><img src="../../images/secondary-logo.svg" /></a>
     <ul>
-      <li><a href="../../terminos">Términos y condiciones</a></li>
-      <li><a href="../../privacidad">Política de privacidad</a></li>
+     <!-- <li><a href="../../terminos">Términos y condiciones</a></li>
+      <li><a href="../../privacidad">Política de privacidad</a></li>-->
     </ul>
-    <p>Copyright © miomo.mx</p>
+    <p>Copyright © miomo.net</p>
   </div>
 </footer>
 
