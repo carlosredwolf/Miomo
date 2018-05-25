@@ -26,6 +26,15 @@ class QuinielaController extends Controller
 
       $respuesta = $this->getRespuesta($response);
     //
+      $quiniela = Quiniela::where('id_usuario',$respuesta->id_user)
+                          ->where('id_jornada',$respuesta->id_jornada)
+                          ->first();
+      if (isset($quiniela->id)) {
+        // code...
+        $apuestas = Apuesta::where('id_quiniela',$quiniela->id)->delete();
+        $quiniela->delete();
+
+      }
       $quiniela = Quiniela::create(['id_usuario' => $respuesta->id_user,
                                     'id_evento' => 1,
                                     'id_jornada' => $respuesta->id_jornada,
@@ -52,7 +61,7 @@ class QuinielaController extends Controller
     {
       // code...
       $id = Auth::user()->id;
-      $quinielas = Quiniela::where('id_usuario',$id)->get();
+      $quinielas = Quiniela::where('id_usuario',$id)->orderBy('id_jornada','asc')->get();
 
       return view('quiniela.misquinielas',compact('quinielas'));
     }
@@ -85,45 +94,23 @@ class QuinielaController extends Controller
     {
       // code...
       $response = $request->input();
-      $partidos = json_decode($request->input('partidos'));
+      $respuesta = $this->getRespuesta($response);
 
-      $respuesta = new stdClass;
-      $radios = array();
-      $respuesta->token = $request->input('_token');
-      $respuesta->id_user = Auth::user()->id;
-      $respuesta->id_jornada = intval($request->input('idJ'));
-      $respuesta->partidos = $partidos;
-      foreach ($response as $key => $value) {
-        // code...
-        if (strpos($key,'radio')!== false) {
-          // code...
-          $radio = new stdClass;
-          $partido = explode('-',$key);
-          $radio->partido = intval($partido[1]);
-          $radio->resultado = intval($value);
-
-          array_push($radios,$radio);
-          unset($radio);
-        }
-      }
-
-        foreach ($respuesta->partidos as $partido) {
-          foreach ($radios as $radio) {
-            // code...
-            if ($partido->id == $radio->partido) {
-              // code...
-              $partido->resultado->id = $radio->resultado;
-            }
-          }
-        }
-
-      $id_quiniela= intval($request->input('idQ'));
+      $id_quiniela= $response['idQ'];
 
       $apuestas = Apuesta::where('id_quiniela',$id_quiniela)->delete();
+      $quiniela = Quiniela::destroy($id_quiniela);
+
+      $quiniela = Quiniela::create(['id_usuario' => $respuesta->id_user,
+                                    'id_evento' => 1,
+                                    'id_jornada' => $respuesta->id_jornada,
+                                    'id_status' => 3]);
+
+      $id_quiniela= $quiniela->id;
+
       foreach ($respuesta->partidos as $partido) {
         // code...
         if ($partido->resultado->id != 4) {
-          // code...
           $apuesta = Apuesta::create([
             'id_quiniela' =>   $id_quiniela,
             'id_partido' => $partido->id,

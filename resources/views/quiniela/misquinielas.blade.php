@@ -92,7 +92,9 @@
               </p> -->
             <div style="" class="navbar margin-topone" id="menuDesktop">
             @foreach ($quinielas as  $quiniela)
-              <h4><span class="tam3"><a href="quiniela/{{$quiniela->id}}/{{$quiniela->jornada->id}}">{{$quiniela->jornada->descripcion}}</a></span></h4>
+              <h4><span class="tam3"><a href="quiniela/{{$quiniela->id}}/{{$quiniela->jornada->id}}">
+								{{$quiniela->jornada->descripcion}} {{date('d/M/Y h:i A',strtotime('-5 hours',strtotime($quiniela->updated_at)))}}
+							</a></span></h4>
             @endforeach
             </div>
           </div>
