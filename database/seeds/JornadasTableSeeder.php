@@ -14,7 +14,7 @@ class JornadasTableSeeder extends Seeder
     {
         //
         DB::table('jornadas')->insert(['nombre' => '1',
-                                      'descripcion' => 'Fase de Grupos Jornada 1',
+                                      'descripcion' => 'Group Stage Round 1',
                                       'sig_jornada' => 2,
                                       'fecha_inicio' => Carbon::parse('2018-06-14'),
                                       'fecha_fin' => Carbon::parse('2018-06-19'),
@@ -23,7 +23,7 @@ class JornadasTableSeeder extends Seeder
                                       'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                                       'updated_at' => Carbon::now()->format('Y-m-d H:i:s')]);
         DB::table('jornadas')->insert(['nombre' => '2',
-                                      'descripcion' => 'Fase de Grupos Jornada 2',
+                                      'descripcion' => 'Group Stage Round 2',
                                       'sig_jornada' => 3,
                                       'fecha_inicio' => Carbon::parse('2018-06-19'),
                                       'fecha_fin' => Carbon::parse('2018-06-24'),
@@ -32,7 +32,7 @@ class JornadasTableSeeder extends Seeder
                                       'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                                       'updated_at' => Carbon::now()->format('Y-m-d H:i:s')]);
         DB::table('jornadas')->insert(['nombre' => '3',
-                                      'descripcion' => 'Fase de Grupos Jornada 3',
+                                      'descripcion' => 'Group Stage Round 3',
                                       'sig_jornada' => 4,
                                       'fecha_inicio' => Carbon::parse('2018-06-25'),
                                       'fecha_fin' => Carbon::parse('2018-06-28'),
@@ -41,7 +41,7 @@ class JornadasTableSeeder extends Seeder
                                       'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                                       'updated_at' => Carbon::now()->format('Y-m-d H:i:s')]);
         DB::table('jornadas')->insert(['nombre' => 'R16',
-                                      'descripcion' => 'Ronda de Octavos',
+                                      'descripcion' => 'Round of 16',
                                       'sig_jornada' => 5,
                                       'fecha_inicio' => Carbon::parse('2018-06-30'),
                                       'fecha_fin' => Carbon::parse('2018-07-03'),
@@ -50,7 +50,7 @@ class JornadasTableSeeder extends Seeder
                                       'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                                       'updated_at' => Carbon::now()->format('Y-m-d H:i:s')]);
         DB::table('jornadas')->insert(['nombre' => 'QRF',
-                                      'descripcion' => 'Cuartos de Final',
+                                      'descripcion' => 'Quarterfinals',
                                       'sig_jornada' => 6,
                                       'fecha_inicio' => Carbon::parse('2018-07-06'),
                                       'fecha_fin' => Carbon::parse('2018-07-07'),
@@ -59,7 +59,7 @@ class JornadasTableSeeder extends Seeder
                                       'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                                       'updated_at' => Carbon::now()->format('Y-m-d H:i:s')]);
         DB::table('jornadas')->insert(['nombre' => 'SMF',
-                                      'descripcion' => 'Semifinales',
+                                      'descripcion' => 'Semifinals',
                                       'sig_jornada' => 7,
                                       'fecha_inicio' => Carbon::parse('2018-07-10'),
                                       'fecha_fin' => Carbon::parse('2018-07-11'),
@@ -68,7 +68,7 @@ class JornadasTableSeeder extends Seeder
                                       'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                                       'updated_at' => Carbon::now()->format('Y-m-d H:i:s')]);
        DB::table('jornadas')->insert(['nombre' => 'FNL',
-                                    'descripcion' => 'Final',
+                                    'descripcion' => 'Finals',
                                     'sig_jornada' => 7,
                                     'fecha_inicio' => Carbon::parse('2018-07-14'),
                                     'fecha_fin' => Carbon::parse('2018-07-15'),

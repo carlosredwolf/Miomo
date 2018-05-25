@@ -13,7 +13,7 @@ class EventosTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('eventos')->insert(['nombre' => 'Copa Mundial FIFA 2018',
+        DB::table('eventos')->insert(['nombre' => 'World Cup FIFA 2018',
                                       'fecha_inicio' => Carbon::parse('2018-06-14'),
                                       'fecha_fin' => Carbon::parse('2018-07-15'),
                                       'comentarios' => 'Copa Mundial de Fútbol',

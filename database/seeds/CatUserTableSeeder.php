@@ -13,16 +13,16 @@ class CatUserTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('cat__usuarios')->insert(['clave' => 'Apostador',
+        DB::table('cat__usuarios')->insert(['clave' => 'User',
                                       'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                                       'updated_at' => Carbon::now()->format('Y-m-d H:i:s')]);
-        DB::table('cat__usuarios')->insert(['clave' => 'Book',
+        DB::table('cat__usuarios')->insert(['clave' => 'Bookmaker',
                                       'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                                       'updated_at' => Carbon::now()->format('Y-m-d H:i:s')]);
-        DB::table('cat__usuarios')->insert(['clave' => 'Visitante',
+        DB::table('cat__usuarios')->insert(['clave' => 'Visitor',
                                       'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                                       'updated_at' => Carbon::now()->format('Y-m-d H:i:s')]);
-        DB::table('cat__usuarios')->insert(['clave' => 'Quiniela',
+        DB::table('cat__usuarios')->insert(['clave' => 'Pool',
                                       'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                                       'updated_at' => Carbon::now()->format('Y-m-d H:i:s')]);
     }

@@ -16,13 +16,13 @@ class CatResulTableSeeder extends Seeder
         DB::table('cat__resultados')->insert(['clave' => 'Local',
                                       'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                                       'updated_at' => Carbon::now()->format('Y-m-d H:i:s')]);
-        DB::table('cat__resultados')->insert(['clave' => 'Empate',
+        DB::table('cat__resultados')->insert(['clave' => 'Draw',
                                       'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                                       'updated_at' => Carbon::now()->format('Y-m-d H:i:s')]);
-        DB::table('cat__resultados')->insert(['clave' => 'Visitante',
+        DB::table('cat__resultados')->insert(['clave' => 'Visitor',
                                       'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                                       'updated_at' => Carbon::now()->format('Y-m-d H:i:s')]);
-        DB::table('cat__resultados')->insert(['clave' => 'S/D',
+        DB::table('cat__resultados')->insert(['clave' => 'N/D',
                                       'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                                       'updated_at' => Carbon::now()->format('Y-m-d H:i:s')]);
     }

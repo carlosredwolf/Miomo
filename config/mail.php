@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'ce.celedonio@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'César de Miomo'),
+        'address' => env('MAIL_FROM_ADDRESS', 'Noreply@miomo.net'),
+        'name' => env('MAIL_FROM_NAME', 'Miomo'),
     ],
 
     /*
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME','ce.celedonio@gmail.com'),
+    'username' => env('MAIL_USERNAME','Noreply@miomo.net'),
 
-    'password' => env('MAIL_PASSWORD','qqqs feqf gypb fego'),
+    'password' => env('MAIL_PASSWORD','Miomopanel789'),
 
     /*
     |--------------------------------------------------------------------------
