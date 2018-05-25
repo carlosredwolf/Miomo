@@ -27,8 +27,7 @@ class CommonController extends Controller
     public function index()
     {
       //$now = Carbon::now();
-      $now = '2018-06-17';
-      $now = Carbon::parse('2018-06-17')->toDateString();
+      $now = Carbon::parse('2018-06-14')->toDateString();
       $partidos = Partido::where('fecha_partido',$now)->orderBy('hora_partido')->get();
 
       $partidosOut = array();

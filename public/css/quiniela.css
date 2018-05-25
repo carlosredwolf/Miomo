@@ -52,6 +52,16 @@ SECTION.nav-right {display:none;}
 	z-index: 1003;
 }
 
+.navBacka{
+  width:99% !important;
+  font:20px 'breamcatcher', helvetica, arial, sans-serif;
+  margin:10px auto 5px;
+  color:#CCAF88;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  word-spacing: 2px;
+}
+
 .header_quiniela .navbar a:first-child{
 	margin-left:30%;
 }
