@@ -3,6 +3,7 @@
 namespace Miomo\Http\Controllers\Auth;
 use Miomo\User;
 use Miomo\Datos_Usuario;
+use Miomo\cat__estados as Estado;
 use Miomo\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -76,11 +77,12 @@ class RegisterController extends Controller
 
         $id_user=$user->id;
         $id_rol=3;
+        $ciudad = Estado::where('estadonombre',$data['ciudad'])->first();
         $datosUsuario=Datos_Usuario::create([
             'nombre'=>$data['nombre'],
             'apellidos'=>$data['apellidos'],
-            'pais'=>$data['pais'],
-            'ciudad'=>$data['ciudad'],
+            'id_pais'=>$ciudad->ubicacionpaisid,
+            'id_ciudad'=>$ciudad->id,
             'fecha_nacimiento'=>$data['fecha_nacimiento'],
             'celular'=>$data['celular'],
             'correo'=>$data['email'],

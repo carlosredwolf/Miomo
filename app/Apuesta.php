@@ -22,10 +22,10 @@ class Apuesta extends Model
     }
 
     public function resultado(){
-      return $this->hasOne('Miomo\Cat_Resultados', 'id_resultado');
+      return $this->belongsTo('Miomo\Cat_Resultados', 'id_resultado');
     }
 
     public function partido(){
-      return $this->hasOne('Miomo\Partido', 'id_partido');
+      return $this->belongsTo('Miomo\Partido', 'id_partido');
     }
 }

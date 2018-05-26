@@ -5,6 +5,8 @@ namespace Miomo\Http\Controllers;
 use Illuminate\Http\Request;
 use Miomo\User;
 use Miomo\Datos_Usuario;
+use Miomo\cat__paises as Pais;
+use Miomo\cat__estados as Estado;
 use Auth;
 
 class UsuariosController extends Controller
@@ -24,7 +26,7 @@ class UsuariosController extends Controller
         //Esta función muestra los datos del usuario.
         $idUsuario=Auth::user()->id;
         $datosUsuario=Datos_Usuario::where('id_usuario','=', $idUsuario)->get();
-        
+
         return view('perfil.index',array('datosUsuario' => $datosUsuario));
         //return response()->json($datosUsuario);
     }
@@ -89,21 +91,22 @@ class UsuariosController extends Controller
         $datosUsuario->apellidos=$request->apellidos;
         $datosUsuario->fecha_nacimiento=$request->fecha_nacimiento;
         $datosUsuario->celular=$request->celular;
-        $datosUsuario->ciudad=$request->ciudad;
-        $datosUsuario->pais=$request->pais;
+        $ciudad = Estado::where('estadonombre',$request->ciudad)->first();
+        $datosUsuario->id_pais=$ciudad->pais->id;
+        $datosUsuario->id_ciudad=$ciudad->id;
         $datosUsuario->correo=$request->email;
         $datosUsuario->id_usuario=$idUsuario;
         $datosUsuario->id_usuario="1";
         //return response()->json($request);
          if($datosUsuario->save()){
              return redirect('perfil');
-           
+
         }
         else
         {
             return back()->with('msgerror', 'Los datos no fueron guardados');
-        }     
-        
+        }
+
     }
 
     /**

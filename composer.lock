@@ -4,8 +4,54 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "771221addadcb02577b0695ea5da19f0",
+    "content-hash": "79863ea7148f1406364b876badaff8c5",
     "packages": [
+        {
+            "name": "annexare/countries-list",
+            "version": "2.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/annexare/Countries.git",
+                "reference": "fc06745249494922ef0a05aa7d348fe6cd31a594"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/annexare/Countries/zipball/fc06745249494922ef0a05aa7d348fe6cd31a594",
+                "reference": "fc06745249494922ef0a05aa7d348fe6cd31a594",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dmytro",
+                    "email": "z@annexare.com",
+                    "homepage": "https://github.com/z-ax"
+                }
+            ],
+            "description": "Continents & countries: ISO 3166-1 alpha-2 code, name, ISO 639-1 languages, capital, currency, native name, phone. JSON, CSV and SQL.",
+            "homepage": "http://annexare.github.io/Countries/",
+            "keywords": [
+                "ISO 3166-1",
+                "ISO 639-1",
+                "capital",
+                "continent",
+                "countries",
+                "country",
+                "csv",
+                "currency",
+                "data",
+                "emoji",
+                "json",
+                "languages",
+                "node",
+                "sql"
+            ],
+            "time": "2018-03-30T10:14:25+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
