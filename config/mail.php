@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME','Noreply@miomo.net'),
+    'username' => env('MAIL_USERNAME','ce.celedonio@gmail.com'),
 
-    'password' => env('MAIL_PASSWORD','Miomopanel789'),
+    'password' => env('MAIL_PASSWORD','qqqs feqf gypb fego'),
 
     /*
     |--------------------------------------------------------------------------
