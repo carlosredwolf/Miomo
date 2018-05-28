@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 587),
+    'port' => env('MAIL_PORT', 465),
 
     /*
     |--------------------------------------------------------------------------
@@ -71,7 +71,7 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
 
     /*
     |--------------------------------------------------------------------------
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME','ce.celedonio@gmail.com'),
+    'username' => env('MAIL_USERNAME','Noreply@miomo.net'),
 
-    'password' => env('MAIL_PASSWORD','qqqs feqf gypb fego'),
+    'password' => env('MAIL_PASSWORD','Miomopanel789'),
 
     /*
     |--------------------------------------------------------------------------

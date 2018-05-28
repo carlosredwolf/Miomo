@@ -47,7 +47,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="#aboutMiomo">
+					<a href="/#aboutMiomo">
 						About us
 					</a>
 				</li>
@@ -170,7 +170,7 @@
 				<h2>REGISTER
 					<span>TO THE WORLD CUP POOL</span></h2>
 					<p>Compete in our World Cup pool to win up to 1.5 ETH.
- 
+
  </p>
 					<p>The only thing you have to do right now is to register, choose who you think the winners will be and that's it. If you win we will add it to your balance.</p>
 					<p class="tam2">Participate for free! </p>
