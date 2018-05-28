@@ -8,7 +8,6 @@ use Miomo\Datos_Usuario;
 use Miomo\cat__paises as Pais;
 use Miomo\cat__estados as Estado;
 use Auth;
-
 class UsuariosController extends Controller
 {
     /**

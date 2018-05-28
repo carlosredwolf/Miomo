@@ -9,7 +9,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Mail;
-use App\Rules\Uppercase;
+use Miomo\Rules\Uppercase;
+use Miomo\Rules\CheckAge;
+
 
 class RegisterController extends Controller
 {
@@ -56,6 +58,19 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:12|confirmed',
             'g-recaptcha-response' => 'required|recaptcha',
+            'apellidos' => 'required',
+            'pais' => 'required',
+            'ciudad' => 'required',
+            'celular' => 'required',
+            'ciudad' => 'required',
+            'fecha_nacimiento' => [
+                'required',function($attribute, $value, $fail) {
+                    $edad= intval((strtotime("now")-strtotime($value))/31536000);
+                    if ($edad<18) {
+                        return $fail(' You need to be of legal age.');
+                    }
+                },
+            ],
         ]);
     }
 
@@ -90,7 +105,7 @@ class RegisterController extends Controller
             'id_rol' => $id_rol]);
 
         Mail::send('emails.confirmation_code', $data, function($message) use ($data) {
-        $message->to($data['email'], $data['name'])->subject('Por favor confirma tu correo');
+            $message->to($data['email'], $data['name'])->subject('Por favor confirma tu correo');
         });
 
         return $user;
