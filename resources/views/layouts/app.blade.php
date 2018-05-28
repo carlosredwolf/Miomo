@@ -188,10 +188,10 @@
 			<div class="container">
 				<a href="/"><img src="images/secondary-logo.svg" /></a>
 				<ul>
-					<li><a href="terminos">Términos y condiciones</a></li>
-					<li><a href="privacidad">Política de privacidad</a></li>
+					{{-- <li><a href="terminos">Términos y condiciones</a></li>
+					<li><a href="privacidad">Política de privacidad</a></li> --}}
 				</ul>
-				<p>Copyright © miomo.mx</p>
+				<p>Copyright © miomo.net</p>
 			</div>
 		</footer>
 

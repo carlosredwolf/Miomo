@@ -35,10 +35,10 @@
 		<div class="container">
 			<a href="#"><img src="{{URL::asset('/images//secondary-logo.svg')}}"/></a>
 			<ul>
-				<li><a href="#">Términos y condiciones</a></li>
-				<li><a href="#">Política de privacidad</a></li>
+				{{-- <li><a href="#">Términos y condiciones</a></li>
+				<li><a href="#">Política de privacidad</a></li> --}}
 			</ul>
-			<p>Copyright © miomo.mx</p>
+			<p>Copyright © miomo.net</p>
 		</div>
 	</footer>
   {!!Html::script("js/quiniela.js", array('type' => "text/javascript"))!!}
