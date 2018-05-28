@@ -14,14 +14,27 @@
                         
                         <h2>General data</h2>
 						<ul>
-							<li class="twoInputs">
+							<li>
 								<!-- <label for="nombre">Nombre(s)</label> -->
-								<input type="text" name="nombre" id="" value="" placeholder="Name(s)" required>
-								<input type="text" name="apellidos" id="" value="" placeholder="Last name" required>
+								<input type="text" name="nombre" id="" value="{{ old('nombre') }}" placeholder="Name(s)" required autofocus>
+								
+							</li>
+							<li>
+								<input type="text" name="apellidos" id="" value="{{ old('apellidos') }}" placeholder="Last name" required autofocus>
+								@if ($errors->has('apellidos'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('apellidos') }}</strong>
+                                    </span>
+                                @endif
 							</li>
 							<li>
 								<!-- <label for="nombre">Apellidos</label> -->
 								<input type="text" name="pais" id="pais-input" value="" placeholder="Country" style="visibility:hidden">
+								@if ($errors->has('pais'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('pais') }}</strong>
+                                    </span>
+                                @endif
 								<li class="selectOps styled-select slate">
 									<select name="paises" id="select-pais">
 									</select>
@@ -34,14 +47,29 @@
 									<option value="x">First select your country</option>
 									</select>
 								</li>
+								@if ($errors->has('ciudad'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('ciudad') }}</strong>
+                                    </span>
+                                @endif
 								<input type="text" name="ciudad" id="estado-input" value="" placeholder="Estado" style="visibility:hidden">
 							</li>
 
 							<li class="twoInputs tooltip" >
 								<!-- <label for="nombre">Correo electrónico</label> -->
 								 <span class="tooltiptext"> Birthdate</span>
-								<input type="date" name="fecha_nacimiento" id="" value="" placeholder="Birthdate" >
-								<input type="text" name="celular" id="" value="" placeholder="Phone">
+								<input type="date" name="fecha_nacimiento" id="" value="{{ old('fecha_nacimiento') }}" placeholder="Birthdate" required autofocus>
+								 @if ($errors->has('fecha_nacimiento'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('fecha_nacimiento') }}</strong>
+                                    </span>
+                                @endif
+								<input type="text" name="celular" id="" value="{{ old('celular') }}" placeholder="Phone" required autofocus>
+								@if ($errors->has('celular'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('celular') }}</strong>
+                                    </span>
+                                @endif
 							</li>
 
 						</ul>
@@ -70,7 +98,7 @@
 						</ul>
 						<h2>User data</h2>
 						<ul>
-							<li><input type="text" name="name" id="" value="" placeholder="Username"></li>
+							<li><input type="text" name="name" id="" value="{{ old('name') }}" placeholder="Username" required autofocus></li>
 							 @if ($errors->has('name'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('name') }}</strong>
@@ -78,7 +106,7 @@
                                 @endif
 							<li>
 								<!-- <label for="nombre">Dirección</label> -->
-								<input type="email" name="email" id="" placeholder="Email" required>
+								<input type="email" name="email" id="" value="{{ old('email') }}" placeholder="Email" required autofocus>
 							@if ($errors->has('email'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -113,6 +141,25 @@
         </div>
     </div>
 </div>
+<style>
+.navBacka{
+	width:99% !important;
+	font:20px 'breamcatcher', helvetica, arial, sans-serif;
+	margin:10px auto 5px;
+	color:#CCAF88;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	word-spacing: 2px;
+}
+.invalid-feedback{
+	width:99% !important;
+	margin:10px auto 5px;
+	color:#BB0000;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	word-spacing: 2px;
+}
+</style>
 <script src="{{ asset('js/intereses.js') }}" defer></script>
 <script src="{{ asset('js/strength.js') }}"></script>
 <script src="{{ asset('js/js.js') }}"></script>
@@ -121,7 +168,7 @@
             $('#myPassword').strength({
                 strengthClass: 'strength',
                 strengthMeterClass: 'strength_meter',
-                strengthButtonClass: 'button_strength',
+                strengthButtonClass: 'navBacka',
                 strengthButtonText: 'Show Password',
                 strengthButtonTextToggle: 'Hide Password'
             });

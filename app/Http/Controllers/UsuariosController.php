@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Miomo\User;
 use Miomo\Datos_Usuario;
 use Auth;
-
 class UsuariosController extends Controller
 {
     /**
