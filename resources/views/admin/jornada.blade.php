@@ -39,7 +39,7 @@
   	<section class="header_quiniela main-menu-sizeone">
 
   		<div class="navbar margin-topone" id="menuDesktop">
-    			<a href="../../quiniela">La quiniela</a>
+    			{{-- <a href="../../quiniela">La quiniela</a> --}}
 					@if (Auth::user()->name == 'pajaro')
 						<a class="active" href="../admin">admin</a>
 					@endif
@@ -85,7 +85,7 @@
             <span class="tam2">champions league </span>
             </p> -->
 
-        <a class="nav-link" href="../admin">Regresar</a>
+        <a class="nav-link" href="../admin">Back</a>
         </div>
 				<meta name="csrf-token" content="{{ csrf_token() }}" />
         <!-- Day -->
@@ -100,10 +100,10 @@
   <div class="container">
     <a href="#"><img src="../../images/secondary-logo.svg" /></a>
     <ul>
-      <li><a href="../../terminos">Términos y condiciones</a></li>
-      <li><a href="../../privacidad">Política de privacidad</a></li>
+      {{-- <li><a href="../../terminos">Términos y condiciones</a></li>
+      <li><a href="../../privacidad">Política de privacidad</a></li> --}}
     </ul>
-    <p>Copyright © miomo.mx</p>
+    <p>Copyright © miomo.net</p>
   </div>
 </footer>
 
