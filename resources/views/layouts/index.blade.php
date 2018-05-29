@@ -43,4 +43,5 @@
 	</footer>
   {!!Html::script("js/quiniela.js", array('type' => "text/javascript"))!!}
 </body>
+<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
 </html>

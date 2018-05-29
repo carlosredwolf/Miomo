@@ -11,7 +11,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Mail;
 use Miomo\Rules\Uppercase;
 use Miomo\Rules\CheckAge;
-
+use Miomo\RolesInteres;
 
 class RegisterController extends Controller
 {
@@ -56,7 +56,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255|unique:users',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:12|confirmed',
+            'password' => 'required|string|min:6|confirmed',
             'g-recaptcha-response' => 'required|recaptcha',
             'apellidos' => 'required',
             'pais' => 'required',
@@ -104,9 +104,17 @@ class RegisterController extends Controller
             'id_usuario'=>$id_user,
             'id_rol' => $id_rol]);
 
+        $RolesInteres=RolesInteres::create([
+            'apostador'=>$data['apostador'],
+            'book'=>$data['book'],
+            'visitante'=>$data['visitante'],
+            'nombre_usuario'=>$data['name'],
+        ]);
+
         Mail::send('emails.confirmation_code', $data, function($message) use ($data) {
             $message->to($data['email'], $data['name'])->subject('Please confirm your email');
         });
+
 
         return $user;
     }
