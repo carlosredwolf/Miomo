@@ -40,10 +40,10 @@
 		<p>To do this you simply have to click on the following link:</p>
 
 		<a href="{{ url('/register/verify/' . $confirmation_code) }}" class="btnConfirm">
-			Click for confirm your email
+			Click to confirm your email
 		</a>
 		<br>
-		<p>Si no puedes ver el boton haz copy/paste al siguiente link en tu navegador:</p>
+		<p>If you can not see this button, copy this link into your browser:</p>
 		<br>
 		<a href="{{ url('/register/verify/' . $confirmation_code) }}">{{ url('/register/verify/' . $confirmation_code) }}</a>
 	</div>

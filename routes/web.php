@@ -42,6 +42,7 @@ Route::get('/register/verify/{code}', 'GuestController@verify');
 
 Route::get('terminos','StaticController@terminos');
 Route::get('privacidad','StaticController@privacidad');
+Route::get('rules','StaticController@rules');
 
 Auth::routes();
 

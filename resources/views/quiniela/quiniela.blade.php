@@ -40,6 +40,7 @@
 			<div class="navbar margin-topone" id="menuDesktop">
 	  			<a class="active" href="quiniela">The pool</a>
 					<a href="misquinielas">My pools</a>
+					<a href="rules">World Cup Pool Rules</a>
 					@if (Auth::user()->name == 'pajaro')
 						<a href="admin">admin</a>
 					@endif
