@@ -8,16 +8,16 @@
 
                 <div class="card-body">
                 <meta name="csrf-token" content="{{ csrf_token() }}" />
-                 
+
                     <form id="form-register" method="POST" action="{{ route('register') }}">
                         @csrf
-                        
+
                         <h2>General data</h2>
 						<ul>
 							<li>
 								<!-- <label for="nombre">Nombre(s)</label> -->
 								<input type="text" name="nombre" id="" value="{{ old('nombre') }}" placeholder="Name(s)" required autofocus>
-								
+
 							</li>
 							<li>
 								<input type="text" name="apellidos" id="" value="{{ old('apellidos') }}" placeholder="Last name" required autofocus>
@@ -29,7 +29,7 @@
 							</li>
 							<li>
 								<!-- <label for="nombre">Apellidos</label> -->
-								<input type="text" name="pais" id="pais-input" value="Mexico" placeholder="Country" style="visibility:hidden">
+								<input type="text" name="pais" id="pais-input" value="" placeholder="Country" style="visibility:hidden">
 								@if ($errors->has('pais'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('pais') }}</strong>
@@ -52,7 +52,7 @@
                                         <strong>{{ $errors->first('ciudad') }}</strong>
                                     </span>
                                 @endif
-								<input type="text" name="ciudad" id="estado-input" value="San Luis Potosi" placeholder="Estado" style="visibility:hidden">
+								<input type="text" name="ciudad" id="estado-input" value="" placeholder="Estado" style="visibility:hidden">
 							</li>
 
 							<li class="twoInputs tooltip" >
@@ -135,7 +135,7 @@
                                 @endif
 							<li>
 								 <button class="btn-light" id="btn-registro" type="submit">Register</button>
-						
+
 							</li>
 						</ul>
                     </form>
