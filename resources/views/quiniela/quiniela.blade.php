@@ -93,7 +93,13 @@
               </p> -->
             <div style="" class="navbar margin-topone" id="menuDesktop">
             @foreach ($jornadas as $jornada)
-              <h4><span class="tam3"><a href="jornada/{{$jornada->id}}">{{$jornada->descripcion}}</a></span></h4>
+							@if ($jornada->status->id ==1)
+								<h4><span class="tam3"><a href="jornada/{{$jornada->id}}">{{$jornada->descripcion}}</a></span></h4>
+							@elseif ($jornada->status->id ==2)
+								<h4><span class="tam3"><a href="#" style="pointer-events:none; text-decoration:line-through;">{{$jornada->descripcion}}</a></span></h4>
+							@else
+								<h4><span class="tam3"><a href="#" style="pointer-events:none;">{{$jornada->descripcion}}</a></span></h4>
+							@endif
             @endforeach
             </div>
           </div>
