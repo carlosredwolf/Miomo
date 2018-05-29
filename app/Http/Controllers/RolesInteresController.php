@@ -4,6 +4,7 @@ namespace Miomo\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Miomo\RolesInteres;
+use Miomo\User;
 
 class RolesInteresController extends Controller
 {
@@ -42,6 +43,7 @@ class RolesInteresController extends Controller
         $rolinteres->nombre_usuario=$request->input("nombre_usuario");
         $rolinteres->save();
         $msg = "Realizado.";
+        
         return response()->json(array('msg'=> $msg), 200);    
     }
 

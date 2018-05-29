@@ -29,7 +29,7 @@
 							</li>
 							<li>
 								<!-- <label for="nombre">Apellidos</label> -->
-								<input type="text" name="pais" id="pais-input" value="" placeholder="Country" style="visibility:hidden">
+								<input type="text" name="pais" id="pais-input" value="Mexico" placeholder="Country" style="visibility:hidden">
 								@if ($errors->has('pais'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('pais') }}</strong>
@@ -52,7 +52,7 @@
                                         <strong>{{ $errors->first('ciudad') }}</strong>
                                     </span>
                                 @endif
-								<input type="text" name="ciudad" id="estado-input" value="" placeholder="Estado" style="visibility:hidden">
+								<input type="text" name="ciudad" id="estado-input" value="San Luis Potosi" placeholder="Estado" style="visibility:hidden">
 							</li>
 
 							<li class="twoInputs tooltip" >
@@ -75,6 +75,9 @@
 						</ul>
 						<h2>User type</h2>
 						<ul class="tipoUsuario">
+							<input id="apostador" name="apostador" type="text" value="null" style="visibility:hidden">
+							<input id="book" name="book" type="text" value="null" style="visibility:hidden">
+							<input id="visitante" name="visitante" type="text" value="null" style="visibility:hidden">
 							<li>
 								<label for="tuser1" class="checkbox">
         						<input type="checkbox" class="checkbox" id="tuser1" name="check_tuser[]" value="apostador" />User</label>
