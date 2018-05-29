@@ -110,8 +110,58 @@ class AdminController extends Controller
     public function store(Request $request)
     {
       // code...
-      $response = $request->input('partidos');
-      $response = json_decode($response);
-      return $response;
+      $response = $request->input();
+      $partidos = json_decode($response['partidos']);
+      foreach ($response as $key => $value) {
+        // code...
+        if (strpos($key,'score')!== false) {
+          // code...
+          $score = new stdClass;
+          $partido = explode('-',$key);
+          $score->partido = intval($partido[1]);
+          $score->valor = intval($value);
+
+          array_push($radios,$radio);
+          unset($radio);
+        }
+      }
+      //$response = json_decode($response);
+      return $partidos;
+    }
+
+    public function activar($id)
+    {
+      // code...
+      $jornada = Jornada::find($id);
+      $status = $jornada->id_status;
+
+      if ($status == 1) {
+        // code...
+        $jornada->id_status = 3;
+      }elseif($status == 3) {
+        // code...
+        $jornada->id_status = 1;
+      }
+
+      $jornada->save();
+      return redirect('admin');
+    }
+
+    public function abrir($id)
+    {
+      // code...
+      $jornada = Jornada::find($id);
+      $status = $jornada->id_status;
+
+      if ($status == 1) {
+        // code...
+        $jornada->id_status = 2;
+      }elseif($status == 2) {
+        // code...
+        $jornada->id_status = 1;
+      }
+
+      $jornada->save();
+      return redirect('admin');
     }
 }

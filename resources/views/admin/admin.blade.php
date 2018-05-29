@@ -38,7 +38,7 @@
 		<section class="header_quiniela main-menu-sizeone">
 
 			<div class="navbar margin-topone" id="menuDesktop">
-	  			<a href="quiniela">La quiniela</a>
+	  			<a href="quiniela">The pool</a>
 					@if (Auth::user()->name == 'pajaro')
 						<a class="active" href="admin">admin</a>
 					@endif
@@ -55,9 +55,9 @@
 	    			</button>
 	    			<div class="dropdown-content">
 
-		      				<a href="perfil">Perfil</a>
+		      				<a href="perfil">Profile</a>
 		      				<a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">Salir</a>
+                                                     document.getElementById('logout-form').submit();">Logout</a>
 	    			</div>
 						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
@@ -78,7 +78,7 @@
 
     <section class="quiniela">
       <div class="container">
-        <h1>Administrador De Partidos</h1>
+        <h1>Administrator Console</h1>
         {{-- @include('sections.containerResultados') --}}
         <div class="quiniela-container">
           <div class="contenido">
@@ -91,7 +91,20 @@
               </p> -->
             <div style="" class="navbar margin-topone" id="menuDesktop">
             @foreach ($jornadas as $jornada)
-              <h4><span class="tam3"><a href="admin/{{$jornada->id}}">{{$jornada->descripcion}}</a></span></h4>
+              <h4><span class="tam3"><a href="admin/{{$jornada->id}}">{{$jornada->descripcion}}</a></span>
+								&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;
+								@if ($jornada->status->id == 3)
+									<span class="tam3"><a href="admin/activar/{{$jornada->id}}">Activate</a></span>
+								@else
+									<span class="tam3"><a href="admin/activar/{{$jornada->id}}">Desactivate</a></span>
+								@endif
+								&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;
+								@if ($jornada->status->id == 1 || $jornada->status->id == 3)
+									<span class="tam3"><a href="admin/abrir/{{$jornada->id}}">Close</a></span>
+								@else
+									<span class="tam3"><a href="admin/abrir/{{$jornada->id}}">Open</a></span>
+								@endif
+							</h4>
             @endforeach
             </div>
           </div>
@@ -105,15 +118,14 @@
 		<div class="container">
 			<a href="#"><img src="images/secondary-logo.svg" /></a>
 			<ul>
-				<li><a href="terminos">Términos y condiciones</a></li>
-				<li><a href="privacidad">Política de privacidad</a></li>
+				{{-- <li><a href="terminos">Términos y condiciones</a></li>
+				<li><a href="privacidad">Política de privacidad</a></li> --}}
 			</ul>
-			<p>Copyright © miomo.mx</p>
+			<p>Copyright © miomo.net</p>
 		</div>
 	</footer>
 
 	<script src="js/quiniela.js" type='text/javascript'></script>
-	<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
 
 </body>
 </html>
