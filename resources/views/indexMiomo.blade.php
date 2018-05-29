@@ -338,6 +338,6 @@
 		<script src="js/index.js" type="text/javascript" ></script>
 		<script src="{{ asset('js/intereses.js') }}" defer></script>
 		<script src="js/videoScript.js" type="text/javascript" ></script>
-
+<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
 	</body>
 	</html>
