@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
 <!--[if lt IE 9]>
