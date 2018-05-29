@@ -54,11 +54,11 @@
 						Pool
 					</a>
 				</li>
-				<li>
-					<!--<a href="terminos">
-						Términos <span>y Condiciones</span>
-					</a>-->
-				</li>
+				{{-- <li>
+					<a href="rules">
+						World Cup Pool Rules
+					</a>
+				</li> --}}
 			</ul>
 		</div>
 
@@ -103,7 +103,7 @@
 		<ul>
 
 			<li><a href="register#formRegistro">Register</a></li>
-			<li><a href="login"><span id="login-btn">Sign in </span></a></li>
+			<li><a href="login"><span id="login-btn">Sign in</span></a></li>
 		</ul>
 	</section>
 
@@ -136,7 +136,7 @@
 					<a class="btn-dark" href="register#formRegistro">REGISTER</a>
 				</li>
 				<li>
-					<p>Join our World Cup pool, 
+					<p>Join our World Cup pool,
 						<span>You just have to register!</span></p>
 					</li>
 					<li class="extra">
@@ -255,7 +255,7 @@
 					<div class="about-info">
 						<h2><span class="tam1">What is </span>
 						Miomo?</h2>
-						<p>We firmly believe that the real possibilities of you winning against the "casino" are very unfair, 
+						<p>We firmly believe that the real possibilities of you winning against the "casino" are very unfair,
 						in order to ditch this, instead, we created Miomo which allows you to bet against a peer.</p>
 
 						<ul>

@@ -40,6 +40,7 @@
 			<div class="navbar margin-topone" id="menuDesktop">
 	  			<a class="active" href="quiniela">The pool</a>
 					<a href="misquinielas">My pools</a>
+					<a href="rules">World Cup Pool Rules</a>
 					@if (Auth::user()->name == 'pajaro')
 						<a href="admin">admin</a>
 					@endif
@@ -92,7 +93,13 @@
               </p> -->
             <div style="" class="navbar margin-topone" id="menuDesktop">
             @foreach ($jornadas as $jornada)
-              <h4><span class="tam3"><a href="jornada/{{$jornada->id}}">{{$jornada->descripcion}}</a></span></h4>
+							@if ($jornada->status->id ==1)
+								<h4><span class="tam3"><a href="jornada/{{$jornada->id}}">{{$jornada->descripcion}}</a></span></h4>
+							@elseif ($jornada->status->id ==2)
+								<h4><span class="tam3"><a href="#" style="pointer-events:none; text-decoration:line-through;">{{$jornada->descripcion}}</a></span></h4>
+							@else
+								<h4><span class="tam3"><a href="#" style="pointer-events:none;">{{$jornada->descripcion}}</a></span></h4>
+							@endif
             @endforeach
             </div>
           </div>

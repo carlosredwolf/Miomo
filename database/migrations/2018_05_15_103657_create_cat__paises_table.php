@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRolesInteresTable extends Migration
+class CreateCatPaisesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateRolesInteresTable extends Migration
      */
     public function up()
     {
-        Schema::create('roles_interes', function (Blueprint $table) {
+        Schema::create('cat__paises', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('apostador',30)->nullable();
-            $table->string('book',30)->nullable();
-            $table->string('visitante',30)->nullable();
-            $table->string('nombre_usuario');
+            $table->string('paisnombre',50);
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -31,6 +27,6 @@ class CreateRolesInteresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles_interes');
+        Schema::dropIfExists('cat__paises');
     }
 }

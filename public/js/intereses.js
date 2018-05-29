@@ -10,7 +10,7 @@ const getPaises = () => {
         dataType: "Json",
         success: function(response) {
             for (var key in response) {
-                let paises = `<option value="" selected disabled hidden>Select your country</option><option value="${response[key].code}">${response[key].name}</option>`;
+                let paises = `<option value="" selected disabled hidden>Select your country</option><option value="${response[key].id}">${response[key].paisnombre}</option>`;
                 $("#select-pais").append(paises);
             }
         }
@@ -61,7 +61,7 @@ const getEstados = () => {
         dataType: "Json",
         success: function(response) {
             for (var key in response) {
-                let estados = `<option value="" selected disabled hidden>Select your city</option><option value="${response[key].display}">${response[key].display}</option>`;
+                let estados = `<option value="" selected disabled hidden>Select your city</option><option value="${response[key].id}">${response[key].estadonombre}</option>`;
                 $("#select-estado").append(estados);
             }
         }
@@ -74,7 +74,7 @@ $("#tuser1").change(function() {
        $("#apostador").val(apostador);
 
    } else {
-    $("#apostador").val("null");        
+    $("#apostador").val("null");
 }
 });
 
@@ -94,7 +94,6 @@ $("#tuser3").change(function() {
        $("#visitante").val(visitante);
 
    } else {
-    $("#visitante").val("null");        
+    $("#visitante").val("null");
 }
 });
-

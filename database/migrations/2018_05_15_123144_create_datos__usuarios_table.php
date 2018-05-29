@@ -19,17 +19,21 @@ class CreateDatosUsuariosTable extends Migration
             $table->string('apellidos',120);
             $table->date('fecha_nacimiento');
             $table->string('celular',20);
-            $table->string('ciudad',30);
-            $table->string('pais',80);
+
+            $table->unsignedInteger('id_pais');
+            $table->foreign('id_pais')->references('id')->on('cat__paises');
+            $table->unsignedInteger('id_ciudad');
+            $table->foreign('id_ciudad')->references('id')->on('cat__estados');
+
             $table->string('correo',120);
             //Comienzan los foreign key
             $table->unsignedInteger('id_usuario');
             $table->foreign('id_usuario')->references('id')->on('users');
              $table->unsignedInteger('id_rol');
             $table->foreign('id_rol')->references('id')->on('cat__usuarios');
-           /* $table->unsignedInteger('id_tipo_usuario');
-            $table->foreign('id_tipo_usuario')->references('id')->on('cat__usuarios');
-            */$table->timestamps();
+
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

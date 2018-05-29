@@ -18,4 +18,10 @@ class StaticController extends Controller
       // code...
       return view('statics.privacidad');
     }
+
+    public function rules()
+    {
+      // code...
+      return view('statics.rules');
+    }
 }

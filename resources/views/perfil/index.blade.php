@@ -23,11 +23,11 @@
 							</li>
 							<li>
 								<!-- <label for="nombre">Apellidos</label> -->
-								<input type="text" name="pais" id="" value="{{ $dataUser->pais}}" placeholder="País">
+								<input type="text" name="pais" id="" value="{{ $dataUser->pais->paisnombre}}" placeholder="País">
 							</li>
 							<li>
 								<!-- <label for="nombre">Apellidos</label> -->
-								<input type="text" name="ciudad" id="" value="{{ $dataUser->ciudad}}" placeholder="Estado">
+								<input type="text" name="ciudad" id="" value="{{ $dataUser->ciudad->estadonombre}}" placeholder="Estado">
 							</li>
 							<li class="twoInputs tooltip" >
 								<!-- <label for="nombre">Correo electrónico</label> -->

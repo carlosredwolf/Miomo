@@ -45,7 +45,7 @@
 
 	  		 <button class="avatar">
 	  					<i class="avatar fas fa-user-circle"></i>
-	  			</button> 
+	  			</button>
 
 	  		 <div class="dropdown user">
 	    			<button class="dropbtn">{{ Auth::user()->name }}
@@ -60,7 +60,7 @@
 						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-	  			</div> 
+	  			</div>
 	  		</div>
 	  		<div class="navbar margin-topone responsive" id="responsiveMenu">
 				<div class="dropdown">
@@ -75,7 +75,7 @@
 	  	</section>
 
     <section class="quiniela">
-      <div class="container">	
+      <div class="container">
 	  		@yield('content')
 		</div>
     </section>
@@ -88,7 +88,7 @@
 				<!--<li><a href="terminos">Términos y condiciones</a></li>
 				<li><a href="privacidad">Política de privacidad</a></li>-->
 			</ul>
-			<p>Copyright © miomo.mx</p>
+			<p>Copyright © miomo.net</p>
 		</div>
 	</footer>
 
