@@ -124,7 +124,7 @@
 			<div class="dropdown">
 				<button onclick="toggleMenu()" id="toggleM" class="dropbtn">Index</button>
 				  <div id="myDropdown" class="dropdown-content menuNone">
- 	   				<a>REGLAS DE LA QUINIELA </a>
+ 	   				<a>POOL RULES</a>
   				  </div>
 			</div>
 		</div>
