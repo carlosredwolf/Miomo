@@ -1,12 +1,17 @@
 <?php
 
 namespace Miomo\Http\Controllers\Auth;
-
 use Miomo\User;
+use Miomo\Datos_Usuario;
+use Miomo\cat__estados as Estado;
 use Miomo\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Mail;
+use Miomo\Rules\Uppercase;
+use Miomo\Rules\CheckAge;
+use Miomo\RolesInteres;
 
 class RegisterController extends Controller
 {
@@ -28,7 +33,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/comprobar';
 
     /**
      * Create a new controller instance.
@@ -49,9 +54,23 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:255|unique:users',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'g-recaptcha-response' => 'required|recaptcha',
+            'apellidos' => 'required',
+            'pais' => 'required',
+            'ciudad' => 'required',
+            'celular' => 'required',
+            'ciudad' => 'required',
+            'fecha_nacimiento' => [
+                'required',function($attribute, $value, $fail) {
+                    $edad= intval((strtotime("now")-strtotime($value))/31536000);
+                    if ($edad<18) {
+                        return $fail(' You need to be of legal age.');
+                    }
+                },
+            ],
         ]);
     }
 
@@ -61,12 +80,44 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Miomo\User
      */
-    protected function create(array $data)
+    protected function create(Array $data)
     {
-        return User::create([
+        $data['confirmation_code'] = str_random(25);
+        $user=User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'confirmation_code' => $data['confirmation_code'],
         ]);
+
+        $id_user=$user->id;
+        $id_rol=3;
+        $ciudad = Estado::where('estadonombre',$data['ciudad'])->first();
+        $datosUsuario=Datos_Usuario::create([
+            'nombre'=>$data['nombre'],
+            'apellidos'=>$data['apellidos'],
+            'id_pais'=>$ciudad->ubicacionpaisid,
+            'id_ciudad'=>$ciudad->id,
+            'fecha_nacimiento'=>$data['fecha_nacimiento'],
+            'celular'=>$data['celular'],
+            'correo'=>$data['email'],
+            'id_usuario'=>$id_user,
+            'id_rol' => $id_rol]);
+
+        $RolesInteres=RolesInteres::create([
+            'apostador'=>$data['apostador'],
+            'book'=>$data['book'],
+            'visitante'=>$data['visitante'],
+            'nombre_usuario'=>$data['name'],
+        ]);
+
+        Mail::send('emails.confirmation_code', $data, function($message) use ($data) {
+            $message->to($data['email'], $data['name'])->subject('Please confirm your email');
+        });
+
+
+        return $user;
     }
+
+
 }
