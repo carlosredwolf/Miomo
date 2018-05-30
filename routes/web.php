@@ -57,4 +57,6 @@ Route::post('estados/{code}','CommonController@estadospost');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/puntosjornada','RolesInteresController@CalcularPuntosJornada');
+
 Route::post('savedatainteres', 'RolesInteresController@store');

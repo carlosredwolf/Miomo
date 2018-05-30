@@ -116,6 +116,7 @@
                                     </span>
                                 @endif
 							</li>
+							<li  class="li-register"><input type="email" name="email_confirmation" id="" placeholder="Confirm email" required></li>
 							<li  class="li-register"><input type="password" name="password" id="myPassword" placeholder="Password" required>
 							@if ($errors->has('password'))
                                     <span class="invalid-feedback">
