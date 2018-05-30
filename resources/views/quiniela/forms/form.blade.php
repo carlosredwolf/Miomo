@@ -29,15 +29,15 @@
         <label class="eEquipo1" for="radio-{{$partido->id}}"><img src="{{asset($route1)}}"> <span>{{$partido->local->nombre}}</span></label>
         <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=1>
       </div>
-        <div class ="deEmpate">
-          <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=2>
-          <label  class ="eEmpate" for="radio-{{$partido->id}}">Empate</label>
-        </div>
-        <div>
-          <input  class="radio square" type="radio" name="radio-{{$partido->id}}" value=3>
-          <label class="eEquipo2" for="radio-{{$partido->id}}"><img src="{{asset($route2)}}" >	<span class="nomEquipo2">{{$partido->visitante->nombre}}</span></label>
-        </div>
+      <div class ="deEmpate">
+        <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=2>
+        <label  class ="eEmpate" for="radio-{{$partido->id}}">Empate</label>
       </div>
+      <div>
+        <input  class="radio square" type="radio" name="radio-{{$partido->id}}" value=3>
+        <label class="eEquipo2" for="radio-{{$partido->id}}"><img src="{{asset($route2)}}" >	<span class="nomEquipo2">{{$partido->visitante->nombre}}</span></label>
+      </div>
+    </div>
     </fieldset>
     @php
       $i++;
