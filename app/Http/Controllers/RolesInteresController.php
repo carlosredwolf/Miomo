@@ -96,9 +96,12 @@ class RolesInteresController extends Controller
         //
     }
 
-    public function CalcularPuntosJornada(){
-        $Apuestas=Apuesta::Where('id_quiniela',1)->get();
-        $Partidos=Partido::All();
+    public function CalcularPuntosJornada($id_quiniela,$id_jornada){
+
+
+        $Quinielas=Quiniela::Where('id_jornada',1)->get();
+        $Apuestas=Apuesta::Where('id_quiniela',8)->get();
+        $Partidos=Partido::Where('id_jornada',1)->get();
 
         $ApuestaData=array();
         foreach ($Apuestas as $apuesta) {
@@ -130,9 +133,17 @@ class RolesInteresController extends Controller
             $Puntaje=$Puntaje+10;
         }            
     }
-    if ($Puntaje>50) {
-                # code...
-        $Puntaje=$Puntaje+5;   
+    if($Puntaje>=160) {
+
+       $Puntaje=$Puntaje+50;
+
+    } else if($Puntaje>=100) {
+
+        $Puntaje=$Puntaje+30;
+
+    } else if($Puntaje>=50) {
+
+        $Puntaje=$Puntaje+5;
     }
         //La variable puntaje se la mandaremos a la tabla de quinielas
     echo $Puntaje;
