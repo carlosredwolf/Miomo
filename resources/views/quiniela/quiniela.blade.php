@@ -37,7 +37,7 @@
 
 		<section class="header_quiniela main-menu-sizeone">
 
-			<div class="navbar margin-topone" id="menuDesktop">
+			<div class="navbar margin-topone " id="menuDesktop">
 	  			<a class="active" href="quiniela">The pool</a>
 					<a href="misquinielas">My pools</a>
 					<a href="rules">World Cup Pool Rules</a>
@@ -91,7 +91,7 @@
               <span class="tam1">football soccer</span>
               <span class="tam2">champions league </span>
               </p> -->
-            <div style="" class="navbar margin-topone" id="menuDesktop">
+            <div style="" class="navbar margin-topone ">
             @foreach ($jornadas as $jornada)
 							@if ($jornada->status->id ==1)
 								<h4><span class="tam3"><a href="jornada/{{$jornada->id}}">{{$jornada->descripcion}}</a></span></h4>

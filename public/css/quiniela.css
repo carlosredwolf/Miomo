@@ -471,6 +471,7 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
  .containerResultados .container .sobre .titulo-proxPartidos h2{margin:170px auto 20px; font-size:30px; width:80%;letter-spacing: 5px;}
  .containerResultados .container .sobre .titulo-proxPartidos h2 span{display:block; font-size:18px;letter-spacing: 2px;}
 
+ .navbar.margin-topone {text-align: center;}
 
 /*  ---------------------------------------------------------------------------------------------  */
 
@@ -1070,6 +1071,9 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
   }
   .quiniela .container .quiniela-container {
     margin: 0;
+  }
+  .header_quiniela .navbar a:first-child {
+    margin-left: 10%;
   }
 }
 @media screen and (max-width: 400px) {
