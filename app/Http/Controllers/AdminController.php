@@ -93,7 +93,9 @@ class AdminController extends Controller
         $partidoObj->fecha_partido = $partido->fecha_partido;
         $partidoObj->hora_partido = $partido->hora_partido;
         $partidoObj->local = $partido->local;
+        $partidoObj->score_local = $partido->score_local;
         $partidoObj->visitante = $partido->visitante;
+        $partidoObj->score_visitante = $partido->score_visitante;
         $partidoObj->grupo = $partido->grupo;
         $partidoObj->status = $partido->status;
         $partidoObj->resultado = $partido->resultado;
@@ -133,10 +135,54 @@ class AdminController extends Controller
       $partidos = collect($partidos)->groupBy('id');
 
       $respuesta->id = $request->input('idJ');
-      $respuesta->scores = $scores;
-      $respuesta->partidos = $partidos;
-      // return response()->json($respuesta,200);
+      //$respuesta->scores = $scores;
+      //$respuesta->partidos = $partidos;
+      //return response()->json($respuesta,200);
 
+      foreach ($partidos as $partido) {
+        // code...
+            //return $partido->first()->id;
+        foreach ($scores as $score) {
+          // code...
+          foreach ($score as $equipo) {
+            // code...
+            if ($partido->first()->id == $equipo->partido) {
+              // code...
+              if ($equipo->score == 1) {
+                // code...
+                $partido->first()->score_local = $equipo->valor;
+              }elseif ($equipo->score == 2) {
+                // code...
+                $partido->first()->score_visitante = $equipo->valor;
+              }
+            }
+          }
+        }
+
+        if ($partido->first()->score_local > $partido->first()->score_visitante) {
+          // code...
+          $partido->first()->resultado->id = 1;
+        }elseif ($partido->first()->score_local == $partido->first()->score_visitante) {
+          // code...
+          $partido->first()->resultado->id = 2;
+        }elseif ($partido->first()->score_local < $partido->first()->score_visitante) {
+          // code...
+          $partido->first()->resultado->id = 3;
+        }
+      }
+
+      //$respuesta->partidos = $partidos;
+      foreach ($partidos as $partido) {
+        // code...
+        $partidoBD = Partido::find($partido->first()->id);
+        $partidoBD->score_local = $partido->first()->score_local;
+        $partidoBD->score_visitante = $partido->first()->score_visitante;
+        $partidoBD->id_resultado = $partido->first()->resultado->id;
+
+        $partidoBD->save();
+
+      }
+      return view('admin.alert.alert');
 
     }
 
