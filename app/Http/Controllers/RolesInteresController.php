@@ -8,7 +8,9 @@ use Miomo\User;
 use Miomo\Quiniela;
 use Miomo\Partido;
 use Miomo\Apuesta;
+use Miomo\Jornada;
 use stdClass;
+use Illuminate\Support\Facades\DB;
 
 class RolesInteresController extends Controller
 {
@@ -96,13 +98,15 @@ class RolesInteresController extends Controller
         //
     }
 
-    public function CalcularPuntosJornada($id_quiniela,$id_jornada){
+    public function CalcularPuntosJornada($Jornada_id){
+        //$AllQuinielas=Quiniela::all();
+        
+        $Quinielas=Quiniela::Where('id_jornada',$Jornada_id)->get();
 
-
-        $Quinielas=Quiniela::Where('id_jornada',1)->get();
-        $Apuestas=Apuesta::Where('id_quiniela',8)->get();
-        $Partidos=Partido::Where('id_jornada',1)->get();
-
+        $Partidos=Partido::Where('id_jornada',$Jornada_id)->get();
+        foreach ($Quinielas as $qui) {
+        $Apuestas=DB::table('apuestas')->Where('id_quiniela','=',$qui->id)->get();
+            # code...
         $ApuestaData=array();
         foreach ($Apuestas as $apuesta) {
             # code...
@@ -146,7 +150,20 @@ class RolesInteresController extends Controller
         $Puntaje=$Puntaje+5;
     }
         //La variable puntaje se la mandaremos a la tabla de quinielas
-    echo $Puntaje;
+    $idQuiniela=$qui->id;
+    $datosQuiniela = Quiniela::find($idQuiniela);
+
+    $datosQuiniela->puntaje=$Puntaje;
+    if($datosQuiniela->save()){
+                //echo $Apuestas;
+             return view('admin.alert.poolalert');
+        }
+        else
+        {
+            echo "Error guardando la actualizacion";
+            //return view('admin.alert.alert');
+        }
+}
 
 }
 }
