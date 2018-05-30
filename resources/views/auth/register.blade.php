@@ -101,13 +101,13 @@
 						</ul>
 						<h2>User data</h2>
 						<ul>
-							<li><input type="text" name="name" id="" value="{{ old('name') }}" placeholder="Username" required autofocus></li>
+							<li class="li-register"><input type="text" name="name" id="" value="{{ old('name') }}" placeholder="Username" required autofocus></li>
 							 @if ($errors->has('name'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
-							<li>
+							<li class="li-register">
 								<!-- <label for="nombre">Dirección</label> -->
 								<input type="email" name="email" id="" value="{{ old('email') }}" placeholder="Email" required autofocus>
 							@if ($errors->has('email'))
@@ -116,8 +116,7 @@
                                     </span>
                                 @endif
 							</li>
-							<li><input type="email" name="email_confirmation" id="" placeholder="Confirm email" required></li>
-							<li><input type="password" name="password" id="myPassword" placeholder="Password" required>
+							<li  class="li-register"><input type="password" name="password" id="myPassword" placeholder="Password" required>
 							@if ($errors->has('password'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -127,7 +126,7 @@
 							<br>
 							<br>
 							<br>
-							<li><input type="password" name="password_confirmation" id="" placeholder="Confirm password" required></li>
+							<li  class="li-register"><input type="password" name="password_confirmation" id="" placeholder="Confirm password" required></li>
 							{!! Recaptcha::render() !!}
 							@if ($errors->has('g-recaptcha-response'))
                                     <span class="invalid-feedback">
@@ -162,7 +161,13 @@
 	text-transform:uppercase;
 	letter-spacing:2px;
 	word-spacing: 2px;
+  font-size: 15px;
 }
+.li-register{
+  margin: 0 0 38px 0 !important;
+  font-size: 8px !important;
+}
+
 </style>
 <script src="{{ asset('js/intereses.js') }}" defer></script>
 <script src="{{ asset('js/strength.js') }}"></script>
