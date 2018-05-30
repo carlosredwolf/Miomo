@@ -28,6 +28,9 @@
           <li>
             <input type="text" name="local" id="local-input" value="" placeholder="local" style="visibility:hidden">
             <select name="local" id="select-local">
+              @foreach ($partido->grupo->equipos as $equipo)
+
+              @endforeach
             </select>
           </li>
           <li>

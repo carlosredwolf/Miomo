@@ -45,6 +45,7 @@ class AdminController extends Controller
       $partidos = $jornada->partidos;
       $partidosStr = json_encode($partidos);
 
+
       return view('admin.jornada',compact('partidos','name','partidosStr','id'));
 
     }
@@ -188,6 +189,6 @@ class AdminController extends Controller
     public function partido($id)
     {
       // code...
-      
+
     }
 }

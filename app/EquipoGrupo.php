@@ -15,4 +15,8 @@ class EquipoGrupo extends Model
     protected $fillable = [
         'id_grupo', 'id_equipo',
     ];
+
+    public function equipo(){
+      return $this->belongsTo('Miomo\Equipo', 'id_equipo');
+    }
 }
