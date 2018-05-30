@@ -181,10 +181,9 @@ class AdminController extends Controller
 
         $partidoBD->save();
 
-        return view('admin.alert.alert');
       }
+      return view('admin.alert.alert');
 
-      //return response()->json($respuesta,200);
     }
 
     public function activar($id)
