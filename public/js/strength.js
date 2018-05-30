@@ -68,17 +68,17 @@
                     thismeter.removeClass().html('');
                 } else if (total <= 1) {
                     thismeter.removeClass();
-                    thismeter.addClass('veryweak').html('<p>Seguridad: muy debil</p>');
+                    thismeter.addClass('veryweak').html('<p>Password: very weak</p>');
                 } else if (total == 2) {
                     thismeter.removeClass();
-                    thismeter.addClass('weak').html('<p>Seguridad: debil</p>');
+                    thismeter.addClass('weak').html('<p>Password: weak</p>');
                 } else if (total == 3) {
                     thismeter.removeClass();
-                    thismeter.addClass('medium').html('<p>Seguridad: media</p>');
+                    thismeter.addClass('medium').html('<p>Password: medium</p>');
 
                 } else {
                     thismeter.removeClass();
-                    thismeter.addClass('strong').html('<p>Seguridad: fuerte</p>');
+                    thismeter.addClass('strong').html('<p>Password: strong</p>');
                 }
                 console.log(total);
             }

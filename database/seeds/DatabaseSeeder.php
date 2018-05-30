@@ -32,6 +32,8 @@ class DatabaseSeeder extends Seeder
         PartidosSMFTableSeeder::class,
         PartidosFNLTableSeeder::class,
 
+        EquipoGrupoTableSeeder::class,
+
     ]);
     }
 }

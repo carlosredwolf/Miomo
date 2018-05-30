@@ -32,23 +32,6 @@ class AdminController extends Controller
         // code...
         return response()->json(['mensaje'=> 'NO existen jornadas de ese evento','codigo'=>'404'],404);
       }
-      $jornadasArr = array();
-      foreach ($jornadas as $jornada) {
-        // code...
-        $response = new stdClass;
-        $response->id = $jornada->id;
-        $response->nombre = $jornada->nombre;
-        $response->descripcion = $jornada->descripcion;
-        $response->sig_jornada = $jornada->sig_jornada;
-        $response->fecha_inicio = $jornada->fecha_inicio;
-        $response->fecha_fin = $jornada->fecha_fin;
-        $response->status = $jornada->status;
-
-        array_push($jornadasArr, $response);
-      }
-
-      $responseData = $jornadasArr;
-      $jornadas = $responseData;
 
       return view('admin.admin',compact('jornadas'));
     }
@@ -61,6 +44,7 @@ class AdminController extends Controller
       $name = $jornada->descripcion;
       $partidos = $jornada->partidos;
       $partidosStr = json_encode($partidos);
+
 
       return view('admin.jornada',compact('partidos','name','partidosStr','id'));
 
@@ -86,24 +70,8 @@ class AdminController extends Controller
       $partidos = Partido::where('id_jornada', $response->id)->get();
 
       $partidos = $partidos->sortBy('hora_partido')->sortBy('fecha_partido');
-      $partidosOut = array();
-      foreach ($partidos as $partido) {
-        $partidoObj = new stdClass;
-        $partidoObj->id = $partido->id;
-        $partidoObj->fecha_partido = $partido->fecha_partido;
-        $partidoObj->hora_partido = $partido->hora_partido;
-        $partidoObj->local = $partido->local;
-        $partidoObj->score_local = $partido->score_local;
-        $partidoObj->visitante = $partido->visitante;
-        $partidoObj->score_visitante = $partido->score_visitante;
-        $partidoObj->grupo = $partido->grupo;
-        $partidoObj->status = $partido->status;
-        $partidoObj->resultado = $partido->resultado;
 
-        array_push($partidosOut,$partidoObj);
-      }
-
-      $response->partidos = $partidosOut;
+      $response->partidos = $partidos;
 
       $response->status = $jornada->status;
 
@@ -113,7 +81,6 @@ class AdminController extends Controller
     public function store(Request $request)
     {
       // code...
-      $respuesta = new stdClass();
       $response = $request->input();
       $partidos = json_decode($response['partidos']);
       $scores =array();
@@ -125,7 +92,14 @@ class AdminController extends Controller
           $partido = explode('-',$key);
           $score->partido = intval($partido[1]);
           $score->score = intval($partido[2]);
-          $score->valor = intval($value);
+          if (is_null($value)) {
+            // code...
+            $score->valor = null;
+          }else {
+            // code...
+            $score->valor = intval($value);
+          }
+
 
           array_push($scores,$score);
           unset($score);
@@ -134,14 +108,10 @@ class AdminController extends Controller
       $scores = collect($scores)->groupBy('partido');
       $partidos = collect($partidos)->groupBy('id');
 
-      $respuesta->id = $request->input('idJ');
-      //$respuesta->scores = $scores;
-      //$respuesta->partidos = $partidos;
-      //return response()->json($respuesta,200);
-
       foreach ($partidos as $partido) {
         // code...
-            //return $partido->first()->id;
+        $partidoBD = Partido::find($partido->first()->id);
+
         foreach ($scores as $score) {
           // code...
           foreach ($score as $equipo) {
@@ -150,40 +120,34 @@ class AdminController extends Controller
               // code...
               if ($equipo->score == 1) {
                 // code...
-                $partido->first()->score_local = $equipo->valor;
+                $partidoBD->score_local = $equipo->valor;
               }elseif ($equipo->score == 2) {
                 // code...
-                $partido->first()->score_visitante = $equipo->valor;
+                $partidoBD->score_visitante = $equipo->valor;
               }
             }
           }
         }
+        if (!is_null($partidoBD->score_local) && !is_null($partidoBD->score_visitante)) {
+          // code...
+          if ($partidoBD->score_local > $partidoBD->score_visitante) {
+            // code...
+            $partidoBD->id_resultado = 1;
 
-        if ($partido->first()->score_local > $partido->first()->score_visitante) {
-          // code...
-          $partido->first()->resultado->id = 1;
-        }elseif ($partido->first()->score_local == $partido->first()->score_visitante) {
-          // code...
-          $partido->first()->resultado->id = 2;
-        }elseif ($partido->first()->score_local < $partido->first()->score_visitante) {
-          // code...
-          $partido->first()->resultado->id = 3;
+          }elseif ($partidoBD->score_local == $partidoBD->score_visitante) {
+            // code...
+            $partidoBD->id_resultado = 2;
+
+          }elseif ($partidoBD->score_local < $partidoBD->score_visitante) {
+            // code...
+            $partidoBD->id_resultado = 3;
+
+          }
         }
-      }
-
-      //$respuesta->partidos = $partidos;
-      foreach ($partidos as $partido) {
-        // code...
-        $partidoBD = Partido::find($partido->first()->id);
-        $partidoBD->score_local = $partido->first()->score_local;
-        $partidoBD->score_visitante = $partido->first()->score_visitante;
-        $partidoBD->id_resultado = $partido->first()->resultado->id;
-
         $partidoBD->save();
-
       }
-      return view('admin.alert.alert');
 
+      return view('admin.alert.alert');
     }
 
     public function activar($id)
@@ -220,5 +184,11 @@ class AdminController extends Controller
 
       $jornada->save();
       return redirect('admin');
+    }
+
+    public function partido($id)
+    {
+      // code...
+
     }
 }

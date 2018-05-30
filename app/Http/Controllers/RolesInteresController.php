@@ -5,6 +5,10 @@ namespace Miomo\Http\Controllers;
 use Illuminate\Http\Request;
 use Miomo\RolesInteres;
 use Miomo\User;
+use Miomo\Quiniela;
+use Miomo\Partido;
+use Miomo\Apuesta;
+use stdClass;
 
 class RolesInteresController extends Controller
 {
@@ -91,4 +95,58 @@ class RolesInteresController extends Controller
     {
         //
     }
+
+    public function CalcularPuntosJornada($id_quiniela,$id_jornada){
+
+
+        $Quinielas=Quiniela::Where('id_jornada',1)->get();
+        $Apuestas=Apuesta::Where('id_quiniela',8)->get();
+        $Partidos=Partido::Where('id_jornada',1)->get();
+
+        $ApuestaData=array();
+        foreach ($Apuestas as $apuesta) {
+            # code...
+            $apuestaObj = new stdClass;
+            $apuestaObj->id=$apuesta->id;
+            $apuestaObj->Resultado=$apuesta->id_resultado;
+            array_push($ApuestaData,$apuestaObj);
+        }
+        $PartidoData=array();
+        foreach ($Partidos as $partido) {
+            # code...
+            $partidoObj = new stdClass;
+            $partidoObj->id=$partido->id;
+            $partidoObj->Resultado=$partido->id_resultado;
+            array_push($PartidoData,$partidoObj);
+        }
+        //Inicializo mi puntaje en 0
+        $Puntaje=0;
+        //Recorro 16 veces por que son 16 partidos por jornada jaja
+        for ($i=0; $i <16 ; $i++) { 
+            # code...
+           //Obtengo los resultados de cada uno 
+         $ValorPartido=$PartidoData[$i]->Resultado;
+         $ValorApuesta=$ApuestaData[$i]->Resultado;
+           //Cada vez que los resultados coincidan añadimos 10 puntos
+         if ($ValorPartido==$ValorApuesta) {
+                # code...
+            $Puntaje=$Puntaje+10;
+        }            
+    }
+    if($Puntaje>=160) {
+
+       $Puntaje=$Puntaje+50;
+
+    } else if($Puntaje>=100) {
+
+        $Puntaje=$Puntaje+30;
+
+    } else if($Puntaje>=50) {
+
+        $Puntaje=$Puntaje+5;
+    }
+        //La variable puntaje se la mandaremos a la tabla de quinielas
+    echo $Puntaje;
+
+}
 }

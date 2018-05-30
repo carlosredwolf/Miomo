@@ -16,6 +16,7 @@ class CreateQuinielasTable extends Migration
         Schema::create('quinielas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('aciertos')->nullable();
+            $table->integer('puntaje')->nullable();
             //Comienzan llaves foraneas
             $table->unsignedInteger('id_usuario');
             $table->foreign('id_usuario')->references('id')->on('users');

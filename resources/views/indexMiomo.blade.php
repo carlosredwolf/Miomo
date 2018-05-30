@@ -194,7 +194,7 @@
 	<div class="container">
 
 		<div class="cnt-video" id ="videoContainer">
-			<video id="video" controls preload="metadata" poster="images/repVideo.png">
+			{{-- <video id="video" controls preload="metadata" poster="images/repVideo.png">
 				<source src="video/bitcoin.mp4" type="video/mp4" >
 					<source src="video/bitcoin.mp4" type="video/ogg">
 					</video>
@@ -205,7 +205,7 @@
 							<input type="range" id="progressBar" value="0">
 							<!-- <span  id="progressBar"></span> -->
 						</li>
-					</ul>
+					</ul> --}}
 				</div>
 
 				<div class="cnt-banner">
@@ -324,20 +324,20 @@
 			</ul>
 		</div>
 	</section>
-		<footer>
-			<div class="container">
-				<a href="/"><img src="images/secondary-logo.svg" /></a>
-				<ul>
+	<footer>
+		<div class="container">
+			<a href="/"><img src="images/secondary-logo.svg" /></a>
+			<ul>
 					<!--<li><a href="terminos">Terms and conditions</a></li>
-					<li><a href="privacidad">Política de privacidad</a></li>-->
-				</ul>
-				<p>Copyright © miomo.net</p>
-			</div>
-		</footer>
+						<li><a href="privacidad">Política de privacidad</a></li>-->
+					</ul>
+					<p>Copyright © miomo.net</p>
+				</div>
+			</footer>
 
-		<script src="js/index.js" type="text/javascript" ></script>
-		<script src="{{ asset('js/intereses.js') }}" defer></script>
-		<script src="js/videoScript.js" type="text/javascript" ></script>
-<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
-	</body>
-	</html>
+			<script src="js/index.js" type="text/javascript" ></script>
+			<script src="{{ asset('js/intereses.js') }}" defer></script>
+			<script src="js/videoScript.js" type="text/javascript" ></script>
+			<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+		</body>
+		</html>

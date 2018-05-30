@@ -208,7 +208,7 @@ section.quiniela .container{
 .quiniela .container .quiniela-container .contenido .titulo-resultados h3, .quiniela .container .quiniela-container .contenido .titulo-proxPartidos h3{font:bold 20px 'poiretone-regular', sans-serif;text-transform:uppercase; letter-spacing:3px; margin:5px auto 50px;color:#CCAF89; width:auto;  height:30px; text-align: center;}
 
 .quiniela .container .quiniela-container .contenido .titulo-quiniela p{font:25px  'breamcatcher', helvetica, arial, sans-serif; float:left;margin:30px 0 30px 70px;color:#CCAF89; width:55%; height:80px; text-transform:uppercase;letter-spacing:5px; padding-left:90px; padding-top:5px;
-background: transparent url('../images/ball3.png') no-repeat bottom left; border:1px solid blue; }
+background: transparent url('../images/ball3.png') no-repeat bottom left; /*border:1px solid blue;*/ }
 .quiniela .container .quiniela-container .contenido .titulo-quiniela img{float:left;margin:80px 70px 30px 190px; width:193px;  }
 .quiniela .container .quiniela-container .contenido .titulo-quiniela p span{display:block;}
 .quiniela .container .quiniela-container .contenido .titulo-quiniela p .tam1 {font-size: 40px;}
@@ -513,7 +513,7 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
 
     .navbar.responsive .dropdown button.dropbtn{
       background: url(../images/arrowDown2.png) no-repeat bottom center; background-size: 35px;
-      text-align: center; width:60%;    padding: 5px; padding-bottom:8px;position: relative; z-index: 1005; border:1px solid blue;
+      text-align: center; width:60%;    padding: 5px; padding-bottom:8px;position: relative; z-index: 1005; /*border:1px solid blue;*/
     }
 
 
@@ -568,7 +568,7 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
       color: #CCAF88;
       padding-bottom:5px;
       display: inline-block;
-      border:1px solid pink;
+      /*border:1px solid pink;*/
       clear:both;
       position:relative;
       -webkit-transition: all 0.5s ease;
@@ -643,9 +643,9 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
     /* ------------------------------------------------------- */
 
     /*--- Sección de quiniela  ----*/
-    SECTION.quiniela {margin: 60px 0 10px;border: 1px solid orange;}
-    .main-menu-sizetwo {height: auto; border:1px solid magenta;}
-    .main-menu-sizeone {height: auto; border:1px solid pink;}
+  SECTION.quiniela {margin: 60px 0 10px;/*border: 1px solid orange;*/}
+.main-menu-sizetwo {height: auto; /*border:1px solid magenta;*/}
+.main-menu-sizeone {height: auto; /*border:1px solid pink;*/}
 
     section.quiniela .container {
       margin: 0 40px;
@@ -969,7 +969,7 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
     position: absolute;
     top:0;
     left:0;
-    border: 1px solid red /*#ccc*/;
+    /*border: 1px solid red #ccc*/;
   }
   .resultados .container .quiniela-container .contenido .formQuiniela fieldset .resultadoExito {
     background: transparent url(../images/paloma.png) no-repeat top right;
@@ -1098,7 +1098,7 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
       padding-bottom:5px;
       margin:3px 0 0 5px;
       display: block;
-      border:1px solid pink;
+      /*border:1px solid pink*/;
       clear:both;
       position:relative;
       z-index:1003;
@@ -1177,7 +1177,7 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
     position: absolute;
     top:0;
     left:0;
-    border: 1px solid red /*#ccc*/;
+    /*border: 1px solid red #ccc*/;
   }
   .resultados .container .quiniela-container .contenido .formQuiniela fieldset .resultadoExito {
     background: transparent url(../images/paloma.png) no-repeat top right;

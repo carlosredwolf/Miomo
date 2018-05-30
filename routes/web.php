@@ -30,6 +30,7 @@ Route::group(['middleware' => ['check_confirm']], function () {
     Route::get('admin/activar/{id}','AdminController@activar');
     Route::get('admin/abrir/{id}','AdminController@abrir');
 
+    Route::get('admin/editarpartido','AdminController@partido');
 
     Route::post('admin','AdminController@store');
 
@@ -55,5 +56,7 @@ Route::get('estados','CommonController@estados');
 Route::post('estados/{code}','CommonController@estadospost');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/puntosjornada','RolesInteresController@CalcularPuntosJornada');
 
 Route::post('savedatainteres', 'RolesInteresController@store');
