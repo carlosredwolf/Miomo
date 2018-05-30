@@ -8,16 +8,16 @@
 
                 <div class="card-body">
                 <meta name="csrf-token" content="{{ csrf_token() }}" />
-                 
+
                     <form id="form-register" method="POST" action="{{ route('register') }}">
                         @csrf
-                        
+
                         <h2>General data</h2>
 						<ul>
 							<li>
 								<!-- <label for="nombre">Nombre(s)</label> -->
 								<input type="text" name="nombre" id="" value="{{ old('nombre') }}" placeholder="Name(s)" required autofocus>
-								
+
 							</li>
 							<li>
 								<input type="text" name="apellidos" id="" value="{{ old('apellidos') }}" placeholder="Last name" required autofocus>
@@ -75,6 +75,9 @@
 						</ul>
 						<h2>User type</h2>
 						<ul class="tipoUsuario">
+							<input id="apostador" name="apostador" type="text" value="null" style="visibility:hidden">
+							<input id="book" name="book" type="text" value="null" style="visibility:hidden">
+							<input id="visitante" name="visitante" type="text" value="null" style="visibility:hidden">
 							<li>
 								<label for="tuser1" class="checkbox">
         						<input type="checkbox" class="checkbox" id="tuser1" name="check_tuser[]" value="apostador" />User</label>
@@ -132,7 +135,7 @@
                                 @endif
 							<li>
 								 <button class="btn-light" id="btn-registro" type="submit">Register</button>
-						
+
 							</li>
 						</ul>
                     </form>

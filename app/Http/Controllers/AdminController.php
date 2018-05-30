@@ -57,11 +57,12 @@ class AdminController extends Controller
     {
       $jornada = $this->getJornada($id);
 
+      $id = $jornada->id;
       $name = $jornada->descripcion;
       $partidos = $jornada->partidos;
       $partidosStr = json_encode($partidos);
 
-      return view('admin.jornada',compact('partidos','name','partidosStr'));
+      return view('admin.jornada',compact('partidos','name','partidosStr','id'));
 
     }
 
@@ -110,8 +111,10 @@ class AdminController extends Controller
     public function store(Request $request)
     {
       // code...
+      $respuesta = new stdClass();
       $response = $request->input();
       $partidos = json_decode($response['partidos']);
+      $scores =array();
       foreach ($response as $key => $value) {
         // code...
         if (strpos($key,'score')!== false) {
@@ -119,14 +122,22 @@ class AdminController extends Controller
           $score = new stdClass;
           $partido = explode('-',$key);
           $score->partido = intval($partido[1]);
+          $score->score = intval($partido[2]);
           $score->valor = intval($value);
 
-          array_push($radios,$radio);
-          unset($radio);
+          array_push($scores,$score);
+          unset($score);
         }
       }
-      //$response = json_decode($response);
-      return $partidos;
+      $scores = collect($scores)->groupBy('partido');
+      $partidos = collect($partidos)->groupBy('id');
+
+      $respuesta->id = $request->input('idJ');
+      $respuesta->scores = $scores;
+      $respuesta->partidos = $partidos;
+      // return response()->json($respuesta,200);
+
+
     }
 
     public function activar($id)

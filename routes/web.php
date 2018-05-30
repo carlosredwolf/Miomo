@@ -30,6 +30,7 @@ Route::group(['middleware' => ['check_confirm']], function () {
     Route::get('admin/activar/{id}','AdminController@activar');
     Route::get('admin/abrir/{id}','AdminController@abrir');
 
+
     Route::post('admin','AdminController@store');
 
     Route::post('quiniela','QuinielaController@store');
