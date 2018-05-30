@@ -5,6 +5,9 @@ namespace Miomo\Http\Controllers;
 use Illuminate\Http\Request;
 use Miomo\RolesInteres;
 use Miomo\User;
+use Miomo\Quiniela;
+use Miomo\Partidos;
+use Miomo\Apuesta;
 
 class RolesInteresController extends Controller
 {
@@ -90,5 +93,10 @@ class RolesInteresController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function CalcularPuntosJornada(){
+        $Apuestas=Apuesta::All();
+        return response()->json($Apuestas);
     }
 }
