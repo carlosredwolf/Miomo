@@ -111,42 +111,50 @@
 	              $id2 = $partido->visitante->id;
 	              $route1 = '../images/equipos/'.$id1.'.png';
 	              $route2 = '../images/equipos/'.$id2.'.png';
-								if (rand(0,2) == 0) {
+								if ($partido->resultado->id == 1) {
+									// code...
 									$inputL = true;
 									$inputE = false;
 									$inputV = false;
-								}elseif (rand(0,2) == 1){
+								}elseif ($partido->resultado->id == 2) {
 									// code...
 									$inputL = false;
 									$inputE = true;
 									$inputV = false;
-								}elseif (rand(0,2) == 2) {
+								}elseif ($partido->resultado->id == 3) {
 									// code...
 									$inputL = false;
 									$inputE = false;
 									$inputV = true;
 								}
+							}elseif ($partido->resultado->id == 4) {
+								// code...
+								$inputL = false;
+								$inputE = false;
+								$inputV = false;
+							}
+								$name = 'radio-'.$partido->id;
 	              @endphp
                 <div>
-                  <label  class="eEquipo1" for="radio-1"><img src="{{asset($route1)}}"> <span>{{$partido->local->nombre}}</span></label>
-									{{ Form::radio('radio-1', 'local', $inputL, ['class' => 'radio square'],'disabled') }}
+                  <label  class="eEquipo1" for="{{$name}}"><img src="{{asset($route1)}}"> <span>{{$partido->local->nombre}}</span></label>
+									{{ Form::radio($name, 'local', $inputL, ['class' => 'radio square','disabled' => 'disabled']) }}
                 </div>
                 <div class ="deEmpate">
-									{{ Form::radio('radio-2', 'empate', $inputE, ['class' => 'radio square'],'disabled') }}
+									{{ Form::radio($name, 'empate', $inputE, ['class' => 'radio square','disabled' => 'disabled']) }}
                   {{-- <input class="radio square" type="radio" name="radio-1" disabled> --}}
-                  <label  class ="eEmpate" for="radio-2">Empate</label>
+                  <label  class ="eEmpate" for="{{$name}}">Empate</label>
                 </div>
                 <div>
-									{{ Form::radio('radio-3', 'visita', $inputV, ['class' => 'radio square'],'disabled') }}
+									{{ Form::radio($name, 'visita', $inputV, ['class' => 'radio square','disabled' => 'disabled']) }}
                   {{-- <input  class="radio square" type="radio" name="radio-1" disabled> --}}
-                	<label class="eEquipo2" for="radio-3"><img src="{{asset($route2)}}" >	<span class="nomEquipo2">{{$partido->visitante->nombre}}</span></label>
+                	<label class="eEquipo2" for="{{$name}}"><img src="{{asset($route2)}}" >	<span class="nomEquipo2">{{$partido->visitante->nombre}}</span></label>
                 </div>
 	            </div>
-							@if (rand(0,1) == 1)
-									<div class="resultadoError"></div>
+							{{-- @if (rand(0,1) == 1)
+								<div class="resultadoError"></div>
 							@else
 								<div class="resultadoExito"></div>
-							@endif
+							@endif --}}
 
 	            </fieldset>
 	          @endforeach

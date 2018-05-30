@@ -8,7 +8,9 @@ use GuzzleHttp\Client;
 use Miomo\Jornada;
 use Miomo\Evento;
 use Miomo\Partido;
+use Miomo\Quiniela;
 use stdClass;
+use Auth;
 
 class EventoController extends Controller
 {
