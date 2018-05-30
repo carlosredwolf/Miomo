@@ -86,6 +86,7 @@
             </p> -->
 
         <a class="nav-link" href="../admin">Back</a>
+				<label class="eEquipo1">USE ONLY NUMBERS</label>
         </div>
 				<meta name="csrf-token" content="{{ csrf_token() }}" />
         <!-- Day -->

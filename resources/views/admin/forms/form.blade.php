@@ -20,7 +20,7 @@
       @endphp
       <div>
         <label class="eEquipo1" for="score-{{$partido->id}}-{{$i}}"><img src="{{asset($route1)}}"> <span>{{$partido->local->nombre}}</span></label>
-        <input class="radio square" type="number" name="score-{{$partido->id}}-{{$i}}" >
+        <input class="radio square" type="text" name="score-{{$partido->id}}-{{$i}}" maxlength="1" pattern="[0-9]+" value="{{$partido->score_local}}" required>
       </div>
       <div class ="deEmpate">
 
@@ -29,7 +29,7 @@
         $i++;
       @endphp
       <div>
-        <input  class="radio square" type="number" name="score-{{$partido->id}}-{{$i}}" >
+        <input  class="radio square" type="text" name="score-{{$partido->id}}-{{$i}}" maxlength="1" pattern="[0-9]+" value="{{$partido->score_visitante}}" required>
         <label class="eEquipo2" for="score-{{$partido->id}}-{{$i}}"><img src="{{asset($route2)}}" >	<span class="nomEquipo2">{{$partido->visitante->nombre}}</span></label>
       </div>
     </div>
