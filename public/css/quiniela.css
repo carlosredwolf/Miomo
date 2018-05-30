@@ -1061,8 +1061,17 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
 
 }
 
+
 /* ----------------------------------------------------------------------------------- */
 /*  Pantallas iphone 5, 6  */
+@media screen and (min-width: 900px) and (max-width: 1230px) {
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset {
+    width: 100%;
+  }
+  .quiniela .container .quiniela-container {
+    margin: 0;
+  }
+}
 @media screen and (max-width: 400px) {
 
 
@@ -1312,5 +1321,54 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
   }
   .quiniela .container .quiniela-container .contenido .titulo-quiniela img {
     width: 40%;
+  }
+}
+@media screen and (min-width: 200px) and (max-width: 320px) {
+  .quiniela .container h1 {
+    font-size: 30px;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div input[type="radio"] {
+    margin: 0;
+  }
+  .container {
+    margin: 0;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro {
+    height: auto;
+    width: 100%;
+    float: none;
+    margin-bottom: 5px;
+    padding-bottom: 2px;
+    border: 1px solid transparent;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset {
+    padding: .5em 0;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro .deEmpate input[type="radio"] {
+    margin-left: 27%;
+  }
+  .quiniela .container .quiniela-container .contenido .titulo-quiniela img {
+    width: 50%;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div label img {
+    width: 100%;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div:last-child label img {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 380px) {
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro .deEmpate input[type="radio"] {
+    margin-left: 28%;
+  }
+}
+@media screen and (min-width: 380px) and (max-width: 900px){
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro .deEmpate input[type="radio"] {
+    margin-left: 40%;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 437px){
+  section.quiniela .container {
+    margin: 0;
   }
 }
