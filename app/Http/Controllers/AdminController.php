@@ -8,6 +8,9 @@ use GuzzleHttp\Client;
 use Miomo\Jornada;
 use Miomo\Evento;
 use Miomo\Partido;
+use Miomo\EquipoGrupo;
+use Miomo\Equipo;
+use Miomo\Grupo;
 use stdClass;
 
 class AdminController extends Controller
@@ -45,8 +48,43 @@ class AdminController extends Controller
       $partidos = $jornada->partidos;
       $partidosStr = json_encode($partidos);
 
+      $grupos = array();
+      $groups =Grupo::all();
 
-      return view('admin.jornada',compact('partidos','name','partidosStr','id'));
+      $equipos = array();
+
+      foreach ($groups as $group) {
+        // code...
+        if ($group->id != 9) {
+          // code...
+          $grupo =new stdClass;
+          reset($equipos);
+          $grupo->id = $group->id;
+          $grupo->nombre = $group->nombre;
+          $grupo->descripcion = $group->descripcion;
+          $teams = EquipoGrupo::where('id_grupo',$group->id)->get();
+
+          foreach ($teams as $team) {
+            // code...
+            $equipo = new stdClass;
+            $equipo->id =$team->id;
+            $teamDB =Equipo::find($team->id);
+            $equipo->name =$teamDB->nombre;
+
+            array_push($equipos,$equipo);
+            unset($equipo);
+          }
+          $grupo->equipos =$equipos;
+
+          array_push($grupos,$grupo);
+          unset($grupo);
+        }
+
+      }
+
+      return $grupos;
+      //return $groups;
+      //return view('admin.jornada',compact('partidos','name','partidosStr','id'));
 
     }
 
