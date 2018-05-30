@@ -67,6 +67,6 @@
   <input type="hidden" name="idJ" value="{{$id}}">
   <input type="hidden" name="partidos" value="{{$partidosStr}}">
 <div class="form-enviar">
-  <input type="submit" value="Guardar">
+  <input type="submit" value="Save">
 </div>
 </form>

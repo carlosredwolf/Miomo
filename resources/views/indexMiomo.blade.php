@@ -194,7 +194,7 @@
 	<div class="container">
 
 		<div class="cnt-video" id ="videoContainer">
-			<video id="video" controls preload="metadata" poster="images/repVideo.png">
+			{{-- <video id="video" controls preload="metadata" poster="images/repVideo.png">
 				<source src="video/bitcoin.mp4" type="video/mp4" >
 					<source src="video/bitcoin.mp4" type="video/ogg">
 					</video>
@@ -205,7 +205,7 @@
 							<input type="range" id="progressBar" value="0">
 							<!-- <span  id="progressBar"></span> -->
 						</li>
-					</ul>
+					</ul> --}}
 				</div>
 
 				<div class="cnt-banner">

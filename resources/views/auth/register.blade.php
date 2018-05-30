@@ -88,7 +88,7 @@
 							</li>
 							<li>
 								<label for="tuser3" class="checkbox">
-        						<input type="checkbox" class="checkbox" id="tuser3" name="check_tuser[]" value="visitante"  />I'm only interested in the quiniela</label>
+        						<input type="checkbox" class="checkbox" id="tuser3" name="check_tuser[]" value="visitante"  />I'm only interested in the pool</label>
 							</li>
 
 							<!-- <li class="selectOps styled-select slate">
