@@ -109,6 +109,7 @@
 </footer>
 
 <script src="../../js/quiniela.js" type='text/javascript'></script>
+<script src="{{ asset('js/equipos.js') }}" defer></script>
 
 </body>
 </html>

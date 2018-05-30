@@ -11,15 +11,20 @@
       <h3><span class="nomEquipo1">{{$partido->local->nombre}}</span>  VS  <span class="nomEquipo2">{{$partido->visitante->nombre}}</span></h3>
       @if ($partido->grupo->id != 9)
         <h3>{{$partido->grupo->descripcion}}</h3>
+        @php
+        $id1 = $partido->local->id;
+        $id2 = $partido->visitante->id;
+        $route1 = 'images/equipos/'.$id1.'.png';
+        $route2 = 'images/equipos/'.$id2.'.png';
+        @endphp
+      @else
+        @php
+        $route1 = 'images/equipos/1.png';
+        $route2 = 'images/equipos/1.png';
+        @endphp
       @endif
     </div>
     <div class="encuentro">
-      @php
-      $id1 = $partido->local->id;
-      $id2 = $partido->visitante->id;
-      $route1 = 'images/equipos/'.$id1.'.png';
-      $route2 = 'images/equipos/'.$id2.'.png';
-      @endphp
       <div>
         <label class="eEquipo1" for="radio-{{$partido->id}}"><img src="{{asset($route1)}}"> <span>{{$partido->local->nombre}}</span></label>
         <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=1>

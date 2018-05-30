@@ -126,13 +126,12 @@
 									$inputL = false;
 									$inputE = false;
 									$inputV = true;
-								}
-							}elseif ($partido->resultado->id == 4) {
+								}elseif ($partido->resultado->id == 4) {
 								// code...
 								$inputL = false;
 								$inputE = false;
 								$inputV = false;
-							}
+								}
 								$name = 'radio-'.$partido->id;
 	              @endphp
                 <div>
@@ -150,12 +149,6 @@
                 	<label class="eEquipo2" for="{{$name}}"><img src="{{asset($route2)}}" >	<span class="nomEquipo2">{{$partido->visitante->nombre}}</span></label>
                 </div>
 	            </div>
-							{{-- @if (rand(0,1) == 1)
-								<div class="resultadoError"></div>
-							@else
-								<div class="resultadoExito"></div>
-							@endif --}}
-
 	            </fieldset>
 	          @endforeach
 			</form>
