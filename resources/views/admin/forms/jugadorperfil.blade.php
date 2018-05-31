@@ -23,3 +23,7 @@
     </section>
 
 @endsection
+
+@section('footer')
+<a class="navBacka" href="../../misquinielas">Back</a>
+@endsection
