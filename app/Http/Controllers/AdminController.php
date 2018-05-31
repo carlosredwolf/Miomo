@@ -48,45 +48,49 @@ class AdminController extends Controller
       $partidos = $jornada->partidos;
       $partidosStr = json_encode($partidos);
 
-      $grupos = array();
-      $groups =Grupo::all();
+      $equipos = Equipo::all();
 
-      $equipos = array();
-
-      foreach ($groups as $group) {
-        // code...
-        if ($group->id != 9) {
-          // code...
-          $grupo =new stdClass;
-          reset($equipos);
-          $grupo->id = $group->id;
-          $grupo->nombre = $group->nombre;
-          $grupo->descripcion = $group->descripcion;
-          $teams = EquipoGrupo::where('id_grupo',$group->id)->get();
-
-          foreach ($teams as $team) {
-            // code...
-            $equipo = new stdClass;
-            $equipo->id =$team->id;
-            $teamDB =Equipo::find($team->id);
-            $equipo->name =$teamDB->nombre;
-
-            array_push($equipos,$equipo);
-            unset($equipo);
-          }
-          $grupo->equipos =$equipos;
-
-          array_push($grupos,$grupo);
-          unset($grupo);
-        }
-
-      }
-
-      return $grupos;
+      return view('admin.jornada',compact('partidos','name','partidosStr','id','equipos'));
+    }
+      // $grupos = array();
+      // $groups =Grupo::all();
+      //
+      // $equipos = array();
+      //
+      // foreach ($groups as $group) {
+      //   // code...
+      //   if ($group->id != 9) {
+      //     // code...
+      //     $grupo =new stdClass;
+      //     reset($equipos);
+      //     $grupo->id = $group->id;
+      //     $grupo->nombre = $group->nombre;
+      //     $grupo->descripcion = $group->descripcion;
+      //     $teams = EquipoGrupo::where('id_grupo',$group->id)->get();
+      //
+      //     foreach ($teams as $team) {
+      //       // code...
+      //       $equipo = new stdClass;
+      //       $equipo->id =$team->id;
+      //       $teamDB =Equipo::find($team->id);
+      //       $equipo->name =$teamDB->nombre;
+      //
+      //       array_push($equipos,$equipo);
+      //       unset($equipo);
+      //     }
+      //     $grupo->equipos =$equipos;
+      //
+      //     array_push($grupos,$grupo);
+      //     unset($grupo);
+      //   }
+      //
+      // }
+      //
+      // return $grupos;
       //return $groups;
       //return view('admin.jornada',compact('partidos','name','partidosStr','id'));
 
-    }
+    //}
 
     public function getJornada($id)
     {
@@ -122,6 +126,7 @@ class AdminController extends Controller
       $response = $request->input();
       $partidos = json_decode($response['partidos']);
       $scores =array();
+      $equipos = array();
       foreach ($response as $key => $value) {
         // code...
         if (strpos($key,'score')!== false) {
@@ -143,48 +148,89 @@ class AdminController extends Controller
           unset($score);
         }
       }
+
+      foreach ($response as $key => $value) {
+        // code...
+        if (strpos($key,'select')!== false) {
+          // code...
+          $partido = new stdClass;
+          $equipo = explode('-',$key);
+          $partido->id = intval($equipo[2]);
+          if ($equipo[1] == 'local') {
+            // code...
+            $partido->equipo_local = intval($value);
+          }else {
+            // code...
+            $partido->equipo_visitante = intval($value);
+          }
+          array_push($equipos,$partido);
+          unset($partido);
+        }
+      }
+
+      //$equipos = collect($equipos)->groupBy('id');
       $scores = collect($scores)->groupBy('partido');
       $partidos = collect($partidos)->groupBy('id');
 
-      foreach ($partidos as $partido) {
+      if (count($equipos)>0) {
         // code...
-        $partidoBD = Partido::find($partido->first()->id);
-
-        foreach ($scores as $score) {
+        foreach ($equipos as $equipo) {
           // code...
-          foreach ($score as $equipo) {
-            // code...
-            if ($partido->first()->id == $equipo->partido) {
+            $partido =Partido::find($equipo->id);
+            if (isset($equipo->equipo_local)) {
               // code...
-              if ($equipo->score == 1) {
+              $partido->id_local = $equipo->equipo_local;
+            }elseif (isset($equipo->equipo_visitante)) {
+              // code...
+              $partido->id_visitante = $equipo->equipo_visitante;
+            }
+            $partido->save();
+        }
+      }
+
+      if (count($scores)>0) {
+        // code...
+        foreach ($partidos as $partido) {
+          // code...
+          $partidoBD = Partido::find($partido->first()->id);
+
+          foreach ($scores as $score) {
+            // code...
+            foreach ($score as $equipo) {
+              // code...
+              if ($partido->first()->id == $equipo->partido) {
                 // code...
-                $partidoBD->score_local = $equipo->valor;
-              }elseif ($equipo->score == 2) {
-                // code...
-                $partidoBD->score_visitante = $equipo->valor;
+                if ($equipo->score == 1) {
+                  // code...
+                  $partidoBD->score_local = $equipo->valor;
+                }elseif ($equipo->score == 2) {
+                  // code...
+                  $partidoBD->score_visitante = $equipo->valor;
+                }
               }
             }
           }
-        }
-        if (!is_null($partidoBD->score_local) && !is_null($partidoBD->score_visitante)) {
-          // code...
-          if ($partidoBD->score_local > $partidoBD->score_visitante) {
+          if (!is_null($partidoBD->score_local) && !is_null($partidoBD->score_visitante)) {
             // code...
-            $partidoBD->id_resultado = 1;
+            if ($partidoBD->score_local > $partidoBD->score_visitante) {
+              // code...
+              $partidoBD->id_resultado = 1;
 
-          }elseif ($partidoBD->score_local == $partidoBD->score_visitante) {
-            // code...
-            $partidoBD->id_resultado = 2;
+            }elseif ($partidoBD->score_local == $partidoBD->score_visitante) {
+              // code...
+              $partidoBD->id_resultado = 2;
 
-          }elseif ($partidoBD->score_local < $partidoBD->score_visitante) {
-            // code...
-            $partidoBD->id_resultado = 3;
+            }elseif ($partidoBD->score_local < $partidoBD->score_visitante) {
+              // code...
+              $partidoBD->id_resultado = 3;
 
+            }
           }
+          $partidoBD->save();
         }
-        $partidoBD->save();
       }
 
+      //return $equipos;
       return view('admin.alert.alert');
     }
 

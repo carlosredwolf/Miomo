@@ -39,7 +39,7 @@
 		<section class="header_quiniela main-menu-sizeone">
 
 			<div class="navbar margin-topone" id="menuDesktop">
-	  			<a class="active" href="quiniela">La quiniela</a>
+	  			<a class="active" href="quiniela">The Pool</a>
 	  			{{-- <a href="resultados">Results</a>
 	  			<a href="proximos">Next matches</a> --}}
 
