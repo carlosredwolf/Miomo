@@ -99,17 +99,86 @@ class RolesInteresController extends Controller
     }
 
     public function CalcularPuntosJornada($Jornada_id){
-        //$AllQuinielas=Quiniela::all();
-        
+     
         $Quinielas=Quiniela::Where('id_jornada',$Jornada_id)->get();
 
         $Partidos=Partido::Where('id_jornada',$Jornada_id)->get();
-        foreach ($Quinielas as $qui) {
-        $Apuestas=DB::table('apuestas')->Where('id_quiniela','=',$qui->id)->get();
+        //Logica para jornadas        
+        if ($Jornada_id<=3) {
             # code...
+            foreach ($Quinielas as $qui) {
+                $Apuestas=DB::table('apuestas')->Where('id_quiniela','=',$qui->id)->get();
+                        # code...
+                $ApuestaData=array();
+                foreach ($Apuestas as $apuesta) {
+                        # code...
+                    $apuestaObj = new stdClass;
+                    $apuestaObj->id=$apuesta->id;
+                    $apuestaObj->Resultado=$apuesta->id_resultado;
+                    array_push($ApuestaData,$apuestaObj);
+                }
+                $PartidoData=array();
+                foreach ($Partidos as $partido) {
+                        # code...
+                    $partidoObj = new stdClass;
+                    $partidoObj->id=$partido->id;
+                    $partidoObj->Resultado=$partido->id_resultado;
+                    array_push($PartidoData,$partidoObj);
+                }
+                    //Inicializo mi puntaje en 0
+                $Puntaje=0;
+                    //Recorro 16 veces por que son 16 partidos por jornada jaja
+                for ($i=0; $i <16 ; $i++) { 
+                        # code...
+                       //Obtengo los resultados de cada uno 
+                 $ValorPartido=$PartidoData[$i]->Resultado;
+                 $ValorApuesta=$ApuestaData[$i]->Resultado;
+                       //Cada vez que los resultados coincidan añadimos 10 puntos
+                 if ($ValorPartido==$ValorApuesta) {
+                            # code...
+                    $Puntaje=$Puntaje+10;
+                }            
+            }
+            if($Puntaje>=160) {
+
+               $Puntaje=$Puntaje+50;
+
+           } else if($Puntaje>=100) {
+
+            $Puntaje=$Puntaje+30;
+
+        } else if($Puntaje>=50) {
+
+            $Puntaje=$Puntaje+5;
+        }
+                    //La variable puntaje se la mandaremos a la tabla de quinielas
+        $idQuiniela=$qui->id;
+        $datosQuiniela = Quiniela::find($idQuiniela);
+
+        $datosQuiniela->puntaje=$Puntaje;
+        if($datosQuiniela->save()){
+            echo $datosQuiniela;
+            return view('admin.alert.poolalert');
+        }
+        else
+        {
+            echo "Error guardando la actualizacion";
+                       
+        }
+    }
+}
+        //Termina primer if
+
+        //Logica para 16vos final
+        //Logica para los 16vos de final
+if ($Jornada_id==4) {
+                # code...
+    foreach ($Quinielas as $qui) {
+        $Apuestas=DB::table('apuestas')->Where('id_quiniela','=',$qui->id)->get();
+                            # code...
         $ApuestaData=array();
         foreach ($Apuestas as $apuesta) {
-            # code...
+                            # code...
             $apuestaObj = new stdClass;
             $apuestaObj->id=$apuesta->id;
             $apuestaObj->Resultado=$apuesta->id_resultado;
@@ -117,53 +186,218 @@ class RolesInteresController extends Controller
         }
         $PartidoData=array();
         foreach ($Partidos as $partido) {
-            # code...
+                            # code...
             $partidoObj = new stdClass;
             $partidoObj->id=$partido->id;
             $partidoObj->Resultado=$partido->id_resultado;
             array_push($PartidoData,$partidoObj);
         }
-        //Inicializo mi puntaje en 0
+                        //Inicializo mi puntaje en 0
         $Puntaje=0;
-        //Recorro 16 veces por que son 16 partidos por jornada jaja
-        for ($i=0; $i <16 ; $i++) { 
-            # code...
-           //Obtengo los resultados de cada uno 
+                        //Recorro 16 veces por que son 16 partidos por jornada jaja
+        for ($i=0; $i <8 ; $i++) { 
+                            # code...
+                           //Obtengo los resultados de cada uno 
          $ValorPartido=$PartidoData[$i]->Resultado;
          $ValorApuesta=$ApuestaData[$i]->Resultado;
-           //Cada vez que los resultados coincidan añadimos 10 puntos
+                           //Cada vez que los resultados coincidan añadimos 10 puntos
          if ($ValorPartido==$ValorApuesta) {
-                # code...
+                                # code...
             $Puntaje=$Puntaje+10;
         }            
     }
-    if($Puntaje>=160) {
+    if($Puntaje>=80) {
 
        $Puntaje=$Puntaje+50;
 
-    } else if($Puntaje>=100) {
+   } 
+                        //La variable puntaje se la mandaremos a la tabla de quinielas
+   $idQuiniela=$qui->id;
+   $datosQuiniela = Quiniela::find($idQuiniela);
 
-        $Puntaje=$Puntaje+30;
-
-    } else if($Puntaje>=50) {
-
-        $Puntaje=$Puntaje+5;
-    }
-        //La variable puntaje se la mandaremos a la tabla de quinielas
-    $idQuiniela=$qui->id;
-    $datosQuiniela = Quiniela::find($idQuiniela);
-
-    $datosQuiniela->puntaje=$Puntaje;
-    if($datosQuiniela->save()){
-                //echo $Apuestas;
-             return view('admin.alert.poolalert');
-        }
-        else
-        {
-            echo "Error guardando la actualizacion";
-            //return view('admin.alert.alert');
-        }
+   $datosQuiniela->puntaje=$Puntaje;
+   if($datosQuiniela->save()){
+    echo $datosQuiniela;
+    return view('admin.alert.poolalert');                               
+}
+else
+{
+    echo "Error guardando la actualizacion";
+                            
+}
+}
 }
 
+//Logica para cuartos de final
+if ($Jornada_id==5) {
+                # code...
+    foreach ($Quinielas as $qui) {
+        $Apuestas=DB::table('apuestas')->Where('id_quiniela','=',$qui->id)->get();
+                            # code...
+        $ApuestaData=array();
+        foreach ($Apuestas as $apuesta) {
+                            # code...
+            $apuestaObj = new stdClass;
+            $apuestaObj->id=$apuesta->id;
+            $apuestaObj->Resultado=$apuesta->id_resultado;
+            array_push($ApuestaData,$apuestaObj);
+        }
+        $PartidoData=array();
+        foreach ($Partidos as $partido) {
+                            # code...
+            $partidoObj = new stdClass;
+            $partidoObj->id=$partido->id;
+            $partidoObj->Resultado=$partido->id_resultado;
+            array_push($PartidoData,$partidoObj);
+        }
+                        //Inicializo mi puntaje en 0
+        $Puntaje=0;
+                        //Recorro 16 veces por que son 16 partidos por jornada jaja
+        for ($i=0; $i <4 ; $i++) { 
+                            # code...
+                           //Obtengo los resultados de cada uno 
+           $ValorPartido=$PartidoData[$i]->Resultado;
+           $ValorApuesta=$ApuestaData[$i]->Resultado;
+                           //Cada vez que los resultados coincidan añadimos 10 puntos
+           if ($ValorPartido==$ValorApuesta) {
+                                # code...
+            $Puntaje=$Puntaje+10;
+        }            
+    }
+    if($Puntaje>=40) {
+
+     $Puntaje=$Puntaje+30;
+
+ } 
+                        //La variable puntaje se la mandaremos a la tabla de quinielas
+ $idQuiniela=$qui->id;
+ $datosQuiniela = Quiniela::find($idQuiniela);
+
+ $datosQuiniela->puntaje=$Puntaje;
+ if($datosQuiniela->save()){
+    echo $datosQuiniela;
+    return view('admin.alert.poolalert');
+}
+else
+{
+    echo "Error guardando la actualizacion";
+                           
+}
+}
+}
+//Logica para semifinal
+if ($Jornada_id==6) {
+                # code...
+    foreach ($Quinielas as $qui) {
+        $Apuestas=DB::table('apuestas')->Where('id_quiniela','=',$qui->id)->get();
+                            # code...
+        $ApuestaData=array();
+        foreach ($Apuestas as $apuesta) {
+                            # code...
+            $apuestaObj = new stdClass;
+            $apuestaObj->id=$apuesta->id;
+            $apuestaObj->Resultado=$apuesta->id_resultado;
+            array_push($ApuestaData,$apuestaObj);
+        }
+        $PartidoData=array();
+        foreach ($Partidos as $partido) {
+                            # code...
+            $partidoObj = new stdClass;
+            $partidoObj->id=$partido->id;
+            $partidoObj->Resultado=$partido->id_resultado;
+            array_push($PartidoData,$partidoObj);
+        }
+                        //Inicializo mi puntaje en 0
+        $Puntaje=0;
+                        //Recorro 16 veces por que son 16 partidos por jornada jaja
+        for ($i=0; $i <2 ; $i++) { 
+                            # code...
+                           //Obtengo los resultados de cada uno 
+           $ValorPartido=$PartidoData[$i]->Resultado;
+           $ValorApuesta=$ApuestaData[$i]->Resultado;
+                           //Cada vez que los resultados coincidan añadimos 10 puntos
+           if ($ValorPartido==$ValorApuesta) {
+                                # code...
+            $Puntaje=$Puntaje+10;
+        }            
+    }
+    if($Puntaje>=20) {
+
+     $Puntaje=$Puntaje+20;
+
+ } 
+                        //La variable puntaje se la mandaremos a la tabla de quinielas
+ $idQuiniela=$qui->id;
+ $datosQuiniela = Quiniela::find($idQuiniela);
+
+ $datosQuiniela->puntaje=$Puntaje;
+ if($datosQuiniela->save()){
+    echo $datosQuiniela;
+    return view('admin.alert.poolalert');
+}
+else
+{
+    echo "Error guardando la actualizacion";
+                            
+}
+}
+}
+//Logica para final
+if ($Jornada_id==7) {
+                        # code...
+    foreach ($Quinielas as $qui) {
+        $Apuestas=DB::table('apuestas')->Where('id_quiniela','=',$qui->id)->get();
+                                    # code...
+        $ApuestaData=array();
+        foreach ($Apuestas as $apuesta) {
+                                    # code...
+            $apuestaObj = new stdClass;
+            $apuestaObj->id=$apuesta->id;
+            $apuestaObj->Resultado=$apuesta->id_resultado;
+            array_push($ApuestaData,$apuestaObj);
+        }
+        $PartidoData=array();
+        foreach ($Partidos as $partido) {
+                                    # code...
+            $partidoObj = new stdClass;
+            $partidoObj->id=$partido->id;
+            $partidoObj->Resultado=$partido->id_resultado;
+            array_push($PartidoData,$partidoObj);
+        }
+                                //Inicializo mi puntaje en 0
+        $Puntaje=0;
+                                //Recorro 16 veces por que son 16 partidos por jornada jaja
+        for ($i=0; $i <1 ; $i++) { 
+                                    # code...
+                                   //Obtengo los resultados de cada uno 
+           $ValorPartido=$PartidoData[$i]->Resultado;
+           $ValorApuesta=$ApuestaData[$i]->Resultado;
+                                   //Cada vez que los resultados coincidan añadimos 10 puntos
+           if ($ValorPartido==$ValorApuesta) {
+                                        # code...
+            $Puntaje=$Puntaje+10;
+        }            
+    }
+    if($Puntaje>=10) {
+
+     $Puntaje=$Puntaje+20;
+
+ }
+                                //La variable puntaje se la mandaremos a la tabla de quinielas
+ $idQuiniela=$qui->id;
+ $datosQuiniela = Quiniela::find($idQuiniela);
+
+ $datosQuiniela->puntaje=$Puntaje;
+ if($datosQuiniela->save()){
+    echo $datosQuiniela;
+    return view('admin.alert.poolalert');
+}
+else
+{
+    echo "Error guardando la actualizacion";
+                                    
+}
+}
+}
 }
 }
