@@ -63,7 +63,7 @@ SECTION.nav-right {display:none;}
 }
 
 .header_quiniela .navbar a:first-child{
-	margin-left:30%;
+	margin-left:40%;
 }
 .header_quiniela .dropdown {
     float: right;
@@ -471,10 +471,11 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
  .containerResultados .container .sobre .titulo-proxPartidos h2{margin:170px auto 20px; font-size:30px; width:80%;letter-spacing: 5px;}
  .containerResultados .container .sobre .titulo-proxPartidos h2 span{display:block; font-size:18px;letter-spacing: 2px;}
 
+ .navbar.margin-topone {text-align: center;}
 
 /*  ---------------------------------------------------------------------------------------------  */
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 900px) {
 /*  Responsive  */
 /* -------- Navigation -------- */
   SECTION.nav-left, SECTION.nav-right{width:50px;}
@@ -685,7 +686,7 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
   .quiniela .container .quiniela-container .contenido .titulo-quiniela img {
     float: none;
     margin: 10px auto 0;
-    width: 50%;
+    width: 35%;
   }
   .quiniela .container .quiniela-container .contenido .titulo-quiniela h3 {
     font: bold 14px 'poiretone-regular', sans-serif;
@@ -703,7 +704,6 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
     width: 99%;
     margin: 5px auto 0;
     min-height: 145px;
-    border-bottom: 1px solid #CCAF88;
     /*border-top: 1px  dashed #FFEBBF; */
     clear: both;
     /*border-bottom: .01mm solid #CCAF88;*/
@@ -722,7 +722,7 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
   .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info h2 {
     width: 99%;
     margin: 5px auto 0;
-    font: bold 14px 'poiretone-regular', sans-serif;
+    font: bold 10px 'poiretone-regular', sans-serif;
     text-transform: uppercase;
     letter-spacing: 3px;
     word-spacing: 2px;
@@ -736,7 +736,7 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
   }
   .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info h3 {
     width: 99% !important;
-    font: 18px 'breamcatcher', helvetica, arial, sans-serif;
+    font: 12px 'breamcatcher', helvetica, arial, sans-serif;
     margin: 5px auto;
     color: #000;
     text-transform: uppercase;
@@ -778,15 +778,12 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
     width: 60%;}
   .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div label img {
     /*width: 41px;*/
-    width: 100%;
+    width: 70%;
     /*height: 41px;*/
     height: 100%;
     position:relative;
     top:-10px;
     text-align: center;
-    margin: 5px;
-    margin-left:3px;
-    margin-top:5px;
   }
   .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div label img + span{
     display:none;
@@ -835,6 +832,7 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
     margin:0;
     margin-right:3px;
     margin-top:5px;
+    width: 70%;
   }
 
   .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div:last-child input[type="radio"] {
@@ -952,12 +950,13 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
   }
   .quiniela .container .quiniela-container .contenido .formQuiniela fieldset {
     width:100%;
+    height: auto;
     margin: 5px auto 0;
+    margin-bottom: .5em;
     min-height: auto;
-    border-bottom: 1px solid #CCAF88;
-    /* border-top: 1px dashed #FFEBBF; */
+    border-top: 1px dashed #FFEBBF;
     clear: both;
-    /* border-bottom: .01mm solid #CCAF88; */
+    border-bottom: .01mm solid #CCAF88;
     /* background: #ccc; */
   }
   .quiniela .container .quiniela-container .contenido .titulo-resultados h3 span{display: block;font-size: 14px;}
@@ -1054,11 +1053,24 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
     margin: 5px auto 5px;
 
 }
+.quiniela .container .quiniela-container .contenido .formQuiniela h3 {font-size: 17px;}
+.quiniela .container .quiniela-container .contenido .titulo-quiniela a {font-size: 17px;}
+.header_quiniela {right: 0%;}
+SECTION.quiniela-form .container .quiniela-form-info, SECTION.quiniela-form .container .quiniela-form-form {width: 100%;}
 
 }
 
+
 /* ----------------------------------------------------------------------------------- */
 /*  Pantallas iphone 5, 6  */
+@media screen and (min-width: 900px) and (max-width: 1230px) {
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset {
+    width: 100%;
+  }
+  .quiniela .container .quiniela-container {
+    margin: 0;
+  }
+}
 @media screen and (max-width: 400px) {
 
 
@@ -1250,4 +1262,118 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
 
 }
 
+}
+@media screen and (min-width: 560px) and (max-width: 700px) {
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info h2 {
+    font-size: 14px;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info h2 span {
+    font-size: 14px;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info h3 {
+    font-size: 18px;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div.deEmpate .eEmpate {
+    font-size: 18px;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div label img {
+    width: 100%;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div:last-child label img {
+    width: 100%;
+  }
+  .quiniela .container .quiniela-container .contenido .titulo-quiniela a {
+    font-size: 20px;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela h3 {
+    font-size: 20px;
+  }
+
+
+}
+@media screen and (min-width: 700px) and (max-width: 900px) {
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info h2 {
+    font-size: 18px;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info h2 span {
+    font-size: 18px;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info h3 {
+    font-size: 22px;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div.deEmpate .eEmpate {
+    font-size: 22px;
+    margin: -1.5em 0;
+  }
+  .quiniela .container .quiniela-container .contenido .titulo-quiniela a {
+    font-size: 25px;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela h3 {
+    font-size: 25px;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div input[type="radio"] {
+    width: 30px;
+    height: 30px;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info {
+    margin-bottom: 1em;
+  }
+  .quiniela .container .quiniela-container .contenido .titulo-quiniela img {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 200px) and (max-width: 320px) {
+  .quiniela .container h1 {font-size: 30px;}
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div input[type="radio"] {margin: 0;}
+  .container {margin: 0;}
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro {
+    height: auto;
+    width: 100%;
+    float: none;
+    margin-bottom: 5px;
+    padding-bottom: 2px;
+    border: 1px solid transparent;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset {padding: .5em 0;}
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro .deEmpate input[type="radio"] {margin-left: 27%;}
+  .quiniela .container .quiniela-container .contenido .titulo-quiniela img {width: 50%;}
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div label img {width: 100%;}
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div:last-child label img {width: 100%;}
+  SECTION.quiniela .container{margin: 0;padding: 0;}
+  SECTION.quiniela-form .container .quiniela-form-form.withoutborder {margin: 0 11%;}
+  SECTION.quiniela-form .container .quiniela-form-form h2 {font-size: 18px;}
+  SECTION.quiniela-form .container .quiniela-form-form ul li input {font-size: 15px;}
+}
+@media screen and (min-width: 320px) and (max-width: 380px) {
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro .deEmpate input[type="radio"] {
+    margin-left: 28%;
+  }
+  SECTION.quiniela .container{margin: 0;padding: 0;}
+  SECTION.quiniela-form .container .quiniela-form-form.withoutborder {margin: 0 11%;}
+  SECTION.quiniela-form .container .quiniela-form-form h2 {font-size: 18px;}
+  SECTION.quiniela-form .container .quiniela-form-form ul li input {font-size: 15px;}
+}
+@media screen and (min-width: 380px) and (max-width: 900px){
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro .deEmpate input[type="radio"] {
+    margin-left: 40%;
+  }
+  SECTION.quiniela .container{margin: 0;padding: 0;}
+  SECTION.quiniela-form .container .quiniela-form-form.withoutborder {margin: 0 11%;}
+  SECTION.quiniela-form .container .quiniela-form-form h2 {font-size: 18px;}
+  SECTION.quiniela-form .container .quiniela-form-form ul li input {font-size: 15px;}
+  .header_quiniela .navbar a:first-child {margin-left: 10%;}
+
+}
+@media screen and (min-width: 320px) and (max-width: 437px){
+  section.quiniela .container {margin: 0;}
+  SECTION.quiniela .container{margin: 0;padding: 0;}
+  SECTION.quiniela-form .container .quiniela-form-form.withoutborder {margin: 0 11%;}
+  SECTION.quiniela-form .container .quiniela-form-form h2 {font-size: 18px;}
+  SECTION.quiniela-form .container .quiniela-form-form ul li input {font-size: 15px;}
+}
+@media screen and (min-width: 480px) and (max-width: 1230px){
+  SECTION.quiniela-form .container .quiniela-form-form.withoutborder {margin:0;}
+  .header_quiniela .navbar a:first-child {margin-left: 30%;}
+  SECTION.quiniela-form .container .quiniela-form-info, SECTION.quiniela-form .container .quiniela-form-form {width: 100%;}
+  
 }

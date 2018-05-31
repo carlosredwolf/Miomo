@@ -9,4 +9,8 @@ class Grupo extends Model
     //
     protected $table="grupos";
     protected $hidden=['created_at','updated_at'];
+
+    public function equipos(){
+      return $this->hasMany('Miomo\EquipoGrupo', 'id_grupo');
+    }
 }

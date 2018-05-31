@@ -29,4 +29,5 @@ class Partido extends Model
     public function resultado(){
       return $this->belongsTo('Miomo\Cat_Resultados', 'id_resultado');
     }
+    
 }
