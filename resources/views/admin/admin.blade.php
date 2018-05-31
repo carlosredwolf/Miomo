@@ -106,6 +106,7 @@
 								@endif
 								&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;
 								<span class="tam3"><a href="/puntosjornada/{{$jornada->id}}">Calculate</a></span>
+							
 							</h4>
             @endforeach
             </div>

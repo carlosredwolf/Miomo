@@ -59,5 +59,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/puntosjornada/{Jornada_id}','RolesInteresController@CalcularPuntosJornada');
 Route::get('/masalto/{Jornada_id}','RolesInteresController@show');
+Route::get('/perfil/{Quiniela_id}/','RolesInteresController@userquiniela');
 
-Route::post('savedatainteres', 'RolesInteresController@store');
+Route::post('savedatainteres', 'RolesInteresController@userquiniela');
