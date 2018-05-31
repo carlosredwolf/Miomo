@@ -39,7 +39,7 @@
 
 			<div class="navbar margin-topone" id="menuDesktop">
 	  			<a href="quiniela">The pool</a>
-					@if (Auth::user()->name == 'pajaro')
+					@if ($data->id_rol == 1)
 						<a class="active" href="admin">admin</a>
 					@endif
 	  			{{-- <a href="resultados">Resultados</a>

@@ -12,6 +12,8 @@ use Miomo\EquipoGrupo;
 use Miomo\Equipo;
 use Miomo\Grupo;
 use stdClass;
+use Auth;
+use Miomo\Datos_Usuario as Data;
 
 class AdminController extends Controller
 {
@@ -36,7 +38,9 @@ class AdminController extends Controller
         return response()->json(['mensaje'=> 'NO existen jornadas de ese evento','codigo'=>'404'],404);
       }
 
-      return view('admin.admin',compact('jornadas'));
+      $data =Data::find(Auth::user()->id);
+
+      return view('admin.admin',compact('jornadas','data'));
     }
 
     public function jornada($id)
