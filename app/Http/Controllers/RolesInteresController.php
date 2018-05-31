@@ -5,6 +5,7 @@ namespace Miomo\Http\Controllers;
 use Illuminate\Http\Request;
 use Miomo\RolesInteres;
 use Miomo\User;
+use Miomo\Datos_Usuario;
 use Miomo\Quiniela;
 use Miomo\Partido;
 use Miomo\Apuesta;
@@ -54,14 +55,22 @@ class RolesInteresController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
+     * Muestra la quiniela con mayor puntaje por jornada.
+     * @param  int  $Jornada_id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($Jornada_id)
     {
-        //
+        $Quinielas=Quiniela::Where('id_jornada',$Jornada_id)->orderBy('puntaje', 'desc')->get();
+        
+       return view('admin.forms.puntajes',array('quiniela' => $Quinielas));
+        
+       // return response()->json($Quinielas);
+    }
+    public function userquiniela($Quiniela_id){
+        $quiniela_idUser=Quiniela::Where('id',$Quiniela_id)->first();
+        $userData=Datos_Usuario::Where('id',$quiniela_idUser->id_usuario)->first();
+        return view('admin.forms.jugadorperfil',array('userData' => $userData));
     }
 
     /**
@@ -98,6 +107,11 @@ class RolesInteresController extends Controller
         //
     }
 
+    /**
+     * Realiza el cálculo de los puntos de la quiniela.
+     * @param int $Jornada_id
+     * @return \Illuminate\Http\Response
+     */
     public function CalcularPuntosJornada($Jornada_id){
      
         $Quinielas=Quiniela::Where('id_jornada',$Jornada_id)->get();

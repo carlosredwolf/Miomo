@@ -60,7 +60,8 @@
   			<div class="dropdown">
   				<button onclick="myFunction()" class="dropbtn">Results </button>
   				  <div id="myDropdown" class="dropdown-content">
-  				    <a  class="active" href="../misquinielas">My pools</a>
+							<a  class="active" href="../misquinielas">My pools</a>
+						
     				  </div>
   			</div>
   	</div>
@@ -69,7 +70,8 @@
   <section class="quiniela">
     <div class="container">
 
-      <h1>My pool</h1>
+			<h1>My pool</h1>
+			
 
       <div class="quiniela-container">
 
