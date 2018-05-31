@@ -63,7 +63,7 @@ SECTION.nav-right {display:none;}
 }
 
 .header_quiniela .navbar a:first-child{
-	margin-left:30%;
+	margin-left:40%;
 }
 .header_quiniela .dropdown {
     float: right;
@@ -1053,12 +1053,10 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
     margin: 5px auto 5px;
 
 }
-.quiniela .container .quiniela-container .contenido .formQuiniela h3 {
-    font-size: 17px;
-}
-.quiniela .container .quiniela-container .contenido .titulo-quiniela a {
-    font-size: 17px;
-}
+.quiniela .container .quiniela-container .contenido .formQuiniela h3 {font-size: 17px;}
+.quiniela .container .quiniela-container .contenido .titulo-quiniela a {font-size: 17px;}
+.header_quiniela {right: 0%;}
+SECTION.quiniela-form .container .quiniela-form-info, SECTION.quiniela-form .container .quiniela-form-form {width: 100%;}
 
 }
 
@@ -1071,9 +1069,6 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
   }
   .quiniela .container .quiniela-container {
     margin: 0;
-  }
-  .header_quiniela .navbar a:first-child {
-    margin-left: 10%;
   }
 }
 @media screen and (max-width: 400px) {
@@ -1328,15 +1323,9 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
   }
 }
 @media screen and (min-width: 200px) and (max-width: 320px) {
-  .quiniela .container h1 {
-    font-size: 30px;
-  }
-  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div input[type="radio"] {
-    margin: 0;
-  }
-  .container {
-    margin: 0;
-  }
+  .quiniela .container h1 {font-size: 30px;}
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div input[type="radio"] {margin: 0;}
+  .container {margin: 0;}
   .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro {
     height: auto;
     width: 100%;
@@ -1345,34 +1334,46 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
     padding-bottom: 2px;
     border: 1px solid transparent;
   }
-  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset {
-    padding: .5em 0;
-  }
-  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro .deEmpate input[type="radio"] {
-    margin-left: 27%;
-  }
-  .quiniela .container .quiniela-container .contenido .titulo-quiniela img {
-    width: 50%;
-  }
-  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div label img {
-    width: 100%;
-  }
-  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div:last-child label img {
-    width: 100%;
-  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset {padding: .5em 0;}
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro .deEmpate input[type="radio"] {margin-left: 27%;}
+  .quiniela .container .quiniela-container .contenido .titulo-quiniela img {width: 50%;}
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div label img {width: 100%;}
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div:last-child label img {width: 100%;}
+  SECTION.quiniela .container{margin: 0;padding: 0;}
+  SECTION.quiniela-form .container .quiniela-form-form.withoutborder {margin: 0 11%;}
+  SECTION.quiniela-form .container .quiniela-form-form h2 {font-size: 18px;}
+  SECTION.quiniela-form .container .quiniela-form-form ul li input {font-size: 15px;}
 }
 @media screen and (min-width: 320px) and (max-width: 380px) {
   .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro .deEmpate input[type="radio"] {
     margin-left: 28%;
   }
+  SECTION.quiniela .container{margin: 0;padding: 0;}
+  SECTION.quiniela-form .container .quiniela-form-form.withoutborder {margin: 0 11%;}
+  SECTION.quiniela-form .container .quiniela-form-form h2 {font-size: 18px;}
+  SECTION.quiniela-form .container .quiniela-form-form ul li input {font-size: 15px;}
 }
 @media screen and (min-width: 380px) and (max-width: 900px){
   .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro .deEmpate input[type="radio"] {
     margin-left: 40%;
   }
+  SECTION.quiniela .container{margin: 0;padding: 0;}
+  SECTION.quiniela-form .container .quiniela-form-form.withoutborder {margin: 0 11%;}
+  SECTION.quiniela-form .container .quiniela-form-form h2 {font-size: 18px;}
+  SECTION.quiniela-form .container .quiniela-form-form ul li input {font-size: 15px;}
+  .header_quiniela .navbar a:first-child {margin-left: 10%;}
+
 }
 @media screen and (min-width: 320px) and (max-width: 437px){
-  section.quiniela .container {
-    margin: 0;
-  }
+  section.quiniela .container {margin: 0;}
+  SECTION.quiniela .container{margin: 0;padding: 0;}
+  SECTION.quiniela-form .container .quiniela-form-form.withoutborder {margin: 0 11%;}
+  SECTION.quiniela-form .container .quiniela-form-form h2 {font-size: 18px;}
+  SECTION.quiniela-form .container .quiniela-form-form ul li input {font-size: 15px;}
+}
+@media screen and (min-width: 480px) and (max-width: 1230px){
+  SECTION.quiniela-form .container .quiniela-form-form.withoutborder {margin:0;}
+  .header_quiniela .navbar a:first-child {margin-left: 30%;}
+  SECTION.quiniela-form .container .quiniela-form-info, SECTION.quiniela-form .container .quiniela-form-form {width: 100%;}
+  
 }

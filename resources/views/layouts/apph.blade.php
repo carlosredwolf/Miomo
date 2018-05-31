@@ -42,9 +42,9 @@
 	  	</section>
 
     <section class="quiniela">
-      <div class="container">	
+      <div class="container">
 	  		@yield('content')
-		</div>
+			</div>
     </section>
   </div>
 
