@@ -51,54 +51,54 @@
 /* titulos largos */
 @font-face {
     font-family: 'breamcatcher';
-    src: url('../fonts/v2/breamcatcher.ttf') format("truetype"); 
+    src: url('../fonts/v2/breamcatcher.ttf') format("truetype");
 }
 
 /* contenidos */
 @font-face {
     font-family: 'JosefinSans-Bold';
-    src: url('../fonts/v2/JosefinSans-Bold.ttf') format("truetype"); 
+    src: url('../fonts/v2/JosefinSans-Bold.ttf') format("truetype");
 }
 @font-face {
     font-family: 'JosefinSans-BoldItalic';
-    src: url('../fonts/v2/JosefinSans-BoldItalic.ttf') format("truetype"); 
+    src: url('../fonts/v2/JosefinSans-BoldItalic.ttf') format("truetype");
 }
 @font-face {
     font-family: 'JosefinSans-Italic';
-    src: url('../fonts/v2/JosefinSans-Italic.ttf') format("truetype"); 
+    src: url('../fonts/v2/JosefinSans-Italic.ttf') format("truetype");
 }
 @font-face {
     font-family: 'JosefinSans-Light';
-    src: url('../fonts/v2/JosefinSans-Light.ttf') format("truetype"); 
+    src: url('../fonts/v2/JosefinSans-Light.ttf') format("truetype");
 }
 @font-face {
     font-family: 'JosefinSans-LightItalic';
-    src: url('../fonts/v2/JosefinSans-LightItalic.ttf') format("truetype"); 
+    src: url('../fonts/v2/JosefinSans-LightItalic.ttf') format("truetype");
 }
 @font-face {
     font-family: 'JosefinSans-Regular';
-    src: url('../fonts/v2/JosefinSans-Regular.ttf') format("truetype"); 
+    src: url('../fonts/v2/JosefinSans-Regular.ttf') format("truetype");
 }
 @font-face {
     font-family: 'JosefinSans-SemiBold';
-    src: url('../fonts/v2/JosefinSans-SemiBold.ttf') format("truetype"); 
+    src: url('../fonts/v2/JosefinSans-SemiBold.ttf') format("truetype");
 }
 @font-face {
     font-family: 'JosefinSans-SemiBoldItalic';
-    src: url('../fonts/v2/JosefinSans-SemiBoldItalic.ttf') format("truetype"); 
+    src: url('../fonts/v2/JosefinSans-SemiBoldItalic.ttf') format("truetype");
 }
 @font-face {
     font-family: 'JosefinSans-Thin';
-    src: url('../fonts/v2/JosefinSans-Thin.ttf') format("truetype"); 
+    src: url('../fonts/v2/JosefinSans-Thin.ttf') format("truetype");
 }
 @font-face {
     font-family: 'JosefinSans-ThinItalic';
-    src: url('../fonts/v2/JosefinSans-ThinItalic.ttf') format("truetype"); 
+    src: url('../fonts/v2/JosefinSans-ThinItalic.ttf') format("truetype");
 }
 /* titulares secundarios */
 @font-face {
     font-family: 'poiretone-regular';
-    src: url('../fonts/v2/PoiretOne-Regular.ttf') format("truetype"); 
+    src: url('../fonts/v2/PoiretOne-Regular.ttf') format("truetype");
 }
 
 
@@ -123,8 +123,8 @@ img{display:block;}
 h2{width:60%; margin: 50px auto 50px; font:normal 65px 'breamcatcher', helvetica, arial, sans-serif; letter-spacing: 3px; word-spacing:4px; text-align:center; color:#22333A;/*color:#ccb089;*/ }
 h2 span{ display:block;}
 h2 span.tam1{font-size:25px;}
-h2 span.tam2{font-size:35px;} 
-h2 span.tam3{font-size:50px;} 
+h2 span.tam2{font-size:35px;}
+h2 span.tam3{font-size:50px;}
 
 /* -------- Navigation -------- */
 SECTION.nav-left, SECTION.nav-right{height:100%;width:60px;position:fixed;background-color:#fff;text-transform:uppercase;letter-spacing:4px;z-index:100;}
@@ -259,12 +259,12 @@ SECTION.banner .proxPartidos .slideshow-container2 .fade {
 }
 
 @-webkit-keyframes fade{
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
@@ -277,7 +277,7 @@ A.btn-dark{color:#fff;}
 
 
 /* -------- Advantages -------- */
-SECTION.advantages{height:auto; margin:0px auto 10px;width:auto;position:relative;left: 0px; top: -10px; padding: 1px; border:1px solid transparent; 
+SECTION.advantages{height:auto; margin:0px auto 10px;width:auto;position:relative;left: 0px; top: -10px; padding: 1px; border:1px solid transparent;
 /*padding:175px 0 80px 0;background:#000e0d url('../images/dirt-advantages.png') repeat;*/}
 SECTION.advantages .container{margin:0px 50px;width:auto; height:400px; position:relative; padding: 0;top:-10px; color:#000; background:#EFF2EF; clear:both;/*border:1px solid blue; */}
 SECTION.advantages .container > *{width:45%; float:left; /*border:1px solid gray;*/}
@@ -301,8 +301,8 @@ SECTION.advantages .container .cnt-video video .play{display:none;}
 .cnt-banner h2{width:60%; margin: 35px auto 5px; font:normal 60px 'breamcatcher', helvetica, arial, sans-serif; letter-spacing: 3px; word-spacing:4px; text-align:center; color:#22333A;/*color:#ccb089;*/ }
 .cnt-banner h2 span{ display:block;}
 .cnt-banner h2 span.tam1{font-size:22px;}
-.cnt-banner h2 span.tam2{font-size:27px;} 
-.cnt-banner h2 span.tam3{font-size:32px;} 
+.cnt-banner h2 span.tam2{font-size:27px;}
+.cnt-banner h2 span.tam3{font-size:32px;}
 .slideshow-container{width:100%;height:90px;position:relative;}
 .slide{display:none;}
 .slide-txt{padding:0 0 0 40px;font:normal 22px 'JosefinSans-Regular', Times, serif;color:#000;position:relative;}
@@ -321,7 +321,7 @@ SECTION.advantages .container .cnt-video video .play{display:none;}
 /* -------- About -------- */
 SECTION.about{/*padding:185px 0 70px 0;background-color:#fff;overflow:hidden;*/
 height:750px; margin:0;width:auto;position:relative;left: 0px; top: 0px; padding: 1px;   background-color:#fff; /*border-bottom:2px solid #000; border:1px solid transparent;*/}
-SECTION.about .container{margin:10px 50px 0;width:auto; height:840px; position:relative; padding: 0;padding-top:30px; color:#000;  clear:both; top:-10px;  
+SECTION.about .container{margin:10px 50px 0;width:auto; height:840px; position:relative; padding: 0;padding-top:30px; color:#000;  clear:both; top:-10px;
 background:#fff  url('../images/ballcoin.png') no-repeat bottom right;background-position: 98% 0%;background-size: 55% ; /*border:1px solid blue;*/ }
 .about-info, .about-img{width:49%;float:left;}
 
@@ -335,7 +335,7 @@ SECTION.about .container .about-info > *{width:80%; margin:25px auto;}
 /*.about-info h3{font:normal 32px 'poiretone-regular', helvetica, arial, sans-serif;color:#ccb089;margin:0 0 65px 0; text-align: center;}*/
 section.about .container .about-info p{font:18px 'JosefinSans-Regular', Times, serif;color:#22333A;width:65%;margin:10px auto; text-align:center;}
 section.about .container .about-info ul{width:65%; height:450px; background:#22333A; color:#fff; padding:10px; border:1px solid transparent; display:block;clear:both;position:relative;}
-section.about .container .about-info ul h3{font:normal 18px 'poiretone-regular', helvetica, arial, sans-serif;color:#ccb089; margin:50px auto 30px; text-align: center; text-transform: uppercase; letter-spacing: 3px; word-spacing:4px; } 
+section.about .container .about-info ul h3{font:normal 18px 'poiretone-regular', helvetica, arial, sans-serif;color:#ccb089; margin:50px auto 30px; text-align: center; text-transform: uppercase; letter-spacing: 3px; word-spacing:4px; }
 section.about .container .about-info ul li{width:90%; margin:15px auto; clear:both; font:normal 16px 'JosefinSans-Regular', helvetica, arial, sans-serif;color:#fff;padding: 5px 0 ; text-align: left;}
 section.about .container .about-info ul li:last-child {margin-bottom:50px;}
 section.about .container .about-info ul li span{font:normal 24px 'montserratlight', helvetica, arial, sans-serif;color:#ccb089;display:block; float:left;margin:0 12px 0 0; height:45px;}
@@ -366,7 +366,7 @@ SECTION.user-type .container{margin:10px 60px 0;width:auto; height:auto; positio
 /* -------- Earn More -------- */
 SECTION.earn{/*margin:75px 0;text-align:center;background:#fff url('../images/dirt-earn.png') repeat;*/
 height:450px; margin:0;width:auto;position:relative;left: 0px; top: 0px; padding: 1px; border:1px solid transparent; background-color:transparent;}
-SECTION.earn .container{margin:30px 70px;width:auto; height:420px; position:relative; padding: 0;color:#000; border:1px solid transparent; clear:both;  
+SECTION.earn .container{margin:30px 70px;width:auto; height:420px; position:relative; padding: 0;color:#000; border:1px solid transparent; clear:both;
 background:#fff;  box-shadow: 0px 0px 5px  #888888; top:-20px;}
 .earn ul{width:98%; height:390px;margin:15px auto; border:2px solid #C5A67E;}
 .earn ul li{width:60%; margin:5px auto 0; border:2px solid transparent; text-align: center;}
@@ -380,7 +380,7 @@ background:#fff;  box-shadow: 0px 0px 5px  #888888; top:-20px;}
 SECTION.quiniela-form{background-color:#fff; height:auto;margin:0; margin-top:40px;width:auto;position:relative;left: 0px; top: 0px; padding: 1px; overflow: hidden; /*border:1px solid red;*/}
 SECTION.quiniela-form.registerView{height:800px;}
 SECTION.quiniela-form.actualizarPerfil {height:900px; }
-SECTION.quiniela-form .container{margin:20px 60px;width:auto;  position:relative; padding: 0;color:#000; border:1px solid transparent; clear:both;  
+SECTION.quiniela-form .container{margin:20px 60px;width:auto;  position:relative; padding: 0;color:#000; border:1px solid transparent; clear:both;
 background:#fff;  /*box-shadow: 0px 0px 5px  #888888;*/ top:-20px;}
 SECTION.quiniela-form.registerView .container{height:780px;}
 SECTION.quiniela-form .container  h2{width:80%;font:bold 35px 'poiretone-regular', helvetica, arial, sans-serif;color:#ccb089;margin:35px auto 15px; text-align:left;}
@@ -392,6 +392,7 @@ SECTION.quiniela-form .container .quiniela-form-info h2 span{display:block;font-
 SECTION.quiniela-form .container .quiniela-form-info p{ width:80%; font:normal 24px 'JosefinSans-Regular', helvetica, arial, sans-serif;color:#000e0d;margin:15px auto; text-align: center;}
 SECTION.quiniela-form .container .quiniela-form-info p.tam2{font-size:32px; font-weight:bold;}
 SECTION.quiniela-form .container .quiniela-form-form {border:1px solid #ccc; box-shadow:0px 1px 20px #ccc; padding:1px;}
+SECTION.quiniela-form .container .quiniela-form-form.withoutborder{border: 0; box-shadow: none; margin: 0 24%;}
 SECTION.quiniela-form .container .quiniela-form-form h2{font-size:22px; margin:40px auto 10px;}
 SECTION.quiniela-form .container .quiniela-form-form h2:first-child{margin-top:60px;}
 SECTION.quiniela-form .container .quiniela-form-form ul{width:85%;margin:0 auto; clear:both; overflow: visible;padding:1px;border:1px solid transparent; height:auto;}
@@ -418,6 +419,18 @@ SECTION.quiniela-form .container .quiniela-form-form ul.tipoUsuario li label{mar
     letter-spacing: 2px;
     text-transform: initial;
     }
+SECTION.quiniela-form .container .quiniela-form-form ul li input[type="text"] input[type="date"]{
+    background-color: #fff;
+    height: auto;
+    margin: 0;
+    margin-top: 40px;
+    width: auto;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    padding: 1px;
+    overflow: hidden;
+}
 SECTION.quiniela-form .container .quiniela-form-form ul.tipoUsuario li input{
     width: 30px;
     height: 30px;
@@ -449,7 +462,7 @@ SECTION.quiniela-form .container .quiniela-form-form .btn-light:hover{margin:0 a
 SECTION.quiniela-form.actualizarPerfil .container .quiniela-form-form{
   width:70%;float:none; margin:5px auto; /*border:1px solid green;*/
 }
-.styled-select { 
+.styled-select {
    height: 65px;
    overflow: hidden;
    width: 100%;
@@ -479,7 +492,7 @@ SECTION.quiniela-form.actualizarPerfil .container .quiniela-form-form{
 }
 
 .styled-select.slate select {
-   border:0; 
+   border:0;
    border-bottom: 1px solid #ccb089;
    height: 40px;
    width:99%;
@@ -544,11 +557,11 @@ SECTION.accordion-table{padding:5px 0; height:auto !important; clear:both; overf
   /*box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);*/
   /*box-shadow: 0px 0px 5px  #888888;*/
   width: 90%;
-  margin:10px auto 0; 
-  height:1600px; 
-  position:relative; 
+  margin:10px auto 0;
+  height:1600px;
+  position:relative;
   padding: 1px;
-  overflow: visible;  
+  overflow: visible;
  /* overflow-y: auto;*/
   clear:both;/*border:1px solid blue; */
 }
@@ -567,11 +580,11 @@ SECTION.accordion-table{padding:5px 0; height:auto !important; clear:both; overf
   float:left;
   border: 1px solid #ccc;
   font: normal 16px 'poiretone-regular', helvetica, arial, sans-serif;
-  color:#000; 
-  margin:14px 0 10px 25px; 
-  text-align: left; 
-  text-transform: uppercase; 
-  letter-spacing: 3px; 
+  color:#000;
+  margin:14px 0 10px 25px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 3px;
   word-spacing:4px;
 }
 
@@ -587,13 +600,13 @@ SECTION.accordion-table{padding:5px 0; height:auto !important; clear:both; overf
 .tabs nav.menuops div a, .tabs nav.menuops div span {
   padding: 15px 5px 15px 20px;
   width: 100%;
-  text-align: left; 
+  text-align: left;
   cursor: pointer;
   display:block;
-  font:bold 14px 'poiretone-regular', helvetica, arial, sans-serif;color:#000; 
+  font:bold 14px 'poiretone-regular', helvetica, arial, sans-serif;color:#000;
   margin:5px auto;  letter-spacing: 2px; word-spacing:2px;
 }
-/*.tabs nav.menuops div span{font:bold 14px 'poiretone-regular', helvetica, arial, sans-serif;color:#000; display:block; 
+/*.tabs nav.menuops div span{font:bold 14px 'poiretone-regular', helvetica, arial, sans-serif;color:#000; display:block;
   margin:5px auto;  letter-spacing: 2px; word-spacing:2px;}*/
 .tabs nav.menuops div a:last-child{margin-bottom:25px;}
 
@@ -605,7 +618,7 @@ SECTION.accordion-table{padding:5px 0; height:auto !important; clear:both; overf
 }
 .tabs nav.menuops div a.sangria{
   padding-left:35px;
- 
+
 }
 
 .tabs .content {
@@ -623,7 +636,7 @@ SECTION.accordion-table{padding:5px 0; height:auto !important; clear:both; overf
   /*border:1px solid blue;*/
   margin:15px 0px 15px 40px;
   display: none;
-  
+
 }
 
 .tabs .content.visible {
@@ -633,7 +646,7 @@ SECTION.accordion-table{padding:5px 0; height:auto !important; clear:both; overf
   /*opacity: 1;*/
   /*width: calc(100% - 150px);*/
   /*overflow: auto;*/
-  display: block;  
+  display: block;
   /*overflow-y: auto;*/
 
 }
@@ -719,4 +732,3 @@ SECTION.register{padding:60px 0 100px 0;}
 
 /*Términos y condiciones*/
 section.mini-banner .navbar.responsive{display:none;}
-
