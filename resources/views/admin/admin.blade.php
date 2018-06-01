@@ -91,7 +91,11 @@
               </p> -->
             <div style="" class="navbar margin-topone" id="menuDesktop">
             @foreach ($jornadas as $jornada)
-              <h4><span class="tam3"><a href="admin/{{$jornada->id}}">{{$jornada->descripcion}}</a></span>
+							@if ($jornada->status->id != 2)
+								<h4><span class="tam3"><a href="admin/{{$jornada->id}}">{{$jornada->descripcion}}</a></span>
+							@else
+								<h4><span class="tam3"><a href="#" style="pointer-events:none; text-decoration:line-through;">{{$jornada->descripcion}}</a></span>
+							@endif
 								&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;
 								@if ($jornada->status->id == 3)
 									<span class="tam3"><a href="admin/activar/{{$jornada->id}}">Activate</a></span>
@@ -105,8 +109,9 @@
 									<span class="tam3"><a href="admin/abrir/{{$jornada->id}}">Open</a></span>
 								@endif
 								&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;
-								<span class="tam3"><a href="/puntosjornada/{{$jornada->id}}">Calculate</a></span>
-							
+								@if ($jornada->status->id == 2)
+									<span class="tam3"><a href="/puntosjornada/{{$jornada->id}}">Calculate</a></span>
+								@endif
 							</h4>
             @endforeach
             </div>
