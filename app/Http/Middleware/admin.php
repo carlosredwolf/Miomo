@@ -18,7 +18,7 @@ class admin
      public function handle($request, Closure $next)
      {
          $idUsuario=Auth::user()->id;
-         $data = Data::find($idUsuario);
+         $data=Data::Where('id_usuario',$idUsuario)->first();
 
          $valData=$data->id_rol;
          if($valData!=1){
