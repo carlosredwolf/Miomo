@@ -9,6 +9,8 @@
       <h3><span class="nomEquipo1">{{$partido->local->nombre}}</span>  VS  <span class="nomEquipo2">{{$partido->visitante->nombre}}</span></h3>
       @if ($partido->grupo->id != 9)
         <h3>{{$partido->grupo->descripcion}}</h3>
+      @endif
+      @if ($partido->local->id != 1)
         @php
         $id1 = $partido->local->id;
         $id2 = $partido->visitante->id;

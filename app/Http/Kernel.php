@@ -60,5 +60,6 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'check_confirm' => \Miomo\Http\Middleware\CheckConfirm::class,
+        'admin' => \Miomo\Http\Middleware\admin::class,
     ];
 }

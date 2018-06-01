@@ -14,7 +14,7 @@
                         <form id="form-register" method="POST" action="{{url('editarperfil')}}">
                             @csrf
 
-                            <h2>Datos Generales</h2>
+                            <h2>User Profile</h2>
                              @if(isset($datosUsuario))
                                 @foreach($datosUsuario as $dataUser)
                                   <ul>
@@ -45,7 +45,7 @@
           						             </ul>
                                  @endforeach
                                @endif
-                               <button class="btn-light" id="btn-registro" type="submit">Actualizar</button>
+                               <button class="btn-light" id="btn-registro" type="submit">Save</button>
                         </form>
                       </div>
                     </div>

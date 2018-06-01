@@ -16,6 +16,21 @@ Route::get('/comprobar', function () {
     return view('emails.useralert');
 });
 
+<<<<<<< HEAD
+=======
+Route::group(['middleware' => ['admin']], function () {
+
+      Route::get('admin','AdminController@show');
+      Route::get('admin/{id}','AdminController@jornada');
+
+      Route::get('admin/activar/{id}','AdminController@activar');
+      Route::get('admin/abrir/{id}','AdminController@abrir');
+
+      Route::get('admin/editarpartido','AdminController@partido');
+
+      Route::post('admin','AdminController@store');
+});
+>>>>>>> 624338dba2cc243ccc1a5964c5f7530f06fb0c47
 
 //Colocar todas las rutas que se van a usar solo cuando el usuario haya confirmado su correo
 Route::group(['middleware' => ['check_confirm']], function () {
@@ -24,16 +39,6 @@ Route::group(['middleware' => ['check_confirm']], function () {
     Route::get('jornada/{id}','EventoController@jornada');
     Route::get('resultados','EventoController@resultados');
     Route::get('proximos','EventoController@proximos');
-
-    Route::get('admin','AdminController@show');
-    Route::get('admin/{id}','AdminController@jornada');
-
-    Route::get('admin/activar/{id}','AdminController@activar');
-    Route::get('admin/abrir/{id}','AdminController@abrir');
-
-    Route::get('admin/editarpartido','AdminController@partido');
-
-    Route::post('admin','AdminController@store');
 
     Route::post('quiniela','QuinielaController@store');
     Route::post('editarQuiniela','QuinielaController@update');

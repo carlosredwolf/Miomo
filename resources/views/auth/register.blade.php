@@ -178,7 +178,10 @@
 <script src="{{ asset('js/js.js') }}"></script>
 <script>
         $(document).ready(function($) {
-			$( "#datepicker" ).datepicker();
+			$( "#datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+          });
             $('#myPassword').strength({
                 strengthClass: 'strength',
                 strengthMeterClass: 'strength_meter',

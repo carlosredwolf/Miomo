@@ -39,7 +39,7 @@
 		<section class="header_quiniela main-menu-sizeone">
 
 			<div class="navbar margin-topone" id="menuDesktop">
-	  			<a class="active" href="quiniela">La quiniela</a>
+	  			<a class="active" href="quiniela">The Pool</a>
 	  			{{-- <a href="resultados">Results</a>
 	  			<a href="proximos">Next matches</a> --}}
 
@@ -89,6 +89,7 @@
 				<li><a href="privacidad">Política de privacidad</a></li>-->
 			</ul>
 			<p>Copyright © miomo.net</p>
+			<p><a href="mailto:contact@miomo.net" style="color:#ffffff; text-decoration:none;" target="_blank">Contact us at contact@miomo.net</a></p>
 		</div>
 	</footer>
 
