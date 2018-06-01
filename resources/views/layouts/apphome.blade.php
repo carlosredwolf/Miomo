@@ -89,7 +89,7 @@
 				<li><a href="privacidad">Política de privacidad</a></li>-->
 			</ul>
 			<p>Copyright © miomo.net</p>
-			<p><a href="mailto:contact@miomo.net" style="color:#ffffff; text-decoration:none;" target="_blank">Contact us at contact@miomo.net</a></p>
+			<p><a href="mailto:contact@miomo.net" style="color:#ffffff; text-decoration:none;" target="_blank">contact@miomo.net</a></p>
 		</div>
 	</footer>
 

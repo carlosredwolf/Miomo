@@ -28,8 +28,8 @@
             <!--<li><a href="terminos">Terms and conditions</a></li>
               <li><a href="privacidad">Política de privacidad</a></li>-->
             </ul>
-            <p style="font-weight: bold; padding-top:40px;color:#fff;text-align: center; text-decoration:none; ">Copyright © miomo.net</p>
-            <p style="text-decoration:none; font-weight: bold; color:#fff;text-align: center;">contact@miomo.net</p>
+            {{-- <p style="font-weight: bold; padding-top:40px;color:#fff;text-align: center; text-decoration:none; ">Copyright © miomo.net</p>
+            <p style="text-decoration:none; font-weight: bold; color:#fff;text-align: center;">contact@miomo.net</p> --}}
           </div>
   </footer>
 	</div>
