@@ -16,8 +16,6 @@ Route::get('/comprobar', function () {
     return view('emails.useralert');
 });
 
-<<<<<<< HEAD
-=======
 Route::group(['middleware' => ['admin']], function () {
 
       Route::get('admin','AdminController@show');
@@ -30,7 +28,6 @@ Route::group(['middleware' => ['admin']], function () {
 
       Route::post('admin','AdminController@store');
 });
->>>>>>> 624338dba2cc243ccc1a5964c5f7530f06fb0c47
 
 //Colocar todas las rutas que se van a usar solo cuando el usuario haya confirmado su correo
 Route::group(['middleware' => ['check_confirm']], function () {
