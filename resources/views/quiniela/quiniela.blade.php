@@ -41,7 +41,7 @@
 	  			<a class="active" href="quiniela">The pool</a>
 					<a href="misquinielas">My pools</a>
 					<a href="rules">World Cup Pool Rules</a>
-					@if (Auth::user()->name == 'pajaro')
+					@if ($data->id_rol == 1)
 						<a href="admin">admin</a>
 					@endif
 	  			{{-- <a href="resultados">Results</a>
