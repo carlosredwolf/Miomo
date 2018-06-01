@@ -16,6 +16,7 @@ Route::get('/comprobar', function () {
     return view('emails.useralert');
 });
 
+
 //Colocar todas las rutas que se van a usar solo cuando el usuario haya confirmado su correo
 Route::group(['middleware' => ['check_confirm']], function () {
 

@@ -11,7 +11,7 @@ use Miomo\Partido;
 use Miomo\Quiniela;
 use stdClass;
 use Auth;
-
+use Miomo\Datos_Usuario as Data;
 class EventoController extends Controller
 {
     //
