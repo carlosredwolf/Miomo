@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/strength.css') }}">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -58,7 +61,7 @@
 							<li class="twoInputs tooltip" >
 								<!-- <label for="nombre">Correo electrónico</label> -->
 								 <span class="tooltiptext"> Birthdate</span>
-								<input type="date" name="fecha_nacimiento" id="" value="{{ old('fecha_nacimiento') }}" placeholder="Birthdate" required autofocus>
+								<input type="text" name="fecha_nacimiento" id="datepicker" value="{{ old('fecha_nacimiento') }}" placeholder="Birthdate" required autofocus>
 								 @if ($errors->has('fecha_nacimiento'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('fecha_nacimiento') }}</strong>
@@ -175,6 +178,7 @@
 <script src="{{ asset('js/js.js') }}"></script>
 <script>
         $(document).ready(function($) {
+			$( "#datepicker" ).datepicker();
             $('#myPassword').strength({
                 strengthClass: 'strength',
                 strengthMeterClass: 'strength_meter',
