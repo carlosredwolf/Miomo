@@ -92,13 +92,14 @@ class RegisterController extends Controller
 
         $id_user=$user->id;
         $id_rol=3;
+        $fechaBD = date("Y-m-d", strtotime($data['fecha_nacimiento']));
         $ciudad = Estado::where('estadonombre',$data['ciudad'])->first();
         $datosUsuario=Datos_Usuario::create([
             'nombre'=>$data['nombre'],
             'apellidos'=>$data['apellidos'],
             'id_pais'=>$ciudad->ubicacionpaisid,
             'id_ciudad'=>$ciudad->id,
-            'fecha_nacimiento'=>$data['fecha_nacimiento'],
+            'fecha_nacimiento'=>$fechaBD,
             'celular'=>$data['celular'],
             'correo'=>$data['email'],
             'id_usuario'=>$id_user,

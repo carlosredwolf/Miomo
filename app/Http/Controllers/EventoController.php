@@ -53,6 +53,11 @@ class EventoController extends Controller
       $jornadas = $responseData;
       $data =Data::find(Auth::user()->id);
 
+      $idUsuario=Auth::user()->id;
+      $data=Data::Where('id_usuario',$idUsuario)->first();
+      //$data =Data::find(Auth::user()->id);
+      //return response()->json($data->id_rol);
+
       return view('quiniela.quiniela',compact('jornadas','data'));
     }
 

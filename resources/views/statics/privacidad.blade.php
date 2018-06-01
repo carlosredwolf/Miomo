@@ -597,6 +597,7 @@ Totales: No contempla ninguna condición hipotética, el  resultado se determina
 				<li><a href="terminos">Términos y Condiciones</a></li>
 			</ul>
 			<p>Copyright © miomo.mx</p>
+			<p><a href="mailto:contact@miomo.net" style="color:#ffffff; text-decoration:none;" target="_blank">Contact us at contact@miomo.net</a></p>
 		</div>
 	</footer>
 

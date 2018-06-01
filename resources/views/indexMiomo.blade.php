@@ -194,6 +194,7 @@
 	<div class="container">
 
 		<div class="cnt-video" id ="videoContainer">
+			<img src="images/repVideo.png" height="auto" width="100%" alt="">
 			{{-- <video id="video" controls preload="metadata" poster="images/repVideo.png">
 				<source src="video/bitcoin.mp4" type="video/mp4" >
 					<source src="video/bitcoin.mp4" type="video/ogg">
@@ -332,6 +333,7 @@
 						<li><a href="privacidad">Política de privacidad</a></li>-->
 					</ul>
 					<p>Copyright © miomo.net</p>
+					<p><a href="mailto:contact@miomo.net" style="color:#ffffff; text-decoration:none;" target="_blank">contact@miomo.net</a></p>
 				</div>
 			</footer>
 

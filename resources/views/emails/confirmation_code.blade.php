@@ -3,49 +3,34 @@
 <head>
 	<meta charset="utf-8">
 </head>
-<link rel="stylesheet" href="css/html5reset-1.6.1.css">
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/responsive.css">
-
-<style>
-.encabezado{
-	color: #000;
-	font-size: 15px;
-	text-align: left;
-}
-.descripcion{
-	color: #000;
-	font-size: 25px;
-}
-.btnConfirm{
-	text-align:center;
-	display:block;
-	padding:15px 25px;
-	background-color:#8ab570;
-	color:#ffffff;
-	border-radius:3px;
-	text-decoration:none;
-	margin-top:20px
-}
-</style>
 
 <body>
-	<div class="container">
-		<img alt="Miomo.net" src="https://www.bing.com/images/search?view=detailV2&ccid=OOtgiTvq&id=F1A40071743D0CCE93328B3139F99B4803CAFC2F&thid=OIP.OOtgiTvqbYT6wPOXWyP0HQHaHa&mediaurl=https%3a%2f%2fimg.imagenescool.com%2fic%2fdomingo%2fdomingo_136.jpg&exph=960&expw=960&q=imagenes&simid=607995547012696294&selectedIndex=0&ajaxhist=0" />
+	<div style="padding: 30px 30px 40px 30px;">
+		<p style="color:#CCB089;font-size: 40px;font-weight: bold;">Miomo</p>
+		<p style="font-size: 20px;">{{ $name }},<br>Welcome to <strong>Miomo</strong> !</p>
 		<br><br>
-		<p class="encabezado">{{ $name }},<br>Welcome to <strong>Miomo</strong> !</p>
+		<p style="font-size: 20px;">Please confirm your email.</p>
 		<br><br>
-		<p class="descripcion">Please confirm your email.</p>
-		<br><br>
-		<p>To do this you simply have to click on the following link:</p>
+		<p style="font-size: 20px;">To do this you simply have to click on the following link:</p>
 
-		<a href="{{ url('/register/verify/' . $confirmation_code) }}" class="btnConfirm">
+		<a href="{{ url('/register/verify/' . $confirmation_code) }}" style="padding: 10px 10px 10px 10px;font-size: 20px;background-color:#CCB089;color:#FFF;height: 40px;border-radius: 5px;">
 			Click to confirm your email
 		</a>
 		<br>
-		<p>If you can not see this button, copy this link into your browser:</p>
+		<p style="font-size: 20px;">If you can not see this button, copy this link into your browser:</p>
 		<br>
-		<a href="{{ url('/register/verify/' . $confirmation_code) }}">{{ url('/register/verify/' . $confirmation_code) }}</a>
-	</div>
+		<a style="font-size: 20px;color:#CCB089;" href="{{ url('/register/verify/' . $confirmation_code) }}">{{ url('/register/verify/' . $confirmation_code) }}</a>
+    <br><br>
 </body>
+  <footer style="background-color:#22333A;height: 100px">
+      <div class="container">
+        <ul>
+            <!--<li><a href="terminos">Terms and conditions</a></li>
+              <li><a href="privacidad">Política de privacidad</a></li>-->
+            </ul>
+            {{-- <p style="font-weight: bold; padding-top:40px;color:#fff;text-align: center; text-decoration:none; ">Copyright © miomo.net</p>
+            <p style="text-decoration:none; font-weight: bold; color:#fff;text-align: center;">contact@miomo.net</p> --}}
+          </div>
+  </footer>
+	</div>
 </html>
