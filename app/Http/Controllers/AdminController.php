@@ -274,6 +274,24 @@ class AdminController extends Controller
       return redirect('admin');
     }
 
+    public function enProgreso($id)
+    {
+      // code...
+      $jornada = Jornada::find($id);
+      $status = $jornada->id_status;
+
+      if ($status == 1) {
+        // code...
+        $jornada->id_status = 4;
+      }elseif($status == 4) {
+        // code...
+        $jornada->id_status = 1;
+      }
+
+      $jornada->save();
+      return redirect('admin');
+    }
+
     public function partido($id)
     {
       // code...

@@ -29,12 +29,14 @@ class QuinielaController extends Controller
       $quiniela = Quiniela::where('id_usuario',$respuesta->id_user)
                           ->where('id_jornada',$respuesta->id_jornada)
                           ->first();
+
       if (isset($quiniela->id)) {
         // code...
         $apuestas = Apuesta::where('id_quiniela',$quiniela->id)->delete();
         $quiniela->delete();
 
       }
+
       $quiniela = Quiniela::create(['id_usuario' => $respuesta->id_user,
                                     'id_evento' => 1,
                                     'id_jornada' => $respuesta->id_jornada,
@@ -98,24 +100,12 @@ class QuinielaController extends Controller
 
       $id_quiniela= $response['idQ'];
 
-      $apuestas = Apuesta::where('id_quiniela',$id_quiniela)->delete();
-      $quiniela = Quiniela::destroy($id_quiniela);
-
-      $quiniela = Quiniela::create(['id_usuario' => $respuesta->id_user,
-                                    'id_evento' => 1,
-                                    'id_jornada' => $respuesta->id_jornada,
-                                    'id_status' => 3]);
-
-      $id_quiniela= $quiniela->id;
-
       foreach ($respuesta->partidos as $partido) {
         // code...
         if ($partido->resultado->id != 4) {
-          $apuesta = Apuesta::create([
-            'id_quiniela' =>   $id_quiniela,
-            'id_partido' => $partido->id,
-            'id_resultado' => $partido->resultado->id,
-          ]);
+          $apuesta = Apuesta::where('id_quiniela',$id_quiniela)->where('id_partido',$partido->id)->first();
+          $apuesta->id_resultado = $partido->resultado->id;
+          $apuesta->save();
         }
       }
 
