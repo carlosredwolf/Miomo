@@ -1,8 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.master')
 @section('content')
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/strength.css') }}">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <div class="container">
     <div class="row justify-content-center">
@@ -93,14 +92,6 @@
 								<label for="tuser3" class="checkbox">
         						<input type="checkbox" class="checkbox" id="tuser3" name="check_tuser[]" value="visitante"  />I'm only interested in the pool</label>
 							</li>
-
-							<!-- <li class="selectOps styled-select slate">
-								<select name="tipo_usuario">
-									<option value="opcion1">Apostador</option>
-									<option value="opcion2">Visitante</option>
-									<option value="opcion3">Solo me interesa la quiniela</option>
-								</select>
-							</li> -->
 						</ul>
 						<h2>User data</h2>
 						<ul>
@@ -193,3 +184,10 @@
         });
     </script>
 @endsection
+
+@section('footer')
+	
+	@include('layouts.footer')
+	
+@stop
+
