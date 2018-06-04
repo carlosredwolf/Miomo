@@ -28,24 +28,24 @@
       <div>
         <label class="eEquipo1" for="radio-{{$partido->id}}"><img src="{{asset($route1)}}"> <span>{{$partido->local->nombre}}</span></label>
         @if ($partido->resultado->id == 1)
-            <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=1 checked disabled>
+            <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=1 checked>
         @else
-            <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=1 disabled>
+            <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=1>
         @endif
       </div>
       <div class ="deEmpate">
         @if ($partido->resultado->id == 2)
-          <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=2 checked disabled>
+          <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=2 checked>
         @else
-          <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=2 disabled>
+          <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=2>
         @endif
         <label  class ="eEmpate" for="radio-{{$partido->id}}">Empate</label>
       </div>
       <div>
         @if ($partido->resultado->id == 3)
-          <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=3 checked disabled>
+          <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=3 checked>
         @else
-          <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=3 disabled>
+          <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=3>
         @endif
         <label class="eEquipo2" for="radio-{{$partido->id}}"><img src="{{asset($route2)}}" >	<span class="nomEquipo2">{{$partido->visitante->nombre}}</span></label>
       </div>
@@ -56,6 +56,6 @@
   <input type="hidden" name="idQ" value="{{$idQ}}">
   <input type="hidden" name="partidos" value="{{$partidosStr}}">
 <div class="form-enviar">
-  {{-- <input type="submit" value="Guardar"> --}}
+  <input type="submit" value="SAVE">
 </div>
 </form>

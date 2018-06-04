@@ -96,21 +96,27 @@
 							@else
 								<h4><span class="tam3"><a href="#" style="pointer-events:none; text-decoration:line-through;">{{$jornada->descripcion}}</a></span>
 							@endif
-								&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;
+								&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;
 								@if ($jornada->status->id == 3)
 									<span class="tam3"><a href="admin/activar/{{$jornada->id}}">Activate</a></span>
 								@else
 									<span class="tam3"><a href="admin/activar/{{$jornada->id}}">Desactivate</a></span>
 								@endif
-								&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;
+								&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;
 								@if ($jornada->status->id == 1 || $jornada->status->id == 3)
 									<span class="tam3"><a href="admin/abrir/{{$jornada->id}}">Close</a></span>
 								@else
 									<span class="tam3"><a href="admin/abrir/{{$jornada->id}}">Open</a></span>
 								@endif
-								&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;
+								&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;
 								@if ($jornada->status->id == 2)
 									<span class="tam3"><a href="/puntosjornada/{{$jornada->id}}">Calculate</a></span>
+								@endif
+								&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;
+								@if($jornada->status->id == 4)
+									<span class="tam3"><a href="admin/progreso/{{$jornada->id}}">Stop</a></span>
+								@elseif ($jornada->status->id == 1)
+									<span class="tam3"><a href="admin/progreso/{{$jornada->id}}">Start</a></span>
 								@endif
 							</h4>
             @endforeach

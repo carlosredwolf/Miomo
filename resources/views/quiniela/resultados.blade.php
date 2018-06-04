@@ -141,7 +141,7 @@
                 <div class ="deEmpate">
 									{{ Form::radio($name, 'empate', $inputE, ['class' => 'radio square','disabled' => 'disabled']) }}
                   {{-- <input class="radio square" type="radio" name="radio-1" disabled> --}}
-                  <label  class ="eEmpate" for="{{$name}}">Empate</label>
+                  <label  class ="eEmpate" for="{{$name}}">DRAW</label>
                 </div>
                 <div>
 									{{ Form::radio($name, 'visita', $inputV, ['class' => 'radio square','disabled' => 'disabled']) }}

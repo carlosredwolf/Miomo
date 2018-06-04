@@ -18,8 +18,8 @@ class admin
      public function handle($request, Closure $next)
      {
          $idUsuario=Auth::user()->id;
-         $data=Data::Where('id_usuario',$idUsuario)->first();
 
+         $data = Data::where('id_usuario',$idUsuario)->first();
          $valData=$data->id_rol;
          if($valData!=1){
          return redirect()->to('/login');

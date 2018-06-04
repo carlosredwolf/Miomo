@@ -24,7 +24,9 @@ Route::group(['middleware' => ['admin']], function () {
       Route::get('admin/activar/{id}','AdminController@activar');
       Route::get('admin/abrir/{id}','AdminController@abrir');
 
-      Route::get('admin/editarpartido','AdminController@partido');
+      Route::get('admin/progreso/{id}','AdminController@enProgreso');
+
+      //Route::get('admin/editarpartido','AdminController@partido');
 
       Route::post('admin','AdminController@store');
 });
