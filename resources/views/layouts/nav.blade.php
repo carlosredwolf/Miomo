@@ -29,9 +29,9 @@
                         <img src="images/main-logo.svg" />
                     </a>
             </section>
-            
+
             <section class="header_quiniela main-menu-sizeone">
-        
+
                     <div class="navbar margin-topone " id="menuDesktop">
                           <a class="active" href="quiniela">The pool</a>
                           <a href="misquinielas">My pools</a>
@@ -39,21 +39,21 @@
                             @if ($data->id_rol == 1)
                                 <a href="admin">admin</a>
                             @endif
-                            
-                            
+
+
                           {{-- <a href="resultados">Results</a>
                           <a href="proximos">Next matches</a> --}}
-        
+
                        <button class="avatar">
                                   <i class="avatar fas fa-user-circle"></i>
                           </button>
-        
+
                        <div class="dropdown user">
                             <button class="dropbtn">{{ Auth::user()->name }}
                                   <i class="fa fa-caret-down"></i>
                             </button>
                             <div class="dropdown-content">
-        
+
                                       <a href="perfil">Profile</a>
                                       <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                              document.getElementById('logout-form').submit();">Logout</a>
@@ -68,8 +68,11 @@
                             <button onclick="myFunction()" class="dropbtn">Results </button>
                               <div id="myDropdown" class="dropdown-content">
                                 <a  class="active" href="quiniela">The pool</a>
-                                {{-- <a href="resultados">Results</a>
-                                  <a href="proximos">Next matches</a> --}}
+                                <a href="misquinielas">My pools</a>
+                                <a href="rules">World Cup Pool Rules</a>
+                                  @if ($data->id_rol == 1)
+                                      <a href="admin">admin</a>
+                                  @endif
                                 </div>
                         </div>
                 </div>
@@ -79,6 +82,6 @@
                         @yield('content')
                     </div>
                 </section>
-                @yield('footer');       
+                @yield('footer');
 </body>
 </html>

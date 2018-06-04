@@ -66,21 +66,21 @@
                     <a href="/" class="main-logo main-logo-sizeone">
                         <img src="/images/main-logo.svg" />
                     </a>
-            
+
                     <ul>
-            
+
                         <li><a href="/register#formRegistro">Register</a></li>
                         <li><a href="/login"><span id="login-btn">Sign in </span></a></li>
                     </ul>
                 </section>
-            
+
                 <section class="nav-right">
                     <div class="menu" onclick="openNav()">
                         <span class="first"></span>
                         <span class="second"></span>
                         <span class="third"></span>
                     </div>
-            
+
                     <ul>
                         <li><a href="https://www.facebook.com/Miomo2/">Facebook</a></li>
                     </ul>
@@ -90,7 +90,7 @@
                             <ul>
                                 <li>
                                     <h2><span class="tam1" >FIND A WAY TO MAKE SOME MONEY THIS SUMMER!
-                
+
                                     </h2>
                                 </li>
                                 <li>
@@ -118,12 +118,12 @@
                             </div>
                             <div class="quiniela-form-form" id="formRegistro">
                                 @yield('content')
-            
+
                             </div>
                         </div>
             </section>
             @yield('footer')
-    
+
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
