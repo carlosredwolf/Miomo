@@ -25,6 +25,13 @@ class AdminController extends Controller
       $this->middleware('auth');
     }
 
+    public function allUsers(){
+     $allUsers=Data::All();
+     $data =Data::find(Auth::user()->id);
+     return view('admin.forms.allusers',compact('allUsers','data'));
+     //return response()->json($allUsers);
+    }
+
     public function show($id = self::TORNEO){
 
       $evento = Evento::find($id);

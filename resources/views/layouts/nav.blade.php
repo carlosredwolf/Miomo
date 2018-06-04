@@ -38,6 +38,7 @@
                           <a href="rules">World Cup Pool Rules</a>
                             @if ($data->id_rol == 1)
                                 <a href="admin">admin</a>
+                               
                             @endif
 
 

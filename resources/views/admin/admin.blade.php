@@ -41,6 +41,7 @@
 	  			<a href="quiniela">The pool</a>
 					@if ($data->id_rol == 1)
 						<a class="active" href="admin">admin</a>
+						<a href="/getallusers">See all users</a>
 					@endif
 	  			{{-- <a href="resultados">Resultados</a>
 	  			<a href="proximos">Próximos partidos</a> --}}
@@ -90,6 +91,7 @@
               <span class="tam2">champions league </span>
               </p> -->
             <div style="" class="navbar margin-topone" id="menuDesktop">
+				
             @foreach ($jornadas as $jornada)
 							@if ($jornada->status->id != 2)
 								<h4><span class="tam3"><a href="admin/{{$jornada->id}}">{{$jornada->descripcion}}</a></span>
