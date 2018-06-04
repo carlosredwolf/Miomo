@@ -2,7 +2,7 @@
 @extends('layouts.appAdmin')
 
 @section('content')
-    
+<link rel="stylesheet" href="/css/table.css">
     <h1>Scores by Round</h1>
     <section class="quiniela">
             <div class="container">
@@ -14,6 +14,7 @@
     @if ($quiniela)
         
         @foreach ($quiniela as $qui)
+        <div class="datagrid"> 
             <table>
                 <thead>
                     <th> Pool number </th>
@@ -38,6 +39,7 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
         @endforeach
         
     @endif
