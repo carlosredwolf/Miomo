@@ -45,7 +45,7 @@ class AdminController extends Controller
         return response()->json(['mensaje'=> 'NO existen jornadas de ese evento','codigo'=>'404'],404);
       }
 
-      $data =Data::find(Auth::user()->id);
+      $data =Data::where('id_usuario',Auth::user()->id)->first();
 
       return view('admin.admin',compact('jornadas','data'));
     }
