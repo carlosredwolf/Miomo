@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/strength.css') }}">
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -102,7 +103,6 @@
                                     </span>
                                 @endif
 							<li class="li-register">
-								<!-- <label for="nombre">Dirección</label> -->
 								<input type="email" name="email" id="" value="{{ old('email') }}" placeholder="Email" required autofocus>
 							@if ($errors->has('email'))
                                     <span class="invalid-feedback">
