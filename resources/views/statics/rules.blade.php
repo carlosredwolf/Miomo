@@ -12,12 +12,12 @@
 	<meta charset="utf-8">
 	<title>Miomo</title>
 
-	<link rel="stylesheet" href="css/html5reset-1.6.1.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/responsiveTyC.css">
+	<link rel="stylesheet" href="/css/html5reset-1.6.1.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/responsiveTyC.css">
 
 
-	<!-- <link rel="stylesheet" href="css/responsive.css">-->
+	<!-- <link rel="stylesheet" href="/css/responsive.css">-->
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

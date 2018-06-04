@@ -11,6 +11,7 @@ use Miomo\Quiniela;
 use Miomo\Apuesta;
 use Miomo\Jornada;
 use Auth;
+use Miomo\Datos_Usuario as Data;
 
 class QuinielaController extends Controller
 {
@@ -62,8 +63,9 @@ class QuinielaController extends Controller
       // code...
       $id = Auth::user()->id;
       $quinielas = Quiniela::where('id_usuario',$id)->orderBy('id_jornada','asc')->get();
-
-      return view('quiniela.misquinielas',compact('quinielas'));
+      $idUsuario=Auth::user()->id;
+      $data=Data::Where('id_usuario',$idUsuario)->first();
+      return view('quiniela.misquinielas',compact('quinielas','data'));
     }
 
     public function quiniela($id,$jornada)
