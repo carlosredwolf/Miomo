@@ -13,13 +13,13 @@
 		<br><br>
 		<p style="font-size: 20px;">To do this you simply have to click on the following link:</p>
 
-		<a href="{{ url('/register/verify/' . $confirmation_code) }}" style="padding: 10px 10px 10px 10px;font-size: 20px;background-color:#CCB089;color:#FFF;height: 40px;border-radius: 5px;">
+		<a href="{{ secure_url('/register/verify/' . $confirmation_code) }}" style="padding: 10px 10px 10px 10px;font-size: 20px;background-color:#CCB089;color:#FFF;height: 40px;border-radius: 5px;">
 			Click to confirm your email
 		</a>
 		<br>
 		<p style="font-size: 20px;">If you can not see this button, copy this link into your browser:</p>
 		<br>
-		<a style="font-size: 20px;color:#CCB089;" href="{{ url('/register/verify/' . $confirmation_code) }}">{{ url('/register/verify/' . $confirmation_code) }}</a>
+		<a style="font-size: 20px;color:#CCB089;" href="{{ secure_url('/register/verify/' . $confirmation_code) }}">{{ secure_url('/register/verify/' . $confirmation_code) }}</a>
     <br><br>
 </body>
   <footer style="background-color:#22333A;height: 100px">
