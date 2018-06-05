@@ -62,10 +62,11 @@ class AdminController extends Controller
       $name = $jornada->descripcion;
       $partidos = $jornada->partidos;
       $partidosStr = json_encode($partidos);
+      $data =Data::where('id_usuario',Auth::user()->id)->first();
 
       $equipos = Equipo::all();
 
-      return view('admin.jornada',compact('partidos','name','partidosStr','id','equipos'));
+      return view('admin.jornada',compact('partidos','name','partidosStr','id','equipos','data'));
     }
       // $grupos = array();
       // $groups =Grupo::all();

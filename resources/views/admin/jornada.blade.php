@@ -40,29 +40,29 @@
 
   		<div class="navbar margin-topone" id="menuDesktop">
     			{{-- <a href="../../quiniela">La quiniela</a> --}}
-					@if (Auth::user()->name == 'pajaro')
+					@if ($data->id_rol == 1)
 						<a class="active" href="../admin">admin</a>
 					@endif
-    			{{-- <button class="avatar">
+    			<button class="avatar">
     					<i class="avatar fas fa-user-circle"></i>
-    			</button> --}}
-
-    			{{-- <div class="dropdown user">
+    			</button>
+    			<div class="dropdown user">
       			<button class="dropbtn">John Doe
         				<i class="fa fa-caret-down"></i>
       			</button>
       			<div class="dropdown-content">
 
-  	      				<a href="#">Perfil</a>
-  	      				<a href="#">Salir</a>
+  	      				<a href="/perfil">Profile</a>
+  	      				<a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Logout</a>
       			</div>
-    			</div> --}}
+    			</div>
     		</div>
     		<div class="navbar margin-topone responsive" id="responsiveMenu">
   			<div class="dropdown">
-  				<button onclick="myFunction()" class="dropbtn">Resultados </button>
+  				<button onclick="myFunction()" class="dropbtn">Admin </button>
   				  <div id="myDropdown" class="dropdown-content">
-  				    <a  class="active" href="../admin">La quiniela</a>
+  				    <a  class="active" href="../admin">admin</a>
     				  </div>
   			</div>
   	</div>
