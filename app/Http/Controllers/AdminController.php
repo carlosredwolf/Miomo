@@ -31,9 +31,25 @@ class AdminController extends Controller
 
     public function allUsers(){
      $allUsers=Data::All();
+
      $data =Data::where('id_usuario',Auth::user()->id)->first();
-     return view('admin.forms.allusers',compact('allUsers','data'));
-     //return response()->json($allUsers);
+     
+     $usuariosData=array();
+     foreach ($allUsers as $all) {
+        $nick=usuario::where('id',$all->id_usuario)->first();
+         $usersObj = new stdClass;
+         $usersObj->id_usuario=$all->id_rol;
+         $usersObj->nickname=$nick->name;
+         $usersObj->fecha_nacimiento=$all->fecha_nacimiento;
+         $usersObj->celular=$all->celular;
+         $usersObj->correo=$all->correo;
+         $usersObj->created_at=$all->created_at;
+         array_push($usuariosData,$usersObj);
+     }
+
+     return view('admin.forms.allusers',compact('usuariosData','data'));
+
+     return response()->json($usuariosData);
     }
     //Función que permite eliminar al usuario
 
