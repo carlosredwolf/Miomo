@@ -53,6 +53,10 @@
     @if($partido->status->id == 2 || $partido->status->id == 3)
       <div class="resultadoError"></div>
     @endif
+    @if (date('M/d/Y',strtotime($partido->fecha_partido)) == date('M/d/Y') && date('h') > date("h", strtotime('-1 hours',strtotime($partido->hora_partido))) )
+      {{-- expr --}}
+      <div class="resultadoError"></div>
+    @endif
     </fieldset>
   @endforeach
   <input type="hidden" name="idJ" value="{{$id}}">

@@ -11,6 +11,10 @@ use Miomo\Partido;
 use Miomo\EquipoGrupo;
 use Miomo\Equipo;
 use Miomo\Grupo;
+use Miomo\Quiniela as quin;
+use Miomo\Apuesta as apu;
+use Miomo\User as usuario;
+use Miomo\RolesInteres as rolint;
 use stdClass;
 use Auth;
 use Miomo\Datos_Usuario as Data;
@@ -321,4 +325,38 @@ class AdminController extends Controller
       $partido->save();
        return redirect('admin/'.$partido->id);
     }
+
+    public function deleteUser($id_usuario){
+      $quinielaid=quin::where('id_usuario',$id_usuario)->first();
+      if($quinielaid!=null) {
+        $quiniela=quin::where('id_usuario',$id_usuario)->get();
+        
+        foreach ($quiniela as $qui) {
+          //$apuesta=apu::where('id_quiniela',$qui->id)->get()->each->delete();
+          $apuestas=apu::where('id_quiniela',$qui->id)->delete();
+          $qui->delete();
+        } 
+
+        //$quiniela=quin::where('id_usuario',$id_usuario)->get()->each->delete();
+        
+        $datosUsuario=Data::where('id_usuario',$id_usuario)->first()->delete();
+        
+        $nombreusuario=usuario::where('id',$id_usuario)->first();
+        
+        $intereses=rolint::where('nombre_usuario',$nombreusuario->name)->first()->delete();
+        
+        $userdelete=usuario::where('id',$id_usuario)->first()->delete();
+        return back();
+      } else {
+        $nombreusuario=usuario::where('id',$id_usuario)->first();
+        
+        $intereses=rolint::where('nombre_usuario',$nombreusuario->name)->first()->delete();
+        
+        $datosUsuario=Data::where('id_usuario',$id_usuario)->first()->delete();
+        
+        $userdelete=usuario::where('id',$id_usuario)->first()->delete();
+        return back();
+        }    
+    }
+
 }
