@@ -31,7 +31,7 @@ class AdminController extends Controller
 
     public function allUsers(){
      $allUsers=Data::All();
-     $data =Data::find(Auth::user()->id);
+     $data =Data::where('id_usuario',Auth::user()->id)->first();
      return view('admin.forms.allusers',compact('allUsers','data'));
      //return response()->json($allUsers);
     }
