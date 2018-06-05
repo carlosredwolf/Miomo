@@ -36,38 +36,38 @@ class AdminController extends Controller
      //return response()->json($allUsers);
     }
     //Función que permite eliminar al usuario
-    
+
     public function deleteUser($id_usuario){
       $quinielaid=quin::where('id_usuario',$id_usuario)->first();
       if($quinielaid!=null) {
         $quiniela=quin::where('id_usuario',$id_usuario)->get();
-        
+
         foreach ($quiniela as $qui) {
           //$apuesta=apu::where('id_quiniela',$qui->id)->get()->each->delete();
           $apuestas=apu::where('id_quiniela',$qui->id)->delete();
           $qui->delete();
-        } 
+        }
 
         //$quiniela=quin::where('id_usuario',$id_usuario)->get()->each->delete();
-        
+
         $datosUsuario=Data::where('id_usuario',$id_usuario)->first()->delete();
-        
+
         $nombreusuario=usuario::where('id',$id_usuario)->first();
-        
+
         $intereses=rolint::where('nombre_usuario',$nombreusuario->name)->first()->delete();
-        
+
         $userdelete=usuario::where('id',$id_usuario)->first()->delete();
         return back();
       } else {
         $nombreusuario=usuario::where('id',$id_usuario)->first();
-        
+
         $intereses=rolint::where('nombre_usuario',$nombreusuario->name)->first()->delete();
-        
+
         $datosUsuario=Data::where('id_usuario',$id_usuario)->first()->delete();
-        
+
         $userdelete=usuario::where('id',$id_usuario)->first()->delete();
         return back();
-        }    
+        }
     }
 
     public function show($id = self::TORNEO){
@@ -102,45 +102,6 @@ class AdminController extends Controller
 
       return view('admin.jornada',compact('partidos','name','partidosStr','id','equipos','data'));
     }
-      // $grupos = array();
-      // $groups =Grupo::all();
-      //
-      // $equipos = array();
-      //
-      // foreach ($groups as $group) {
-      //   // code...
-      //   if ($group->id != 9) {
-      //     // code...
-      //     $grupo =new stdClass;
-      //     reset($equipos);
-      //     $grupo->id = $group->id;
-      //     $grupo->nombre = $group->nombre;
-      //     $grupo->descripcion = $group->descripcion;
-      //     $teams = EquipoGrupo::where('id_grupo',$group->id)->get();
-      //
-      //     foreach ($teams as $team) {
-      //       // code...
-      //       $equipo = new stdClass;
-      //       $equipo->id =$team->id;
-      //       $teamDB =Equipo::find($team->id);
-      //       $equipo->name =$teamDB->nombre;
-      //
-      //       array_push($equipos,$equipo);
-      //       unset($equipo);
-      //     }
-      //     $grupo->equipos =$equipos;
-      //
-      //     array_push($grupos,$grupo);
-      //     unset($grupo);
-      //   }
-      //
-      // }
-      //
-      // return $grupos;
-      //return $groups;
-      //return view('admin.jornada',compact('partidos','name','partidosStr','id'));
-
-    //}
 
     public function getJornada($id)
     {
@@ -336,12 +297,14 @@ class AdminController extends Controller
       if ($status == 1) {
         // code...
         $jornada->id_status = 4;
+
       }elseif($status == 4) {
         // code...
         $jornada->id_status = 1;
       }
 
       $jornada->save();
+
       return redirect('admin');
     }
 

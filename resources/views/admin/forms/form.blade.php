@@ -10,16 +10,13 @@
 
       <h2>{{date('M/d/Y',strtotime($partido->fecha_partido))}}<span>{{date('H:i A', strtotime($partido->hora_partido))}} CDT</span></h2>
       @if ($partido->local->id > 1 && $partido->local->id <=33)
-        {{-- expr --}}
-        @if ($partido->status->id == 1)
-          {{-- expr --}}
-          <h3><a href="partido/{{$partido->id}}">START</a></h3>
-        @else
-          <h3><a href="partido/{{$partido->id}}">STOP</a></h3>
-        @endif
-        
+          @if ($partido->status->id == 1)
+            <h3><a href="partido/{{$partido->id}}">START</a></h3>
+          @elseif($partido->status->id == 3)
+            <h3><a href="partido/{{$partido->id}}">STOP</a></h3>
+          @endif
       @endif
-       
+
       <h3><span class="nomEquipo1">{{$partido->local->nombre}}</span>  VS  <span class="nomEquipo2">{{$partido->visitante->nombre}}</span></h3>
       @if ($partido->grupo->id != 9)
         <h3>{{$partido->grupo->descripcion}}</h3>
@@ -39,10 +36,10 @@
         $route2 = 'images/equipos/1.png';
         @endphp
       @endif
-      @if ($partido->grupo->id == 9)
         <table>
           <tbody>
             <tr>
+            @if ($partido->grupo->id == 9)
               <td>
                 <select name="select-local-{{$partido->id}}" id="local-{{$partido->id}}">
                   @foreach ($equipos as $equipo)
@@ -69,10 +66,10 @@
                     @endforeach
                 </select>
               </td>
+              @endif
             </tr>
           </tbody>
         </table>
-      @endif
     </div>
     <div class="encuentro">
       <div>
