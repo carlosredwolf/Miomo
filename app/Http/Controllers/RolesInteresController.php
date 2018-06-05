@@ -50,8 +50,8 @@ class RolesInteresController extends Controller
         $rolinteres->nombre_usuario=$request->input("nombre_usuario");
         $rolinteres->save();
         $msg = "Realizado.";
-        
-        return response()->json(array('msg'=> $msg), 200);    
+
+        return response()->json(array('msg'=> $msg), 200);
     }
 
     /**
@@ -61,10 +61,30 @@ class RolesInteresController extends Controller
      */
     public function show($Jornada_id)
     {
-        $Quinielas=Quiniela::Where('id_jornada',$Jornada_id)->orderBy('puntaje', 'desc')->get();
-        
-       return view('admin.forms.puntajes',array('quiniela' => $Quinielas));
-        
+        $pools=Quiniela::Where('id_jornada',$Jornada_id)->orderBy('puntaje', 'desc')->get();
+        $quinielas = array();
+        foreach ($pools as $pool) {
+          // code...
+          $quiniela = new stdClass;
+          $quiniela->id = $pool->id;
+          $quiniela->puntaje = $pool->puntaje;
+
+          $user = User::where('id',$pool->id_usuario)->first();
+          $quiniela->usuario = $user->name;
+          $quiniela->fecha = $pool->updated_at;
+          $quiniela->puntaje =$pool->puntaje;
+          $quiniela->acumuladoUser =0;
+          $poolsUser = Quiniela::where('id_usuario',$pool->id_usuario)->get();
+          foreach ($poolsUser as $poolUser) {
+            // code...
+            $quiniela->acumuladoUser = $quiniela->acumuladoUser + $poolUser->puntaje;
+          }
+
+          array_push($quinielas, $quiniela);
+        }
+
+      return view('admin.forms.puntajes',array('quiniela' => $quinielas));
+
        // return response()->json($Quinielas);
     }
     public function userquiniela($Quiniela_id){
@@ -113,11 +133,11 @@ class RolesInteresController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function CalcularPuntosJornada($Jornada_id){
-     
+
         $Quinielas=Quiniela::Where('id_jornada',$Jornada_id)->get();
 
         $Partidos=Partido::Where('id_jornada',$Jornada_id)->get();
-        //Logica para jornadas        
+        //Logica para jornadas
         if ($Jornada_id<=3) {
             # code...
             foreach ($Quinielas as $qui) {
@@ -142,16 +162,16 @@ class RolesInteresController extends Controller
                     //Inicializo mi puntaje en 0
                 $Puntaje=0;
                     //Recorro 16 veces por que son 16 partidos por jornada jaja
-                for ($i=0; $i <16 ; $i++) { 
+                for ($i=0; $i <16 ; $i++) {
                         # code...
-                       //Obtengo los resultados de cada uno 
+                       //Obtengo los resultados de cada uno
                  $ValorPartido=$PartidoData[$i]->Resultado;
                  $ValorApuesta=$ApuestaData[$i]->Resultado;
                        //Cada vez que los resultados coincidan añadimos 10 puntos
                  if ($ValorPartido==$ValorApuesta) {
                             # code...
                     $Puntaje=$Puntaje+10;
-                }            
+                }
             }
             if($Puntaje>=160) {
 
@@ -177,7 +197,7 @@ class RolesInteresController extends Controller
         else
         {
             echo "Error guardando la actualizacion";
-                       
+
         }
     }
 }
@@ -209,22 +229,22 @@ if ($Jornada_id==4) {
                         //Inicializo mi puntaje en 0
         $Puntaje=0;
                         //Recorro 16 veces por que son 16 partidos por jornada jaja
-        for ($i=0; $i <8 ; $i++) { 
+        for ($i=0; $i <8 ; $i++) {
                             # code...
-                           //Obtengo los resultados de cada uno 
+                           //Obtengo los resultados de cada uno
          $ValorPartido=$PartidoData[$i]->Resultado;
          $ValorApuesta=$ApuestaData[$i]->Resultado;
                            //Cada vez que los resultados coincidan añadimos 10 puntos
          if ($ValorPartido==$ValorApuesta) {
                                 # code...
             $Puntaje=$Puntaje+10;
-        }            
+        }
     }
     if($Puntaje>=80) {
 
        $Puntaje=$Puntaje+50;
 
-   } 
+   }
                         //La variable puntaje se la mandaremos a la tabla de quinielas
    $idQuiniela=$qui->id;
    $datosQuiniela = Quiniela::find($idQuiniela);
@@ -232,12 +252,12 @@ if ($Jornada_id==4) {
    $datosQuiniela->puntaje=$Puntaje;
    if($datosQuiniela->save()){
     echo $datosQuiniela;
-    return view('admin.alert.poolalert');                               
+    return view('admin.alert.poolalert');
 }
 else
 {
     echo "Error guardando la actualizacion";
-                            
+
 }
 }
 }
@@ -267,22 +287,22 @@ if ($Jornada_id==5) {
                         //Inicializo mi puntaje en 0
         $Puntaje=0;
                         //Recorro 16 veces por que son 16 partidos por jornada jaja
-        for ($i=0; $i <4 ; $i++) { 
+        for ($i=0; $i <4 ; $i++) {
                             # code...
-                           //Obtengo los resultados de cada uno 
+                           //Obtengo los resultados de cada uno
            $ValorPartido=$PartidoData[$i]->Resultado;
            $ValorApuesta=$ApuestaData[$i]->Resultado;
                            //Cada vez que los resultados coincidan añadimos 10 puntos
            if ($ValorPartido==$ValorApuesta) {
                                 # code...
             $Puntaje=$Puntaje+10;
-        }            
+        }
     }
     if($Puntaje>=40) {
 
      $Puntaje=$Puntaje+30;
 
- } 
+ }
                         //La variable puntaje se la mandaremos a la tabla de quinielas
  $idQuiniela=$qui->id;
  $datosQuiniela = Quiniela::find($idQuiniela);
@@ -295,7 +315,7 @@ if ($Jornada_id==5) {
 else
 {
     echo "Error guardando la actualizacion";
-                           
+
 }
 }
 }
@@ -324,22 +344,22 @@ if ($Jornada_id==6) {
                         //Inicializo mi puntaje en 0
         $Puntaje=0;
                         //Recorro 16 veces por que son 16 partidos por jornada jaja
-        for ($i=0; $i <2 ; $i++) { 
+        for ($i=0; $i <2 ; $i++) {
                             # code...
-                           //Obtengo los resultados de cada uno 
+                           //Obtengo los resultados de cada uno
            $ValorPartido=$PartidoData[$i]->Resultado;
            $ValorApuesta=$ApuestaData[$i]->Resultado;
                            //Cada vez que los resultados coincidan añadimos 10 puntos
            if ($ValorPartido==$ValorApuesta) {
                                 # code...
             $Puntaje=$Puntaje+10;
-        }            
+        }
     }
     if($Puntaje>=20) {
 
      $Puntaje=$Puntaje+20;
 
- } 
+ }
                         //La variable puntaje se la mandaremos a la tabla de quinielas
  $idQuiniela=$qui->id;
  $datosQuiniela = Quiniela::find($idQuiniela);
@@ -352,7 +372,7 @@ if ($Jornada_id==6) {
 else
 {
     echo "Error guardando la actualizacion";
-                            
+
 }
 }
 }
@@ -381,16 +401,16 @@ if ($Jornada_id==7) {
                                 //Inicializo mi puntaje en 0
         $Puntaje=0;
                                 //Recorro 16 veces por que son 16 partidos por jornada jaja
-        for ($i=0; $i <1 ; $i++) { 
+        for ($i=0; $i <1 ; $i++) {
                                     # code...
-                                   //Obtengo los resultados de cada uno 
+                                   //Obtengo los resultados de cada uno
            $ValorPartido=$PartidoData[$i]->Resultado;
            $ValorApuesta=$ApuestaData[$i]->Resultado;
                                    //Cada vez que los resultados coincidan añadimos 10 puntos
            if ($ValorPartido==$ValorApuesta) {
                                         # code...
             $Puntaje=$Puntaje+10;
-        }            
+        }
     }
     if($Puntaje>=10) {
 
@@ -409,7 +429,7 @@ if ($Jornada_id==7) {
 else
 {
     echo "Error guardando la actualizacion";
-                                    
+
 }
 }
 }
