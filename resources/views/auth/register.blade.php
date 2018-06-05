@@ -62,7 +62,7 @@
 							<li class="twoInputs tooltip" >
 								<!-- <label for="nombre">Correo electrónico</label> -->
 								 <span class="tooltiptext"> Birthdate</span>
-								<input type="text" name="fecha_nacimiento" id="datepicker" value="{{ old('fecha_nacimiento') }}" placeholder="Birthdate" required autofocus>
+								<input type="date" name="fecha_nacimiento" id="datepicker" value="{{ old('fecha_nacimiento') }}" placeholder="Birthdate" required autofocus>
 								 @if ($errors->has('fecha_nacimiento'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('fecha_nacimiento') }}</strong>
@@ -169,11 +169,11 @@
 <script src="{{ asset('js/strength.js') }}"></script>
 <script src="{{ asset('js/js.js') }}"></script>
 <script>
-        $(document).ready(function($) {
+        /*$(document).ready(function($) {
 			$( "#datepicker" ).datepicker({
             changeMonth: true,
             changeYear: true
-          });
+          });*/
             $('#myPassword').strength({
                 strengthClass: 'strength',
                 strengthMeterClass: 'strength_meter',
