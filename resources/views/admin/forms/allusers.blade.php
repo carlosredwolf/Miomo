@@ -10,26 +10,29 @@
             <div class="contenido">
                 <div class="datagrid"> 
                 <table>
+                        
                     <thead>
-                        <th>Name</th>
-                        <th>Last Name</th>
+                        <th>Nickname</th>
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Birthday</th>
+                        <th>Create date </th>
                         <th>Options</th>
+                        
+
                     </thead>
                     <tbody>
-                        @foreach ($allUsers as $user)
+                        @foreach ($usuariosData as $user)
                         <tr>
-                        <td> {{$user->nombre}} </td> 
-                        <td> {{$user->apellidos}} </td>
+                        <td> {{$user->nickname}} </td> 
                         <td> {{$user->correo}} </td> 
                         <td> {{$user->celular}} </td> 
                         <td> {{$user->fecha_nacimiento}} </td>
-                        @if ($user->id_rol != 1)
-                            {{-- expr --}}
-                            <td><a onclick="return confirm('Sure to delete user?')" href="/userdelete/{{$user->id_usuario}}/" class="navback">Delete user</a></td>
+                        <td> {{$user->created_at}} </td>
+                        @if($user->id_usuario!=1)
+                          <td><a onclick="return confirm('Sure to delete user?')" href="/userdeete/{{$user->id_usuario}}/" class="navback">Delete user</a></td>
                         @endif
+
                         </tr>   
                         @endforeach
                     </tbody>
