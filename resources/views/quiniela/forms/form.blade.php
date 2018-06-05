@@ -33,7 +33,7 @@
       </div>
       <div class ="deEmpate">
         <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=2>
-        <label  class ="eEmpate" for="radio-{{$partido->id}}">Empate</label>
+        <label  class ="eEmpate" for="radio-{{$partido->id}}">Draw</label>
       </div>
       <div>
         <input  class="radio square" type="radio" name="radio-{{$partido->id}}" value=3>
