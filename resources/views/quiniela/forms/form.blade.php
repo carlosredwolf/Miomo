@@ -40,7 +40,7 @@
         <label class="eEquipo2" for="radio-{{$partido->id}}"><img src="{{asset($route2)}}" >	<span class="nomEquipo2">{{$partido->visitante->nombre}}</span></label>
       </div>
     </div>
-    @if($partido->status->id == 2)
+    @if($partido->status->id == 2 || $partido->status->id == 3)
       <div class="resultadoError"></div>
     @endif
     </fieldset>

@@ -7,11 +7,24 @@
     @endphp
     <fieldset >
     <div class="encuentros-info">
+
       <h2>{{date('M/d/Y',strtotime($partido->fecha_partido))}}<span>{{date('H:i A', strtotime($partido->hora_partido))}} CDT</span></h2>
+      @if ($partido->local->id > 1 && $partido->local->id <=33)
+        {{-- expr --}}
+        @if ($partido->status->id == 1)
+          {{-- expr --}}
+          <h3><a href="partido/{{$partido->id}}">START</a></h3>
+        @else
+          <h3><a href="partido/{{$partido->id}}">STOP</a></h3>
+        @endif
+        
+      @endif
+       
       <h3><span class="nomEquipo1">{{$partido->local->nombre}}</span>  VS  <span class="nomEquipo2">{{$partido->visitante->nombre}}</span></h3>
       @if ($partido->grupo->id != 9)
         <h3>{{$partido->grupo->descripcion}}</h3>
       @endif
+
       @if ($partido->local->id != 1)
 
         @php

@@ -309,6 +309,16 @@ class AdminController extends Controller
     public function partido($id)
     {
       // code...
+      $partido = Partido::find($id);
+      if ($partido->id_status == 1) {
+        # code...
+        $partido->id_status = 3;
+      }elseif ($partido->id_status = 3) {
+        # code...
+        $partido->id_status = 1;
+      }
 
+      $partido->save();
+       return redirect('admin/'.$partido->id);
     }
 }
