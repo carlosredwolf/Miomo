@@ -16,6 +16,7 @@
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Birthday</th>
+                        <th>Options</th>
                     </thead>
                     <tbody>
                         @foreach ($allUsers as $user)
@@ -24,7 +25,8 @@
                         <td> {{$user->apellidos}} </td>
                         <td> {{$user->correo}} </td> 
                         <td> {{$user->celular}} </td> 
-                        <td> {{$user->fecha_nacimiento}} </td> 
+                        <td> {{$user->fecha_nacimiento}} </td>
+                        <td><a href="/userdelete/{{$user->id_usuario}}/" class="navback">Delete user</a></td> 
                         </tr>   
                         @endforeach
                     </tbody>
