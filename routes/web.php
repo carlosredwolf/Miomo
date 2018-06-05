@@ -25,12 +25,15 @@ Route::group(['middleware' => ['admin']], function () {
       Route::get('admin/abrir/{id}','AdminController@abrir');
 
       Route::get('admin/progreso/{id}','AdminController@enProgreso');
+      Route::get('admin/partido/{id}','AdminController@partido');
 
       //Route::get('admin/editarpartido','AdminController@partido');
       Route::get('/getallusers','AdminController@allUsers');
       Route::get('/userdelete/{id_usuario}','AdminController@deleteUser');  
 
       Route::post('admin','AdminController@store');
+
+      Route::get('/userdelete/{id_usuario}','AdminController@deleteUser'); 
 });
 
 //Colocar todas las rutas que se van a usar solo cuando el usuario haya confirmado su correo

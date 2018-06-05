@@ -7,7 +7,7 @@
   @foreach ($partidos as $partido)
     <fieldset >
     <div class="encuentros-info">
-      <h2>{{date('M/d/Y',strtotime($partido->fecha_partido))}}<span>{{date('H:i A', strtotime($partido->hora_partido))}} CDT</span></h2>
+      <h2>{{date('M/d/Y',strtotime($partido->fecha_partido))}}<span>{{date('h:i A', strtotime($partido->hora_partido))}} CDT</span></h2>
       <h3><span class="nomEquipo1">{{$partido->local->nombre}}</span>  VS  <span class="nomEquipo2">{{$partido->visitante->nombre}}</span></h3>
       @if ($partido->grupo->id != 9)
         <h3>{{$partido->grupo->descripcion}}</h3>
@@ -40,6 +40,13 @@
         <label class="eEquipo2" for="radio-{{$partido->id}}"><img src="{{asset($route2)}}" >	<span class="nomEquipo2">{{$partido->visitante->nombre}}</span></label>
       </div>
     </div>
+    @if($partido->status->id == 2 || $partido->status->id == 3)
+      <div class="resultadoError"></div>
+    @endif
+    @if (date('M/d/Y',strtotime($partido->fecha_partido)) == date('M/d/Y') && date('h') > date("h", strtotime('-1 hours',strtotime($partido->hora_partido))) )
+      {{-- expr --}}
+      <div class="resultadoError"></div>
+    @endif
     </fieldset>
     @php
       $i++;

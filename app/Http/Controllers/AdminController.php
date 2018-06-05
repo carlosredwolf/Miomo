@@ -11,6 +11,10 @@ use Miomo\Partido;
 use Miomo\EquipoGrupo;
 use Miomo\Equipo;
 use Miomo\Grupo;
+use Miomo\Quiniela as quin;
+use Miomo\Apuesta as apu;
+use Miomo\User as usuario;
+use Miomo\RolesInteres as rolint;
 use stdClass;
 use Auth;
 use Miomo\Quiniela as quin;
@@ -83,7 +87,7 @@ class AdminController extends Controller
         return response()->json(['mensaje'=> 'NO existen jornadas de ese evento','codigo'=>'404'],404);
       }
 
-      $data =Data::find(Auth::user()->id);
+      $data =Data::where('id_usuario',Auth::user()->id)->first();
 
       return view('admin.admin',compact('jornadas','data'));
     }
@@ -274,9 +278,13 @@ class AdminController extends Controller
               $partidoBD->id_resultado = 3;
 
             }
+
+            $partidoBD->id_status = 2;
+
           }else {
             // code...
               $partidoBD->id_resultado = 4;
+              $partidoBD->id_status = 1;
           }
           $partidoBD->save();
         }
@@ -343,6 +351,50 @@ class AdminController extends Controller
     public function partido($id)
     {
       // code...
+      $partido = Partido::find($id);
+      if ($partido->id_status == 1) {
+        # code...
+        $partido->id_status = 3;
+      }elseif ($partido->id_status = 3) {
+        # code...
+        $partido->id_status = 1;
+      }
 
+      $partido->save();
+       return redirect('admin/'.$partido->id);
     }
+
+    public function deleteUser($id_usuario){
+      $quinielaid=quin::where('id_usuario',$id_usuario)->first();
+      if($quinielaid!=null) {
+        $quiniela=quin::where('id_usuario',$id_usuario)->get();
+        
+        foreach ($quiniela as $qui) {
+          //$apuesta=apu::where('id_quiniela',$qui->id)->get()->each->delete();
+          $apuestas=apu::where('id_quiniela',$qui->id)->delete();
+          $qui->delete();
+        } 
+
+        //$quiniela=quin::where('id_usuario',$id_usuario)->get()->each->delete();
+        
+        $datosUsuario=Data::where('id_usuario',$id_usuario)->first()->delete();
+        
+        $nombreusuario=usuario::where('id',$id_usuario)->first();
+        
+        $intereses=rolint::where('nombre_usuario',$nombreusuario->name)->first()->delete();
+        
+        $userdelete=usuario::where('id',$id_usuario)->first()->delete();
+        return back();
+      } else {
+        $nombreusuario=usuario::where('id',$id_usuario)->first();
+        
+        $intereses=rolint::where('nombre_usuario',$nombreusuario->name)->first()->delete();
+        
+        $datosUsuario=Data::where('id_usuario',$id_usuario)->first()->delete();
+        
+        $userdelete=usuario::where('id',$id_usuario)->first()->delete();
+        return back();
+        }    
+    }
+
 }
