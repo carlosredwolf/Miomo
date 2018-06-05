@@ -236,9 +236,13 @@ class AdminController extends Controller
               $partidoBD->id_resultado = 3;
 
             }
+
+            $partidoBD->id_status = 2;
+
           }else {
             // code...
               $partidoBD->id_resultado = 4;
+              $partidoBD->id_status = 1;
           }
           $partidoBD->save();
         }
