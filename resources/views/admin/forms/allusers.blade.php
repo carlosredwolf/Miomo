@@ -15,10 +15,10 @@
                         <th>Nickname</th>
                         <th>Email</th>
                         <th>Phone</th>
+                        <th>Registered Country</th>
                         <th>Birthday</th>
-                        <th>Create date </th>
+                        <th>Create date</th>
                         <th>Options</th>
-
 
                     </thead>
                     <tbody>
@@ -27,6 +27,7 @@
                         <td> {{$user->nickname}} </td>
                         <td> {{$user->correo}} </td>
                         <td> {{$user->celular}} </td>
+                        <td> {{$user->pais}} </td>
                         <td> {{$user->fecha_nacimiento}} </td>
                         <td> {{$user->created_at}} </td>
                         @if($user->id_rol!=1)

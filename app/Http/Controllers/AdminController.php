@@ -15,6 +15,7 @@ use Miomo\Quiniela as quin;
 use Miomo\Apuesta as apu;
 use Miomo\User as usuario;
 use Miomo\RolesInteres as rolint;
+use Miomo\cat__paises as Pais;
 use stdClass;
 use Auth;
 use Miomo\Datos_Usuario as Data;
@@ -37,14 +38,17 @@ class AdminController extends Controller
      $usuariosData=array();
      foreach ($allUsers as $all) {
         $nick=usuario::where('id',$all->id_usuario)->first();
-         $usersObj = new stdClass;
-         $usersObj->id_usuario=$all->id_usuario;
-         $usersObj->id_rol=$all->id_rol;
-         $usersObj->nickname=$nick->name;
-         $usersObj->fecha_nacimiento=$all->fecha_nacimiento;
-         $usersObj->celular=$all->celular;
-         $usersObj->correo=$all->correo;
-         $usersObj->created_at=$all->created_at;
+        $usersObj = new stdClass;
+        $usersObj->id_usuario=$all->id_usuario;
+        $usersObj->id_rol=$all->id_rol;
+        $usersObj->nickname=$nick->name;
+        $usersObj->fecha_nacimiento=$all->fecha_nacimiento;
+        $usersObj->celular=$all->celular;
+        $usersObj->correo=$all->correo;
+        $usersObj->created_at=$all->created_at;
+
+        $pais = Pais::find($all->id_pais);
+        $usersObj->pais = $pais->paisnombre;
          array_push($usuariosData,$usersObj);
      }
 
