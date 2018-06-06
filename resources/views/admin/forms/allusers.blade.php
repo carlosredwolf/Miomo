@@ -8,9 +8,9 @@
         <div class="container">
           <div class="quiniela-container">
             <div class="contenido">
-                <div class="datagrid"> 
+                <div class="datagrid">
                 <table>
-                        
+
                     <thead>
                         <th>Nickname</th>
                         <th>Email</th>
@@ -18,22 +18,22 @@
                         <th>Birthday</th>
                         <th>Create date </th>
                         <th>Options</th>
-                        
+
 
                     </thead>
                     <tbody>
                         @foreach ($usuariosData as $user)
                         <tr>
-                        <td> {{$user->nickname}} </td> 
-                        <td> {{$user->correo}} </td> 
-                        <td> {{$user->celular}} </td> 
+                        <td> {{$user->nickname}} </td>
+                        <td> {{$user->correo}} </td>
+                        <td> {{$user->celular}} </td>
                         <td> {{$user->fecha_nacimiento}} </td>
                         <td> {{$user->created_at}} </td>
                         @if($user->id_usuario!=1)
-                          <td><a onclick="return confirm('Sure to delete user?')" href="/userdeete/{{$user->id_usuario}}/" class="navback">Delete user</a></td>
+                          <td><a onclick="return confirm('Sure to delete user?')" href="/userdelete/{{$user->id_usuario}}/" class="navback">Delete user</a></td>
                         @endif
 
-                        </tr>   
+                        </tr>
                         @endforeach
                     </tbody>
                 </table>
@@ -41,6 +41,6 @@
             </div>
           </div>
         </div>
-    </section>             
-    
+    </section>
+
 @stop

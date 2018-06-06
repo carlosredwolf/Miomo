@@ -54,8 +54,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255|unique:users',
-            'email' => 'required|string|email|max:255|unique:users|confirmed',
+            'name' => 'required|string|max:255|unique:users,name,NULL,id,deleted_at,NULL',
+            'email' => 'required|string|email|max:255|unique:users,email,NULL,id,deleted_at,NULL|confirmed',
             'password' => 'required|string|min:6|confirmed',
             'g-recaptcha-response' => 'required|recaptcha',
             'apellidos' => 'required',
