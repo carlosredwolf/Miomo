@@ -39,8 +39,9 @@
 
 			<div class="navbar margin-topone" id="menuDesktop">
 	  			<a href="quiniela">The pool</a>
-					@if (Auth::user()->name == 'pajaro')
+					@if ($data->id_rol == 1)
 						<a class="active" href="admin">admin</a>
+						<a href="/getallusers">See all users</a>
 					@endif
 	  			{{-- <a href="resultados">Resultados</a>
 	  			<a href="proximos">Próximos partidos</a> --}}
@@ -90,19 +91,34 @@
               <span class="tam2">champions league </span>
               </p> -->
             <div style="" class="navbar margin-topone" id="menuDesktop">
+				
             @foreach ($jornadas as $jornada)
-              <h4><span class="tam3"><a href="admin/{{$jornada->id}}">{{$jornada->descripcion}}</a></span>
-								&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;
+							@if ($jornada->status->id != 2)
+								<h4><span class="tam3"><a href="admin/{{$jornada->id}}">{{$jornada->descripcion}}</a></span>
+							@else
+								<h4><span class="tam3"><a href="#" style="pointer-events:none; text-decoration:line-through;">{{$jornada->descripcion}}</a></span>
+							@endif
+								&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;
 								@if ($jornada->status->id == 3)
 									<span class="tam3"><a href="admin/activar/{{$jornada->id}}">Activate</a></span>
 								@else
 									<span class="tam3"><a href="admin/activar/{{$jornada->id}}">Desactivate</a></span>
 								@endif
-								&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;
+								&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;
 								@if ($jornada->status->id == 1 || $jornada->status->id == 3)
 									<span class="tam3"><a href="admin/abrir/{{$jornada->id}}">Close</a></span>
 								@else
 									<span class="tam3"><a href="admin/abrir/{{$jornada->id}}">Open</a></span>
+								@endif
+								&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;
+								@if ($jornada->status->id == 2)
+									<span class="tam3"><a href="/puntosjornada/{{$jornada->id}}">Calculate</a></span>
+								@endif
+								&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;
+								@if($jornada->status->id == 4)
+									<span class="tam3"><a href="admin/progreso/{{$jornada->id}}">Stop</a></span>
+								@elseif ($jornada->status->id == 1)
+									<span class="tam3"><a href="admin/progreso/{{$jornada->id}}">Start</a></span>
 								@endif
 							</h4>
             @endforeach
@@ -122,6 +138,7 @@
 				<li><a href="privacidad">Política de privacidad</a></li> --}}
 			</ul>
 			<p>Copyright © miomo.net</p>
+			<p><a href="mailto:contact@miomo.net" style="color:#ffffff; text-decoration:none;" target="_blank">contact@miomo.net</a></p>
 		</div>
 	</footer>
 

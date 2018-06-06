@@ -54,8 +54,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255|unique:users',
-            'email' => 'required|string|email|max:255|unique:users|confirmed',
+            'name' => 'required|string|max:255|unique:users,name,NULL,id,deleted_at,NULL',
+            'email' => 'required|string|email|max:255|unique:users,email,NULL,id,deleted_at,NULL|confirmed',
             'password' => 'required|string|min:6|confirmed',
             'g-recaptcha-response' => 'required|recaptcha',
             'apellidos' => 'required',
@@ -92,13 +92,14 @@ class RegisterController extends Controller
 
         $id_user=$user->id;
         $id_rol=3;
+        $fechaBD = date("Y-m-d", strtotime($data['fecha_nacimiento']));
         $ciudad = Estado::where('estadonombre',$data['ciudad'])->first();
         $datosUsuario=Datos_Usuario::create([
             'nombre'=>$data['nombre'],
             'apellidos'=>$data['apellidos'],
             'id_pais'=>$ciudad->ubicacionpaisid,
             'id_ciudad'=>$ciudad->id,
-            'fecha_nacimiento'=>$data['fecha_nacimiento'],
+            'fecha_nacimiento'=>$fechaBD,
             'celular'=>$data['celular'],
             'correo'=>$data['email'],
             'id_usuario'=>$id_user,

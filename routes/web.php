@@ -16,6 +16,26 @@ Route::get('/comprobar', function () {
     return view('emails.useralert');
 });
 
+Route::group(['middleware' => ['admin']], function () {
+
+      Route::get('admin','AdminController@show');
+      Route::get('admin/{id}','AdminController@jornada');
+
+      Route::get('admin/activar/{id}','AdminController@activar');
+      Route::get('admin/abrir/{id}','AdminController@abrir');
+
+      Route::get('admin/progreso/{id}','AdminController@enProgreso');
+      Route::get('admin/partido/{id}','AdminController@partido');
+
+      //Route::get('admin/editarpartido','AdminController@partido');
+      Route::get('/getallusers','AdminController@allUsers');
+      Route::get('/userdelete/{id_usuario}','AdminController@deleteUser');
+
+      Route::post('admin','AdminController@store');
+
+      Route::get('/userdelete/{id_usuario}','AdminController@deleteUser');
+});
+
 //Colocar todas las rutas que se van a usar solo cuando el usuario haya confirmado su correo
 Route::group(['middleware' => ['check_confirm']], function () {
 
@@ -24,24 +44,20 @@ Route::group(['middleware' => ['check_confirm']], function () {
     Route::get('resultados','EventoController@resultados');
     Route::get('proximos','EventoController@proximos');
 
-    Route::get('admin','AdminController@show');
-    Route::get('admin/{id}','AdminController@jornada');
-
-    Route::get('admin/activar/{id}','AdminController@activar');
-    Route::get('admin/abrir/{id}','AdminController@abrir');
-
-    Route::get('admin/editarpartido','AdminController@partido');
-
-    Route::post('admin','AdminController@store');
-
     Route::post('quiniela','QuinielaController@store');
     Route::post('editarQuiniela','QuinielaController@update');
     Route::get('quiniela/{id}/{jornada}','QuinielaController@quiniela');
     Route::get('misquinielas','QuinielaController@show');
+
+    Route::get('perfil','UsuariosController@index');
+    Route::post('editarperfil','UsuariosController@update');
+
+    Route::get('/puntosjornada/{Jornada_id}','RolesInteresController@CalcularPuntosJornada');
+    Route::get('/masalto/{Jornada_id}','RolesInteresController@show');
+    Route::get('/perfil/{Quiniela_id}/','RolesInteresController@userquiniela');
 });
 
-Route::get('perfil','UsuariosController@index');
-Route::post('editarperfil','UsuariosController@update');
+
 
 Route::get('/register/verify/{code}', 'GuestController@verify');
 
@@ -57,6 +73,4 @@ Route::post('estados/{code}','CommonController@estadospost');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/puntosjornada','RolesInteresController@CalcularPuntosJornada');
-
-Route::post('savedatainteres', 'RolesInteresController@store');
+Route::post('savedatainteres', 'RolesInteresController@userquiniela');

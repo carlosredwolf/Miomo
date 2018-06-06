@@ -60,7 +60,8 @@
   			<div class="dropdown">
   				<button onclick="myFunction()" class="dropbtn">Results </button>
   				  <div id="myDropdown" class="dropdown-content">
-  				    <a  class="active" href="../misquinielas">My pools</a>
+							<a  class="active" href="../misquinielas">My pools</a>
+
     				  </div>
   			</div>
   	</div>
@@ -69,7 +70,8 @@
   <section class="quiniela">
     <div class="container">
 
-      <h1>My pool</h1>
+			<h1>My pool</h1>
+
 
       <div class="quiniela-container">
 
@@ -97,6 +99,7 @@
       <li><a href="../../privacidad">Política de privacidad</a></li>-->
     </ul>
     <p>Copyright © miomo.net</p>
+		<p><a href="mailto:contact@miomo.net" style="color:#ffffff; text-decoration:none;" target="_blank">contact@miomo.net</a></p>
   </div>
 </footer>
 

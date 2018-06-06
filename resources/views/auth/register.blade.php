@@ -1,6 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.master')
 @section('content')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/strength.css') }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -58,7 +62,7 @@
 							<li class="twoInputs tooltip" >
 								<!-- <label for="nombre">Correo electrónico</label> -->
 								 <span class="tooltiptext"> Birthdate</span>
-								<input type="date" name="fecha_nacimiento" id="" value="{{ old('fecha_nacimiento') }}" placeholder="Birthdate" required autofocus>
+								<input type="date" name="fecha_nacimiento" id="datepicker" value="{{ old('fecha_nacimiento') }}" placeholder="Birthdate" required autofocus>
 								 @if ($errors->has('fecha_nacimiento'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('fecha_nacimiento') }}</strong>
@@ -90,14 +94,6 @@
 								<label for="tuser3" class="checkbox">
         						<input type="checkbox" class="checkbox" id="tuser3" name="check_tuser[]" value="visitante"  />I'm only interested in the pool</label>
 							</li>
-
-							<!-- <li class="selectOps styled-select slate">
-								<select name="tipo_usuario">
-									<option value="opcion1">Apostador</option>
-									<option value="opcion2">Visitante</option>
-									<option value="opcion3">Solo me interesa la quiniela</option>
-								</select>
-							</li> -->
 						</ul>
 						<h2>User data</h2>
 						<ul>
@@ -108,7 +104,6 @@
                                     </span>
                                 @endif
 							<li class="li-register">
-								<!-- <label for="nombre">Dirección</label> -->
 								<input type="email" name="email" id="" value="{{ old('email') }}" placeholder="Email" required autofocus>
 							@if ($errors->has('email'))
                                     <span class="invalid-feedback">
@@ -174,7 +169,11 @@
 <script src="{{ asset('js/strength.js') }}"></script>
 <script src="{{ asset('js/js.js') }}"></script>
 <script>
-        $(document).ready(function($) {
+        /*$(document).ready(function($) {
+			$( "#datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+          });*/
             $('#myPassword').strength({
                 strengthClass: 'strength',
                 strengthMeterClass: 'strength_meter',
@@ -186,3 +185,9 @@
         });
     </script>
 @endsection
+
+@section('footer')
+
+	@include('layouts.footer')
+
+@stop

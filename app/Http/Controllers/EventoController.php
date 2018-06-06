@@ -11,6 +11,7 @@ use Miomo\Partido;
 use Miomo\Quiniela;
 use stdClass;
 use Auth;
+use Miomo\Datos_Usuario as Data;
 
 class EventoController extends Controller
 {
@@ -50,8 +51,14 @@ class EventoController extends Controller
 
       $responseData = $jornadasArr;
       $jornadas = $responseData;
+      $data =Data::find(Auth::user()->id);
 
-      return view('quiniela.quiniela',compact('jornadas'));
+      $idUsuario=Auth::user()->id;
+      $data=Data::Where('id_usuario',$idUsuario)->first();
+      //$data =Data::find(Auth::user()->id);
+      //return response()->json($data->id_rol);
+
+      return view('quiniela.quiniela',compact('jornadas','data'));
     }
 
     public function jornada($id)

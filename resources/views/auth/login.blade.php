@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 
@@ -59,4 +59,9 @@
 	font-size: 15px;
 }
 </style>
-@endsection
+@stop
+
+@section('footer')
+	@include('layouts.footer')
+@stop
+

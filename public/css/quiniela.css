@@ -266,6 +266,18 @@ background: transparent url('../images/ball3.png') no-repeat bottom left; /*bord
 	text-align:left;
 }
 
+.quiniela .container .quiniela-container .contenido .formQuiniela fieldset .resultadoError {
+    background: #fff url(../images/error.png) no-repeat center center;
+    background-size: 99%;
+    opacity: 0.8;
+    width: 100%;
+    height: 137px;
+    position: absolute;
+    top:0;
+    left:0;
+    /*border: 1px solid red #ccc*/;
+  }
+
 .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro{
 	width:55%; height:132px; float:left;}
 .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div{
@@ -961,6 +973,18 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
   }
   .quiniela .container .quiniela-container .contenido .titulo-resultados h3 span{display: block;font-size: 14px;}
 
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .resultadoError {
+    background: #fff url(../images/error.png) no-repeat center center;
+    background-size: 99%;
+    opacity: 0.8;
+    width: 100%;
+    height: 137px;
+    position: absolute;
+    top:0;
+    left:0;
+    /*border: 1px solid red #ccc*/;
+  }
+
   .resultados .container .quiniela-container .contenido .formQuiniela fieldset .resultadoError {
     background: #fff url(../images/error.png) no-repeat center center;
     background-size: 99%;
@@ -1166,6 +1190,18 @@ SECTION.quiniela-form .container .quiniela-form-info, SECTION.quiniela-form .con
     /* background: #ccc; */
   }
   .quiniela .container .quiniela-container .contenido .titulo-resultados h3 span{display: block;font-size: 14px;}
+
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .resultadoError {
+    background: #fff url(../images/error.png) no-repeat center center;
+    background-size: 99%;
+    opacity: 0.8;
+    width: 100%;
+    height: 137px;
+    position: absolute;
+    top:0;
+    left:0;
+    /*border: 1px solid red #ccc*/;
+  }
 
   .resultados .container .quiniela-container .contenido .formQuiniela fieldset .resultadoError {
     background: #fff url(../images/error.png) no-repeat center center;
