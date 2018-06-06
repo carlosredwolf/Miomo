@@ -29,11 +29,11 @@ Route::group(['middleware' => ['admin']], function () {
 
       //Route::get('admin/editarpartido','AdminController@partido');
       Route::get('/getallusers','AdminController@allUsers');
-      Route::get('/userdelete/{id_usuario}','AdminController@deleteUser');  
+      Route::get('/userdelete/{id_usuario}','AdminController@deleteUser');
 
       Route::post('admin','AdminController@store');
 
-      Route::get('/userdelete/{id_usuario}','AdminController@deleteUser'); 
+      Route::get('/userdelete/{id_usuario}','AdminController@deleteUser');
 });
 
 //Colocar todas las rutas que se van a usar solo cuando el usuario haya confirmado su correo
@@ -48,10 +48,16 @@ Route::group(['middleware' => ['check_confirm']], function () {
     Route::post('editarQuiniela','QuinielaController@update');
     Route::get('quiniela/{id}/{jornada}','QuinielaController@quiniela');
     Route::get('misquinielas','QuinielaController@show');
+
+    Route::get('perfil','UsuariosController@index');
+    Route::post('editarperfil','UsuariosController@update');
+
+    Route::get('/puntosjornada/{Jornada_id}','RolesInteresController@CalcularPuntosJornada');
+    Route::get('/masalto/{Jornada_id}','RolesInteresController@show');
+    Route::get('/perfil/{Quiniela_id}/','RolesInteresController@userquiniela');
 });
 
-Route::get('perfil','UsuariosController@index');
-Route::post('editarperfil','UsuariosController@update');
+
 
 Route::get('/register/verify/{code}', 'GuestController@verify');
 
@@ -66,9 +72,5 @@ Route::get('estados','CommonController@estados');
 Route::post('estados/{code}','CommonController@estadospost');
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/puntosjornada/{Jornada_id}','RolesInteresController@CalcularPuntosJornada');
-Route::get('/masalto/{Jornada_id}','RolesInteresController@show');
-Route::get('/perfil/{Quiniela_id}/','RolesInteresController@userquiniela');
 
 Route::post('savedatainteres', 'RolesInteresController@userquiniela');
