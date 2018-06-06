@@ -39,6 +39,7 @@ class AdminController extends Controller
         $nick=usuario::where('id',$all->id_usuario)->first();
          $usersObj = new stdClass;
          $usersObj->id_usuario=$all->id_usuario;
+         $usersObj->id_rol=$all->id_rol;
          $usersObj->nickname=$nick->name;
          $usersObj->fecha_nacimiento=$all->fecha_nacimiento;
          $usersObj->celular=$all->celular;

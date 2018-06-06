@@ -29,7 +29,7 @@
                         <td> {{$user->celular}} </td>
                         <td> {{$user->fecha_nacimiento}} </td>
                         <td> {{$user->created_at}} </td>
-                        @if($user->id_usuario!=1)
+                        @if($user->id_rol!=1)
                           <td><a onclick="return confirm('Sure to delete user?')" href="/userdelete/{{$user->id_usuario}}/" class="navback">Delete user</a></td>
                         @endif
 
