@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME','ce.celedonio@gmail.com'),
+    'username' => env('MAIL_USERNAME','cjmar87@gmail.com'),
 
-    'password' => env('MAIL_PASSWORD','qqqs feqf gypb fego'),
+    'password' => env('MAIL_PASSWORD','RegioGoogle'),
 
     /*
     |--------------------------------------------------------------------------
