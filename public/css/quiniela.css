@@ -338,7 +338,6 @@ background: transparent url('../images/ball3.png') no-repeat bottom left; /*bord
 /*aqui es para los input text*/
 .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div input[type="text"]{
 	/*display:block;*/
-	position:relative;
 	top:50px;
 	box-sizing: border-box;
   	appearance: none;
@@ -835,6 +834,10 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
     margin:0;
 
   }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div input[type="text"] {
+    width: 30px;
+    height: 30px;
+  }
   .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div:last-child label{
     margin:0;
     /*margin-right:5px;
@@ -1082,6 +1085,9 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
 .header_quiniela {right: 0%;}
 SECTION.quiniela-form .container .quiniela-form-info, SECTION.quiniela-form .container .quiniela-form-form {width: 100%;}
 
+}
+.partidoDerecha{
+  float: right!important;
 }
 
 
@@ -1356,6 +1362,10 @@ SECTION.quiniela-form .container .quiniela-form-info, SECTION.quiniela-form .con
   }
   .quiniela .container .quiniela-container .contenido .titulo-quiniela img {
     width: 40%;
+  }
+  .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentro div input[type="text"] {
+    width: 40px;
+    height: 40px;
   }
 }
 @media screen and (min-width: 200px) and (max-width: 320px) {

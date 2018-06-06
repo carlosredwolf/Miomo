@@ -86,7 +86,7 @@
       @php
         $i++;
       @endphp
-      <div>
+      <div class="partidoDerecha">
         @if ($partido->visitante->pais->id != 1)
           <input  class="radio square" type="text" name="score-{{$partido->id}}-{{$i}}" maxlength="1" pattern="[0-9]+" value="{{$partido->score_visitante}}">
         @else

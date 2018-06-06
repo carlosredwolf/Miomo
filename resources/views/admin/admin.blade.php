@@ -90,8 +90,8 @@
               <span class="tam1">football soccer</span>
               <span class="tam2">champions league </span>
               </p> -->
-            <div style="" class="navbar margin-topone" id="menuDesktop">
-				
+            <div style="" class="navbar margin-topone" >
+
             @foreach ($jornadas as $jornada)
 							@if ($jornada->status->id != 2)
 								<h4><span class="tam3"><a href="admin/{{$jornada->id}}">{{$jornada->descripcion}}</a></span>
