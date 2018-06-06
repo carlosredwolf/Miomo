@@ -41,7 +41,7 @@
 	}
 	.cnt-banner h2 {margin: 20px auto 5px;}
 	SECTION.advantages .container {
-	    margin: 0px 50px;
+	    margin: 5em 50px;
 	    /*height: 380px;*/
 	    top: -10px;
 	}
@@ -73,7 +73,7 @@
 
 SECTION.banner .proxPartidos {
     /*width: 96%; */
-    margin: 70px auto;
+    margin: 10px auto;
     padding: 1px;
     border: 3px solid transparent;
 }
@@ -93,24 +93,24 @@ SECTION.banner .proxPartidos {
 	.main-logo-sizeone{width:75px;height:75px;}
 	.main-logo-sizetwo{width:50px;height:50px;}
 	.menu{left:11px;}
-	
+
 	/* -------- Banner -------- */
 	.banner-info{padding:150px 0 70px 100px;}
 	/*.top-illustration{background:transparent url('../images/illustration-top.png') no-repeat right 60px bottom;background-size:500px;}*/
 	.mini-banner{padding:150px 80px 120px 80px;}
-	
+
 	/* -------- Advantages -------- */
 	/*SECTION.advantages{padding:100px 20px 80px 20px;overflow:hidden;}
 	.adv-info-container{float:left;width:60%;padding:0 0 0 20px;}
 	.video-img{position:relative;float:left;width:40%;padding:0 20px 0 0;top:0;left:0;}
 	.adv-info{float:none;width:100%;}*/
-	
+
 	/* -------- About -------- */
 	/*SECTION.about{padding:100px 0 50px 0;}
 	.about-info, .about-img{float:none;}
 	.about-info{width:65%;padding:0 0 0 40px;}
 	.about-img{position:absolute;top:0;right:-10%;}*/
-	
+
 	/* -------- User type -------- */
 	/*SECTION.user-type{padding:0 0 80px 0;}*/
 	SECTION.user-type {height: auto; margin:1px; margin-bottom: 10px;}
@@ -120,7 +120,7 @@ SECTION.banner .proxPartidos {
     	height: auto;
 	}
 	SECTION.user-type .container ul li h2{width:80%;}
-	
+
 	section.about .container .about-info ul li span {
     	height: 50px;
     	font-size: 16px ;
@@ -137,16 +137,16 @@ SECTION.banner .proxPartidos {
 	/*SECTION.quiniela-form{padding:80px 0 120px 0;}*/
 	/*.quiniela-form-info, .quiniela-form-form{padding:0 40px;}*/
 	.quiniela-form-form UL{margin:0;}
-	
+
 	/* -------- Accordion -------- */
 	.accordion-padd{padding:0 60px;}
 	.accordion-table OL{margin:25px 0 0 5px;}
 	.accordion-table OL LI{margin:0 20px 30px 45px;}
 	.accordion-table OL P{padding:0 0 0 15px;}
-	
+
 	/* -------- Register form -------- */
 	.register-container{padding:0;}
-	
+
 	/* -------- Quiniela -------- */
 	.quiniela-container{padding:0;}
 	UL.odds{float:right;}
@@ -186,18 +186,56 @@ SECTION.earn .container {
 
 	}
 	footer {
-    	height: auto; 
+    	height: auto;
 	}
 	footer .container {
-    height: auto; 
+    height: auto;
+	}
+	SECTION.banner .proxPartidos .cProxPartidos {
+    width: 100%;
+	}
+	SECTION.banner .proxPartidos .cProxPartidos p {
+    width: 40% !important;
+	}
+	SECTION.banner .proxPartidos {
+    height: 300px;
+	}
+	SECTION.banner .proxPartidos .marco {
+    height: 270px;
+	}
+	SECTION.banner .proxPartidos .slideshow-container2 .mySlides div.horarios {
+    font-size: 31px;
+    text-align: center;
+		position: absolute;
+    right: 30%;
+	}
+	div.mySlides.fade div.imagenpartidoder {
+    float: right !important;
+    right: 2em;
+    position: relative;
+	}
+	SECTION.banner .proxPartidos .slideshow-container2 {
+    width: 67%;
+    position: absolute;
+		right: 2em;
+    top: 4em;
+	}
+	.nav-left UL LI, .nav-right UL LI {
+    margin: 0 57px;
+	}
+	SECTION.advantages {
+    margin: 11em auto 10px;
 	}
 }
 
 @media screen and (min-width: 860px)  and (max-width: 1060px) {
 	/*  Vista index.html */
-
+	SECTION.advantages {
+    margin: 5em auto 10px;
+	}
 	section.banner .container .banner-info {
 		margin-left: 2% !important;
+		margin-bottom: 0;
 	}
 	.top-illustration {
 	    background-size: 40%;
@@ -208,9 +246,9 @@ SECTION.earn .container {
 
 	SECTION.banner .proxPartidos {
 	    width: 96%;
-	}	
+	}
 	SECTION.banner .proxPartidos .cProxPartidos h2 {
-	    font-size: 26px;
+	    font-size: 20px;
 	}
 	SECTION.banner .proxPartidos .cProxPartidos p {
 	    font: 18px 'breamcatcher', helvetica, arial, sans-serif;
@@ -220,26 +258,30 @@ SECTION.earn .container {
 	    padding-left: 110px;
 	    background-position: 8% 5%;
 	    background-size: 38%;
-	}	
+	}
 	SECTION.banner .proxPartidos .cProxPartidos p .tam3 {
     	font-size: 14px;
 	}
 	SECTION.banner .proxPartidos .slideshow-container2 {
-	    width: 60%;
+		width: 97%;
+		position: absolute;
+		bottom: 3em;
+		right: 0em;
+		top: 6em;
 	}
 }
-	
+
 @media screen and (max-width: 959px) {
 	/* -------- Advantages -------- */
-	SECTION.advantages{padding:80px 40px;}
+	SECTION.advantages{padding:80px 40px;margin: 0 auto 10px;}
 	.adv-info-container{float:none;width:100%;padding:50px 0 0 0;}
 	.video-img{float:none;width:50%;padding:0;margin:0 auto;}
-	
+
 	/* -------- Register form -------- */
 	.register-cta{padding:0 20px;margin:60px 0 0 0;}
 	.register-cta UL LI{float:none;width:100%;padding:0;}
 	.register-cta UL LI P{margin:40px 0 60px 0;font-size:22px;}
-	
+
 	/* -------- Quiniela -------- */
 	.teams{width:100%;float:none;padding:15px 0 0 0;}
 	.teams DIV.team-container{width:100%;}
@@ -254,9 +296,8 @@ SECTION.earn .container {
 @media screen and (max-width: 820px) {
 	/* -------- Banner -------- */
 	.banner-info{padding:100px 20px 200px 20px;margin:0 auto;width:100%;}
-	.top-illustration{background:transparent url('../images/illustration-top.png') no-repeat center bottom;background-size:400px;}
 	.mini-banner H1{font-size:40px;}
-	
+
 		/* -------- User type -------- */
 	SECTION.user-type{padding:0 0 30px 0;}
 	.user-type UL LI{float:none;width:100%;margin:0 0 50px 0;}
@@ -264,12 +305,12 @@ SECTION.earn .container {
 	.user-type IMG{margin:0 0 30px 0;}
 	.usuario{padding:0;}
 	.book{padding:0;}
-	
+
 	/* -------- Earn More -------- */
 	.earn H3{font-size:32px;}
 	.earn H2{font-size:52px;}
 	.earn P{font-size:20px;}
-	
+
 	/* -------- Quiniela form -------- */
 	SECTION.quiniela-form{padding:60px 0 80px 0;}
 	.quiniela-form-info, .quiniela-form-form{float:none;width:100%;padding:0 20px;}
@@ -280,7 +321,7 @@ SECTION.earn .container {
 	/* -------- Global -------- */
 	.container{width:100%;padding:0 40px;}
 	.mini-container{width:100%;}
-	
+
 	/* -------- Navigation -------- */
 	SECTION.nav-left, SECTION.nav-right{width:40px;letter-spacing:2px;}
 	.nav-left UL LI,.nav-right UL LI{margin:0 15px;}
@@ -294,7 +335,7 @@ SECTION.earn .container {
 	.menu .third{width:20px;}
 	.menu:hover .first{width:25px;}
 	.menu:hover .third{width:25px;}
-	
+
 	/* -------- Banner -------- */
 	.banner-info{padding:100px 20px;}
 	.top-illustration{background-size:320px;}
@@ -303,17 +344,17 @@ SECTION.earn .container {
 	.banner .extra{width:100%;}
 	.mini-banner{padding:100px 60px 70px 60px;}
 	.mini-banner H1{font-size:32px;}
-	
+
 	/* -------- Buttons -------- */
 	.btn-light,.btn-dark{width:200px;font-size:13px;}
-	
+
 	/* -------- Advantages -------- */
 	SECTION.advantages{padding:80px 20px;}
 	.video-img{width:80%;}
 	.advantages H2{font-size:32px;margin:0 0 40px 0;text-align:center;}
 	.slide-txt{font-size:22px;}
 	.slide-txt::before{font-size:30px;}
-	
+
 	/* -------- About -------- */
 	.about-info{width:70%;padding:0 0 0 20px;}
 	.about-img{right:-10%;}
@@ -321,38 +362,38 @@ SECTION.earn .container {
 	.about-info H3{font-size:28px;margin:0 0 50px 0;}
 	.about-info P{font-size:22px;margin:0 0 55px 0;}
 	.about-info UL LI P{font-size:15px;}
-	.about-info UL LI SPAN{font-size:20px;}	
-	
+	.about-info UL LI SPAN{font-size:20px;}
+
 	/* -------- Quiniela form -------- */
 	SECTION.quiniela-form{padding:60px 0;}
 	.quiniela-form H2{font-size:32px;margin:0 0 30px 0;}
 	.quiniela-form P{font-size:22px;margin:0 0 20px 0;}
-	
+
 	/* -------- Footer -------- */
 	FOOTER{padding:40px 0 30px 0;}
 	FOOTER A IMG{width:60px;}
 	FOOTER UL{margin:60px 0 40px 0;}
 	FOOTER UL LI{margin:12px 0;display:block;}
-	
+
 	/* -------- Sidenav -------- */
 	.sidenav UL{padding:40px 20px 0 20px;}
 	.sidenav A H2{font-size:52px;}
 	.sidenav A P{font-size:22px;}
 	.close-menu{top:20px;right:20px;}
-	
+
 	/* -------- Login Modal -------- */
 	.modal-content{padding:40px;width:90%;}
-	
+
 	/* -------- Accordion -------- */
 	.accordion-table OL{font-size:20px;}
 	.accordion-table .accordion{font-size:24px;}
 	.accordion-table OL P{font-size:15px;}
-	
+
 	/* -------- Register form -------- */
 	.register H2{font-size:32px;padding:0 20px;}
 	.register-container UL{padding:0 10px;margin:0 0 40px 0;}
 	.register-cta .btn-light{letter-spacing:1px;}
-	
+
 	/* -------- Quiniela -------- */
 	.teams{margin:0 0 10px 0;}
 	P.team{padding:0 0 0 10px;}
@@ -362,7 +403,7 @@ SECTION.earn .container {
 	UL.odds LI DIV{margin:0 8px 8px 8px;padding:8px 0;}
 }
 
-@media screen and (max-width: 480px) {	
+@media screen and (min-width: 300px) and (max-width: 859px) {
 	/* -------- Banner -------- */
 	SECTION.banner{
 		height:auto;
@@ -375,7 +416,7 @@ SECTION.earn .container {
 	    float: none;
 	    width: 66%;
 	    margin:10px auto 5px;
-	    
+
 	    background-size: 80%;
 	    /*border:1px solid red;*/
 	}
@@ -448,7 +489,7 @@ SECTION.earn .container {
     	min-height:50px;
     	position: relative;
     	float: none;
-    	margin:0  auto; 
+    	margin:0  auto;
    }
    SECTION.banner .proxPartidos .cProxPartidos h2 {
     font-size: 16px;
@@ -460,16 +501,15 @@ SECTION.earn .container {
 	    font-size: 12px;
 	    margin: -5px auto;
 	    width: 99% !important;
-	    height: auto;
-	    min-height: auto;
-	    padding:5%;
-	    padding-top: 3%;
+	    height: -webkit-fill-available;
+	    max-height: 50px;
+	    padding: 0;
 	    /*padding-left: 30%;*/
 	    text-align: center;
 	    /* background: transparent url(../images/ball3.png) no-repeat bottom left; */
 	    background: transparent url(../images/copa2.png) no-repeat top left;
 	    background-position: 5% 5%;
-	    background-size: 20%;
+	    background-size: 13%;
 	    /*border:1px solid red;*/
 	}
 	SECTION.banner .proxPartidos .cProxPartidos p .tam3 {
@@ -477,9 +517,8 @@ SECTION.earn .container {
 	}
 
 	SECTION.banner .proxPartidos .slideshow-container2 {
-    	width: 99%;
+    	width: 90%;
     	min-height: 90px;
-    	position: relative;
     	float: none;
     	border: 1px solid transparent;
 	}
@@ -503,11 +542,15 @@ SECTION.earn .container {
 	}
 	SECTION.banner .proxPartidos .slideshow-container2 .mySlides > div img {
     	margin: 10px auto;
-    	width: 100%;
+    	width: 90%;
 	}
-	
+
 	SECTION.banner .proxPartidos .slideshow-container2 .mySlides div.horarios {
- 	   width: 50%;
+ 	  width: 56%;
+		position: absolute;
+		font-size: 31px;
+		text-align: center;
+		right: 22%;
 	}
 
 	SECTION.banner .proxPartidos .slideshow-container2 .mySlides div.horarios h2 {
@@ -526,21 +569,21 @@ SECTION.earn .container {
 	SECTION.banner .proxPartidos {
 		height: 180px;}
 	SECTION.banner .proxPartidos .marco {
-	    height: 155px;
-	 
+	    height: -webkit-fill-available;
+
 	}
 
 /*	.banner H1{font-size:30px;}
 	.banner H4{font-size:26px;margin:0 0 35px 0;}
 	.mini-banner{padding:80px 40px 60px 40px;}
 	.mini-banner H1{font-size:26px;}
-*/	
+*/
 	/* -------- Advantages -------- */
 	SECTION.advantages{width:auto; margin:10px auto 0; padding:0; clear:both;}
 	.video-img{width:100%;}
-	
+
 	SECTION.advantages .container {
-	    margin: 10px auto; 
+	    margin: 10px auto;
 	    width: 100%;
 	    height: auto;
 	    clear: both;
@@ -592,7 +635,7 @@ SECTION.earn .container {
 	    margin: 8px 0;
 	    width: 100%;
 	}
-	
+
 	SECTION.advantages .container .cnt-banner {
     	width: 100% !important;
     	float:none;
@@ -607,7 +650,7 @@ SECTION.earn .container {
     	clear:both;
     	/*border:1px solid red;*/
 	}
-	
+
 	.slide-txt {font-size:18px;}
 	.cnt-banner h2 span.tam1 {font-size: 19px;margin-top:10px;}
 	.cnt-banner h2 span.tam2 {font-size: 23px; font-weight:400x;}
@@ -621,7 +664,7 @@ SECTION.earn .container {
 	}
 	.slide-txt{padding-left:30px;font-size:18px;}
 	.slide-txt::before{font-size:22px;}
-	
+
 	SECTION.advantages .container .slide-nav {
 	    text-align: center;
 	    margin-top: 15px 0 5px;
@@ -645,7 +688,7 @@ SECTION.earn .container {
 	    background-position: 50% 0%;
 	    background-size: 45%;
 	    /*border: 1px solid blue; */
-	}	
+	}
 	SECTION.about .container .about-info {
 	    margin: 1px;
 	    margin: 0 auto;
@@ -720,7 +763,7 @@ SECTION.earn .container {
 	    word-spacing: 0;
 	}
 	/* -------- Earn More -------- */
-	
+
 	.earn H2{font-size:38px;}
 	SECTION.earn {height: auto; margin-top:10px;}
 	SECTION.earn .container {
@@ -739,7 +782,7 @@ SECTION.earn .container {
 		width: 96%;
 	    height: auto;
 	    margin: 5px auto;
-	    border: 2px solid #C5A67E;	
+	    border: 2px solid #C5A67E;
 	}
 	SECTION.earn .container ul li {
 	    width:99%;
@@ -788,9 +831,9 @@ SECTION.earn .container {
 	    appearance:none;
 	    -moz-appearance:none; /* Firefox */
 	    -webkit-appearance:none; /* Safari and Chrome */
-	    
+
 	}
-	
+
 	SECTION.quiniela-form .container {
 	    margin: 10px auto;
 	    width: 100%;
@@ -883,8 +926,8 @@ SECTION.quiniela-form .container .quiniela-form-form ul.tipoUsuario li input[typ
 	    height: 30px;
 	    width: 30px;
 	}
-	
-	
+
+
 	.login-form-title H2 {
 	    width: 90%;
 	    font: normal 25px 'breamcatcher', helvetica, arial, sans-serif;
@@ -922,7 +965,6 @@ SECTION.quiniela-form .container .quiniela-form-form ul.tipoUsuario li input[typ
 	    background: transparent url(../images/copa2.png) no-repeat top left;
 	    background-position: 3% 5%;
 	    background-size: 20%;
-	    border: 1px solid red;
 	}
 	SECTION.banner .proxPartidos .cProxPartidos p .tam3 {
     	font-size: 11px;
@@ -967,7 +1009,7 @@ SECTION.quiniela-form .container .quiniela-form-form ul.tipoUsuario li input[typ
 	    padding: 5px 0;
 	    margin: 20px auto  0;
 	}
-	
+
 }
 
 @media (min-height: 500px) and (max-height: 599px){
@@ -976,7 +1018,7 @@ SECTION.quiniela-form .container .quiniela-form-form ul.tipoUsuario li input[typ
 	    padding: 5px 0 ;
 	    margin: 20px auto 0;
 	}
-	
+
 @media (min-height: 600px) and (max-height: 700px){
 	.sidenav UL {padding: 45px 20px 0 20px;}
 	.sidenav UL LI {
@@ -984,4 +1026,6 @@ SECTION.quiniela-form .container .quiniela-form-form ul.tipoUsuario li input[typ
 	    margin: 25px auto 0;
 	}
 }
+@media screen (min-width:650px) and (max-width: 859px){
 
+}

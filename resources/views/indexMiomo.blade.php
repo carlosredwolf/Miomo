@@ -171,7 +171,7 @@
 
 			<h3> <span class="nomEquipo1">{{$partido->local->nombre}}</span>  VS  <span class="nomEquipo2">{{$partido->visitante->nombre}}</span></h3>
 		</div>
-		<div>
+		<div class="imagenpartidoder">
 			<img src="images/equipos/{{$partido->visitante->id}}.png" >
 		</div>
 	</div>
