@@ -50,8 +50,11 @@
         <label class="eEquipo2" for="radio-{{$partido->id}}"><img src="{{asset($route2)}}" >	<span class="nomEquipo2">{{$partido->visitante->nombre}}</span></label>
       </div>
     </div>
-    @if($partido->status->id == 2 || $partido->status->id == 3)
+    @if(($partido->status->id == 2 || $partido->status->id == 3) || $resultado[$partido->id] == 0)
       <div class="resultadoError"></div>
+    @endif
+    @if($resultado[$partido->id] == 1)
+      <div class="resultadoExito"></div>
     @endif
     @if (date('M/d/Y',strtotime($partido->fecha_partido)) == date('M/d/Y') && date('h') > date("h", strtotime('-1 hours',strtotime($partido->hora_partido))) )
       {{-- expr --}}

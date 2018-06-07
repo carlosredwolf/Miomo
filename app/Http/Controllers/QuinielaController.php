@@ -77,12 +77,27 @@ class QuinielaController extends Controller
       $jornada = Jornada::find($jornada);
       $partidos = $jornada->partidos;
       $partidos = $partidos->sortBy('hora_partido')->sortBy('fecha_partido');
+      $resultado = array();
 
       foreach ($partidos as $partido) {
         // code...
         foreach ($apuestas as $apuesta) {
           // code...
           if ($partido->id == $apuesta->id_partido) {
+            if ($partido->resultado->id != 4) {
+              // code...
+              if ($partido->resultado->id == $apuesta->id_resultado) {
+                // code...
+                  $resultado[$partido->id] = 1;
+              }else {
+                // code...
+                $resultado[$partido->id] = 0;
+              }
+
+            }else {
+              // code...
+              $resultado[$partido->id] = 2;
+            }
             $partido->resultado->id = $apuesta->id_resultado;
           }
         }
@@ -91,7 +106,7 @@ class QuinielaController extends Controller
       $idQ = $id;
       $id = $jornada->id;
       $partidosStr = json_encode($partidos);
-      return view('quiniela.jornadaQuiniela',compact('partidos','name','id','partidosStr','idQ'));
+      return view('quiniela.jornadaQuiniela',compact('partidos','name','id','partidosStr','idQ','resultado'));
     }
 
     public function update(Request $request)

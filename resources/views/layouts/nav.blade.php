@@ -38,7 +38,7 @@
                           <a href="rules">World Cup Pool Rules</a>
                             @if ($data->id_rol == 1)
                                 <a href="admin">admin</a>
-                               
+
                             @endif
 
 
@@ -66,7 +66,7 @@
                       </div>
                       <div class="navbar margin-topone responsive" id="responsiveMenu">
                         <div class="dropdown">
-                            <button onclick="myFunction()" class="dropbtn">Results </button>
+                            <button onclick="myFunction()" class="dropbtn">Options </button>
                               <div id="myDropdown" class="dropdown-content">
                                 <a  class="active" href="quiniela">The pool</a>
                                 <a href="misquinielas">My pools</a>

@@ -41,24 +41,24 @@
   		<div class="navbar margin-topone" id="menuDesktop">
     			<a class="active" href="../../misquinielas">My pools</a>
 
-    			{{-- <button class="avatar">
+    			<button class="avatar">
     					<i class="avatar fas fa-user-circle"></i>
-    			</button> --}}
+    			</button>
 
-    			{{-- <div class="dropdown user">
-      			<button class="dropbtn">John Doe
+    			<div class="dropdown user">
+      			<button class="dropbtn">{{Auth::user()->name}}
         				<i class="fa fa-caret-down"></i>
       			</button>
       			<div class="dropdown-content">
 
-  	      				<a href="#">Profile</a>
-  	      				<a href="#">Logout</a>
+  	      				<a href="perfil">Profile</a>
+  	      				<a href="logout">Logout</a>
       			</div>
-    			</div> --}}
+    			</div>
     		</div>
     		<div class="navbar margin-topone responsive" id="responsiveMenu">
   			<div class="dropdown">
-  				<button onclick="myFunction()" class="dropbtn">Results </button>
+  				<button onclick="myFunction()" class="dropbtn">Options</button>
   				  <div id="myDropdown" class="dropdown-content">
 							<a  class="active" href="../misquinielas">My pools</a>
 
