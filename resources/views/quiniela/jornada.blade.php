@@ -92,8 +92,12 @@
 
         <div class="titulo-quiniela">
           <img src="{{asset('images/copa.png')}}" alt="">
+					@if (Route::getCurrentRoute()->getActionMethod() == 'quiniela')
+						<a class="nav-link" href="../../misquinielas">Back</a>
+					@elseif (Route::getCurrentRoute()->getActionMethod() == 'jornada')
+						<a class="nav-link" href="../quiniela">Back</a>
+					@endif
 
-        <a class="nav-link" href="../quiniela">Back</a>
         </div>
 				<meta name="csrf-token" content="{{ csrf_token() }}" />
         <!-- Day -->
