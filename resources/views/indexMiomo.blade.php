@@ -161,7 +161,7 @@
 </div>
 <!-- Slideshow container -->
 <div class="slideshow-container2">
-	@foreach ($partidosOut as $partido)
+	@foreach ($partidos as $partido)
 	<div class="mySlides fade">
 		<div>
 			<img src="images/equipos/{{$partido->local->id}}.png" >

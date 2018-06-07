@@ -10,23 +10,10 @@
       @if ($partido->grupo->id != 9)
         <h3>{{$partido->grupo->descripcion}}</h3>
       @endif
-      @if ($partido->local->id != 1)
-        @php
-        $id1 = $partido->local->id;
-        $id2 = $partido->visitante->id;
-        $route1 = 'images/equipos/'.$id1.'.png';
-        $route2 = 'images/equipos/'.$id2.'.png';
-        @endphp
-      @else
-        @php
-        $route1 = 'images/equipos/1.png';
-        $route2 = 'images/equipos/1.png';
-        @endphp
-      @endif
     </div>
     <div class="encuentro">
       <div>
-        <label class="eEquipo1" for="radio-{{$partido->id}}"><img src="{{asset($route1)}}"> <span>{{$partido->local->nombre}}</span></label>
+        <label class="eEquipo1" for="radio-{{$partido->id}}"><img src="{{asset('images/equipos/'.$partido->local->id.'.png')}}"> <span>{{$partido->local->nombre}}</span></label>
         @if ($partido->resultado->id == 1)
             <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=1 checked>
         @else
@@ -47,7 +34,7 @@
         @else
           <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=3>
         @endif
-        <label class="eEquipo2" for="radio-{{$partido->id}}"><img src="{{asset($route2)}}" >	<span class="nomEquipo2">{{$partido->visitante->nombre}}</span></label>
+        <label class="eEquipo2" for="radio-{{$partido->id}}"><img src="{{asset('images/equipos/'.$partido->visitante->id.'.png')}}" >	<span class="nomEquipo2">{{$partido->visitante->nombre}}</span></label>
       </div>
     </div>
     @if(($partido->status->id == 2 || $partido->status->id == 3) || $resultado[$partido->id] == 0)

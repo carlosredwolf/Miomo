@@ -28,22 +28,16 @@ class CommonController extends Controller
 
     public function index()
     {
-      //$now = Carbon::now();
-      $now = Carbon::parse('2018-06-14')->toDateString();
-      $partidos = Partido::where('fecha_partido',$now)->orderBy('hora_partido')->get();
+      $today = Carbon::now();
+      $start = Carbon::parse('2018-06-14');
 
-      $partidosOut = array();
-      foreach ($partidos as $partido) {
-        $partidoObj = new stdClass;
-        $partidoObj->id = $partido->id;
-        $partidoObj->fecha_partido = $partido->fecha_partido;
-        $partidoObj->hora_partido = $partido->hora_partido;
-        $partidoObj->local = $partido->local;
-        $partidoObj->visitante = $partido->visitante;
+      $now = ($today >= $start) ? $today : $start;
+      $end = Carbon::parse($now->toDateString());
+      $end->addDays(5);
 
-        array_push($partidosOut,$partidoObj);
-      }
-      return view('indexMiomo',compact('partidosOut'));
+      $partidos = Partido::whereBetween('fecha_partido',[$now->toDateString(),$end->toDateString()])->orderBy('fecha_partido')->get();
+
+      return view('indexMiomo',compact('partidos'));
     }
 
     public function catResultados(){

@@ -39,9 +39,14 @@
   	<section class="header_quiniela main-menu-sizeone">
 
   		<div class="navbar margin-topone" id="menuDesktop">
-    			<a class="active" href="../../quiniela">The pool</a>
-    			<a href="../../resultados">Results</a>
-    			<a href="../../proximos">Next matches</a>
+				@if (Route::getCurrentRoute()->getActionMethod() == 'jornada')
+					<a  class="active" href="../quiniela">The pool</a>
+					<a href="../../resultados">Results</a>
+					<a href="../../proximos">Next matches</a>
+				@elseif (Route::getCurrentRoute()->getActionMethod() == 'quiniela')
+					<a class="active" href="../../misquinielas">My pools</a>
+					<a href="../../quiniela">The pool</a>
+				@endif
 
     			<button class="avatar">
     					<i class="avatar fas fa-user-circle"></i>
@@ -62,9 +67,15 @@
   			<div class="dropdown">
   				<button onclick="myFunction()" class="dropbtn">Options </button>
   				  <div id="myDropdown" class="dropdown-content">
-  				    <a  class="active" href="../quiniela">The pool</a>
-  				    <a href="../../resultados">Results</a>
-    					<a href="../../proximos">Next matches</a>
+							@if (Route::getCurrentRoute()->getActionMethod() == 'jornada')
+								<a  class="active" href="../quiniela">The pool</a>
+	  				    <a href="../../resultados">Results</a>
+	    					<a href="../../proximos">Next matches</a>
+							@elseif (Route::getCurrentRoute()->getActionMethod() == 'quiniela')
+								<a class="active" href="../../misquinielas">My pools</a>
+								<a href="../../quiniela">The pool</a>
+							@endif
+
     				  </div>
   			</div>
   	</div>
@@ -86,7 +97,11 @@
         </div>
 				<meta name="csrf-token" content="{{ csrf_token() }}" />
         <!-- Day -->
-				@include('quiniela.forms.form')
+				@if (Route::getCurrentRoute()->getActionMethod() == 'quiniela')
+					@include('quiniela.forms.formEditar')
+				@elseif (Route::getCurrentRoute()->getActionMethod() == 'jornada')
+					@include('quiniela.forms.form')
+				@endif
     </div>
     </div>
   </div>

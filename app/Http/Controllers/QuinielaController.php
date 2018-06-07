@@ -106,7 +106,7 @@ class QuinielaController extends Controller
       $idQ = $id;
       $id = $jornada->id;
       $partidosStr = json_encode($partidos);
-      return view('quiniela.jornadaQuiniela',compact('partidos','name','id','partidosStr','idQ','resultado'));
+      return view('quiniela.jornada',compact('partidos','name','id','partidosStr','idQ','resultado'));
     }
 
     public function update(Request $request)
