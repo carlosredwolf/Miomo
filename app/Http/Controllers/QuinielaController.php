@@ -10,6 +10,7 @@ use stdClass;
 use Miomo\Quiniela;
 use Miomo\Apuesta;
 use Miomo\Jornada;
+use Miomo\Partido;
 use Auth;
 use Miomo\Datos_Usuario as Data;
 
@@ -26,7 +27,7 @@ class QuinielaController extends Controller
       $response = $request->input();
 
       $respuesta = $this->getRespuesta($response);
-    //
+
       $quiniela = Quiniela::where('id_usuario',$respuesta->id_user)
                           ->where('id_jornada',$respuesta->id_jornada)
                           ->first();
@@ -139,7 +140,8 @@ class QuinielaController extends Controller
       $respuesta->token = $response['_token'];
       $respuesta->id_user = Auth::user()->id;
       $respuesta->id_jornada = intval($response['idJ']);
-      $respuesta->partidos = $partidos;
+      $respuesta->partidos = Partido::where('id_jornada',$respuesta->id_jornada)->get();
+
       foreach ($response as $key => $value) {
         // code...
         if (strpos($key,'radio')!== false) {
@@ -154,16 +156,14 @@ class QuinielaController extends Controller
         }
       }
 
-        foreach ($respuesta->partidos as $partido) {
-          foreach ($radios as $radio) {
-            // code...
-            if ($partido->id == $radio->partido) {
-              // code...
-              $partido->resultado->id = $radio->resultado;
-            }
-          }
+      foreach ($radios as $radio) {
+        // code...
+        foreach ($respuesta->partidos as $partido) if ($radio->partido == $partido->id) {
+          // code...
+          $partido->resultado->id = $radio->resultado;
         }
+      }
 
-        return $respuesta;
+      return $respuesta;
     }
 }
