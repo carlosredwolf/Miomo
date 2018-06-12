@@ -34,6 +34,8 @@ Route::group(['middleware' => ['admin']], function () {
       Route::post('admin','AdminController@store');
 
       Route::get('/userdelete/{id_usuario}','AdminController@deleteUser');
+
+      Route::get('profile/{id}','UsuariosController@show');
 });
 
 //Colocar todas las rutas que se van a usar solo cuando el usuario haya confirmado su correo

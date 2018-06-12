@@ -24,7 +24,7 @@
                     <tbody>
                         @foreach ($usuariosData as $user)
                         <tr>
-                        <td> {{$user->nickname}} </td>
+                        <td><a style="color:#CCB089;" href="profile/{{$user->id_usuario}}">{{$user->nickname}}</a></td>
                         <td> {{$user->correo}} </td>
                         <td> {{$user->celular}} </td>
                         <td> {{$user->pais}} </td>
