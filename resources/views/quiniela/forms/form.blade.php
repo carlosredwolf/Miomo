@@ -13,14 +13,26 @@
     <div class="encuentro">
       <div>
         <label class="eEquipo1" for="radio-{{$partido->id}}"><img src="{{asset('images/equipos/'.$partido->local->id.'.png')}}"> <span>{{$partido->local->nombre}}</span></label>
+        @if($partido->status->id == 2 || $partido->status->id == 3)
+        <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=1>
+        @else
         <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=1 required>
+        @endif
       </div>
       <div class ="deEmpate">
+        @if($partido->status->id == 2 || $partido->status->id == 3)
+        <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=2>
+        @else
         <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=2 required>
+        @endif
         <label  class ="eEmpate" for="radio-{{$partido->id}}">Draw</label>
       </div>
       <div>
+        @if($partido->status->id == 2 || $partido->status->id == 3)
+        <input  class="radio square" type="radio" name="radio-{{$partido->id}}" value=3>
+        @else
         <input  class="radio square" type="radio" name="radio-{{$partido->id}}" value=3 required>
+        @endif
         <label class="eEquipo1" for="radio-{{$partido->id}}"><img src="{{asset('images/equipos/'.$partido->visitante->id.'.png')}}"> <span>{{$partido->visitante->nombre}}</span></label>
       </div>
     </div>
@@ -28,7 +40,7 @@
       <div class="resultadoError"></div>
     @endif
     @if (date('M/d/Y',strtotime($partido->fecha_partido)) == date('M/d/Y') && date('h') > date("h", strtotime('-1 hours',strtotime($partido->hora_partido))) )
-      {{-- expr --}}
+
       <div class="resultadoError"></div>
     @endif
     </fieldset>
