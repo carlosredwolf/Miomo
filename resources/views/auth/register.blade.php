@@ -2,9 +2,9 @@
 @section('content')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/strength.css') }}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -42,6 +42,7 @@
 								<li class="selectOps styled-select slate">
 									<select name="paises" id="select-pais">
 									</select>
+                  {{-- <select id="country" name="country"></select> --}}
 								</li>
 							</li>
 							<li>
@@ -50,6 +51,7 @@
 									<select name="ciudades" id="select-estado">
 									<option value="x">First select your country</option>
 									</select>
+                  {{-- <select name="state" id="state"></select> --}}
 								</li>
 								@if ($errors->has('ciudad'))
                                     <span class="invalid-feedback">
@@ -166,8 +168,10 @@
 
 </style>
 <script src="{{ asset('js/intereses.js') }}" defer></script>
+<script src="{{ asset('js/paises.js') }}" defer></script>
 <script src="{{ asset('js/strength.js') }}"></script>
 <script src="{{ asset('js/js.js') }}"></script>
+{{-- <script src="{{ asset('js/countries.js') }}"></script> --}}
 <script>
         /*$(document).ready(function($) {
 			$( "#datepicker" ).datepicker({
@@ -184,6 +188,10 @@
 
         });
     </script>
+
+{{-- <script language="javascript">
+	populateCountries("select-pais", "select-estado"); // first parameter is id of country drop-down and second parameter is id of state drop-down
+</script> --}}
 @endsection
 
 @section('footer')
