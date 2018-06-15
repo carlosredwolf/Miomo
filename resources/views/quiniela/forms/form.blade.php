@@ -11,9 +11,13 @@
       @endif
     </div>
     @if ($partido->status->id == 2 || $partido->status->id == 3)
-      {{$required = 'required'}}
+      @php
+        $required = '';
+      @endphp
     @else
-      {{$required = ''}}
+      @php
+        $required = 'required';
+      @endphp
     @endif
     <div class="encuentro">
       <div>
@@ -29,12 +33,16 @@
         <label class="eEquipo1" for="radio-{{$partido->id}}"><img src="{{asset('images/equipos/'.$partido->visitante->id.'.png')}}"> <span>{{$partido->visitante->nombre}}</span></label>
       </div>
     </div>
-    @if($partido->status->id == 2 || $partido->status->id == 3 )
+  @php
+    date_default_timezone_set('America/Mexico_City');
+  @endphp
+    @if($partido->status->id == 2 || $partido->status->id == 3 || (date('M/d/Y') >= date('M/d/Y',strtotime($partido->fecha_partido)) && date('H') >= date("H", strtotime('-1 hours',strtotime($partido->hora_partido)))))
       <div class="resultadoError"></div>
     @endif
-    @if (date('M/d/Y') >= date('M/d/Y',strtotime($partido->fecha_partido)) && date('h') >= date("h", strtotime('-1 hours',strtotime($partido->hora_partido))))
+
+    {{-- @if (date('M/d/Y') >= date('M/d/Y',strtotime($partido->fecha_partido)) && date('H') >= date("H", strtotime('-1 hours',strtotime($partido->hora_partido))))
       <div class="resultadoError"></div>
-    @endif
+    @endif --}}
     </fieldset>
   @endforeach
   <input type="hidden" name="idJ" value="{{$id}}">

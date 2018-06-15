@@ -100,6 +100,8 @@ class QuinielaController extends Controller
               $resultado[$partido->id] = 2;
             }
             $partido->resultado->id = $apuesta->id_resultado;
+          }else{
+              $resultado[$partido->id] = 2;
           }
         }
       }
@@ -107,6 +109,7 @@ class QuinielaController extends Controller
       $idQ = $id;
       $id = $jornada->id;
       $partidosStr = json_encode($partidos);
+      //return $resultado;
       return view('quiniela.jornada',compact('partidos','name','id','partidosStr','idQ','resultado'));
     }
 
