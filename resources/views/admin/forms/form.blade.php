@@ -11,9 +11,9 @@
       <h2>{{date('M/d/Y',strtotime($partido->fecha_partido))}}<span>{{date('H:i A', strtotime($partido->hora_partido))}} CDT</span></h2>
       @if ($partido->local->id > 1 && $partido->local->id <=33)
           @if ($partido->status->id == 1)
-            <h3><a href="partido/{{$partido->id}}">START</a></h3>
+            <h3><a href="partido/{{$partido->id}}/{{$id}}">START</a></h3>
           @elseif($partido->status->id == 3)
-            <h3><a href="partido/{{$partido->id}}">STOP</a></h3>
+            <h3><a href="partido/{{$partido->id}}/{{$id}}">STOP</a></h3>
           @endif
       @endif
 
