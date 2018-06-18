@@ -51,7 +51,7 @@ Route::group(['middleware' => ['check_confirm']], function () {
     Route::get('quiniela/{id}/{jornada}','QuinielaController@quiniela');
     Route::get('misquinielas','QuinielaController@show');
 
-    Route::get('perfil','UsuariosController@index');
+    Route::get('perfil','UsuariosController@index')->name('profile');;
     Route::post('editarperfil','UsuariosController@update');
 
     Route::get('/puntosjornada/{Jornada_id}','RolesInteresController@CalcularPuntosJornada');

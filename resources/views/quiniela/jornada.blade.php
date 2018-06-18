@@ -58,8 +58,8 @@
       			</button>
       			<div class="dropdown-content">
 
-  	      				<a href="perfil">Profile</a>
-  	      				<a href="logout">Logout</a>
+  	      				<a href="{{route('profile')}}">Profile</a>
+  	      				<a href="{{ route('logout') }}">Logout</a>
       			</div>
     			</div>
     		</div>

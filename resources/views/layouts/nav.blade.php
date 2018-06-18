@@ -14,6 +14,7 @@
     <link href="/css/html5reset-1.6.1.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/css/quiniela.css">
+    <link rel="stylesheet" href="/css/responsive.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
     <link rel="icon" href="/images/favicon@2x.png">
     <!-- Scripts -->
@@ -55,7 +56,7 @@
                             </button>
                             <div class="dropdown-content">
 
-                                      <a href="perfil">Profile</a>
+                                      <a href="{{route('profile')}}">Profile</a>
                                       <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                              document.getElementById('logout-form').submit();">Logout</a>
                             </div>
