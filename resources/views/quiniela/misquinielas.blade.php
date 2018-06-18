@@ -12,7 +12,7 @@
 			<span class="tam1">football soccer</span>
 			<span class="tam2">champions league </span>
 			</p> -->
-		<div style="" class="navbar margin-topone" id="menuDesktop">
+		<div style="" class="navbar margin-topone">
 		@foreach ($quinielas as  $quiniela)
 			@if ($quiniela->jornada->id_status != 4)
 				<h4><span class="tam3"><a href="quiniela/{{$quiniela->id}}/{{$quiniela->jornada->id}}">
