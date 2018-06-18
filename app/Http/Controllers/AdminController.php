@@ -329,7 +329,7 @@ class AdminController extends Controller
       return redirect('admin');
     }
 
-    public function partido($id)
+    public function partido($id,$jornada)
     {
       // code...
       $partido = Partido::find($id);
@@ -342,7 +342,7 @@ class AdminController extends Controller
       }
 
       $partido->save();
-       return redirect('admin/'.$partido->id);
+       return redirect('admin/'.$jornada);
     }
 
 }

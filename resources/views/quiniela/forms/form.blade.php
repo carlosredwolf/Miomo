@@ -10,27 +10,39 @@
         <h3>{{$partido->grupo->descripcion}}</h3>
       @endif
     </div>
+    @if ($partido->status->id == 2 || $partido->status->id == 3)
+      @php
+        $required = '';
+      @endphp
+    @else
+      @php
+        $required = 'required';
+      @endphp
+    @endif
     <div class="encuentro">
       <div>
         <label class="eEquipo1" for="radio-{{$partido->id}}"><img src="{{asset('images/equipos/'.$partido->local->id.'.png')}}"> <span>{{$partido->local->nombre}}</span></label>
-        <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=1>
+        <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=1 {{$required}}>
       </div>
       <div class ="deEmpate">
-        <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=2>
+        <input class="radio square" type="radio" name="radio-{{$partido->id}}" value=2 {{$required}}>
         <label  class ="eEmpate" for="radio-{{$partido->id}}">Draw</label>
       </div>
       <div>
-        <input  class="radio square" type="radio" name="radio-{{$partido->id}}" value=3>
+        <input  class="radio square" type="radio" name="radio-{{$partido->id}}" value=3 {{$required}}>
         <label class="eEquipo1" for="radio-{{$partido->id}}"><img src="{{asset('images/equipos/'.$partido->visitante->id.'.png')}}"> <span>{{$partido->visitante->nombre}}</span></label>
       </div>
     </div>
-    @if($partido->status->id == 2 || $partido->status->id == 3)
+  @php
+    date_default_timezone_set('America/Mexico_City');
+  @endphp
+    @if($partido->status->id == 2 || $partido->status->id == 3 || (date('M/d/Y') >= date('M/d/Y',strtotime($partido->fecha_partido)) && date('H') >= date("H", strtotime('-1 hours',strtotime($partido->hora_partido)))))
       <div class="resultadoError"></div>
     @endif
-    @if (date('M/d/Y',strtotime($partido->fecha_partido)) == date('M/d/Y') && date('h') > date("h", strtotime('-1 hours',strtotime($partido->hora_partido))) )
-      {{-- expr --}}
+
+    {{-- @if (date('M/d/Y') >= date('M/d/Y',strtotime($partido->fecha_partido)) && date('H') >= date("H", strtotime('-1 hours',strtotime($partido->hora_partido))))
       <div class="resultadoError"></div>
-    @endif
+    @endif --}}
     </fieldset>
   @endforeach
   <input type="hidden" name="idJ" value="{{$id}}">

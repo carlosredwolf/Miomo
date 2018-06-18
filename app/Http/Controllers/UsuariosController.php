@@ -61,6 +61,11 @@ class UsuariosController extends Controller
     public function show($id)
     {
         //
+        $usuario = User::find($id);
+        $datosUsuario = Datos_Usuario::where('id_usuario',$id)->first();
+
+        //return $datosUsuario;
+        return view('admin.perfil',compact('datosUsuario'));
     }
 
     /**
