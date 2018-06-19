@@ -34,7 +34,7 @@ class UsersTableSeeder extends Seeder
         'id_ciudad' => rand(1,1000),
         'correo' => 'correo@ejemplo.com',
         'id_usuario' => 1,
-        'id_rol' => 2,
+        'id_rol' => 1,
         'created_at' => $faker->dateTime,
         'updated_at' => $faker->dateTime,
       ]);

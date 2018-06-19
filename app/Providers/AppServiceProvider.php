@@ -8,6 +8,7 @@ use Miomo\Jornada;
 use View;
 use Carbon\Carbon;
 use Session;
+use URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,6 +22,11 @@ class AppServiceProvider extends ServiceProvider
         //Importante agregar esto debido a que sino ocasiona un error al realizar
         //la migración NO QUITAR.
         Schema::defaultStringLength(191);
+
+        if (env('APP_ENV') != 'local'){
+            URL::forceScheme('https');
+        }
+
     }
 
     /**

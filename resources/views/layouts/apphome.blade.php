@@ -64,9 +64,9 @@
 	  		</div>
 	  		<div class="navbar margin-topone responsive" id="responsiveMenu">
 				<div class="dropdown">
-					<button onclick="myFunction()" class="dropbtn">Results </button>
+					<button onclick="myFunction()" class="dropbtn">Options </button>
 					  <div id="myDropdown" class="dropdown-content">
-					    <a  class="active" href="quiniela">La quiniela</a>
+					    <a  class="active" href="quiniela">The Pool</a>
 					    {{-- <a href="resultados">Results</a>
 	  					<a href="proximos">Next matches</a> --}}
 	  				  </div>
