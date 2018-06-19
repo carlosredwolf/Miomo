@@ -200,7 +200,7 @@ section.quiniela .container{
 .quiniela .container .quiniela-container .contenido{margin:15px;border:2px solid #CCAF89;/*height:935px;*/ clear:both; position:relative; }
 .quiniela .container .quiniela-container .contenido .titulo-quiniela, .quiniela .container .quiniela-container .contenido .titulo-resultados, .quiniela .container .quiniela-container .contenido .titulo-proxPartidos{
 	width:100%;
-	min-height:180px;
+	min-height:auto;
 	position:relative;
 	color:#CCAF89;clear:both;}
 
@@ -703,12 +703,15 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
   .containerResultados .container .sobre {height:auto;}
   .containerResultados .container .marco {width: 98%; margin: 4px auto;}
   .quiniela .container .quiniela-container {margin: 5px auto 25px; }
-  .quiniela .container .quiniela-container .contenido .titulo-quiniela, .quiniela .container .quiniela-container .contenido .titulo-resultados, .quiniela .container .quiniela-container .contenido .titulo-proxPartidos {min-height: 80px;}
   .quiniela .container .quiniela-container .contenido .titulo-quiniela img {
     float: none;
     margin: 10px auto 0;
     width: 35%;
   }
+  .quiniela .container .quiniela-container .contenido .titulo-quiniela, .quiniela .container .quiniela-container .contenido .titulo-resultados, .quiniela .container .quiniela-container .contenido .titulo-proxPartidos {
+    min-height: auto;
+}
+
   .quiniela .container .quiniela-container .contenido .titulo-quiniela h3 {
     font: bold 14px 'poiretone-regular', sans-serif;
     text-transform: uppercase;

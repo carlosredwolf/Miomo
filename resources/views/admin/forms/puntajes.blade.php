@@ -11,6 +11,10 @@
               <div class="quiniela-container">
 
                 <div class="contenido">
+                    <div class="titulo-quiniela altura">
+                        <a class="nav-link" href="">Back</a>
+                    </div>
+
     @if ($quiniela)
 
         @foreach ($quiniela as $qui)
