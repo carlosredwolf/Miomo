@@ -24,9 +24,9 @@ class UsuariosController extends Controller
     {
         //Esta función muestra los datos del usuario.
         $idUsuario=Auth::user()->id;
-        $datosUsuario=Datos_Usuario::where('id_usuario','=', $idUsuario)->get();
+        $dataUser=Datos_Usuario::where('id_usuario','=', $idUsuario)->first();
 
-        return view('perfil.index',array('datosUsuario' => $datosUsuario));
+        return view('perfil.index',array('dataUser' => $dataUser));
         //return response()->json($datosUsuario);
     }
 
@@ -96,11 +96,10 @@ class UsuariosController extends Controller
         $datosUsuario->fecha_nacimiento=$request->fecha_nacimiento;
         $datosUsuario->celular=$request->celular;
         $ciudad = Estado::where('estadonombre',$request->ciudad)->first();
-        $datosUsuario->id_pais=$ciudad->pais->id;
+        $datosUsuario->id_pais=$ciudad->ubicacionpaisid;
         $datosUsuario->id_ciudad=$ciudad->id;
         $datosUsuario->correo=$request->email;
         $datosUsuario->id_usuario=$idUsuario;
-        $datosUsuario->id_usuario="1";
         //return response()->json($request);
          if($datosUsuario->save()){
              return redirect('perfil');

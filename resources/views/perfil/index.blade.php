@@ -15,8 +15,7 @@
                             @csrf
 
                             <h2>User Profile</h2>
-                             @if(isset($datosUsuario))
-                                @foreach($datosUsuario as $dataUser)
+                             @if(isset($dataUser))
                                   <ul>
                       							<li>
                       								<!-- <label for="nombre">Nombre(s)</label> -->
@@ -43,7 +42,6 @@
                                       <input type="text" name="email" id="" value="{{ $dataUser->correo}}" placeholder="Teléfono">
                                     </li>
           						             </ul>
-                                 @endforeach
                                @endif
                                <button class="btn-light" id="btn-registro" type="submit">Save</button>
                         </form>

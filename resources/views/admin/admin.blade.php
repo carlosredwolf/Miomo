@@ -12,15 +12,15 @@
 	<meta charset="utf-8">
 	<title>Miomo</title>
 
-	<link rel="stylesheet" href="css/html5reset-1.6.1.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/quiniela.css">
+	<link rel="stylesheet" href="{{asset('css/html5reset-1.6.1.css')}}">
+	<link rel="stylesheet" href="{{asset('css/style.css')}}">
+	<link rel="stylesheet" href="{{asset('css/quiniela.css')}}">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
-	<link rel="icon" href="images/favicon@2x.png">
+	<link rel="icon" href="{{asset('images/favicon@2x.png')}}">
 </head>
 
 <body>
@@ -28,7 +28,7 @@
 
 		<section class="nav-left">
 			<a href="/" class="main-logo main-logo-sizeone">
-				<img src="images/main-logo.svg" />
+				<img src="{{asset('images/main-logo.svg')}}" />
 			</a>
 
 		</section>
@@ -38,10 +38,10 @@
 		<section class="header_quiniela main-menu-sizeone">
 
 			<div class="navbar margin-topone" id="menuDesktop">
-	  			<a href="quiniela">The pool</a>
+	  			<a href="{{url('quiniela')}}">The pool</a>
 					@if ($data->id_rol == 1)
-						<a class="active" href="admin">admin</a>
-						<a href="/getallusers">See all users</a>
+						<a class="active" href="{{url('admin')}}">admin</a>
+						<a href="{{url('getallusers')}}">See all users</a>
 					@endif
 	  			{{-- <a href="resultados">Resultados</a>
 	  			<a href="proximos">Próximos partidos</a> --}}
