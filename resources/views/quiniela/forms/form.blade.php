@@ -9,8 +9,11 @@
       @if ($partido->grupo->id != 9)
         <h3>{{$partido->grupo->descripcion}}</h3>
       @endif
+      @php
+        date_default_timezone_set('America/Mexico_City');
+      @endphp
     </div>
-    @if ($partido->status->id == 2 || $partido->status->id == 3)
+    @if ($partido->status->id == 2 || $partido->status->id == 3 || (date('M/d/Y') >= date('M/d/Y',strtotime($partido->fecha_partido)) && date('H') >= date("H", strtotime('-1 hours',strtotime($partido->hora_partido)))))
       @php
         $required = '';
       @endphp
