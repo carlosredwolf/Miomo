@@ -37,9 +37,9 @@
         <label class="eEquipo2" for="radio-{{$partido->id}}"><img src="{{asset('images/equipos/'.$partido->visitante->id.'.png')}}" >	<span class="nomEquipo2">{{$partido->visitante->nombre}}</span></label>
       </div>
     </div>
-    @php
+    {{-- @php
       date_default_timezone_set('America/Mexico_City');
-    @endphp
+    @endphp --}}
     @if(($partido->status->id == 2 || $partido->status->id == 3) || $resultado[$partido->id] == 0 || (date('M/d/Y') >= date('M/d/Y',strtotime($partido->fecha_partido)) && date('H') >= date("H", strtotime('-1 hours',strtotime($partido->hora_partido)))) )
       <div class="resultadoError"></div>
     @endif

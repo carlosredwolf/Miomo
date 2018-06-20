@@ -12,10 +12,10 @@
 	<meta charset="utf-8">
 	<title>Miomo</title>
 
-  <link rel="stylesheet" href="../../css/html5reset-1.6.1.css">
-	<link rel="stylesheet" href="../../css/style.css">
-	<link rel="stylesheet" href="../../css/quiniela.css">
-	<!-- <link rel="stylesheet" href="css/responsive.css">-->
+  <link rel="stylesheet" href="{{asset('css/html5reset-1.6.1.css')}}">
+	<link rel="stylesheet" href="{{asset('css/style.css')}}">
+	<link rel="stylesheet" href="{{asset('css/quiniela.css')}}">
+	<link rel="stylesheet" href="{{asset('css/responsive.css')}}">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -41,13 +41,13 @@
   		<div class="navbar margin-topone" id="menuDesktop">
     			{{-- <a href="../../quiniela">La quiniela</a> --}}
 					@if ($data->id_rol == 1)
-						<a class="active" href="../admin">admin</a>
+						<a class="active" href="{{url('admin')}}">admin</a>
 					@endif
     			<button class="avatar">
     					<i class="avatar fas fa-user-circle"></i>
     			</button>
     			<div class="dropdown user">
-      			<button class="dropbtn">John Doe
+      			<button class="dropbtn">{{ Auth::user()->name }}
         				<i class="fa fa-caret-down"></i>
       			</button>
       			<div class="dropdown-content">
@@ -56,13 +56,16 @@
   	      				<a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Logout</a>
       			</div>
+						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
     			</div>
     		</div>
     		<div class="navbar margin-topone responsive" id="responsiveMenu">
   			<div class="dropdown">
   				<button onclick="myFunction()" class="dropbtn">Admin </button>
   				  <div id="myDropdown" class="dropdown-content">
-  				    <a  class="active" href="../admin">admin</a>
+  				    <a  class="active" href="{{url('admin')}}">admin</a>
     				  </div>
   			</div>
   	</div>
@@ -99,7 +102,7 @@
 
 <footer>
   <div class="container">
-    <a href="#"><img src="../../images/secondary-logo.svg" /></a>
+    <a href="#"><img src="{{asset('images/secondary-logo.svg')}}"/></a>
     <ul>
       {{-- <li><a href="../../terminos">Términos y condiciones</a></li>
       <li><a href="../../privacidad">Política de privacidad</a></li> --}}
@@ -109,7 +112,7 @@
   </div>
 </footer>
 
-<script src="../../js/quiniela.js" type='text/javascript'></script>
+<script src="{{asset('js/quiniela.js')}}" type='text/javascript'></script>
 <script src="{{ asset('js/equipos.js') }}" defer></script>
 
 </body>

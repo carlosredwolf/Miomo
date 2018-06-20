@@ -22,10 +22,10 @@ class AppServiceProvider extends ServiceProvider
         //Importante agregar esto debido a que sino ocasiona un error al realizar
         //la migración NO QUITAR.
         Schema::defaultStringLength(191);
-        //URL::forceScheme('https');
-        // if (env('APP_ENV') != 'local'){
-        //     URL::forceScheme('https');
-        // }
+
+        if (env('APP_ENV') != 'local'){
+            URL::forceScheme('https');
+        }
 
     }
 
