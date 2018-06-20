@@ -71,7 +71,7 @@ class RolesInteresController extends Controller
 
           $user = User::where('id',$pool->id_usuario)->first();
           $quiniela->usuario = $user->name;
-          $quiniela->fecha = $pool->updated_at;
+          $quiniela->fecha = $pool->created_at;
           $quiniela->puntaje =$pool->puntaje;
           $quiniela->acumuladoUser =0;
           $poolsUser = Quiniela::where('id_usuario',$pool->id_usuario)->get();

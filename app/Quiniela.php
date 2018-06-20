@@ -12,7 +12,7 @@ class Quiniela extends Model
 
     protected $dates = ['deleted_at'];
     protected $table="quinielas";
-    protected $hidden=['created_at'];
+    protected $hidden=[''];
     protected $fillable = [
         'id_usuario', 'id_evento', 'id_jornada','id_status',
     ];
