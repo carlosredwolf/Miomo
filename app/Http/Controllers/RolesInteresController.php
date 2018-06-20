@@ -163,7 +163,7 @@ class RolesInteresController extends Controller
               $puntaje=$puntaje+30;
 
             } else if($puntaje>=50) {
-              $puntaje=$puntaje+5;
+              $puntaje=$puntaje+10;
             }
           }elseif ($Jornada_id == 4) {
             // code...

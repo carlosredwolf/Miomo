@@ -38,7 +38,7 @@
       </div>
     </div>
     @if($partido->status->id == 2 || $partido->status->id == 3
-      || (date('M/d/Y') >= date('M/d/Y',strtotime($partido->fecha_partido)) && date('H') >= date("H", strtotime('-1 hours',strtotime($partido->hora_partido)))))
+      || (date('M/d/Y') >= date('M/d/Y',strtotime($partido->fecha_partido)) && date('H') >= date("H", strtotime('-0.2 hours',strtotime($partido->hora_partido)))))
       <div class="resultadoError"></div>
     @endif
     </fieldset>
