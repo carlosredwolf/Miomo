@@ -12,7 +12,7 @@
 
                 <div class="contenido">
                     <div class="titulo-quiniela altura">
-                        <a class="nav-link" href="{{url('misquinielas')}}">Back</a>
+                        <a class="nav-link" href="{{url('jornada/'.$id)}}">Back</a>
                     </div>
 
     @if ($quiniela)

@@ -12,16 +12,16 @@
 	<meta charset="utf-8">
 	<title>Miomo</title>
 
-	<link rel="stylesheet" href="../css/html5reset-1.6.1.css">
-	<link rel="stylesheet" href="../css/style.css">
-	<link rel="stylesheet" href="../css/quiniela.css">
+	<link rel="stylesheet" href="{{asset('css/html5reset-1.6.1.css')}}">
+	<link rel="stylesheet" href="{{asset('css/style.css')}}">
+	<link rel="stylesheet" href="{{asset('css/quiniela.css')}}">
 	<!-- <link rel="stylesheet" href="css/responsive.css">-->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
-	<link rel="icon" href="../images/favicon@2x.png">
+	<link rel="icon" href="{{asset('images/favicon@2x.png')}}">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
 	<!-- Menu Overlay -->
 	<section class="sidenav" id="sidenav">
 		<div onclick="closeNav()" class="close-menu">
-			<img src="../images/cross.svg" />
+			<img src="{{asset('images/cross.svg')}}" />
 		</div>
 		<div class="mini-container">
 
@@ -41,7 +41,7 @@
 	<!-- Sidebars -->
 	<section class="nav-left">
 		<a href="/" class="main-logo main-logo-sizeone">
-			<img src="../images/main-logo.svg" />
+			<img src="{{asset('images/main-logo.svg')}}" />
 		</a>
 
 	</section>
@@ -51,9 +51,9 @@
 	<section class="header_quiniela main-menu-sizeone">
 
 		<div class="navbar margin-topone" id="menuDesktop">
-  			<a href="../quiniela">The pool</a>
-  			<a class="active"  href="../resultados">Results</a>
-  			<a href="../proximos">Next matches</a>
+  			<a href="{{url('quiniela')}}">The pool</a>
+  			<a class="active"  href="{{url('resultados')}}">Results</a>
+  			<a href="{{url('proximos')}}">Next matches</a>
 
   			<button class="avatar">
   					<i class="avatar fas fa-user-circle"></i>
@@ -65,8 +65,8 @@
     			</button>
     			<div class="dropdown-content">
 
-	      				<a href="perfil">Profile</a>
-	      				<a href="logout">Logout</a>
+	      				<a href="{{url('perfil')}}">Profile</a>
+	      				<a href="{{route('logout')}}">Logout</a>
     			</div>
   			</div>
   		</div>
@@ -74,9 +74,9 @@
 			<div class="dropdown">
 				<button onclick="myFunction()" class="dropbtn">Options</button>
 				  <div id="myDropdown" class="dropdown-content">
-				    <a  class="active" href="../quiniela">The pool</a>
-				    <a href="../resultados">Results</a>
-  					<a href="../proximos">Next matches</a>
+						<a href="{{url('quiniela')}}">The pool</a>
+		  			<a class="active" href="{{url('resultados')}}">Results</a>
+		  			<a href="{{url('proximos')}}">Next matches</a>
   				  </div>
 			</div>
 	</div>
@@ -94,7 +94,7 @@
 				<div class="contenido">
 
 				<div class="titulo-resultados">
-					<img src="../images/copa.png" alt="">
+					<img src="{{asset('images/copa.png')}}" alt="">
 					<h3>RESULTS <span>{{$name}}</span></h3>
 				</div>
 				<!-- Day -->
@@ -109,8 +109,8 @@
 	              @php
 	              $id1 = $partido->local->id;
 	              $id2 = $partido->visitante->id;
-	              $route1 = '../images/equipos/'.$id1.'.png';
-	              $route2 = '../images/equipos/'.$id2.'.png';
+	              $route1 = 'images/equipos/'.$id1.'.png';
+	              $route2 = 'images/equipos/'.$id2.'.png';
 								if ($partido->resultado->id == 1) {
 									// code...
 									$inputL = true;
@@ -140,12 +140,10 @@
                 </div>
                 <div class ="deEmpate">
 									{{ Form::radio($name, 'empate', $inputE, ['class' => 'radio square','disabled' => 'disabled']) }}
-                  {{-- <input class="radio square" type="radio" name="radio-1" disabled> --}}
                   <label  class ="eEmpate" for="{{$name}}">DRAW</label>
                 </div>
                 <div>
 									{{ Form::radio($name, 'visita', $inputV, ['class' => 'radio square','disabled' => 'disabled']) }}
-                  {{-- <input  class="radio square" type="radio" name="radio-1" disabled> --}}
                 	<label class="eEquipo2" for="{{$name}}"><img src="{{asset($route2)}}" >	<span class="nomEquipo2">{{$partido->visitante->nombre}}</span></label>
                 </div>
 	            </div>
@@ -159,7 +157,7 @@
 
 	<footer>
 		<div class="container">
-			<a href="/"><img src="images/secondary-logo.svg" /></a>
+			<a href="/"><img src="{{asset('images/secondary-logo.svg')}}" /></a>
 			<ul>
 				<!--<li><a href="terminos">Términos y condiciones</a></li>
 				<li><a href="privacidad">Política de privacidad</a></li>-->
@@ -243,6 +241,5 @@
 	}
 
 	</script>
-<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
 </body>
 </html>

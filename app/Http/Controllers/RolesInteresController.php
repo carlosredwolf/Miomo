@@ -83,7 +83,7 @@ class RolesInteresController extends Controller
           array_push($quinielas, $quiniela);
         }
 
-      return view('admin.forms.puntajes',array('quiniela' => $quinielas));
+      return view('admin.forms.puntajes',array('quiniela' => $quinielas,'id'=>$Jornada_id));
 
        // return response()->json($Quinielas);
     }

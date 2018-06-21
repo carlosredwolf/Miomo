@@ -1,6 +1,6 @@
 <form class="formQuiniela" method="post" action="{{url('editarQuiniela')}}">
   @csrf
-  <a class="navBacka" href="/masalto/{{$id}}/">High scores</a>
+  {{-- <a class="navBacka" href="/masalto/{{$id}}/">High scores</a> --}}
   <h3>{{$name}}</h3>
   @foreach ($partidos as $partido)
     <fieldset >

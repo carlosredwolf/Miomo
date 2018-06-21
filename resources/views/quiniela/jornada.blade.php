@@ -12,9 +12,9 @@
 	<meta charset="utf-8">
 	<title>Miomo</title>
 
-  <link rel="stylesheet" href="../../css/html5reset-1.6.1.css">
-	<link rel="stylesheet" href="../../css/style.css">
-	<link rel="stylesheet" href="../../css/quiniela.css">
+  <link rel="stylesheet" href="{{asset('css/html5reset-1.6.1.css')}}">
+	<link rel="stylesheet" href="{{asset('css/style.css')}}">
+	<link rel="stylesheet" href="{{asset('css/quiniela.css')}}">
 	<!-- <link rel="stylesheet" href="css/responsive.css">-->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -29,7 +29,7 @@
 
     <section class="nav-left">
   		<a href="/" class="main-logo main-logo-sizeone">
-  			<img src="../../images/main-logo.svg" />
+  			<img src="{{asset('images/main-logo.svg')}}" />
   		</a>
 
   	</section>
@@ -40,12 +40,13 @@
 
   		<div class="navbar margin-topone" id="menuDesktop">
 				@if (Route::getCurrentRoute()->getActionMethod() == 'jornada')
-					<a  class="active" href="../quiniela">The pool</a>
-					<a href="../../resultados">Results</a>
-					<a href="../../proximos">Next matches</a>
+					<a  class="active" href="{{url('quiniela')}}">The pool</a>
+					<a href="{{url('resultados')}}">Results</a>
+					<a href="{{url('proximos')}}">Next matches</a>
+					<a href="{{url('masalto/'.$id)}}">High Scores</a>
 				@elseif (Route::getCurrentRoute()->getActionMethod() == 'quiniela')
-					<a class="active" href="../../misquinielas">My pools</a>
-					<a href="../../quiniela">The pool</a>
+					<a class="active" href="{{url('misquinielas')}}">My pools</a>
+					<a href="{{url('quiniela')}}">The pool</a>
 				@endif
 
     			<button class="avatar">
@@ -68,12 +69,13 @@
   				<button onclick="myFunction()" class="dropbtn">Options </button>
   				  <div id="myDropdown" class="dropdown-content">
 							@if (Route::getCurrentRoute()->getActionMethod() == 'jornada')
-								<a  class="active" href="../quiniela">The pool</a>
-	  				    <a href="../../resultados">Results</a>
-	    					<a href="../../proximos">Next matches</a>
+								<a  class="active" href="{{url('quiniela')}}">The pool</a>
+	  				    <a href="{{url('resultados')}}">Results</a>
+								<a href="{{url('proximos')}}">Next matches</a>
+								<a href="{{url('masalto')}}">High Scores</a>
 							@elseif (Route::getCurrentRoute()->getActionMethod() == 'quiniela')
-								<a class="active" href="../../misquinielas">My pools</a>
-								<a href="../../quiniela">The pool</a>
+								<a class="active" href="{{url('misquinielas')}}">My pools</a>
+								<a href="{{url('quiniela')}}">The pool</a>
 							@endif
 
     				  </div>
@@ -93,9 +95,9 @@
         <div class="titulo-quiniela">
           <img src="{{asset('images/copa.png')}}" alt="">
 					@if (Route::getCurrentRoute()->getActionMethod() == 'quiniela')
-						<a class="nav-link" href="../../misquinielas">Back</a>
+						<a class="nav-link" href="{{url('misquinielas')}}">Back</a>
 					@elseif (Route::getCurrentRoute()->getActionMethod() == 'jornada')
-						<a class="nav-link" href="../quiniela">Back</a>
+						<a class="nav-link" href="{{url('quiniela')}}">Back</a>
 					@endif
 
         </div>
@@ -114,7 +116,7 @@
 
 <footer>
   <div class="container">
-    <a href="#"><img src="../../images/secondary-logo.svg" /></a>
+    <a href="#"><img src="{{asset('images/secondary-logo.svg')}}" /></a>
     <ul>
      <!-- <li><a href="../../terminos">Términos y condiciones</a></li>
       <li><a href="../../privacidad">Política de privacidad</a></li>-->
@@ -124,7 +126,6 @@
   </div>
 </footer>
 
-<script src="../../js/quiniela.js" type='text/javascript'></script>
-<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+<script src="{{asset('js/quiniela.js')}}" type='text/javascript'></script>
 </body>
 </html>
