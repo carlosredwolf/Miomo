@@ -47,6 +47,7 @@
 				@elseif (Route::getCurrentRoute()->getActionMethod() == 'quiniela')
 					<a class="active" href="{{url('misquinielas')}}">My pools</a>
 					<a href="{{url('quiniela')}}">The pool</a>
+					<a href="{{url('masalto/'.$id)}}">High Scores</a>
 				@endif
 
     			<button class="avatar">
@@ -72,10 +73,11 @@
 								<a  class="active" href="{{url('quiniela')}}">The pool</a>
 	  				    <a href="{{url('resultados')}}">Results</a>
 								<a href="{{url('proximos')}}">Next matches</a>
-								<a href="{{url('masalto')}}">High Scores</a>
+								<a href="{{url('masalto/'.$id)}}">High Scores</a>
 							@elseif (Route::getCurrentRoute()->getActionMethod() == 'quiniela')
 								<a class="active" href="{{url('misquinielas')}}">My pools</a>
 								<a href="{{url('quiniela')}}">The pool</a>
+								<a href="{{url('masalto/'.$id)}}">High Scores</a>
 							@endif
 
     				  </div>
