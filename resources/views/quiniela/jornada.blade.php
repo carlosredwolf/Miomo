@@ -65,7 +65,7 @@
     			</div>
     		</div>
     		<div class="navbar margin-topone responsive" id="responsiveMenu">
-  			<div class="dropdown">
+  			<div class="dropdown options">
   				<button onclick="myFunction()" class="dropbtn">Options </button>
   				  <div id="myDropdown" class="dropdown-content">
 							@if (Route::getCurrentRoute()->getActionMethod() == 'jornada')
@@ -80,6 +80,27 @@
 
     				  </div>
   			</div>
+			<!-- Boton de usuario -->
+			<div class="dropdown user">
+
+				<!-- Icono de perfil del usuario-->
+				<button class="avatar avatar-sizeone">
+					<i class="avatar fas fa-user-circle"></i>
+				</button>
+
+				<!-- Menú doropdown  -->
+				<div class="dropdown-content">
+					<a href="perfil">Profile</a>
+					<a href="{{ route('logout') }}" onclick="event.preventDefault();
+							document.getElementById('logout-form').submit();">Logout</a>
+				</div>
+
+				<!--funcionaloidad de boton logout-->
+				<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+					@csrf
+				</form>
+
+			</div>
   	</div>
     	</section>
 

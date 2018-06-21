@@ -17,11 +17,11 @@ function foo() {
 // 			if ($(".nav-right .dropdown .dropdown-content").hasClass('menuNone')){
 //  			// alert("tiene class none")
 //  			$(".nav-right .dropdown .dropdown-content").removeClass("menuNone");
-//    			$(".nav-right .dropdown .dropdown-content").addClass("menuBlock");   
+//    			$(".nav-right .dropdown .dropdown-content").addClass("menuBlock");
 //   		}else{
 //   			// alert("tiene class block")
 //   			$(".nav-right .dropdown .dropdown-content").removeClass("menuBlock");
-//    		$(".nav-right .dropdown .dropdown-content").addClass("menuNone");   
+//    		$(".nav-right .dropdown .dropdown-content").addClass("menuNone");
 //   		}
 // });
 
@@ -55,11 +55,11 @@ document.addEventListener('DOMContentLoaded', function() {
 //    	if ($(".nav-right .dropdown .dropdown-content").hasClass('menuNone')){
 //  			alert("tiene class none")
 //    			$(".nav-right .dropdown .dropdown-content").removeClass("menuNone");
-//    		$(".nav-right .dropdown .dropdown-content").addClass("menuBlock");   
+//    		$(".nav-right .dropdown .dropdown-content").addClass("menuBlock");
 //   		}else{
 //   			alert("tiene class block")
 //       		$(".nav-right .dropdown .dropdown-content").removeClass("menuBlock");
-//    		$(".nav-right .dropdown .dropdown-content").addClass("menuNone");   
+//    		$(".nav-right .dropdown .dropdown-content").addClass("menuNone");
 //   		}
 // }
 
@@ -81,6 +81,8 @@ $(function() {
         if (scroll >= shrinkLogo) {
             $('.main-logo').addClass('main-logo-sizetwo');
             $('.main-logo').removeClass('main-logo-sizeone');
+            $('.avatar').addClass('avatar-sizetwo');
+            $('.avatar').removeClass('avatar-sizeone');
             $('.header_quiniela').addClass('main-menu-sizetwo');
             $('.header_quiniela').removeClass('main-menu-sizeone');
             $('.header_quiniela .navbar').addClass("margin-toptwo")
@@ -91,6 +93,8 @@ $(function() {
         } else {
             $('.main-logo').addClass('main-logo-sizeone');
             $('.main-logo').removeClass('main-logo-sizetwo');
+            $('.avatar').addClass('avatar-sizeone');
+            $('.avatar').removeClass('avatar-sizetwo');
             $('.header_quiniela').addClass('main-menu-sizeone');
             $('.header_quiniela').removeClass('main-menu-sizetwo');
             $('.header_quiniela .navbar').addClass("margin-topone");

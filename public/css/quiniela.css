@@ -7,6 +7,8 @@ body{background:#22333A;}
 .main-menu-sizetwo{height:60px;}
 .margin-topone{margin: 20px 60px;}
 .margin-toptwo{margin: 0 60px;}
+.avatar-sizeone{width:52px; height: 52px;}
+.avatar-sizetwo{width:35px; height: 35px;}
 /* ------- */
 
 SECTION.nav-left, SECTION.nav-right {
@@ -507,16 +509,17 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
   .margin-toptwouser{margin-top: 0;}
 
   #menuDesktop{display:none;}
-  #responsiveMenu{display:block;}
+  #responsiveMenu{display:inline-flex;}
   /* menu dropdown*/
   /*.menuNone{display:none;}
   .menuBlock{display:block;}*/
 
 
-  .margin-topone {margin: 20px auto 0;}
-  .margin-toptwo {margin: 0 auto;}
+  .margin-topone {margin: 0px auto 0;}
+  .margin-toptwo {margin: 0 auto; max-height: 40px }
   .header_quiniela .navbar {width: 100%;}
-  .header_quiniela .navbar.responsive {height: auto;}
+ /*.header_quiniela .navbar.responsive {height: auto;}*/
+
 
   .navbar.responsive  .dropdown {
       float: none;
@@ -531,6 +534,14 @@ font:20px  'breamcatcher', helvetica, arial, sans-serif; margin:0px auto;color:#
       margin:0;
       /*border:1px solid red;*/
       clear:both;
+      /*align-self: center;*/
+      text-align: right;
+
+    }
+
+    .options{
+        margin-left: 22% !important;
+        padding-top: 3px!important;
     }
 
     .navbar.responsive .dropdown button.dropbtn{
@@ -1118,6 +1129,7 @@ SECTION.quiniela-form .container .quiniela-form-info, SECTION.quiniela-form .con
 /* ----------------------------------------------------------------------------------- */
 /*  Pantallas iphone 5, 6  */
 @media screen and (min-width: 900px) and (max-width: 1230px) {
+
   .quiniela .container .quiniela-container .contenido .formQuiniela fieldset {
     width: 100%;
   }
@@ -1132,7 +1144,7 @@ SECTION.quiniela-form .container .quiniela-form-info, SECTION.quiniela-form .con
  /* menu dropdown*/
 /*.menuNone{display:none;}
 .menuBlock{display:block;}*/
-
+    #responsiveMenu {display: inline-flex;}
     section.nav-right{display:block; background-color:transparent;}
     section.nav-right .user{ -webkit-transition: all 0.5s ease;
       -moz-transition: all 0.5s ease;
@@ -1341,6 +1353,7 @@ SECTION.quiniela-form .container .quiniela-form-info, SECTION.quiniela-form .con
 
 }
 @media screen and (min-width: 560px) and (max-width: 700px) {
+        #responsiveMenu {display: inline-flex;}
   .quiniela .container .quiniela-container .contenido .formQuiniela fieldset .encuentros-info h2 {
     font-size: 14px;
   }
