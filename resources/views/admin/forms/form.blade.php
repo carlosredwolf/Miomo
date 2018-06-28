@@ -43,7 +43,7 @@
               <td>
                 <select name="select-local-{{$partido->id}}" id="local-{{$partido->id}}">
                   @foreach ($equipos as $equipo)
-                    @if ($equipo->id <= 32)
+                    @if ($equipo->id <= 32 || $equipo->id == 35)
                       @if ($equipo->id == $partido->local->id)
                         <option selected="selected" value="{{$equipo->id}}">{{$equipo->nombre}}</option>
                       @else
@@ -56,7 +56,7 @@
               <td>
                 <select name="select-visitante-{{$partido->id}}" id="local-{{$partido->id}}">
                     @foreach ($equipos as $equipo)
-                      @if ($equipo->id <= 32)
+                      @if ($equipo->id <= 32 || $equipo->id == 35)
                         @if ($equipo->id == $partido->visitante->id)
                             <option selected="selected" value="{{$equipo->id}}">{{$equipo->nombre}}</option>
                         @else
