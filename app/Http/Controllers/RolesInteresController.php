@@ -80,7 +80,7 @@ class RolesInteresController extends Controller
             $quiniela->acumuladoUser = $quiniela->acumuladoUser + $poolUser->puntaje;
           }
 
-          $quinielas = collect($quinielas)->sortBy('acumuladoUser')->toArray();
+          $quinielas = collect($quinielas)->sortByDesc('acumuladoUser')->toArray();
 
           array_push($quinielas, $quiniela);
         }
