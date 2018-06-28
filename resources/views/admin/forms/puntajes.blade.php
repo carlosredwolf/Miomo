@@ -7,7 +7,6 @@
     <section class="quiniela">
             <div class="container">
 
-              {{-- @include('sections.containerResultados') --}}
               <div class="quiniela-container">
 
                 <div class="contenido">
