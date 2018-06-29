@@ -61,7 +61,8 @@ class RolesInteresController extends Controller
      */
     public function show($Jornada_id)
     {
-        $pools=Quiniela::Where('id_jornada',$Jornada_id)->orderBy('puntaje', 'desc')->get();
+        $pools=Quiniela::where('id_jornada',$Jornada_id)->get();
+
         $quinielas = array();
         foreach ($pools as $pool) {
           // code...
@@ -80,14 +81,14 @@ class RolesInteresController extends Controller
             $quiniela->acumuladoUser = $quiniela->acumuladoUser + $poolUser->puntaje;
           }
 
-          $quinielas = collect($quinielas)->sortByDesc('acumuladoUser')->toArray();
-
           array_push($quinielas, $quiniela);
+
+          $quinielas = collect($quinielas)->sortByDesc('acumuladoUser')->toArray();
         }
 
-      return view('admin.forms.puntajes',array('quiniela' => $quinielas,'id'=>$Jornada_id));
+        return view('admin.forms.puntajes',array('quiniela' => $quinielas,'id'=>$Jornada_id));
 
-       // return response()->json($Quinielas);
+        //return response()->json($quinielas,200);
     }
     public function userquiniela($Quiniela_id){
         $quiniela_idUser=Quiniela::Where('id',$Quiniela_id)->first();
