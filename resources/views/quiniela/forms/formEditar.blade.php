@@ -40,7 +40,7 @@
     {{-- @php
       date_default_timezone_set('America/Mexico_City');
     @endphp --}}
-    @if(($partido->status->id == 2 || $partido->status->id == 3) || $resultado[$partido->id] == 0 || (date('M/d/Y') >= date('M/d/Y',strtotime($partido->fecha_partido)) && date('H') >= date("H", strtotime('-0.2 hours',strtotime($partido->hora_partido)))) )
+    @if(date('m/d/Y H:i') >= date('m/d/Y H:i',strtotime($partido->fecha_partido.$partido->hora_partido)))
       <div class="resultadoError"></div>
     @endif
     @if($resultado[$partido->id] == 1)
