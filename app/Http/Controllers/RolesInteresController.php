@@ -83,8 +83,9 @@ class RolesInteresController extends Controller
 
           array_push($quinielas, $quiniela);
 
-          $quinielas = collect($quinielas)->sortByDesc('acumuladoUser')->toArray();
+          
         }
+        $quinielas = collect($quinielas)->sortByDesc('acumuladoUser')->toArray();
 
         return view('admin.forms.puntajes',array('quiniela' => $quinielas,'id'=>$Jornada_id));
 
