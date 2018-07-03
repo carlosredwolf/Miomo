@@ -19,7 +19,7 @@
       @endphp
     @else
       @php
-        $required = 'required';
+        $required = '';
       @endphp
     @endif
     <div class="encuentro">
