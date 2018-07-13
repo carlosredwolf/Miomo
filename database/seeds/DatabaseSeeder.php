@@ -13,8 +13,8 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         $this->call([
-        CatPaisesTableSeeder::class,
-        CatEstadosTableSeeder::class,
+        //CatPaisesTableSeeder::class,
+        //CatEstadosTableSeeder::class,
         CatResulTableSeeder::class,
         CatStatusTableSeeder::class,
         CatUserTableSeeder::class,
