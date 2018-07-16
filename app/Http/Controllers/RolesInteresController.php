@@ -189,7 +189,7 @@ class RolesInteresController extends Controller
             }
           }elseif ($Jornada_id == 7) {
             // code...
-            if($puntaje == 10){
+            if($puntaje == 20){
               $puntaje = $puntaje+20;
             }
           }
